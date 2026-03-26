@@ -60,16 +60,18 @@ __turbopack_context__.s([
     "authConfig",
     ()=>authConfig
 ]);
+const isProd = ("TURBOPACK compile-time value", "development") === 'production';
+const isVercel = !!process.env.VERCEL;
 const authConfig = {
     trustHost: true,
     cookies: {
         sessionToken: {
-            name: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : 'auth.session-token',
+            name: 'auth.session-token',
             options: {
                 httpOnly: true,
                 sameSite: 'lax',
                 path: '/',
-                secure: ("TURBOPACK compile-time value", "development") === 'production'
+                secure: false
             }
         }
     },
@@ -259,7 +261,8 @@ const { handlers, signIn, signOut, auth } = (0, __TURBOPACK__imported__module__$
                                 select: {
                                     db_url: true,
                                     slug: true,
-                                    name: true
+                                    name: true,
+                                    metadata: true
                                 }
                             }) : Promise.resolve(null),
                             // Company + currency
@@ -338,6 +341,8 @@ const { handlers, signIn, signOut, auth } = (0, __TURBOPACK__imported__module__$
                             dbUrl: tenantInfo?.db_url,
                             currencyCode: company?.company_settings?.currencies?.code || 'INR',
                             currencySymbol: company?.company_settings?.currencies?.symbol || '₹',
+                            dateFormat: tenantInfo?.metadata?.date_format || 'dd/MM/yyyy',
+                            precision: company?.company_settings?.rounding_precision ?? 2,
                             industry: company?.industry || 'General',
                             hasCRM: moduleKeys.includes('crm'),
                             hasHMS: moduleKeys.includes('hms')
@@ -384,6 +389,8 @@ const { handlers, signIn, signOut, auth } = (0, __TURBOPACK__imported__module__$
                 token.current_branch_name = u.current_branch_name;
                 token.currencyCode = u.currencyCode;
                 token.currencySymbol = u.currencySymbol;
+                token.dateFormat = u.dateFormat;
+                token.precision = u.precision;
             }
             if (trigger === "update" && session) {
                 if (session.companyId) token.companyId = session.companyId;
@@ -410,6 +417,8 @@ const { handlers, signIn, signOut, auth } = (0, __TURBOPACK__imported__module__$
                 u.current_branch_name = token.current_branch_name;
                 u.currencyCode = token.currencyCode;
                 u.currencySymbol = token.currencySymbol;
+                u.dateFormat = token.dateFormat;
+                u.precision = token.precision;
             }
             return session;
         }

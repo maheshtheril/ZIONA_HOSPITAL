@@ -29,66 +29,11 @@ self.__BUILD_MANIFEST = {
           {
             "type": "header",
             "key": "next-url",
-            "value": "/hms(?:/.*)?"
-          }
-        ],
-        "source": "/hms/prescriptions/new",
-        "destination": "/hms/(.)prescriptions/new"
-      },
-      {
-        "has": [
-          {
-            "type": "header",
-            "key": "next-url",
             "value": "/hms/billing(?:/.*)?"
           }
         ],
         "source": "/hms/billing/:nxtIid/edit",
         "destination": "/hms/billing/(.):nxtIid/edit"
-      },
-      {
-        "has": [
-          {
-            "type": "header",
-            "key": "next-url",
-            "value": "/hms/billing(?:/.*)?"
-          }
-        ],
-        "source": "/hms/billing/new",
-        "destination": "/hms/billing/(.)new"
-      },
-      {
-        "has": [
-          {
-            "type": "header",
-            "key": "next-url",
-            "value": "/hms(?:/.*)?"
-          }
-        ],
-        "source": "/hms/prescriptions/new",
-        "destination": "/hms/(.)prescriptions/new"
-      },
-      {
-        "has": [
-          {
-            "type": "header",
-            "key": "next-url",
-            "value": "/hms/billing(?:/.*)?"
-          }
-        ],
-        "source": "/hms/billing/:nxtIid/edit",
-        "destination": "/hms/billing/(.):nxtIid/edit"
-      },
-      {
-        "has": [
-          {
-            "type": "header",
-            "key": "next-url",
-            "value": "/hms/billing(?:/.*)?"
-          }
-        ],
-        "source": "/hms/billing/new",
-        "destination": "/hms/billing/(.)new"
       }
     ],
     "fallback": []

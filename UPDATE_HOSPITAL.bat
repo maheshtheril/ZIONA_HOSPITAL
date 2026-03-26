@@ -17,9 +17,12 @@ if %errorlevel% neq 0 (
     git pull origin production
 )
 
+echo [2/2] Rebuilding system components...
+call npm run build
+
 echo.
 echo ===================================================
-echo   SUCCESS: System is up to date!
+echo   SUCCESS: System is up to date and rebuilt!
 echo   You can now restart the application.
 echo ===================================================
 echo.

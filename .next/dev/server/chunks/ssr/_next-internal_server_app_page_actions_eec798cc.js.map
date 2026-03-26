@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":["file:///C:/2035-HMS/SAAS_ERP/.next-internal/server/app/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {getTenantBrandingByHost as '4007ccdb75d82f2c333a0ba67acb0596c56de86a40'} from 'ACTIONS_MODULE0'\nexport {auditAndFixMenuPermissions as '001d846c340e0b0dc03631f5abb6a919b37618be0c'} from 'ACTIONS_MODULE1'\nexport {getMenuItems as '007da8a383d393bc3e0c883ec0243c8394a0988218'} from 'ACTIONS_MODULE1'\nexport {getAllPermissions as '0080b205f1acae75e69db7a6bcb4173b5d3e51a5dc'} from 'ACTIONS_MODULE2'\nexport {getRoles as '00a6f84a8e6477a0104223506d74bc4dfe9481b3d4'} from 'ACTIONS_MODULE2'\nexport {seedRolesAndPermissions as '00b3d4806a5f0a59b1ba375ae313a48c60867df645'} from 'ACTIONS_MODULE2'\nexport {createRole as '404f8eef86e7a928257f21d02e0dcb5aeb8922daf9'} from 'ACTIONS_MODULE2'\nexport {checkPermission as '407793196ca4fd907dc854c625b75c571dcc2579b3'} from 'ACTIONS_MODULE2'\nexport {deleteRole as '408f1a5020e6ba461ea2ab0f6cc2c241264c88fb87'} from 'ACTIONS_MODULE2'\nexport {getUserPermissions as '40a18ef6ef9ff95f524a8fc838c6be9565ccc80335'} from 'ACTIONS_MODULE2'\nexport {updateRole as '6079b9612e1fe52d990c15df9204be8bd86d38ceb2'} from 'ACTIONS_MODULE2'\n"],"names":[],"mappings":";AAAA;AACA;AAEA"}}]
+}

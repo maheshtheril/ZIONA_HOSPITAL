@@ -18,6 +18,7 @@ node_modules/
 !node_modules/prisma/
 !node_modules/pg/
 !node_modules/dotenv/
+!whatsapp-bridge/node_modules/
 
 # Ensure Next.js large binary is NEVER tracked
 node_modules/@next/swc-win32-x64-msvc/
