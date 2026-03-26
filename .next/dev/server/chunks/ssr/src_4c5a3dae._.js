@@ -71,7 +71,7 @@ async function ensureAccountingMenu() {
         if (!existingDash) {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
                 data: {
-                    label: 'Financial Dashboard',
+                    label: 'Gateway of Tally',
                     url: '/hms/accounting',
                     key: dashKey,
                     module_key: 'finance',
@@ -80,14 +80,15 @@ async function ensureAccountingMenu() {
                     is_global: true
                 }
             });
-            console.log("Seeded Accounting Dashboard menu item.");
-        } else if (existingDash.url !== '/hms/accounting') {
+            console.log("Seeded Tally Dashboard menu item.");
+        } else if (existingDash.url !== '/hms/accounting' || existingDash.label !== 'Gateway of Tally') {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
                 where: {
                     id: existingDash.id
                 },
                 data: {
                     url: '/hms/accounting',
+                    label: 'Gateway of Tally',
                     module_key: 'finance'
                 }
             });
@@ -128,14 +129,24 @@ async function ensurePaymentMenus() {
     if (!receiptMenu) {
         await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
             data: {
-                label: 'Receipts',
-                url: '/accounting/customer/receipts',
+                label: 'Receipt Vouchers',
+                url: '/hms/accounting/receipts',
                 key: 'acc-receipts',
                 module_key: 'finance',
                 icon: 'ArrowDownLeft',
                 parent_id: custParent.id,
                 sort_order: 20,
                 is_global: true
+            }
+        });
+    } else if (receiptMenu.url !== '/hms/accounting/receipts') {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
+            where: {
+                id: receiptMenu.id
+            },
+            data: {
+                url: '/hms/accounting/receipts',
+                label: 'Receipt Vouchers'
             }
         });
     }
@@ -166,8 +177,8 @@ async function ensurePaymentMenus() {
     if (!paymentMenu) {
         await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
             data: {
-                label: 'Payments',
-                url: '/accounting/vendor/payments',
+                label: 'Payment Vouchers',
+                url: '/hms/accounting/payments',
                 key: 'acc-payments',
                 module_key: 'finance',
                 icon: 'ArrowUpRight',
@@ -175,6 +186,16 @@ async function ensurePaymentMenus() {
                 sort_order: 20,
                 permission_code: 'billing:view',
                 is_global: true
+            }
+        });
+    } else if (paymentMenu.url !== '/hms/accounting/payments') {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
+            where: {
+                id: paymentMenu.id
+            },
+            data: {
+                url: '/hms/accounting/payments',
+                label: 'Payment Vouchers'
             }
         });
     }
@@ -232,8 +253,8 @@ async function ensureJournalMenu() {
             console.log("Creating Journal Entries menu...");
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
                 data: {
-                    label: 'Journal Entries',
-                    url: '/accounting/journals',
+                    label: 'Journal Register',
+                    url: '/hms/accounting/journals',
                     key: 'acc-journals',
                     module_key: 'finance',
                     icon: 'BookOpen',
@@ -243,12 +264,14 @@ async function ensureJournalMenu() {
                     is_global: true
                 }
             });
-        } else if (!journalsMenu.permission_code) {
+        } else if (journalsMenu.url !== '/hms/accounting/journals') {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
                 where: {
                     id: journalsMenu.id
                 },
                 data: {
+                    url: '/hms/accounting/journals',
+                    label: 'Journal Register',
                     permission_code: 'billing:view'
                 }
             });
@@ -264,7 +287,7 @@ async function ensureJournalMenu() {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
                 data: {
                     label: 'Chart of Accounts',
-                    url: '/accounting/coa',
+                    url: '/hms/accounting/coa',
                     key: 'acc-coa',
                     module_key: 'finance',
                     icon: 'ListTree',
@@ -274,12 +297,13 @@ async function ensureJournalMenu() {
                     is_global: true
                 }
             });
-        } else if (!coaMenu.permission_code) {
+        } else if (coaMenu.url !== '/hms/accounting/coa') {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
                 where: {
                     id: coaMenu.id
                 },
                 data: {
+                    url: '/hms/accounting/coa',
                     permission_code: 'billing:view'
                 }
             });
@@ -1157,7 +1181,7 @@ async function ensurePurchasingMenus() {
                     key: prodKey,
                     module_key: 'inventory',
                     icon: 'Package',
-                    sort_order: 6,
+                    sort_order: 20,
                     permission_code: 'inventory:view',
                     is_global: true
                 }
@@ -1169,6 +1193,36 @@ async function ensurePurchasingMenus() {
                 },
                 data: {
                     permission_code: 'inventory:view'
+                }
+            });
+        }
+        // Ensure Bulk Import Exists (Direct Access)
+        const importKey = 'inv-import';
+        const existingImport = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.findFirst({
+            where: {
+                key: importKey
+            }
+        });
+        if (!existingImport) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.create({
+                data: {
+                    label: 'Bulk Import Products',
+                    url: '/hms/inventory/products?import=true',
+                    key: importKey,
+                    module_key: 'inventory',
+                    icon: 'Upload',
+                    sort_order: 21,
+                    permission_code: 'inventory:view',
+                    is_global: true
+                }
+            });
+        } else if (existingImport.url !== '/hms/inventory/products?import=true') {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].menu_items.update({
+                where: {
+                    id: existingImport.id
+                },
+                data: {
+                    url: '/hms/inventory/products?import=true'
                 }
             });
         }

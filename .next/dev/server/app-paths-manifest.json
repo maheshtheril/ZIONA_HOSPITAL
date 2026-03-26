@@ -1,5 +1,10 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/hms/appointments/page": "app/hms/appointments/page.js",
+  "/hms/billing/page": "app/hms/billing/page.js",
+  "/hms/dashboard/page": "app/hms/dashboard/page.js",
+  "/hms/pharmacy/billing/page": "app/hms/pharmacy/billing/page.js",
   "/login/page": "app/login/page.js",
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/page": "app/page.js"

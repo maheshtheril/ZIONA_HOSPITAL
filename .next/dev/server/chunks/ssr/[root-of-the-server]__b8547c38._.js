@@ -1,0 +1,12748 @@
+module.exports = [
+"[project]/src/lib/services/uom.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "internalSeedUOMs",
+    ()=>internalSeedUOMs
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+async function internalSeedUOMs(tenantId, companyId, tx) {
+    const db = tx || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"];
+    console.log(`[UOM Service] Seeding UOMs for Tenant: ${tenantId}, Company: ${companyId}`);
+    try {
+        // 0. MIGRATION: Normalize 'each' to 'EACH'
+        // This cleans up previous duplicate seeds
+        console.log("[UOM Service] Normalizing UOMs (each -> EACH)...");
+        try {
+            // Update products to use 'EACH'
+            await db.hms_product.updateMany({
+                where: {
+                    uom: 'each'
+                },
+                data: {
+                    uom: 'EACH'
+                }
+            });
+            // Find the lowercase UOM record to delete it
+            const lowercaseEach = await db.hms_uom.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    name: 'each'
+                }
+            });
+            if (lowercaseEach) {
+                await db.hms_uom.delete({
+                    where: {
+                        id: lowercaseEach.id
+                    }
+                });
+                console.log("[UOM Service] Deleted duplicate lowercase 'each' UOM.");
+            }
+        } catch (migError) {
+            console.warn("[UOM Service] Migration warning (non-fatal):", migError);
+        }
+        // 1. Ensure Categories
+        const categories = [
+            'Pharmaceutical Packaging',
+            'Generic Units',
+            'Volume',
+            'Weight',
+            'Services'
+        ];
+        const catMap = {};
+        for (const catName of categories){
+            let cat = await db.hms_uom_category.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    name: catName
+                }
+            });
+            if (!cat) {
+                cat = await db.hms_uom_category.create({
+                    data: {
+                        id: crypto.randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: catName
+                    }
+                });
+            }
+            catMap[catName] = cat;
+        }
+        const pharmaCat = catMap['Pharmaceutical Packaging'];
+        const genericCat = catMap['Generic Units'];
+        const volCat = catMap['Volume'];
+        const weightCat = catMap['Weight'];
+        const serviceCat = catMap['Services'];
+        // 2. Define world-standard UOMs
+        const uomDefinitions = [
+            // Generic
+            {
+                name: 'EACH',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Each / Single Unit',
+                categoryId: genericCat.id
+            },
+            {
+                name: 'PCS',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Pieces',
+                categoryId: genericCat.id
+            },
+            {
+                name: 'UNIT',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Standard Unit',
+                categoryId: genericCat.id
+            },
+            {
+                name: 'NOS',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Numbers',
+                categoryId: genericCat.id
+            },
+            // Pharma Packaging
+            {
+                name: 'TAB',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Tablet',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'CAP',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Capsule',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'STRIP',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Strip',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'VIAL',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Vial',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'AMPOULE',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Ampoule',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'BOTTLE',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Bottle',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'PACK',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Pack',
+                categoryId: pharmaCat.id
+            },
+            {
+                name: 'BOX',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Box',
+                categoryId: pharmaCat.id
+            },
+            // Weight
+            {
+                name: 'MG',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Milligram',
+                categoryId: weightCat.id
+            },
+            {
+                name: 'G',
+                type: 'bigger',
+                ratio: 1000.0,
+                description: 'Gram',
+                categoryId: weightCat.id
+            },
+            {
+                name: 'KG',
+                type: 'bigger',
+                ratio: 1000000.0,
+                description: 'Kilogram',
+                categoryId: weightCat.id
+            },
+            {
+                name: 'MCG',
+                type: 'smaller',
+                ratio: 0.001,
+                description: 'Microgram',
+                categoryId: weightCat.id
+            },
+            // Volume
+            {
+                name: 'ML',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Milliliter',
+                categoryId: volCat.id
+            },
+            {
+                name: 'L',
+                type: 'bigger',
+                ratio: 1000.0,
+                description: 'Liter',
+                categoryId: volCat.id
+            },
+            // Services
+            {
+                name: 'VISIT',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Consultation Visit',
+                categoryId: serviceCat.id
+            },
+            {
+                name: 'TEST',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Lab Test',
+                categoryId: serviceCat.id
+            },
+            {
+                name: 'SCAN',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Radiology Scan',
+                categoryId: serviceCat.id
+            },
+            {
+                name: 'SESSION',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Procedure Session',
+                categoryId: serviceCat.id
+            },
+            {
+                name: 'DAY',
+                type: 'reference',
+                ratio: 1.0,
+                description: 'Day (IPD)',
+                categoryId: serviceCat.id
+            }
+        ];
+        // 3. Seed UOMs
+        let createdCount = 0;
+        for (const uomDef of uomDefinitions){
+            const existing = await db.hms_uom.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    name: uomDef.name
+                }
+            });
+            if (!existing) {
+                await db.hms_uom.create({
+                    data: {
+                        id: crypto.randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        category_id: uomDef.categoryId,
+                        name: uomDef.name,
+                        uom_type: uomDef.type,
+                        ratio: uomDef.ratio,
+                        is_active: true
+                    }
+                });
+                createdCount++;
+            }
+        }
+        return {
+            success: true,
+            message: `Seeded ${createdCount} new UOMs`
+        };
+    } catch (error) {
+        console.error("Error in internalSeedUOMs:", error);
+        throw error;
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/services/tenant-init.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "initializeTenantMasters",
+    ()=>initializeTenantMasters
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$uom$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/services/uom.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$uom$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$uom$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+async function initializeTenantMasters(tenantId, companyId, tx) {
+    const db = tx || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"];
+    console.log(`[TenantInit] Initializing masters for Tenant: ${tenantId}, Company: ${companyId}`);
+    try {
+        // 0. Seed Standard Departments (World-Class Comprehensive List)
+        const deptCount = await db.hms_departments.count({
+            where: {
+                company_id: companyId
+            }
+        });
+        if (deptCount === 0) {
+            const standardDepartments = [
+                {
+                    name: 'Emergency & Trauma',
+                    code: 'ER',
+                    description: '24/7 emergency care'
+                },
+                {
+                    name: 'Outpatient (OPD)',
+                    code: 'OPD',
+                    description: 'Outpatient consultations'
+                },
+                {
+                    name: 'Inpatient (IPD)',
+                    code: 'IPD',
+                    description: 'In-patient wards'
+                },
+                {
+                    name: 'Critical Care (ICU)',
+                    code: 'ICU',
+                    description: 'Critical care'
+                },
+                {
+                    name: 'Operation Theatre',
+                    code: 'OT',
+                    description: 'Surgical procedures'
+                },
+                {
+                    name: 'Radiological Imaging',
+                    code: 'RAD',
+                    description: 'Medical imaging'
+                },
+                {
+                    name: 'Pathology Lab',
+                    code: 'PATH',
+                    description: 'Laboratory diagnostics'
+                },
+                {
+                    name: 'Central Pharmacy',
+                    code: 'PHAR',
+                    description: 'Medication dispensing'
+                },
+                {
+                    name: 'General Medicine',
+                    code: 'GENMED',
+                    description: 'Internal Medicine'
+                },
+                {
+                    name: 'Pediatrics',
+                    code: 'PED',
+                    description: 'Child care'
+                },
+                {
+                    name: 'Obstetrics & Gynae',
+                    code: 'OBGYN',
+                    description: 'Women care'
+                },
+                {
+                    name: 'Cardiology',
+                    code: 'CARD',
+                    description: 'Heart care'
+                }
+            ];
+            await db.hms_departments.createMany({
+                data: standardDepartments.map((dept)=>({
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: dept.name,
+                        code: dept.code,
+                        description: dept.description,
+                        is_active: true
+                    }))
+            });
+            console.log('[TenantInit] Seeded 12 Standard Departments');
+        }
+        // 1. Seed UOMs (Crucial for inventory/billing)
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$uom$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["internalSeedUOMs"])(tenantId, companyId, db);
+        console.log('[TenantInit] Seeded UOMs');
+        // 2. Seed Default Stock Location (Professional Standard)
+        const locationCount = await db.hms_stock_location.count({
+            where: {
+                company_id: companyId
+            }
+        });
+        if (locationCount === 0) {
+            await db.hms_stock_location.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    code: 'MAIN',
+                    name: 'Main Store',
+                    location_type: 'warehouse',
+                    metadata: {
+                        is_default: true
+                    }
+                }
+            });
+            console.log('[TenantInit] Seeded Default Stock Location');
+        }
+        // 3. Seed Standard HMS Roles (Physician, Nurse, etc. - in addition to RBAC roles)
+        const roleCount = await db.hms_roles.count({
+            where: {
+                tenant_id: tenantId
+            }
+        });
+        if (roleCount === 0) {
+            const standardRoles = [
+                "Physician",
+                "Surgeon",
+                "Nurse",
+                "Radiologist",
+                "Pathologist",
+                "Anesthesiologist",
+                "Physiotherapist",
+                "Pharmacist",
+                "Lab Technician",
+                "Administrative Specialist"
+            ];
+            await db.hms_roles.createMany({
+                data: standardRoles.map((name)=>({
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name,
+                        is_clinical: true,
+                        is_active: true
+                    }))
+            });
+            console.log('[TenantInit] Seeded Standard HMS Roles');
+        }
+        // 4. Seed Standard Specializations
+        const specCount = await db.hms_specializations.count({
+            where: {
+                tenant_id: tenantId
+            }
+        });
+        if (specCount === 0) {
+            const standardSpecs = [
+                "Cardiology",
+                "Neurology",
+                "Pediatrics",
+                "Orthopedics",
+                "Gastroenterology",
+                "Dermatology",
+                "Psychiatry",
+                "Ophthalmology",
+                "ENT",
+                "Oncology",
+                "Urology",
+                "Nephrology"
+            ];
+            await db.hms_specializations.createMany({
+                data: standardSpecs.map((name)=>({
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name,
+                        is_active: true
+                    }))
+            });
+            console.log('[TenantInit] Seeded Standard Specializations');
+        }
+        // 5. Seed Placeholder Manufacturers
+        const mfgCount = await db.hms_manufacturer.count({
+            where: {
+                company_id: companyId
+            }
+        });
+        if (mfgCount === 0) {
+            const commonMfgs = [
+                "Pfizer",
+                "Novartis",
+                "Roche",
+                "Merck",
+                "GSK",
+                "Sanofi",
+                "AstraZeneca"
+            ];
+            await db.hms_manufacturer.createMany({
+                data: commonMfgs.map((name)=>({
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: name,
+                        is_active: true
+                    }))
+            });
+            console.log('[TenantInit] Seeded Placeholder Manufacturers');
+        }
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('[TenantInit] Critical failure during master seeding:', error);
+        // We don't throw here to avoid blocking signup, 
+        // but in a world-class system we might want to log this for manual intervention
+        return {
+            success: false,
+            error
+        };
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/currency-constants.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Centralized Currency Constants
+ * 
+ * Shared between client and server components.
+ * Default values can be overridden via environment variables.
+ */ __turbopack_context__.s([
+    "CURRENCY_CODES",
+    ()=>CURRENCY_CODES,
+    "CURRENCY_SYMBOLS",
+    ()=>CURRENCY_SYMBOLS,
+    "SYSTEM_DEFAULT_CURRENCY_CODE",
+    ()=>SYSTEM_DEFAULT_CURRENCY_CODE,
+    "SYSTEM_DEFAULT_CURRENCY_SYMBOL",
+    ()=>SYSTEM_DEFAULT_CURRENCY_SYMBOL
+]);
+const SYSTEM_DEFAULT_CURRENCY_CODE = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_DEFAULT_CURRENCY_CODE || 'INR' : 'INR';
+const SYSTEM_DEFAULT_CURRENCY_SYMBOL = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_DEFAULT_CURRENCY_SYMBOL || '₹' : '₹';
+const CURRENCY_SYMBOLS = {
+    'IN': '₹',
+    'US': '$',
+    'GB': '£',
+    'EU': '€',
+    'AE': 'AED',
+    'SA': 'SAR',
+    'AU': 'A$',
+    'CA': 'C$',
+    'SG': 'S$'
+};
+const CURRENCY_CODES = {
+    'IN': 'INR',
+    'US': 'USD',
+    'GB': 'GBP',
+    'EU': 'EUR',
+    'AE': 'AED',
+    'SA': 'SAR',
+    'AU': 'AUD',
+    'CA': 'CAD',
+    'SG': 'SGD'
+};
+}),
+"[project]/src/lib/account-seeder.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "ensureDefaultAccounts",
+    ()=>ensureDefaultAccounts
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+async function ensureDefaultAccounts(companyId, tenantId) {
+    // 1. Determine Tax Terminology based on Country
+    const company = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findUnique({
+        where: {
+            id: companyId
+        },
+        include: {
+            countries: true
+        }
+    });
+    let taxLabel = "Tax";
+    const countryName = company?.countries?.name?.toLowerCase() || '';
+    if (countryName.includes('india') || countryName.includes('canada') || countryName.includes('australia')) {
+        taxLabel = "GST";
+    } else if (countryName.includes('united kingdom') || countryName.includes('uae') || countryName.includes('europe')) {
+        taxLabel = "VAT";
+    } else if (countryName.includes('usa') || countryName.includes('united states')) {
+        taxLabel = "Sales Tax";
+    }
+    // 2. Fetch existing accounts to check what is missing
+    const existingAccounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+        where: {
+            company_id: companyId
+        },
+        select: {
+            code: true
+        }
+    });
+    const existingCodes = new Set(existingAccounts.map((a)=>a.code || ''));
+    // 3. Define Standard COA Template (1000-8999 range)
+    const templates = [
+        // ASSETS (1000-1999)
+        {
+            code: '1000',
+            name: 'Fixed Assets',
+            type: 'Asset',
+            isGroup: true
+        },
+        {
+            code: '1010',
+            name: 'Office Equipment',
+            type: 'Asset',
+            parentCode: '1000'
+        },
+        {
+            code: '1020',
+            name: 'Medical Equipment',
+            type: 'Asset',
+            parentCode: '1000'
+        },
+        {
+            code: '1030',
+            name: 'Furniture & Fixtures',
+            type: 'Asset',
+            parentCode: '1000'
+        },
+        {
+            code: '1500',
+            name: 'Current Assets',
+            type: 'Asset',
+            isGroup: true
+        },
+        {
+            code: '1600',
+            name: 'Cash on Hand',
+            type: 'Asset',
+            parentCode: '1500',
+            isGroup: true
+        },
+        {
+            code: '1700',
+            name: 'Bank Accounts',
+            type: 'Asset',
+            parentCode: '1500',
+            isGroup: true
+        },
+        {
+            code: '1710',
+            name: 'Bank Account - Primary',
+            type: 'Asset',
+            parentCode: '1700'
+        },
+        {
+            code: '1610',
+            name: 'Cash',
+            type: 'Asset',
+            parentCode: '1600'
+        },
+        {
+            code: '1800',
+            name: 'Sundry Debtors',
+            type: 'Asset',
+            parentCode: '1500',
+            isGroup: true
+        },
+        {
+            code: '1810',
+            name: 'Accounts Receivable (Patients)',
+            type: 'Asset',
+            parentCode: '1800'
+        },
+        {
+            code: '1820',
+            name: 'Insurance Debtors',
+            type: 'Asset',
+            parentCode: '1800'
+        },
+        {
+            code: '1830',
+            name: 'Corporate Debtors',
+            type: 'Asset',
+            parentCode: '1800'
+        },
+        {
+            code: '1900',
+            name: 'Inventory / Stock',
+            type: 'Asset',
+            parentCode: '1500',
+            isGroup: true
+        },
+        // LIABILITIES (2000-2999)
+        {
+            code: '2000',
+            name: 'Current Liabilities',
+            type: 'Liability',
+            isGroup: true
+        },
+        {
+            code: '2100',
+            name: 'Sundry Creditors',
+            type: 'Liability',
+            parentCode: '2000',
+            isGroup: true
+        },
+        {
+            code: '2110',
+            name: 'Accounts Payable (Vendors)',
+            type: 'Liability',
+            parentCode: '2100'
+        },
+        {
+            code: '2120',
+            name: 'Accrued Expenses',
+            type: 'Liability',
+            parentCode: '2000'
+        },
+        {
+            code: '2200',
+            name: `${taxLabel} Duties & Taxes`,
+            type: 'Liability',
+            parentCode: '2000',
+            isGroup: true
+        },
+        {
+            code: '2210',
+            name: `${taxLabel} Output (Collected)`,
+            type: 'Liability',
+            parentCode: '2200'
+        },
+        {
+            code: '2220',
+            name: `${taxLabel} Input (Paid)`,
+            type: 'Liability',
+            parentCode: '2200'
+        },
+        {
+            code: '2300',
+            name: 'Salaries Payable',
+            type: 'Liability',
+            parentCode: '2000'
+        },
+        // EQUITY (3000-3999)
+        {
+            code: '3000',
+            name: 'Owner Capital / Equity',
+            type: 'Equity',
+            isGroup: true
+        },
+        {
+            code: '3200',
+            name: 'Retained Earnings',
+            type: 'Equity'
+        },
+        // REVENUE (4000-4999)
+        {
+            code: '4000',
+            name: 'Direct Income (Revenue)',
+            type: 'Revenue',
+            isGroup: true
+        },
+        {
+            code: '4010',
+            name: 'Patient Consultation Fees',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4020',
+            name: 'OP Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4030',
+            name: 'Casualty Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4040',
+            name: 'IP Income / Ward Charges',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4100',
+            name: 'Lab Test Revenue',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4200',
+            name: 'Pharmacy Sales',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4300',
+            name: 'Procedure / Surgery Charges',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4900',
+            name: 'Other Income',
+            type: 'Revenue'
+        },
+        {
+            code: '4950',
+            name: 'Purchase Discounts',
+            type: 'Revenue'
+        },
+        // EXPENSES (5000-8999)
+        {
+            code: '5000',
+            name: 'Direct Expenses (COGS)',
+            type: 'Expense',
+            isGroup: true
+        },
+        {
+            code: '5100',
+            name: 'Cost of Goods Sold',
+            type: 'Expense',
+            parentCode: '5000'
+        },
+        {
+            code: '5200',
+            name: 'Inventory Shrinkage',
+            type: 'Expense',
+            parentCode: '5000'
+        },
+        {
+            code: '6000',
+            name: 'Indirect Expenses (Admin)',
+            type: 'Expense',
+            isGroup: true
+        },
+        {
+            code: '6010',
+            name: 'Rent',
+            type: 'Expense',
+            parentCode: '6000'
+        },
+        {
+            code: '6020',
+            name: 'Utilities (Elec/Water)',
+            type: 'Expense',
+            parentCode: '6000'
+        },
+        {
+            code: '6030',
+            name: 'Telephone & Internet',
+            type: 'Expense',
+            parentCode: '6000'
+        },
+        {
+            code: '6040',
+            name: 'Printing & Stationery',
+            type: 'Expense',
+            parentCode: '6000'
+        },
+        {
+            code: '6600',
+            name: 'Personnel Expenses',
+            type: 'Expense',
+            isGroup: true
+        },
+        {
+            code: '6610',
+            name: 'Staff Salaries',
+            type: 'Expense',
+            parentCode: '6600'
+        },
+        {
+            code: '6620',
+            name: 'Staff Welfare',
+            type: 'Expense',
+            parentCode: '6600'
+        }
+    ];
+    const missing = templates.filter((t)=>!existingCodes.has(t.code));
+    if (missing.length > 0) {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.createMany({
+            data: missing.map((acc)=>({
+                    company_id: companyId,
+                    tenant_id: tenantId,
+                    code: acc.code,
+                    name: acc.name,
+                    type: acc.type,
+                    is_active: true,
+                    is_group: acc.isGroup || false,
+                    is_reconcilable: [
+                        '1200',
+                        '1210',
+                        '1220',
+                        '2001'
+                    ].includes(acc.code)
+                })),
+            skipDuplicates: true
+        });
+    }
+    // Always ensure parent-child links are established (even for existing accounts)
+    const allAccounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+        where: {
+            company_id: companyId
+        }
+    });
+    const accountMap = new Map(allAccounts.map((a)=>[
+            a.code,
+            a.id
+        ]));
+    for (const t of templates){
+        const childId = accountMap.get(t.code);
+        if (!childId) continue;
+        const updateData = {
+            is_group: t.isGroup || false
+        };
+        if (t.parentCode) {
+            const parentId = accountMap.get(t.parentCode);
+            if (parentId) {
+                updateData.parent_id = parentId;
+            }
+        }
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.update({
+            where: {
+                id: childId
+            },
+            data: updateData
+        });
+    }
+    // 6. Ensure Company Accounting Settings exist and are linked to default accounts
+    const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+        where: {
+            company_id: companyId
+        }
+    });
+    const findId = (code)=>accountMap.get(code);
+    if (!settings) {
+        // Find currency from company_settings if not passed
+        const companySettings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_settings.findUnique({
+            where: {
+                company_id: companyId
+            }
+        });
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.create({
+            data: {
+                tenant_id: tenantId,
+                company_id: companyId,
+                currency_id: companySettings?.currency_id || undefined,
+                ar_account_id: findId('1200'),
+                ap_account_id: findId('2000') || findId('2001'),
+                sales_account_id: findId('4000'),
+                purchase_account_id: findId('5000') || findId('5100'),
+                output_tax_account_id: findId('2200'),
+                input_tax_account_id: findId('2210'),
+                fiscal_year_start: new Date(new Date().getFullYear(), 3, 1),
+                fiscal_year_end: new Date(new Date().getFullYear() + 1, 2, 31)
+            }
+        });
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"0084944294869cb8b4434babef93dc48d5753dadf6":"logout","606e3e7a5e134743dc9da6334a1f1334fef80e91dd":"signup"},"",""] */ __turbopack_context__.s([
+    "logout",
+    ()=>logout,
+    "signup",
+    ()=>signup
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/bcryptjs/index.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$tenant$2d$init$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/services/tenant-init.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/currency-constants.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/account-seeder.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$tenant$2d$init$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$tenant$2d$init$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+;
+;
+;
+async function logout() {
+    console.log("[Auth Action] Logging out...");
+    try {
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["signOut"])({
+            redirectTo: '/login'
+        });
+    } catch (err) {
+        // Next.js redirects act as errors, so we need to rethrow them if it's a redirect
+        if (err.message === 'NEXT_REDIRECT') {
+            throw err;
+        }
+        console.error("[Auth Action] Logout failed:", err);
+        throw err;
+    }
+}
+async function signup(prevState, formData) {
+    const rawData = Object.fromEntries(formData.entries());
+    const email = (rawData.email || '').toLowerCase();
+    const password = rawData.password;
+    const name = rawData.name;
+    const companyName = rawData.companyName;
+    const countryId = rawData.countryId;
+    const currencyId = rawData.currencyId;
+    const industry = rawData.industry;
+    const selectedModules = (rawData.modules || '').split(',').filter(Boolean);
+    const taxId = rawData.taxId// Optional tax ID if they selected one
+    ;
+    if (!email || !password || !name || !companyName) {
+        return {
+            error: "Missing required fields"
+        };
+    }
+    try {
+        // [SAFETY] Check if this is a fresh system. For local installs, we only allow ONE initial signup.
+        const userCount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.count();
+        if (userCount > 0) {
+            return {
+                error: "Initial setup already completed. Please login instead."
+            };
+        }
+        const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.findFirst({
+            where: {
+                email
+            }
+        });
+        const inputCountryId = rawData.countryId;
+        let resolvedCountryId = inputCountryId;
+        // Defensive check: if countryId is an ISO code (e.g. "IN"), resolve it to UUID
+        if (countryId && (countryId.length === 2 || countryId.length === 3)) {
+            const countryDoc = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].countries.findFirst({
+                where: {
+                    OR: [
+                        {
+                            iso2: countryId
+                        },
+                        {
+                            iso3: countryId
+                        }
+                    ]
+                },
+                select: {
+                    id: true
+                }
+            });
+            if (countryDoc) resolvedCountryId = countryDoc.id;
+            else resolvedCountryId = ""; // Invalid ISO code
+        }
+        const inputCurrencyId = rawData.currencyId;
+        let resolvedCurrencyId = inputCurrencyId;
+        // Defensive check: if currencyId is a code (e.g. "INR"), resolve it to UUID
+        if (currencyId && currencyId.length === 3 && !/^[0-9a-fA-F-]{36}$/.test(currencyId)) {
+            const currencyDoc = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].currencies.findFirst({
+                where: {
+                    code: currencyId
+                },
+                select: {
+                    id: true
+                }
+            });
+            if (currencyDoc) resolvedCurrencyId = currencyDoc.id;
+        }
+        if (existing) return {
+            error: "User already exists"
+        };
+        const tenantId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+        const companyId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+        const branchId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+        const userId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+        // [NEW] Resolve Currency Code for Seeding (Dynamic - No Hardcoding)
+        let resolvedCurrencyCode = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SYSTEM_DEFAULT_CURRENCY_CODE"];
+        if (resolvedCurrencyId) {
+            const cur = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].currencies.findUnique({
+                where: {
+                    id: resolvedCurrencyId
+                },
+                select: {
+                    code: true
+                }
+            });
+            if (cur) resolvedCurrencyCode = cur.code;
+        }
+        // PHASE 1: CORE IDENTITY (Sequential - bypassing transaction for pooler stability)
+        console.log(`[AUTH] Starting Core Creation for ${email}`);
+        // 1. Create Tenant
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tenant.create({
+            data: {
+                id: tenantId,
+                name: `${companyName} (Tenant)`,
+                slug: companyName.toLowerCase().replace(/[^a-z0-9]/g, '-')
+            }
+        });
+        // 2. Create Company
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.create({
+            data: {
+                id: companyId,
+                tenant_id: tenantId,
+                name: companyName,
+                country_id: resolvedCountryId || undefined,
+                industry: industry,
+                enabled: true
+            }
+        });
+        // 3. Create Default Main Branch
+        const isHms = selectedModules.includes('hms');
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_branch.create({
+            data: {
+                id: branchId,
+                tenant_id: tenantId,
+                company_id: companyId,
+                name: isHms ? "Main Clinic" : "Head Office",
+                code: "MAIN",
+                is_active: true,
+                type: isHms ? "clinic" : "office"
+            }
+        });
+        // 4. Create App User
+        const hashedPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].hash(password, 10);
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.create({
+            data: {
+                id: userId,
+                tenant_id: tenantId,
+                company_id: companyId,
+                current_branch_id: branchId,
+                email: email.toLowerCase(),
+                password: hashedPassword,
+                name: name,
+                is_admin: true,
+                is_active: true
+            }
+        });
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].user_branch.create({
+            data: {
+                user_id: userId,
+                branch_id: branchId,
+                is_default: true
+            }
+        });
+        // 5. Create Default Roles
+        const superAdminRoleId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+        const defaultRoles = [
+            {
+                id: superAdminRoleId,
+                key: 'super_admin',
+                name: 'Super Administrator',
+                permissions: [
+                    '*'
+                ]
+            },
+            {
+                key: 'admin',
+                name: 'Administrator',
+                permissions: [
+                    'users:view',
+                    'users:create',
+                    'users:edit',
+                    'hms:admin',
+                    'crm:admin'
+                ]
+            },
+            {
+                key: 'hms_admin',
+                name: 'HMS Administrator',
+                permissions: [
+                    'hms:view',
+                    'patients:view',
+                    'billing:view'
+                ]
+            },
+            {
+                key: 'doctor',
+                name: 'Doctor',
+                permissions: [
+                    'patients:view',
+                    'appointments:view',
+                    'prescriptions:create'
+                ]
+            },
+            {
+                key: 'nurse',
+                name: 'Nurse',
+                permissions: [
+                    'patients:view',
+                    'vitals:create'
+                ]
+            },
+            {
+                key: 'receptionist',
+                name: 'Receptionist',
+                permissions: [
+                    'patients:create',
+                    'appointments:create',
+                    'billing:create'
+                ]
+            },
+            {
+                key: 'sales_executive',
+                name: 'Sales Executive',
+                permissions: [
+                    'crm:view_own',
+                    'leads:create'
+                ]
+            }
+        ];
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].role.createMany({
+            data: defaultRoles.map((r)=>({
+                    id: r.id || __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    key: r.key,
+                    name: r.name,
+                    permissions: r.permissions
+                }))
+        });
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].user_role.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                user_id: userId,
+                role_id: superAdminRoleId,
+                tenant_id: tenantId
+            }
+        });
+        // PHASE 2: DOMAIN INITIALIZATION (Background/Secondary)
+        console.log(`[AUTH] Core Creation Successful. Starting Background Init for ${email}`);
+        try {
+            // 6. Settings & Tax
+            if (resolvedCurrencyId) {
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_settings.create({
+                    data: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        currency_id: resolvedCurrencyId
+                    }
+                });
+                if (resolvedCountryId) {
+                    const defaultMappings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].country_tax_mappings.findMany({
+                        where: {
+                            country_id: resolvedCountryId,
+                            is_active: true
+                        }
+                    });
+                    if (defaultMappings.length > 0) {
+                        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.createMany({
+                            data: defaultMappings.map((dm)=>({
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: tenantId,
+                                    company_id: companyId,
+                                    country_id: resolvedCountryId,
+                                    tax_type_id: dm.tax_type_id,
+                                    tax_rate_id: dm.tax_rate_id,
+                                    is_default: false,
+                                    is_active: true
+                                }))
+                        });
+                    }
+                }
+            }
+            // 7. Chart of Accounts (World-Standard Seeding)
+            if (resolvedCurrencyId) {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureDefaultAccounts"])(companyId, tenantId);
+            }
+            // 8. Modules
+            let modulesToEnable = new Set([
+                'system',
+                ...selectedModules
+            ]);
+            const validModules = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].modules.findMany({
+                where: {
+                    module_key: {
+                        in: Array.from(modulesToEnable)
+                    }
+                }
+            });
+            if (validModules.length > 0) {
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tenant_module.createMany({
+                    data: validModules.map((m)=>({
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            module_key: m.module_key,
+                            module_id: m.id,
+                            enabled: true
+                        })),
+                    skipDuplicates: true
+                });
+            }
+            // 9. Master Seeding (Standard UOMs, Roles, etc.)
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$tenant$2d$init$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["initializeTenantMasters"])(tenantId, companyId, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"]);
+            const { seedCompanyTaxes } = await __turbopack_context__.A("[project]/src/lib/services/tax-seed.ts [app-rsc] (ecmascript, async loader)");
+            await seedCompanyTaxes(companyId, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"]);
+            // 10. Default Products (HMS Only)
+            if (modulesToEnable.has('hms')) {
+                const standardProducts = [
+                    {
+                        sku: 'REG-FEE',
+                        name: 'Patient Registration Fee',
+                        uom: 'EACH',
+                        price: 100,
+                        is_service: true,
+                        stockable: false
+                    },
+                    {
+                        sku: 'CONS-GEN',
+                        name: 'General Consultation',
+                        uom: 'VISIT',
+                        price: 250,
+                        is_service: true,
+                        stockable: false
+                    },
+                    {
+                        sku: 'CONS-SPEC',
+                        name: 'Specialist Consultation',
+                        uom: 'VISIT',
+                        price: 500,
+                        is_service: true,
+                        stockable: false
+                    },
+                    {
+                        sku: 'PARA-500',
+                        name: 'Paracetamol 500mg',
+                        uom: 'TAB',
+                        price: 5,
+                        is_service: false,
+                        stockable: true
+                    },
+                    {
+                        sku: 'AMOX-500',
+                        name: 'Amoxicillin 500mg Strip',
+                        uom: 'STRIP',
+                        price: 85,
+                        is_service: false,
+                        stockable: true
+                    },
+                    {
+                        sku: 'SYR-5ML',
+                        name: 'Disposable Syringe 5ml',
+                        uom: 'PCS',
+                        price: 15,
+                        is_service: false,
+                        stockable: true
+                    },
+                    {
+                        sku: 'CBC-TEST',
+                        name: 'Complete Blood Count (CBC)',
+                        uom: 'TEST',
+                        price: 450,
+                        is_service: true,
+                        stockable: false
+                    },
+                    {
+                        sku: 'CXR-SCAN',
+                        name: 'Chest X-Ray',
+                        uom: 'SCAN',
+                        price: 1200,
+                        is_service: true,
+                        stockable: false
+                    }
+                ];
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.createMany({
+                    data: standardProducts.map((p)=>({
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            sku: p.sku,
+                            name: p.name,
+                            is_service: p.is_service,
+                            is_stockable: p.stockable,
+                            price: p.price,
+                            currency: resolvedCurrencyCode,
+                            is_active: true,
+                            uom: p.uom,
+                            metadata: {
+                                tax_exempt: true
+                            }
+                        }))
+                });
+            }
+        } catch (initError) {
+            console.error("[AUTH] Domain Initialization failed, but User exists:", initError);
+        }
+        return {
+            success: true
+        };
+    } catch (error) {
+        // WORLD-CLASS ERROR REPORTING: Prevent generic 500s
+        const err = error;
+        console.error("[AUTH] Fatal signup error:", err);
+        return {
+            error: `Registration failed: ${err.message || "Unknown error"}. Please check server logs for Digest: 1401391270 correlate.`
+        };
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    logout,
+    signup
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "0084944294869cb8b4434babef93dc48d5753dadf6", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(signup, "606e3e7a5e134743dc9da6334a1f1334fef80e91dd", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"0017bc7bd76d12c4fa0332c041f8dc72f971161904":"getPaymentMappings","00e1e20b68fcf111e2adb0663e0e74e48a42a2e964":"getHMSSettings","00ee7cb30127714f93eb99d84e6378a1b9d5f71a82":"getUserProfile","401fbfa1dcf731b9d7863ef7a624aabc6f9c601520":"updateGlobalSettings","4031046d1e88ab01ac04a97d7373e9b675b9b2102e":"updateHMSSettings","4033f0ad3178ccda49f8634ca8f6313b462889bdb0":"updateWhatsAppSettings","405d8eea04931e98fb50c32271a9ab145ae6f8d465":"createDesignation","408df1093956fc035cc68154d5d98c525f414c0317":"updateAISettings","4098cc338ddde8532ea628809839b63f72ed6e703e":"updatePaymentGatewaySettings","40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa":"updatePDFSettings","40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6":"updateTenantSettings","40c1ce8bac6bd0294860e6dbb06e4ca911bd121437":"createBranch","40c78bda30257384bf051704051785bf4620f8ae50":"getDesignation","40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9":"updatePaymentMappings","40f5ad1ddc48abb6f590059867aca153fb43763d61":"deleteDesignation","6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c":"updateBranch","600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506":"getPDFSettings","604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0":"getPaymentGatewayConfig","6061fbcb1a881f4e8692dead2c43587d3634d83fe1":"getWhatsAppSettings","60660fbc726854ba5c95d6c1506c1006864e56857e":"getPDFConfig","6066d3905d83653ad33bde20210544c6df1c8f8477":"getAISettings","60825e363deb70c92d1882c2041a21532c1b8cea9a":"getWhatsAppConfig","608dd6755d4938c38cd9057e16d303d139cba113ed":"getAIConfig","60978e108f0c867559c6c352cdc1209191fb6cd822":"updateDesignation","60af4c4a57d0c5c26681b16bf66e53126bb318bbab":"updateProfile","60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775":"getPaymentGatewaySettings"},"",""] */ __turbopack_context__.s([
+    "createBranch",
+    ()=>createBranch,
+    "createDesignation",
+    ()=>createDesignation,
+    "deleteDesignation",
+    ()=>deleteDesignation,
+    "getAIConfig",
+    ()=>getAIConfig,
+    "getAISettings",
+    ()=>getAISettings,
+    "getDesignation",
+    ()=>getDesignation,
+    "getHMSSettings",
+    ()=>getHMSSettings,
+    "getPDFConfig",
+    ()=>getPDFConfig,
+    "getPDFSettings",
+    ()=>getPDFSettings,
+    "getPaymentGatewayConfig",
+    ()=>getPaymentGatewayConfig,
+    "getPaymentGatewaySettings",
+    ()=>getPaymentGatewaySettings,
+    "getPaymentMappings",
+    ()=>getPaymentMappings,
+    "getUserProfile",
+    ()=>getUserProfile,
+    "getWhatsAppConfig",
+    ()=>getWhatsAppConfig,
+    "getWhatsAppSettings",
+    ()=>getWhatsAppSettings,
+    "updateAISettings",
+    ()=>updateAISettings,
+    "updateBranch",
+    ()=>updateBranch,
+    "updateDesignation",
+    ()=>updateDesignation,
+    "updateGlobalSettings",
+    ()=>updateGlobalSettings,
+    "updateHMSSettings",
+    ()=>updateHMSSettings,
+    "updatePDFSettings",
+    ()=>updatePDFSettings,
+    "updatePaymentGatewaySettings",
+    ()=>updatePaymentGatewaySettings,
+    "updatePaymentMappings",
+    ()=>updatePaymentMappings,
+    "updateProfile",
+    ()=>updateProfile,
+    "updateTenantSettings",
+    ()=>updateTenantSettings,
+    "updateWhatsAppSettings",
+    ()=>updateWhatsAppSettings
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/cache.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+// === HMS SETTINGS LOGIC ===
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+async function updateProfile(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id) {
+        return {
+            error: "Not authenticated"
+        };
+    }
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const avatarUrl = formData.get('avatar_url');
+    // Basic Validation
+    if (!name || name.length < 2) {
+        return {
+            error: "Name must be at least 2 characters"
+        };
+    }
+    try {
+        // Update user
+        // We might want to update email, but that usually requires verification. 
+        // For now, let's allow updating name and avatar (metadata).
+        // If email is changed, we should probably check uniqueness, but let's stick to name/avatar for MVP "production ready" visual.
+        const updateData = {
+            name
+        };
+        // Handle Avatar
+        if (avatarUrl) {
+            // SECURITY: Prevent massive base64 strings from bloating DB and Cookies
+            if (avatarUrl.length > 1000000) {
+                return {
+                    error: "Image is too large. Please use a smaller photo (max 1MB)"
+                };
+            }
+            // Fetch current metadata to merge
+            const currentUser = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.findUnique({
+                where: {
+                    id: session.user.id
+                },
+                select: {
+                    metadata: true
+                }
+            });
+            const currentMeta = currentUser?.metadata || {};
+            updateData.metadata = {
+                ...currentMeta,
+                avatar_url: avatarUrl
+            };
+        }
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.update({
+            where: {
+                id: session.user.id
+            },
+            data: updateData
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/profile');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/', 'layout'); // Update sidebar avatar
+        return {
+            success: true,
+            message: "Profile updated successfully"
+        };
+    } catch (error) {
+        console.error("Profile update error:", error);
+        return {
+            error: "Failed to update profile"
+        };
+    }
+}
+async function getUserProfile() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id) return null;
+    const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.findUnique({
+        where: {
+            id: session.user.id
+        },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            role: true,
+            metadata: true,
+            created_at: true
+        }
+    });
+    return user;
+}
+async function updateGlobalSettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id) return {
+        error: "Not authenticated"
+    };
+    // Basic RBAC check
+    if (!session.user.isAdmin && !session.user.isTenantAdmin) {
+    // return { error: "Unauthorized" }
+    }
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // Fetch current metadata to merge
+            const currentCompany = await tx.company.findUnique({
+                where: {
+                    id: data.companyId
+                },
+                select: {
+                    metadata: true
+                }
+            });
+            const currentMeta = currentCompany?.metadata || {};
+            // Update Company Basics & Metadata
+            await tx.company.update({
+                where: {
+                    id: data.companyId
+                },
+                data: {
+                    name: data.name,
+                    industry: data.industry,
+                    logo_url: data.logoUrl,
+                    metadata: {
+                        ...currentMeta,
+                        address: data.address,
+                        phone: data.phone,
+                        email: data.email,
+                        gstin: data.gstin
+                    }
+                }
+            });
+            // Update Company Settings (Currency)
+            // Upsert because it might not exist
+            // Update Company Settings (Currency & Invoice Prefix)
+            // Upsert because it might not exist
+            const existingSettings = await tx.company_settings.findUnique({
+                where: {
+                    company_id: data.companyId
+                }
+            });
+            if (existingSettings) {
+                await tx.company_settings.update({
+                    where: {
+                        id: existingSettings.id
+                    },
+                    data: {
+                        currency_id: data.currencyId,
+                        numbering_prefix: data.invoicePrefix,
+                        rounding_precision: data.roundingPrecision
+                    }
+                });
+            } else {
+                // Should exist ideally, but fallback create
+                await tx.company_settings.create({
+                    data: {
+                        tenant_id: session.user.tenantId,
+                        company_id: data.companyId,
+                        currency_id: data.currencyId,
+                        numbering_prefix: data.invoicePrefix || 'INV',
+                        rounding_precision: data.roundingPrecision || 2
+                    }
+                });
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/', 'layout'); // Update logo in sidebar
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update global settings:", error);
+        return {
+            error: "Failed to update settings"
+        };
+    }
+}
+async function updateTenantSettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.isTenantAdmin && !session.user.isAdmin) {
+        return {
+            error: "Unauthorized. Admin access required."
+        };
+    }
+    // Safety check: Ensure they are updating THEIR tenant
+    if (!session.user.isTenantAdmin && data.tenantId !== session.user.tenantId) {
+        return {
+            error: "Permission denied: You can only update your own organization settings."
+        };
+    }
+    try {
+        // Fetch current tenant for metadata
+        const currentTenant = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tenant.findUnique({
+            where: {
+                id: data.tenantId
+            }
+        });
+        const currentMeta = currentTenant?.metadata || {};
+        // Only allow updating registration_enabled if the user is a Global Admin (Developer)
+        const updatedMeta = {
+            ...currentMeta
+        };
+        if (session.user.isAdmin && data.registrationEnabled !== undefined) {
+            updatedMeta.registration_enabled = data.registrationEnabled;
+        }
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tenant.update({
+            where: {
+                id: data.tenantId
+            },
+            data: {
+                app_name: data.appName,
+                logo_url: data.logoUrl,
+                db_url: data.dbUrl,
+                metadata: {
+                    ...updatedMeta,
+                    date_format: data.dateFormat || updatedMeta.date_format || 'dd/MM/yyyy'
+                }
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/', 'layout');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update tenant settings:", error);
+        return {
+            error: "Failed to update tenant settings. Please check your DB connection string format."
+        };
+    }
+}
+;
+async function getHMSSettings() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const companyId = session.user.companyId;
+        const tenantId = session.user.tenantId;
+        // 1. Fetch Registration Fee Product (Master definition)
+        let regFeeProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findFirst({
+            where: {
+                company_id: companyId,
+                name: {
+                    contains: 'Registration Fee',
+                    mode: 'insensitive'
+                },
+                is_active: true
+            }
+        });
+        if (!regFeeProduct) {
+            regFeeProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findFirst({
+                where: {
+                    company_id: companyId,
+                    name: {
+                        contains: 'Registration',
+                        mode: 'insensitive'
+                    },
+                    description: {
+                        contains: 'fee',
+                        mode: 'insensitive'
+                    },
+                    is_active: true
+                }
+            });
+        }
+        const finalProduct = regFeeProduct;
+        // 2. Fetch HMS Specific Settings (Config JSON)
+        const hmsConfigRecord = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'registration_config'
+            }
+        });
+        const configData = hmsConfigRecord?.value || {};
+        // 3. Fetch Registration Fee History (The "Amount and Date" part)
+        const feeHistory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient_registration_fees.findMany({
+            where: {
+                tenant_id: tenantId,
+                company_id: companyId
+            },
+            orderBy: {
+                created_at: 'desc'
+            },
+            take: 20
+        });
+        const activeFee = feeHistory.find((f)=>f.is_active);
+        console.log(`HMS Settings Audit [${companyId}]: Found ${feeHistory.length} history records, active=${!!activeFee}`);
+        // 4. Finalize Fee (Priority: Active Table Entry > Config JSON Value > Product Price > Fallback 100)
+        let finalFee = 100;
+        if (activeFee) {
+            finalFee = Number(activeFee.fee_amount);
+        } else if (configData.fee !== undefined) {
+            finalFee = Number(configData.fee);
+        } else if (finalProduct) {
+            finalFee = Number(finalProduct.price || '100');
+        }
+        // 4. Fetch All Available Service Products (for mapping)
+        const availableProducts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findMany({
+            where: {
+                company_id: companyId,
+                is_service: true,
+                is_active: true
+            },
+            select: {
+                id: true,
+                name: true,
+                sku: true,
+                price: true
+            },
+            orderBy: {
+                name: 'asc'
+            }
+        });
+        const serializedProducts = availableProducts.map((p)=>({
+                ...p,
+                price: Number(p.price || 0)
+            }));
+        return {
+            success: true,
+            settings: {
+                registrationFee: finalFee,
+                registrationProductId: configData.productId || finalProduct?.id || null,
+                registrationProductName: finalProduct?.name || 'Patient Registration Fee',
+                registrationProductDescription: finalProduct?.description || 'Standard Registration Service',
+                registrationValidity: activeFee?.validity_days || configData.validity || 7,
+                enableCardIssuance: configData.enableCardIssuance ?? true,
+                consultationBillingMode: configData.consultationBillingMode || 'post_visit',
+                defaultDoctorId: configData.defaultDoctorId || null,
+                opSlipPreprintedLetterhead: configData.opSlipPreprintedLetterhead ?? false,
+                opSlipHeaderHeight: configData.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: configData.billPreprintedLetterhead ?? false,
+                billHeaderHeight: configData.billHeaderHeight || '4.5',
+                feeHistory: feeHistory.map((f)=>({
+                        id: f.id,
+                        amount: Number(f.fee_amount),
+                        validity: f.validity_days,
+                        active: f.is_active,
+                        date: f.created_at
+                    }))
+            },
+            availableProducts: serializedProducts
+        };
+    } catch (error) {
+        return {
+            error: error.message
+        };
+    }
+}
+async function updateHMSSettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId) {
+        return {
+            error: "Session expired. Please log in again."
+        };
+    }
+    // Permission Check
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) {
+        return {
+            error: "Unauthorized: You do not have permission to manage clinical settings."
+        };
+    }
+    try {
+        const feeAmount = parseFloat(String(data.registrationFee || '0'));
+        const validityDays = parseInt(String(data.registrationValidity || '7'));
+        console.log(`[HMS SAVE DIAGNOSTIC] User: ${userId} | Co: ${companyId} | Ten: ${tenantId}`);
+        console.log(`[HMS SAVE DIAGNOSTIC] Types: Co=${typeof companyId} | Ten=${typeof tenantId} | User=${typeof userId}`);
+        console.log(`[HMS SAVE DIAGNOSTIC] Data: Fee=${feeAmount} | Valid=${validityDays}`);
+        if (isNaN(feeAmount) || isNaN(validityDays)) {
+            return {
+                error: "Invalid registration fee or validity period."
+            };
+        }
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // STEP 1: Manage the Registration Fee Product
+            let regProduct = null;
+            // 1a. Check if an explicit product was selected in the UI
+            if (data.productId && data.productId.length > 20) {
+                console.log(`[HMS SETTINGS SAVE] Using explicitly selected product: ${data.productId}`);
+                regProduct = await tx.hms_product.findUnique({
+                    where: {
+                        id: data.productId
+                    }
+                });
+            }
+            // 1b. If no explicit product (or not found), find/create standard SKU
+            if (!regProduct) {
+                const branchSuffix = companyId.slice(-6).toUpperCase();
+                const targetSku = `REG-FEE-${branchSuffix}`;
+                regProduct = await tx.hms_product.findFirst({
+                    where: {
+                        company_id: companyId,
+                        OR: [
+                            {
+                                sku: targetSku
+                            },
+                            {
+                                sku: {
+                                    startsWith: 'REG-FEE'
+                                }
+                            },
+                            {
+                                name: {
+                                    contains: 'Registration Fee',
+                                    mode: 'insensitive'
+                                }
+                            }
+                        ]
+                    }
+                });
+                if (regProduct) {
+                    console.log(`[HMS SETTINGS SAVE] Updating existing product: ${regProduct.id} (${regProduct.sku})`);
+                    regProduct = await tx.hms_product.update({
+                        where: {
+                            id: regProduct.id
+                        },
+                        data: {
+                            price: feeAmount,
+                            sku: targetSku,
+                            is_service: true,
+                            is_stockable: false,
+                            is_active: true,
+                            updated_at: new Date()
+                        }
+                    });
+                } else {
+                    console.log(`[HMS SETTINGS SAVE] Creating new Registration Fee product for company ${companyId}`);
+                    regProduct = await tx.hms_product.create({
+                        data: {
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            name: "Patient Registration Fee",
+                            sku: targetSku,
+                            description: "Standard fee for new patient registration",
+                            price: feeAmount,
+                            is_service: true,
+                            is_stockable: false,
+                            uom: 'unit',
+                            is_active: true,
+                            created_at: new Date()
+                        }
+                    });
+                }
+            } else {
+                // UPDATE EXPLICIT PRODUCT price to match the setting
+                regProduct = await tx.hms_product.update({
+                    where: {
+                        id: regProduct.id
+                    },
+                    data: {
+                        price: feeAmount,
+                        is_service: true,
+                        is_active: true,
+                        updated_at: new Date()
+                    }
+                });
+            }
+            // STEP 2: Manage HMS Configuration JSON (Reset & Create Pattern)
+            const configValue = JSON.stringify({
+                validity: validityDays,
+                enableCardIssuance: !!data.enableCardIssuance,
+                consultationBillingMode: data.consultationBillingMode || 'post_visit',
+                opSlipPreprintedLetterhead: !!data.opSlipPreprintedLetterhead,
+                opSlipHeaderHeight: data.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: !!data.billPreprintedLetterhead,
+                billHeaderHeight: data.billHeaderHeight || '4.5',
+                fee: feeAmount,
+                productId: regProduct.id,
+                defaultDoctorId: data.defaultDoctorId || null,
+                lastUpdated: new Date().toISOString()
+            });
+            console.log(`[HMS SETTINGS SAVE] Wiping old config for ${companyId}`);
+            // Delete any existing config for this company to avoid unique constraint issues
+            await tx.hms_settings.deleteMany({
+                where: {
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'registration_config'
+                }
+            });
+            console.log(`[HMS SETTINGS SAVE] Creating fresh config via Raw SQL for ${companyId}`);
+            // USE RAW SQL to bypass any Prisma mapping bugs or null constraint false-positives
+            const configId = (await tx.$queryRaw`SELECT gen_random_uuid()`)[0].gen_random_uuid;
+            await tx.$executeRaw`
+                INSERT INTO hms_settings (
+                    id, tenant_id, company_id, key, value, scope, version, is_active, created_at, updated_at, created_by, updated_by
+                ) VALUES (
+                    ${configId}::uuid, ${tenantId}::uuid, ${companyId}::uuid, 'registration_config', ${configValue}::jsonb, 'company', 1, true, now(), now(), ${userId}::uuid, ${userId}::uuid
+                )
+            `;
+            console.log(`[HMS SETTINGS SAVE] Created config ID: ${configId}`);
+            // STEP 3: Log Fee History (Audit Trail)
+            // Deactivate all old fees for this branch
+            await tx.hms_patient_registration_fees.updateMany({
+                where: {
+                    company_id: companyId,
+                    is_active: true
+                },
+                data: {
+                    is_active: false,
+                    updated_at: new Date()
+                }
+            });
+            // Create new audit record with explicit UUID
+            const historyId = (await tx.$queryRaw`SELECT gen_random_uuid()`)[0].gen_random_uuid;
+            await tx.$executeRaw`
+                INSERT INTO hms_patient_registration_fees (
+                    id, tenant_id, company_id, fee_amount, validity_days, is_active, created_at, updated_at
+                ) VALUES (
+                    ${historyId}::uuid, ${tenantId}::uuid, ${companyId}::uuid, ${feeAmount}, ${validityDays}, true, now(), now()
+                )
+            `;
+            return {
+                success: true,
+                productId: regProduct.id
+            };
+        }, {
+            timeout: 15000
+        }); // High timeout for concurrent production writes
+        console.log(`[HMS SETTINGS SAVE] COMPLETED SUCCESSFULLY for ${companyId}`);
+        // Flush all relevant caches
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/hms');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/patients/new');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/reception/dashboard');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("CRITICAL PERSISTENCE ERROR in HMS Settings:", error);
+        let userMessage = "Database error while saving. Please try again in 30 seconds.";
+        if (error.code === 'P2002') userMessage = "Data collision error (SKU/Key already exists). Retrying might fix this.";
+        return {
+            error: userMessage,
+            debug: error.message
+        };
+    }
+}
+async function createBranch(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        const branch = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_branch.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name: data.name,
+                code: data.code.toUpperCase(),
+                type: data.type,
+                phone: data.phone,
+                email: data.email,
+                address: data.address,
+                city: data.city,
+                state: data.state,
+                country: data.country,
+                district: data.district,
+                pincode: data.pincode,
+                is_active: true
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/branches');
+        return {
+            success: true,
+            branchId: branch.id
+        };
+    } catch (error) {
+        console.error("Failed to create branch:", error);
+        return {
+            error: "Failed to create branch. Branch code must be unique within company."
+        };
+    }
+}
+async function updateBranch(id, data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_branch.update({
+            where: {
+                id,
+                company_id: session.user.companyId // Security: Ensure it belongs to current company
+            },
+            data: {
+                name: data.name,
+                code: data.code.toUpperCase(),
+                type: data.type,
+                phone: data.phone,
+                email: data.email,
+                address: data.address,
+                city: data.city,
+                state: data.state,
+                country: data.country,
+                district: data.district,
+                pincode: data.pincode,
+                is_active: data.is_active ?? true
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/branches');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update branch:", error);
+        return {
+            error: "Failed to update branch."
+        };
+    }
+}
+async function createDesignation(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        const designation = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].crm_designation.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                name: data.name,
+                description: data.description,
+                department_id: data.department_id || null,
+                parent_id: data.parent_id || null,
+                is_active: true
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/designations');
+        return {
+            success: true,
+            designationId: designation.id
+        };
+    } catch (error) {
+        console.error("Failed to create designation:", error);
+        return {
+            error: "Failed to create designation. Name must be unique."
+        };
+    }
+}
+async function getDesignation(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.tenantId) return null;
+    return __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].crm_designation.findUnique({
+        where: {
+            id,
+            tenant_id: session.user.tenantId
+        },
+        include: {
+            department: true,
+            parent: true
+        }
+    });
+}
+async function updateDesignation(id, data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].crm_designation.update({
+            where: {
+                id,
+                tenant_id: session.user.tenantId
+            },
+            data: {
+                name: data.name,
+                description: data.description,
+                department_id: data.department_id || null,
+                parent_id: data.parent_id || null,
+                is_active: data.is_active ?? true
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/designations');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update designation:", error);
+        return {
+            error: "Failed to update designation."
+        };
+    }
+}
+async function deleteDesignation(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].crm_designation.delete({
+            where: {
+                id,
+                tenant_id: session.user.tenantId
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/designations');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to delete designation:", error);
+        return {
+            error: "Failed to delete designation. It might be in use by employees."
+        };
+    }
+}
+async function getPaymentGatewaySettings(providedCompanyId, providedTenantId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'payment_gateway_config'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'payment_gateway_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        return {
+            success: true,
+            settings: {
+                enabled: data.enabled ?? false,
+                provider: data.provider ?? 'razorpay',
+                keyId: data.keyId ?? '',
+                hasKeySecret: !!data.keySecret,
+                upiVpa: data.upiVpa ?? '',
+                businessName: data.businessName ?? ''
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updatePaymentGatewaySettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'payment_gateway_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'payment_gateway_config'
+                }
+            });
+        }
+        const existingData = existing?.value || {};
+        const configValue = {
+            enabled: data.enabled,
+            provider: 'razorpay',
+            keyId: data.keyId,
+            keySecret: data.keySecret && data.keySecret.trim() !== '' ? data.keySecret.trim() : existingData.keySecret ?? '',
+            upiVpa: data.upiVpa,
+            businessName: data.businessName,
+            lastUpdated: new Date().toISOString()
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    company_id: companyId,
+                    tenant_id: tenantId,
+                    key: 'payment_gateway_config'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'payment_gateway_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/hms');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('Failed to save payment gateway settings:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getPaymentMappings() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: session.user.companyId,
+                tenant_id: session.user.tenantId,
+                key: 'payment_method_mapping'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: session.user.tenantId,
+                    key: 'payment_method_mapping'
+                }
+            });
+        }
+        const mappings = record?.value || {
+            cash: '',
+            upi: '',
+            card: '',
+            bank_transfer: ''
+        };
+        return {
+            success: true,
+            mappings
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updatePaymentMappings(mappings) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        const configValue = JSON.stringify(mappings);
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'payment_method_mapping'
+            }
+        });
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: tenantId,
+                company_id: companyId,
+                key: 'payment_method_mapping',
+                value: mappings,
+                scope: 'company',
+                version: 1,
+                is_active: true,
+                created_by: userId,
+                updated_by: userId
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/accounting');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('Failed to save payment mappings:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getPaymentGatewayConfig(companyId, tenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+        where: {
+            company_id: companyId,
+            tenant_id: tenantId,
+            key: 'payment_gateway_config'
+        }
+    });
+    return record?.value || null;
+}
+async function getWhatsAppSettings(providedCompanyId, providedTenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        console.log(`[WHATSAPP FETCH] Searching for: Co: ${companyId}, Te: ${tenantId}`);
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'whatsapp_config'
+            }
+        });
+        if (!record) {
+            console.log(`[WHATSAPP FETCH] Company record not found. Trying tenant fallback: ${tenantId}`);
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'whatsapp_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        const hasToken = !!(data.token && data.token.length > 0);
+        console.log(`[WHATSAPP FETCH] Final: Found=${!!record}, HasToken=${hasToken}, Key=${record?.id || 'N/A'}`);
+        return {
+            success: true,
+            settings: {
+                enabled: data.enabled ?? false,
+                provider: data.provider ?? 'ultramsg',
+                instanceId: data.instanceId ?? '',
+                hasToken: hasToken,
+                autoSendBill: data.autoSendBill ?? false
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updateWhatsAppSettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = data.companyId || session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    console.log(`[WHATSAPP SAVE] Updating config for ${companyId} (Tenant: ${tenantId})`);
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        // Try to find existing by company specifically first, then fallback to tenant-wide search for this key
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'whatsapp_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'whatsapp_config'
+                }
+            });
+        }
+        const existingData = existing?.value || {};
+        console.log(`[WHATSAPP SAVE] Existing record found: ${!!existing}, Has Token: ${!!existingData.token}`);
+        let cleanInstanceId = (data.instanceId ?? '').trim().toLowerCase();
+        if (cleanInstanceId.startsWith('instance')) {
+            cleanInstanceId = cleanInstanceId.substring(8);
+        }
+        const formattedInstanceId = `instance${cleanInstanceId}`;
+        const configValue = {
+            enabled: data.enabled,
+            provider: data.provider || 'ultramsg',
+            instanceId: formattedInstanceId,
+            token: data.token && data.token.trim() !== '' ? data.token.trim() : existingData.token || '',
+            autoSendBill: data.autoSendBill,
+            lastUpdated: new Date().toISOString()
+        };
+        console.log(`[WHATSAPP SAVE] Final Token Length: ${configValue.token?.length || 0}`);
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    company_id: companyId,
+                    tenant_id: tenantId,
+                    key: 'whatsapp_config'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'whatsapp_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/hms');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('Failed to save WhatsApp settings:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getWhatsAppConfig(companyId, tenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    // 1. Specific Company Lookup
+    let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+        where: {
+            company_id: companyId,
+            tenant_id: tenantId,
+            key: 'whatsapp_config'
+        }
+    });
+    // 2. Tenant Fallback
+    if (!record) {
+        record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                tenant_id: tenantId,
+                key: 'whatsapp_config'
+            }
+        });
+    }
+    return record?.value || null;
+}
+async function getPDFSettings(providedCompanyId, providedTenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'pdf_print_config'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'pdf_print_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        return {
+            success: true,
+            settings: {
+                headerAlignment: data.headerAlignment || 'right',
+                showLogo: data.showLogo ?? true,
+                hospitalNameSize: data.hospitalNameSize || 16,
+                addressSize: data.addressSize || 10,
+                showContactInfo: data.showContactInfo ?? true,
+                autoPrint: data.autoPrint ?? false
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updatePDFSettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'pdf_print_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'pdf_print_config'
+                }
+            });
+        }
+        const configValue = {
+            ...data,
+            lastUpdated: new Date().toISOString()
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    company_id: companyId,
+                    tenant_id: tenantId,
+                    key: 'pdf_print_config'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'pdf_print_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/hms');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('Failed to save PDF settings:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getAISettings(providedCompanyId, providedTenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        const hasKey = !!(data.apiKey && data.apiKey.length > 0);
+        return {
+            success: true,
+            settings: {
+                enabled: data.enabled ?? true,
+                hasKey: hasKey,
+                apiKey: '' // Never return the key to the frontend
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updateAISettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = data.companyId || session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    console.log(`[AI-SAVE] Attempting to save for Company: ${companyId}, Tenant: ${tenantId}`);
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        // Try multiple ways to find existing record to ensure we don't duplicate or lose data
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                key: 'ai_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const existingData = existing?.value || {};
+        const finalApiKey = data.apiKey && data.apiKey.trim() !== '' ? data.apiKey.trim() : existingData.apiKey || '';
+        console.log(`[AI-SAVE] Final Key Length: ${finalApiKey?.length || 0}`);
+        const configValue = {
+            enabled: data.enabled,
+            apiKey: finalApiKey,
+            updatedAt: new Date().toISOString()
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    OR: [
+                        {
+                            company_id: companyId,
+                            key: 'ai_config'
+                        },
+                        {
+                            tenant_id: tenantId,
+                            key: 'ai_config'
+                        }
+                    ]
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'ai_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        console.log(`[AI-SAVE] SUCCESS. Result saved in database.`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('[AI-SAVE] FAILED:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getAIConfig(companyId, tenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+        where: {
+            company_id: companyId,
+            tenant_id: tenantId,
+            key: 'ai_config'
+        }
+    });
+    if (!record) {
+        record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+    }
+    return record?.value || null;
+}
+async function getPDFConfig(companyId, tenantId) {
+    try {
+        const record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'pdf_print_config'
+            }
+        });
+        return record?.value || null;
+    } catch (err) {
+        return null;
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    updateProfile,
+    getUserProfile,
+    updateGlobalSettings,
+    updateTenantSettings,
+    getHMSSettings,
+    updateHMSSettings,
+    createBranch,
+    updateBranch,
+    createDesignation,
+    getDesignation,
+    updateDesignation,
+    deleteDesignation,
+    getPaymentGatewaySettings,
+    updatePaymentGatewaySettings,
+    getPaymentMappings,
+    updatePaymentMappings,
+    getPaymentGatewayConfig,
+    getWhatsAppSettings,
+    updateWhatsAppSettings,
+    getWhatsAppConfig,
+    getPDFSettings,
+    updatePDFSettings,
+    getAISettings,
+    updateAISettings,
+    getAIConfig,
+    getPDFConfig
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateProfile, "60af4c4a57d0c5c26681b16bf66e53126bb318bbab", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getUserProfile, "00ee7cb30127714f93eb99d84e6378a1b9d5f71a82", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateGlobalSettings, "401fbfa1dcf731b9d7863ef7a624aabc6f9c601520", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateTenantSettings, "40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getHMSSettings, "00e1e20b68fcf111e2adb0663e0e74e48a42a2e964", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateHMSSettings, "4031046d1e88ab01ac04a97d7373e9b675b9b2102e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createBranch, "40c1ce8bac6bd0294860e6dbb06e4ca911bd121437", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateBranch, "6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createDesignation, "405d8eea04931e98fb50c32271a9ab145ae6f8d465", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getDesignation, "40c78bda30257384bf051704051785bf4620f8ae50", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateDesignation, "60978e108f0c867559c6c352cdc1209191fb6cd822", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteDesignation, "40f5ad1ddc48abb6f590059867aca153fb43763d61", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPaymentGatewaySettings, "60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updatePaymentGatewaySettings, "4098cc338ddde8532ea628809839b63f72ed6e703e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPaymentMappings, "0017bc7bd76d12c4fa0332c041f8dc72f971161904", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updatePaymentMappings, "40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPaymentGatewayConfig, "604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getWhatsAppSettings, "6061fbcb1a881f4e8692dead2c43587d3634d83fe1", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateWhatsAppSettings, "4033f0ad3178ccda49f8634ca8f6313b462889bdb0", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getWhatsAppConfig, "60825e363deb70c92d1882c2041a21532c1b8cea9a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFSettings, "600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updatePDFSettings, "40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAISettings, "6066d3905d83653ad33bde20210544c6df1c8f8477", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAISettings, "408df1093956fc035cc68154d5d98c525f414c0317", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAIConfig, "608dd6755d4938c38cd9057e16d303d139cba113ed", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFConfig, "60660fbc726854ba5c95d6c1506c1006864e56857e", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"400c20c3242d9ec681541ba29d024c15419e6e9923":"updateAppointmentDetails","408286af0dd3bd2d67448b9352533aee38bea53e42":"createAppointment","603265b48c110da148cea32af57be4ad9aa9e022c6":"getAppointmentsByClinician","60784d78965906d3fa7bb25a8e3f7fc16bbb25e266":"updateAppointmentStatus","60c021be98a362a1fe876b51ae89a00102ea0ba49d":"getAppointmentsProp","704260891327b42a52553211f322a7c7c002e3e9d7":"updateAppointmentDate"},"",""] */ __turbopack_context__.s([
+    "createAppointment",
+    ()=>createAppointment,
+    "getAppointmentsByClinician",
+    ()=>getAppointmentsByClinician,
+    "getAppointmentsProp",
+    ()=>getAppointmentsProp,
+    "updateAppointmentDate",
+    ()=>updateAppointmentDate,
+    "updateAppointmentDetails",
+    ()=>updateAppointmentDetails,
+    "updateAppointmentStatus",
+    ()=>updateAppointmentStatus
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)"); // Correct auth import
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/cache.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+async function getAppointmentsProp(start, end) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        success: false,
+        error: "Unauthorized"
+    };
+    try {
+        const appointments = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.findMany({
+            where: {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                starts_at: {
+                    gte: start,
+                    lte: end
+                },
+                deleted_at: null
+            }
+        });
+        // Manual fetch of patients
+        const patientIds = appointments.map((a)=>a.patient_id).filter((id)=>id);
+        const patients = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findMany({
+            where: {
+                id: {
+                    in: patientIds
+                },
+                tenant_id: session.user.tenantId // Filter by tenant
+            },
+            select: {
+                id: true,
+                first_name: true,
+                last_name: true,
+                patient_number: true
+            }
+        });
+        const patientMap = new Map(patients.map((p)=>[
+                p.id,
+                p
+            ]));
+        // Transform for calendar
+        const events = appointments.map((apt)=>{
+            const patient = apt.patient_id ? patientMap.get(apt.patient_id) : null;
+            return {
+                id: apt.id,
+                title: patient ? `${patient.first_name} ${patient.last_name}` : 'Unknown Patient',
+                start: apt.starts_at,
+                end: apt.ends_at,
+                resource: apt,
+                status: apt.status
+            };
+        });
+        return {
+            success: true,
+            data: events
+        };
+    } catch (error) {
+        console.error("Failed to fetch appointments:", error);
+        return {
+            success: false,
+            error: "Failed to fetch appointments"
+        };
+    }
+}
+async function createAppointment(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    // Allow if tenantId is present. Fallback companyId to tenantId if missing.
+    if (!session?.user?.id || !session?.user?.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    const companyId = session.user.companyId || session.user.tenantId;
+    const patientId = formData.get("patient_id");
+    const clinicianId = formData.get("clinician_id");
+    const dateStr = formData.get("date");
+    const timeStr = formData.get("time");
+    // Advanced Fields
+    const type = formData.get("type") || 'consultation';
+    const mode = formData.get("mode") || 'in_person';
+    const priority = formData.get("priority") || 'normal';
+    const notes = formData.get("notes");
+    if (!patientId || !clinicianId || !dateStr || !timeStr) {
+        return {
+            error: "Missing required fields"
+        };
+    }
+    // Combine date and time
+    const startsAt = new Date(`${dateStr}T${timeStr}:00`);
+    // =====================================================================
+    // [SERVER-SIDE REG FEE GUARD]
+    // Uses the exact same flags that billing.ts sets when collecting/expiring fees
+    // =====================================================================
+    const patient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findUnique({
+        where: {
+            id: patientId
+        },
+        select: {
+            metadata: true
+        }
+    });
+    if (patient) {
+        const meta = patient.metadata || {};
+        // Flag 1: New patient created but fee never collected (set in patient-v10.ts)
+        if (meta.status === 'awaiting_payment') {
+            return {
+                error: '⛔ Registration fee is pending. Collect it before booking.'
+            };
+        }
+        // Flag 2: billing.ts explicitly sets this to false when registration expires
+        if (meta.registration_fees_paid === false) {
+            return {
+                error: '⛔ Patient registration has expired. Renew before booking.'
+            };
+        }
+        // Flag 3: Check the actual expiry date if present
+        if (meta.registration_expiry && new Date(meta.registration_expiry) < new Date()) {
+            return {
+                error: '⛔ Patient registration expired on ' + new Date(meta.registration_expiry).toLocaleDateString('en-IN') + '. Renew before booking.'
+            };
+        }
+    }
+    // =====================================================================
+    // NUCLEAR LOCK: Prevent concurrent bookings for the same patient/clinician on this day
+    const lockKey = `${patientId}_${clinicianId}_${dateStr}`;
+    const startOfDay = new Date(`${dateStr}T00:00:00`);
+    const endOfDay = new Date(`${dateStr}T23:59:59`);
+    let createdApt;
+    try {
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // [ATOMIC-GUARD] Acquire session-level lock for this specific booking context
+            await tx.$executeRawUnsafe(`SELECT pg_advisory_xact_lock(hashtext('${lockKey}'))`);
+            // 1. DUPLICATE CHECK (Inside lock)
+            const existing = await tx.hms_appointments.findFirst({
+                where: {
+                    patient_id: patientId,
+                    clinician_id: clinicianId,
+                    starts_at: {
+                        gte: startOfDay,
+                        lte: endOfDay
+                    },
+                    status: {
+                        notIn: [
+                            'cancelled'
+                        ]
+                    },
+                    deleted_at: null
+                }
+            });
+            if (existing) {
+                return {
+                    _isDuplicate: true,
+                    data: existing
+                };
+            }
+            // 2. Fetch doctor's slot duration (using tx)
+            const clinician = await tx.hms_clinicians.findUnique({
+                where: {
+                    id: clinicianId
+                },
+                select: {
+                    consultation_slot_duration: true
+                }
+            });
+            const durationMinutes = clinician?.consultation_slot_duration || 30;
+            const endsAt = new Date(startsAt.getTime() + durationMinutes * 60000);
+            // 3. Create Appointment
+            const created = await tx.$queryRaw`
+                INSERT INTO hms_appointments (
+                    id, tenant_id, company_id, patient_id, clinician_id,
+                    starts_at, ends_at, type, mode, priority, notes, status, created_by, branch_id
+                ) VALUES (
+                    gen_random_uuid(),
+                    ${session.user.tenantId}::uuid,
+                    ${companyId}::uuid,
+                    ${patientId}::uuid,
+                    ${clinicianId}::uuid,
+                    ${startsAt}::timestamptz,
+                    ${endsAt}::timestamptz,
+                    ${type},
+                    ${mode},
+                    ${priority},
+                    ${notes || null},
+                    'scheduled',
+                    ${session.user.id}::uuid,
+                    ${session.user.current_branch_id || null}::uuid
+                )
+                RETURNING *
+            `;
+            return created[0];
+        });
+        if (result._isDuplicate) {
+            console.log(`[BOOKING-DEDUPLICATED] Patient ${patientId} already booked for ${dateStr}. Returning existing.`);
+            return {
+                success: true,
+                data: result.data
+            };
+        }
+        createdApt = result;
+    } catch (error) {
+        console.error("CRITICAL_BOOKING_FAILURE:", error.message);
+        return {
+            error: `Appointment allocation failed: ${error.message}`
+        };
+    }
+    const source = formData.get("source");
+    const nextAction = formData.get("next_action");
+    if (nextAction === 'prescribe') {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])(`/hms/prescriptions/new?patientId=${patientId}&appointmentId=${createdApt.id}`);
+    }
+    if (nextAction === 'bill') {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])(`/hms/billing/new?patientId=${patientId}&appointmentId=${createdApt.id}`);
+    }
+    if (source === 'dashboard' || source === 'terminal') {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/reception/dashboard");
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/dashboard");
+        return {
+            success: true,
+            data: createdApt
+        };
+    }
+    // Default Fallback
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("/hms/appointments");
+}
+async function updateAppointmentDate(id, start, end) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        success: false,
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                starts_at: start,
+                ends_at: end
+            }
+        });
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update appointment:", error);
+        return {
+            success: false,
+            error: "Failed to update appointment"
+        };
+    }
+}
+async function updateAppointmentStatus(id, status) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id) return {
+        success: false,
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.update({
+            where: {
+                id,
+                tenant_id: session.user.tenantId // Security: Ensure specific tenant
+            },
+            data: {
+                status,
+                updated_by: session.user.id,
+                updated_at: new Date()
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/reception/dashboard");
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/nursing");
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/doctor/dashboard");
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update status:", error);
+        return {
+            success: false,
+            error: "Failed to update status"
+        };
+    }
+}
+async function updateAppointmentDetails(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const patientId = formData.get("patient_id");
+    const clinicianId = formData.get("clinician_id");
+    const dateStr = formData.get("date");
+    const timeStr = formData.get("time");
+    const type = formData.get("type");
+    const mode = formData.get("mode");
+    const priority = formData.get("priority");
+    const notes = formData.get("notes");
+    if (!id || !clinicianId || !dateStr || !timeStr) {
+        return {
+            error: "Missing required fields"
+        };
+    }
+    // Combine date and time
+    const startsAt = new Date(`${dateStr}T${timeStr}:00`);
+    // Fetch doctor's slot duration to recalculate end time
+    const clinician = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_clinicians.findUnique({
+        where: {
+            id: clinicianId
+        },
+        select: {
+            consultation_slot_duration: true
+        }
+    });
+    const durationMinutes = clinician?.consultation_slot_duration || 30;
+    const endsAt = new Date(startsAt.getTime() + durationMinutes * 60000);
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.update({
+            where: {
+                id,
+                tenant_id: session.user.tenantId
+            },
+            data: {
+                patient_id: patientId,
+                clinician_id: clinicianId,
+                starts_at: startsAt,
+                ends_at: endsAt,
+                type,
+                mode,
+                priority,
+                notes,
+                updated_by: session.user.id,
+                updated_at: new Date()
+            }
+        });
+    } catch (error) {
+        console.error("Failed to update details:", error);
+        return {
+            error: "Failed to update appointment details"
+        };
+    }
+    // Handle redirection outside try/catch
+    const source = formData.get("source");
+    if (source === 'dashboard' || source === 'terminal') {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/reception/dashboard");
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])("/hms/dashboard");
+        return {
+            success: true,
+            data: {
+                id
+            }
+        } // editingAppointment was undefined here
+        ;
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("/hms/appointments");
+}
+async function getAppointmentsByClinician(clinicianId, date) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    // Allow if tenantId is present. Fallback companyId to tenantId if missing.
+    if (!session?.user?.id || !session?.user?.tenantId) {
+        return {
+            success: false,
+            error: "Unauthorized"
+        };
+    }
+    try {
+        // Parse date for day range (UTC safe approach for local comparison)
+        const startOfDay = new Date(`${date}T00:00:00`);
+        const endOfDay = new Date(`${date}T23:59:59`);
+        const appointments = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.findMany({
+            where: {
+                tenant_id: session.user.tenantId,
+                clinician_id: clinicianId,
+                starts_at: {
+                    gte: startOfDay,
+                    lte: endOfDay
+                },
+                status: {
+                    not: 'cancelled'
+                },
+                deleted_at: null
+            },
+            select: {
+                id: true,
+                starts_at: true,
+                ends_at: true,
+                status: true,
+                clinician_id: true,
+                patient_id: true
+            }
+        });
+        return {
+            success: true,
+            data: appointments
+        };
+    } catch (error) {
+        console.error("Failed to fetch clinician appointments:", error);
+        return {
+            success: false,
+            error: "Failed to fetch appointments"
+        };
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    getAppointmentsProp,
+    createAppointment,
+    updateAppointmentDate,
+    updateAppointmentStatus,
+    updateAppointmentDetails,
+    getAppointmentsByClinician
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAppointmentsProp, "60c021be98a362a1fe876b51ae89a00102ea0ba49d", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createAppointment, "408286af0dd3bd2d67448b9352533aee38bea53e42", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAppointmentDate, "704260891327b42a52553211f322a7c7c002e3e9d7", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAppointmentStatus, "60784d78965906d3fa7bb25a8e3f7fc16bbb25e266", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAppointmentDetails, "400c20c3242d9ec681541ba29d024c15419e6e9923", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAppointmentsByClinician, "603265b48c110da148cea32af57be4ad9aa9e022c6", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"4029c36e9e4cbb469275ea3b8aa688934c39bc7192":"getPatientById","605a1b1564ee1b438dc1de20d9db2102e6ebff257e":"createPatientV10","609644000fc9717ba32a47c8f4a54f0367faed0a69":"createPatientQuick"},"",""] */ __turbopack_context__.s([
+    "createPatientQuick",
+    ()=>createPatientQuick,
+    "createPatientV10",
+    ()=>createPatientV10,
+    "getPatientById",
+    ()=>getPatientById
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+const normalizeGender = (gender)=>{
+    if (!gender) return 'unknown';
+    const g = gender.toLowerCase().trim();
+    if (g === 'm' || g === 'male') return 'male';
+    if (g === 'f' || g === 'female') return 'female';
+    if (g === 'other') return 'other';
+    return 'unknown';
+};
+async function createPatientV10(patientId, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session?.user?.tenantId) {
+        return {
+            error: "SECURITY_AUTH_EXPIRED: Please login to verify clinical credentials."
+        };
+    }
+    const userId = session.user.id;
+    const tenantId = session.user.tenantId;
+    let companyId = session.user.companyId;
+    // 1. DATA SCRUBBING (Standardizing Inputs)
+    const firstName = formData.get("first_name")?.trim();
+    const lastName = formData.get("last_name")?.trim() || "";
+    const phone = formData.get("phone")?.trim();
+    if (!firstName || !phone) {
+        return {
+            error: "VALIDATION_FAILED: Patient Identity (Name/Phone) is mandatory for clinical indexing."
+        };
+    }
+    // 2. CONTEXT RESOLUTION
+    if (!companyId) {
+        const fallback = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findFirst({
+            where: {
+                tenant_id: tenantId,
+                enabled: true
+            }
+        });
+        companyId = fallback?.id ?? null;
+    }
+    if (!companyId) return {
+        error: "FACILITY_NOT_LINKED: Terminal must be associated with an active medical branch."
+    };
+    try {
+        // 3. DUPLICATE CHECK (Mobile Number)
+        const isUpdate = patientId && typeof patientId === 'string' && patientId.length > 30;
+        if (!isUpdate) {
+            const existingPatient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    contact: {
+                        path: [
+                            'phone'
+                        ],
+                        equals: phone
+                    }
+                },
+                select: {
+                    id: true,
+                    first_name: true
+                }
+            });
+            if (existingPatient) {
+                return {
+                    error: `DUPLICATE_FOUND: A patient with this mobile number (${phone}) is already registered as ${existingPatient.first_name}.`,
+                    data: existingPatient
+                };
+            }
+        }
+        // -----------------------------------------------------------------------------------
+        // MASTER PATIENT INDEX (UPSERT) - DIRECT MODE (No Transaction, No Others)
+        // -----------------------------------------------------------------------------------
+        const registrationDate = new Date();
+        const expiryDate = new Date();
+        // [AUDIT-FIX] Set to ancient date (10 years ago) so it's clearly expired and not confused with a 1-year cycle
+        expiryDate.setFullYear(expiryDate.getFullYear() - 10);
+        const address = {
+            street: formData.get('street'),
+            city: formData.get('city'),
+            zip: formData.get('zip')
+        };
+        const metadata = {
+            created_via: 'WorldClass-V10-Atomic-Static',
+            registration_date: registrationDate.toISOString(),
+            registration_expiry: expiryDate.toISOString(),
+            title: formData.get("title"),
+            last_rcm_audit: new Date().toISOString(),
+            status: 'awaiting_payment',
+            accounting_group: formData.get('accounting_group') || 'general'
+        };
+        const upsertPayload = {
+            first_name: firstName,
+            last_name: lastName,
+            gender: normalizeGender(formData.get('gender')),
+            dob: formData.get('dob') ? new Date(formData.get('dob')) : null,
+            contact: {
+                phone,
+                email: formData.get('email'),
+                address
+            },
+            metadata: metadata,
+            updated_at: new Date(),
+            updated_by: userId
+        };
+        let patient;
+        try {
+            let invoiceId = null;
+            if (isUpdate) {
+                patient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.update({
+                    where: {
+                        id: patientId
+                    },
+                    data: upsertPayload
+                });
+            } else {
+                patient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.create({
+                    data: {
+                        ...upsertPayload,
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        patient_number: `PAT-${Date.now().toString().slice(-6)}`,
+                        created_at: new Date(),
+                        created_by: userId,
+                        status: 'active'
+                    }
+                });
+            // [RCM-AUDIT] Automatic billing removed. Clinical terminal will now handle registration triggers.
+            }
+            return {
+                success: true,
+                message: isUpdate ? "Master Patient Index Updated." : "New Patient Registered.",
+                data: patient,
+                invoiceId: invoiceId
+            };
+        } catch (err) {
+            throw err; // Let catch block below handle it
+        }
+    } catch (err) {
+        const errorDetail = {
+            message: err.message,
+            code: err.code,
+            meta: err.meta,
+            stack: err.stack?.split('\n')[0]
+        };
+        console.error("CRITICAL_RCM_FAILURE:", JSON.stringify(errorDetail, null, 2));
+        return {
+            error: `[RCM-FATAL] HMS_CORE_EXCEPTION: ${err.message} (Code: ${err.code || 'N/A'})`,
+            details: JSON.stringify(errorDetail)
+        };
+    }
+}
+async function getPatientById(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const patient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findUnique({
+            where: {
+                id,
+                tenant_id: session.user.tenantId
+            }
+        });
+        return {
+            success: true,
+            data: patient
+        };
+    } catch (err) {
+        return {
+            error: err.message
+        };
+    }
+}
+async function createPatientQuick(name, phone) {
+    const formData = new FormData();
+    const [first, ...rest] = name.trim().split(' ');
+    formData.append('first_name', first);
+    formData.append('last_name', rest.join(' ') || '.');
+    formData.append('phone', phone);
+    // Default dummy address to pass validation/scrubbing
+    formData.append('street', 'Walk-in');
+    formData.append('city', 'Local');
+    formData.append('zip', '000000');
+    return await createPatientV10(null, formData);
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    createPatientV10,
+    getPatientById,
+    createPatientQuick
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createPatientV10, "605a1b1564ee1b438dc1de20d9db2102e6ebff257e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatientById, "4029c36e9e4cbb469275ea3b8aa688934c39bc7192", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createPatientQuick, "609644000fc9717ba32a47c8f4a54f0367faed0a69", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"603b64924af9a59930e1af6f2434856fdc89fe2319":"uploadFile"},"",""] */ __turbopack_context__.s([
+    "uploadFile",
+    ()=>uploadFile
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+async function uploadFile(formData, folder = 'documents') {
+    // Wrap EVERYTHING in try-catch to prevent 500s from crashing the client
+    try {
+        console.log("Upload Action Started");
+        const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+        console.log("Upload Auth Session (v2):", session?.user?.id);
+        if (!session?.user?.id) {
+            console.error("Upload Unauthorized: No user ID");
+            return {
+                error: "Unauthorized"
+            };
+        }
+        const file = formData.get('file');
+        if (!file) {
+            return {
+                error: "No file uploaded"
+            };
+        }
+        console.log(`[Upload] File Received: ${file.name}, Type: ${file.type}, Size: ${(file.size / 1024 / 1024).toFixed(2)} MB`);
+        const startTime = Date.now();
+        // Validate file type (PDF, Image, CSV, Excel)
+        const validTypes = [
+            'application/pdf',
+            'image/jpeg',
+            'image/png',
+            'image/webp',
+            'text/csv',
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ];
+        if (!validTypes.includes(file.type)) {
+            console.error("Invalid file type:", file.type);
+            return {
+                error: "Invalid file type. Allowed: PDF, Images, CSV, Excel."
+            };
+        }
+        // Validate size (e.g. 10MB)
+        if (file.size > 10 * 1024 * 1024) {
+            return {
+                error: "File size must be less than 10MB"
+            };
+        }
+        const bytes = await file.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        // Create unique filename
+        const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
+        const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, ''); // Sanitize
+        // STRATEGY CHANGE: Use Base64 Data URI instead of File System
+        // This is more robust for serverless/container environments like Render
+        // where the filesystem might be ephemeral or read-only.
+        const base64String = buffer.toString('base64');
+        const mimeType = file.type;
+        const dataUri = `data:${mimeType};base64,${base64String}`;
+        console.log("Upload Success: Converted to Data URI");
+        return {
+            success: true,
+            url: dataUri,
+            filename: originalName,
+            size: file.size,
+            type: file.type
+        };
+    } catch (error) {
+        console.error("Upload Fatal Error:", error);
+        return {
+            error: `Upload failed: ${error.message}`
+        };
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    uploadFile
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(uploadFile, "603b64924af9a59930e1af6f2434856fdc89fe2319", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/services/accounting.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "AccountingService",
+    ()=>AccountingService
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/account-seeder.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+class AccountingService {
+    /**
+     * Posts a Sales Invoice to the General Ledger (Journal Entries).
+     * Follows Double-Entry Bookkeeping Validation.
+     * 
+     * @param invoiceId - The ID of the invoice to post
+     * @param userId - ID of the user performing the action
+     */ static async postSalesInvoice(invoiceId, userId) {
+        try {
+            // 1. Fetch Invoice
+            const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findUnique({
+                where: {
+                    id: invoiceId
+                },
+                include: {
+                    hms_invoice_lines: true,
+                    hms_patient: true,
+                    hms_invoice_payments: true
+                }
+            });
+            if (!invoice) throw new Error("Invoice not found");
+            // [TALLY-STYLE] Resolve Patient Name for narration fallback
+            const patientName = invoice.hms_patient ? invoice.hms_patient.full_name || `${invoice.hms_patient.first_name || ''} ${invoice.hms_patient.last_name || ''}`.trim() : invoice.billing_metadata?.patient_name || 'Guest Patient';
+            // 2. Fetch/Configure Settings (Required for both Accrual and Payments)
+            let settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: invoice.company_id
+                }
+            });
+            if (!settings) {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureDefaultAccounts"])(invoice.company_id, invoice.tenant_id);
+                // Fetch again
+                settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                    where: {
+                        company_id: invoice.company_id
+                    }
+                });
+            }
+            if (!settings) throw new Error("Accounting settings could not be loaded.");
+            // 3. Post Accrual (If not already posted)
+            const existingJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                where: {
+                    invoice_id: invoiceId
+                }
+            });
+            if (!existingJournal) {
+                // --- ACCRUAL LOGIC START ---
+                // Identify Accounts
+                // --- WORLD-STANDARD DYNAMIC AR RESOLUTION ---
+                let debitAccountId = await AccountingService.resolvePatientARAccount(invoice.company_id, settings.ar_account_id, invoice.hms_patient);
+                if (!debitAccountId) throw new Error("AR Account (1200) missing.");
+                let defaultSalesAccountId = settings.sales_account_id;
+                if (!defaultSalesAccountId) {
+                    const sales = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                        where: {
+                            company_id: invoice.company_id,
+                            code: '4000'
+                        }
+                    });
+                    defaultSalesAccountId = sales?.id || null;
+                }
+                if (!defaultSalesAccountId) throw new Error("Sales Account (4000) missing.");
+                const taxAccountId = settings.output_tax_account_id;
+                // Prepare Lines
+                const journalDate = invoice.invoice_date || invoice.created_at || new Date();
+                const journalLines = [];
+                // Credit: Sales
+                for (const line of invoice.hms_invoice_lines){
+                    const netAmount = Number(line.net_amount || 0);
+                    if (netAmount > 0) {
+                        journalLines.push({
+                            account_id: defaultSalesAccountId,
+                            debit: 0,
+                            credit: netAmount,
+                            description: `${patientName} | Sales - ${line.description || invoice.invoice_number}`,
+                            metadata: {
+                                source: 'auto'
+                            }
+                        });
+                    }
+                }
+                // Credit: Tax
+                const totalTax = Number(invoice.total_tax || 0);
+                if (totalTax > 0 && taxAccountId) {
+                    journalLines.push({
+                        account_id: taxAccountId,
+                        debit: 0,
+                        credit: totalTax,
+                        description: `${patientName} | Tax Output - ${invoice.invoice_number}`,
+                        metadata: {
+                            source: 'auto'
+                        }
+                    });
+                }
+                // Debit: AR
+                const totalReceivable = Number(invoice.total || 0);
+                if (totalReceivable > 0) {
+                    journalLines.push({
+                        account_id: debitAccountId,
+                        debit: totalReceivable,
+                        credit: 0,
+                        description: `${patientName} | AR - ${invoice.invoice_number}`,
+                        party_type: 'patient',
+                        party_id: invoice.patient_id,
+                        metadata: {
+                            source: 'auto'
+                        }
+                    });
+                }
+                // Post Accrual
+                if (journalLines.length > 0) {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: invoice.tenant_id,
+                            company_id: invoice.company_id,
+                            invoice_id: invoice.id,
+                            date: new Date(journalDate),
+                            posted: true,
+                            posted_at: new Date(),
+                            created_by: userId,
+                            currency_id: settings.currency_id,
+                            amount_in_company_currency: totalReceivable,
+                            ref: invoice.invoice_number,
+                            journal_entry_lines: {
+                                create: journalLines.map((l)=>({
+                                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                        tenant_id: invoice.tenant_id,
+                                        company_id: invoice.company_id,
+                                        account_id: l.account_id,
+                                        debit: l.debit,
+                                        credit: l.credit,
+                                        description: l.description,
+                                        partner_id: l.party_id || invoice.patient_id || undefined
+                                    }))
+                            }
+                        }
+                    });
+                }
+            // --- ACCRUAL LOGIC END ---
+            }
+            // 4. Post Payments (Check individually)
+            const payments = invoice.hms_invoice_payments || [];
+            let paymentsPosted = 0;
+            for (const payment of payments){
+                // Check if this specific payment is posted
+                // We use a specific Ref convention: "PMT-{PaymentID}"
+                const paymentRef = `PMT-${payment.id}`;
+                const existingPaymentJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                    where: {
+                        company_id: invoice.company_id,
+                        ref: paymentRef // Strict check
+                    }
+                });
+                if (!existingPaymentJournal) {
+                    // Post This Payment
+                    const amount = Number(payment.amount);
+                    if (amount <= 0) continue;
+                    const paymentMethod = (payment.method || 'cash').toLowerCase();
+                    // --- DYNAMIC PAYMENT METHOD MAPPING ---
+                    const mappingRecord = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                        where: {
+                            company_id: invoice.company_id,
+                            tenant_id: invoice.tenant_id,
+                            key: 'payment_method_mapping'
+                        }
+                    });
+                    const mapping = mappingRecord?.value || {};
+                    const mappedAccountId = mapping[paymentMethod];
+                    let debitAccount = null;
+                    if (mappedAccountId) {
+                        debitAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findUnique({
+                            where: {
+                                id: mappedAccountId
+                            }
+                        });
+                    }
+                    if (!debitAccount) {
+                        // Fallback to defaults using the Tally-Standardized COA codes (including legacy fallbacks)
+                        // Cash: 1001 (New), 1110 (Group), 1000 (Legacy)
+                        // Bank: 1050 (New), 1120 (Group), 1100 (Legacy)
+                        const cashAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                            where: {
+                                company_id: invoice.company_id,
+                                code: {
+                                    in: [
+                                        '1610',
+                                        '1600'
+                                    ]
+                                }
+                            }
+                        });
+                        const bankAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                            where: {
+                                company_id: invoice.company_id,
+                                code: {
+                                    in: [
+                                        '1710',
+                                        '1700'
+                                    ]
+                                }
+                            }
+                        });
+                        debitAccount = paymentMethod === 'cash' ? cashAccount : bankAccount;
+                    }
+                    const creditAccount = settings.ar_account_id; // Credit AR to reduce debt
+                    if (debitAccount && creditAccount) {
+                        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.create({
+                            data: {
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: invoice.tenant_id,
+                                company_id: invoice.company_id,
+                                invoice_id: invoice.id,
+                                date: new Date(),
+                                posted: true,
+                                posted_at: new Date(),
+                                created_by: userId,
+                                currency_id: settings.currency_id,
+                                amount_in_company_currency: amount,
+                                ref: paymentRef,
+                                journal_entry_lines: {
+                                    create: [
+                                        {
+                                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                            tenant_id: invoice.tenant_id,
+                                            company_id: invoice.company_id,
+                                            account_id: debitAccount.id,
+                                            debit: amount,
+                                            credit: 0,
+                                            description: `${patientName} | Payment Recvd (${payment.method}) - ${invoice.invoice_number}`,
+                                            partner_id: invoice.patient_id
+                                        },
+                                        {
+                                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                            tenant_id: invoice.tenant_id,
+                                            company_id: invoice.company_id,
+                                            account_id: await AccountingService.resolvePatientARAccount(invoice.company_id, settings.ar_account_id, invoice.hms_patient),
+                                            debit: 0,
+                                            credit: amount,
+                                            description: `${patientName} | Payment Applied - ${invoice.invoice_number}`,
+                                            partner_id: invoice.patient_id
+                                        }
+                                    ]
+                                }
+                            }
+                        });
+                        paymentsPosted++;
+                    }
+                }
+            }
+            return {
+                success: true,
+                message: `Processed. Accrual: ${!existingJournal}, Payments: ${paymentsPosted}`
+            };
+        } catch (error) {
+            console.error("Accounting Post Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Payment (Receipt or Outbound) to the General Ledger.
+     * 
+     * @param paymentId - The ID of the payment to post
+     * @param userId - ID of the user performing the action
+     */ static async postPaymentEntry(paymentId, userId) {
+        try {
+            // 1. Fetch Payment
+            const payment = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].payments.findUnique({
+                where: {
+                    id: paymentId
+                }
+            });
+            if (!payment) throw new Error("Payment not found");
+            if (payment.journal_entry_id) return {
+                success: true,
+                message: "Already posted"
+            };
+            const metadata = payment.metadata;
+            const type = metadata?.type || 'inbound';
+            const journalDate = metadata?.date ? new Date(metadata.date) : payment.created_at || new Date();
+            // 2. Fetch Accounting Settings
+            let settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: payment.company_id
+                }
+            });
+            // SELF-HEALING: Auto-configure defaults if missing
+            if (!settings) {
+                try {
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureDefaultAccounts"])(payment.company_id, payment.tenant_id);
+                    const accounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                        where: {
+                            company_id: payment.company_id
+                        }
+                    });
+                    const findId = (code)=>accounts.find((a)=>a.code === code)?.id || null;
+                    settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.create({
+                        data: {
+                            company_id: payment.company_id,
+                            tenant_id: payment.tenant_id,
+                            ar_account_id: findId('1200'),
+                            ap_account_id: findId('2000'),
+                            sales_account_id: findId('4000'),
+                            purchase_account_id: findId('5000'),
+                            output_tax_account_id: findId('2200'),
+                            input_tax_account_id: findId('2210'),
+                            fiscal_year_start: new Date(new Date().getFullYear(), 3, 1),
+                            fiscal_year_end: new Date(new Date().getFullYear() + 1, 2, 31)
+                        }
+                    });
+                } catch (configError) {
+                    console.error("Failed to auto-configure accounting:", configError);
+                }
+            }
+            if (!settings) throw new Error("Accounting settings not configured.");
+            // --- DYNAMIC PAYMENT METHOD MAPPING ---
+            const mappingRecord = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    company_id: payment.company_id,
+                    tenant_id: payment.tenant_id,
+                    key: 'payment_method_mapping'
+                }
+            });
+            const mapping = mappingRecord?.value || {};
+            const paymentMethod = (payment.method || 'cash').toLowerCase();
+            const mappedAccountId = mapping[paymentMethod];
+            let moneyAccountId = null;
+            if (mappedAccountId) {
+                const mappedAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findUnique({
+                    where: {
+                        id: mappedAccountId
+                    }
+                });
+                moneyAccountId = mappedAccount?.id || null;
+            }
+            if (!moneyAccountId) {
+                const cashAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                    where: {
+                        company_id: payment.company_id,
+                        code: '1610'
+                    }
+                }) || await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.create({
+                    data: {
+                        tenant_id: payment.tenant_id,
+                        company_id: payment.company_id,
+                        name: 'Cash on Hand',
+                        code: '1610',
+                        type: 'Asset',
+                        is_active: true
+                    }
+                });
+                const bankAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                    where: {
+                        company_id: payment.company_id,
+                        code: '1710'
+                    }
+                }) || await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.create({
+                    data: {
+                        tenant_id: payment.tenant_id,
+                        company_id: payment.company_id,
+                        name: 'Bank Account - Primary',
+                        code: '1710',
+                        type: 'Asset',
+                        is_active: true
+                    }
+                });
+                moneyAccountId = paymentMethod === 'cash' ? cashAccount.id : bankAccount.id;
+            }
+            const amount = Number(payment.amount);
+            // 4. Prepare Lines
+            const journalLines = [];
+            // Check for Direct Allocation Lines (Direct Payment)
+            const paymentLines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].payment_lines.findMany({
+                where: {
+                    payment_id: payment.id
+                }
+            });
+            const isDirectPayment = paymentLines.some((l)=>l.metadata?.account_id);
+            if (isDirectPayment) {
+                // DIRECT PAYMENT / EXPENSE
+                // Debit: Expense Account(s)
+                // Credit: Bank/Cash
+                let totalDebited = 0;
+                for (const line of paymentLines){
+                    const meta = line.metadata;
+                    if (meta?.account_id) {
+                        const lineAmt = Number(line.amount);
+                        totalDebited += lineAmt;
+                        journalLines.push({
+                            account_id: meta.account_id,
+                            debit: lineAmt,
+                            credit: 0,
+                            description: meta.description || `Direct Expense - ${payment.payment_number}`,
+                            partner_id: payment.partner_id
+                        });
+                    }
+                }
+                // Credit Bank/Cash
+                journalLines.push({
+                    account_id: moneyAccountId,
+                    debit: 0,
+                    credit: totalDebited,
+                    description: `Funds Disbursed - ${payment.payment_number}`
+                });
+            } else {
+                // Dynamic AR/AP Resolution
+                const patient = payment.partner_id ? await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findUnique({
+                    where: {
+                        id: payment.partner_id
+                    }
+                }) : null;
+                const arAccount = await AccountingService.resolvePatientARAccount(payment.company_id, settings.ar_account_id, patient);
+                const apAccount = settings.ap_account_id || (await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                    where: {
+                        company_id: payment.company_id,
+                        code: '2000'
+                    }
+                }))?.id;
+                if (type === 'inbound' && !arAccount) throw new Error("Accounts Receivable not found.");
+                if (type === 'outbound' && !apAccount) throw new Error("Accounts Payable (2000) not found.");
+                if (type === 'inbound') {
+                    // RECEIPT: Debit Cash/Bank, Credit AR
+                    journalLines.push({
+                        account_id: moneyAccountId,
+                        debit: amount,
+                        credit: 0,
+                        description: `Receipt Received - ${payment.payment_number}`
+                    });
+                    journalLines.push({
+                        account_id: arAccount,
+                        debit: 0,
+                        credit: amount,
+                        description: `AR Cleared - ${payment.payment_number}`,
+                        partner_id: payment.partner_id
+                    });
+                } else {
+                    // PAYMENT (Vendor Bill): Debit AP, Credit Cash/Bank
+                    journalLines.push({
+                        account_id: apAccount,
+                        debit: amount,
+                        credit: 0,
+                        description: `Vendor Payment - ${payment.payment_number}`,
+                        partner_id: payment.partner_id
+                    });
+                    journalLines.push({
+                        account_id: moneyAccountId,
+                        debit: 0,
+                        credit: amount,
+                        description: `Funds Disbursed - ${payment.payment_number}`
+                    });
+                }
+            }
+            // 5. Create Transaction
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+                const journal = await tx.journal_entries.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: payment.tenant_id || settings.tenant_id,
+                        company_id: payment.company_id,
+                        date: journalDate,
+                        posted: true,
+                        posted_at: new Date(),
+                        created_by: userId,
+                        currency_id: settings.currency_id,
+                        amount_in_company_currency: amount,
+                        ref: payment.payment_number,
+                        journal_entry_lines: {
+                            create: journalLines.map((line)=>({
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: payment.tenant_id || settings.tenant_id,
+                                    company_id: payment.company_id,
+                                    account_id: line.account_id,
+                                    debit: line.debit,
+                                    credit: line.credit,
+                                    description: line.description,
+                                    partner_id: line.partner_id
+                                }))
+                        }
+                    }
+                });
+                // Link back to payment
+                await tx.payments.update({
+                    where: {
+                        id: payment.id
+                    },
+                    data: {
+                        posted: true,
+                        posted_at: new Date(),
+                        journal_entry_id: journal.id
+                    }
+                });
+            });
+            return {
+                success: true
+            };
+        } catch (error) {
+            console.error("Payment Posting Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Purchase Invoice (Vendor Bill) to the General Ledger.
+     * 
+     * @param invoiceId - The ID of the purchase invoice to post
+     * @param userId - ID of the user performing the action
+     */ static async postPurchaseInvoice(invoiceId, userId) {
+        try {
+            // 1. Fetch Purchase Invoice with Lines and Supplier
+            const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_invoice.findUnique({
+                where: {
+                    id: invoiceId
+                },
+                include: {
+                    hms_purchase_invoice_line: true,
+                    hms_supplier: true
+                }
+            });
+            if (!invoice) throw new Error("Purchase Invoice not found");
+            // Check if already posted
+            const existingJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                where: {
+                    purchase_invoice_id: invoiceId
+                }
+            });
+            if (existingJournal) {
+                console.log("Purchase Invoice already posted.");
+                return {
+                    success: true,
+                    message: "Already posted"
+                };
+            }
+            // 2. Fetch Accounting Settings
+            let settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: invoice.company_id
+                }
+            });
+            // SELF-HEALING: Auto-configure defaults if missing
+            if (!settings) {
+                console.warn("Accounting Settings missing. Attempting auto-configuration...");
+                try {
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureDefaultAccounts"])(invoice.company_id, invoice.tenant_id);
+                    const accounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                        where: {
+                            company_id: invoice.company_id
+                        }
+                    });
+                    const findId = (code)=>accounts.find((a)=>a.code === code)?.id || null;
+                    settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.create({
+                        data: {
+                            company_id: invoice.company_id,
+                            tenant_id: invoice.tenant_id,
+                            ar_account_id: findId('1200'),
+                            ap_account_id: findId('2000'),
+                            sales_account_id: findId('4000'),
+                            purchase_account_id: findId('5000'),
+                            output_tax_account_id: findId('2200'),
+                            input_tax_account_id: findId('2210'),
+                            inventory_asset_account_id: findId('1400'),
+                            fiscal_year_start: new Date(new Date().getFullYear(), 3, 1),
+                            fiscal_year_end: new Date(new Date().getFullYear() + 1, 2, 31)
+                        }
+                    });
+                } catch (configError) {
+                    console.error("Failed to auto-configure accounting:", configError);
+                }
+            }
+            if (!settings) throw new Error("Accounting settings not configured.");
+            // 3. Determine Accounts
+            // DEBIT: Purchase/Expense Account
+            const debitAccountId = settings.purchase_account_id;
+            if (!debitAccountId) throw new Error("Purchase Account not configured.");
+            // CREDIT: Accounts Payable
+            const creditAccountId = settings.ap_account_id;
+            if (!creditAccountId) throw new Error("Accounts Payable Account not configured.");
+            // TAX: Input Tax (Debit)
+            const inputTaxAccountId = settings.input_tax_account_id;
+            // 4. Prepare Lines
+            const journalLines = [];
+            const totalAmount = Number(invoice.total_amount || 0);
+            const subtotal = Number(invoice.subtotal || 0);
+            const taxTotal = Number(invoice.tax_total || 0);
+            // A. DEBIT: Purchase Expense
+            journalLines.push({
+                account_id: debitAccountId,
+                debit: subtotal,
+                credit: 0,
+                description: `Purchase Expense - Ref ${invoice.name}`
+            });
+            // B. DEBIT: Input VAT (if any)
+            if (taxTotal > 0) {
+                if (!inputTaxAccountId) throw new Error("Input Tax Account not configured, but bill contains tax.");
+                journalLines.push({
+                    account_id: inputTaxAccountId,
+                    debit: taxTotal,
+                    credit: 0,
+                    description: `Input Tax - Ref ${invoice.name}`
+                });
+            }
+            // C. CREDIT: Accounts Payable
+            journalLines.push({
+                account_id: creditAccountId,
+                debit: 0,
+                credit: totalAmount,
+                description: `Accounts Payable - ${invoice.hms_supplier?.name || 'Vendor'}`,
+                partner_id: invoice.supplier_id
+            });
+            // 5. Create Transaction
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+                await tx.journal_entries.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: invoice.tenant_id,
+                        company_id: invoice.company_id,
+                        purchase_invoice_id: invoice.id,
+                        date: invoice.invoice_date || new Date(),
+                        posted: true,
+                        posted_at: new Date(),
+                        created_by: userId,
+                        currency_id: settings.currency_id,
+                        amount_in_company_currency: totalAmount,
+                        ref: invoice.name,
+                        journal_entry_lines: {
+                            create: journalLines.map((line)=>({
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: invoice.tenant_id,
+                                    company_id: invoice.company_id,
+                                    account_id: line.account_id,
+                                    debit: line.debit,
+                                    credit: line.credit,
+                                    description: line.description,
+                                    partner_id: line.partner_id
+                                }))
+                        }
+                    }
+                });
+                // Update invoice status if needed
+                await tx.hms_purchase_invoice.update({
+                    where: {
+                        id: invoice.id
+                    },
+                    data: {
+                        status: 'posted',
+                        updated_at: new Date()
+                    }
+                });
+            });
+            return {
+                success: true
+            };
+        } catch (error) {
+            console.error("Purchase Posting Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Purchase Receipt (GRN) to the General Ledger.
+     * 
+     * @param receiptId - The ID of the purchase receipt to post
+     * @param userId - ID of the user performing the action
+     */ static async postPurchaseReceipt(receiptId, userId) {
+        try {
+            // 1. Fetch Purchase Receipt with Lines and Supplier
+            const receipt = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_receipt.findUnique({
+                where: {
+                    id: receiptId
+                },
+                include: {
+                    hms_purchase_receipt_line: true,
+                    hms_supplier: true
+                }
+            });
+            if (!receipt) throw new Error("Purchase Receipt not found");
+            // Check if already posted
+            const existingJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                where: {
+                    ref: receipt.name,
+                    company_id: receipt.company_id
+                }
+            });
+            if (existingJournal) {
+                console.log("Purchase Receipt already posted.");
+                return {
+                    success: true,
+                    message: "Already posted"
+                };
+            }
+            // 2. Fetch Accounting Settings
+            let settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: receipt.company_id
+                }
+            });
+            // SELF-HEALING: Auto-configure defaults if missing
+            if (!settings) {
+                console.warn("Accounting Settings missing. Attempting auto-configuration...");
+                try {
+                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$account$2d$seeder$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureDefaultAccounts"])(receipt.company_id, receipt.tenant_id);
+                    const accounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                        where: {
+                            company_id: receipt.company_id
+                        }
+                    });
+                    const findId = (code)=>accounts.find((a)=>a.code === code)?.id || null;
+                    settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.create({
+                        data: {
+                            company_id: receipt.company_id,
+                            tenant_id: receipt.tenant_id,
+                            ar_account_id: findId('1200'),
+                            ap_account_id: findId('2000'),
+                            sales_account_id: findId('4000'),
+                            purchase_account_id: findId('5000'),
+                            output_tax_account_id: findId('2200'),
+                            input_tax_account_id: findId('2210'),
+                            inventory_asset_account_id: findId('1400'),
+                            fiscal_year_start: new Date(new Date().getFullYear(), 3, 1),
+                            fiscal_year_end: new Date(new Date().getFullYear() + 1, 2, 31)
+                        }
+                    });
+                } catch (configError) {
+                    console.error("Failed to auto-configure accounting:", configError);
+                }
+            }
+            if (!settings) throw new Error("Accounting settings not configured.");
+            // 3. Determine Accounts
+            // DEBIT: Inventory/Purchase Account
+            const debitAccountId = settings.purchase_account_id;
+            if (!debitAccountId) throw new Error("Purchase/Inventory Account not configured.");
+            // CREDIT: Accounts Payable (or Stock Received Not Invoiced - for simplicity we use AP)
+            const creditAccountId = settings.ap_account_id;
+            if (!creditAccountId) throw new Error("Accounts Payable Account not configured.");
+            const inputTaxAccountId = settings.input_tax_account_id;
+            // 4. Calculate Totals from Lines
+            let subtotal = 0;
+            let taxTotal = 0;
+            for (const line of receipt.hms_purchase_receipt_line){
+                const qty = Number(line.qty || 0);
+                const price = Number(line.unit_price || 0);
+                const meta = line.metadata;
+                console.log(`[AccountPost] Processing Line: ${line.id} | Item: ${meta.productName || '?'}`);
+                console.log(`[AccountPost] Raw Meta:`, JSON.stringify(meta));
+                // Robust extraction (supports snake_case and camelCase)
+                const lineTax = Number(meta?.tax_amount ?? meta?.taxAmount ?? 0);
+                const discountAmt = Number(meta?.discount_amt ?? meta?.discountAmt ?? 0);
+                const schemeDiscount = Number(meta?.scheme_discount ?? meta?.schemeDiscount ?? 0);
+                console.log(`[AccountPost] Values -> Price: ${price}, Qty: ${qty}, Tax: ${lineTax}, Disc: ${discountAmt}, Scheme: ${schemeDiscount}`);
+                // Taxable Value logic: (Price * Qty) - Discounts
+                const lineSubtotal = Math.max(0, qty * price - (discountAmt + schemeDiscount));
+                console.log(`[AccountPost] Calculated Line Subtotal (Taxable): ${lineSubtotal}`);
+                subtotal += lineSubtotal;
+                taxTotal += lineTax;
+            }
+            const totalAmount = subtotal + taxTotal;
+            if (totalAmount <= 0) return {
+                success: true,
+                message: "Zero amount receipt, skipping journal."
+            };
+            // 5. Prepare Lines
+            const journalLines = [];
+            // A. DEBIT: Inventory/Purchase
+            journalLines.push({
+                account_id: debitAccountId,
+                debit: subtotal,
+                credit: 0,
+                description: `Purchase Stock - ${receipt.name}`
+            });
+            // B. DEBIT: Input Tax
+            if (taxTotal > 0) {
+                if (!inputTaxAccountId) throw new Error("Input Tax Account not configured.");
+                journalLines.push({
+                    account_id: inputTaxAccountId,
+                    debit: taxTotal,
+                    credit: 0,
+                    description: `Input Tax (GRN) - ${receipt.name}`
+                });
+            }
+            // C. CREDIT: Accounts Payable
+            journalLines.push({
+                account_id: creditAccountId,
+                debit: 0,
+                credit: totalAmount,
+                description: `Liability (GRN) - ${receipt.hms_supplier?.name || 'Vendor'}`,
+                partner_id: receipt.supplier_id
+            });
+            // Safe Currency Resolution
+            let currencyId = settings.currency_id;
+            if (!currencyId) {
+                const defaultCurrency = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].currencies.findFirst({
+                    where: {
+                        code: 'INR'
+                    }
+                });
+                if (defaultCurrency) currencyId = defaultCurrency.id;
+            }
+            if (!currencyId) {
+                // Fallback to any active currency if INR missing
+                const anyCurrency = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].currencies.findFirst({
+                    where: {
+                        is_active: true
+                    }
+                });
+                currencyId = anyCurrency?.id || null;
+            }
+            if (!currencyId) throw new Error("No active currency found in system.");
+            // 6. Create Transaction
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+                await tx.journal_entries.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: receipt.tenant_id,
+                        company_id: receipt.company_id,
+                        date: receipt.receipt_date || new Date(),
+                        posted: true,
+                        posted_at: new Date(),
+                        created_by: userId,
+                        currency_id: currencyId,
+                        amount_in_company_currency: totalAmount,
+                        ref: receipt.name,
+                        journal_entry_lines: {
+                            create: journalLines.map((line)=>({
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: receipt.tenant_id,
+                                    company_id: receipt.company_id,
+                                    account_id: line.account_id,
+                                    debit: line.debit,
+                                    credit: line.credit,
+                                    description: line.description,
+                                    partner_id: line.partner_id
+                                }))
+                        }
+                    }
+                });
+                // Update receipt status
+                await tx.hms_purchase_receipt.update({
+                    where: {
+                        id: receipt.id
+                    },
+                    data: {
+                        status: 'received',
+                        updated_at: new Date()
+                    }
+                });
+            });
+            return {
+                success: true
+            };
+        } catch (error) {
+            console.error("Purchase Receipt Posting Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Fetches a Daily Accounting Summary for a given date.
+     */ static async getDailyReport(companyId, date = new Date()) {
+        const startOfDay = new Date(date);
+        startOfDay.setHours(0, 0, 0, 0);
+        const endOfDay = new Date(date);
+        endOfDay.setHours(23, 59, 59, 999);
+        try {
+            const [sales, payments, purchases, journalLines] = await Promise.all([
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findMany({
+                    where: {
+                        company_id: companyId,
+                        created_at: {
+                            gte: startOfDay,
+                            lte: endOfDay
+                        }
+                    }
+                }),
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice_payments.findMany({
+                    where: {
+                        hms_invoice: {
+                            company_id: companyId
+                        },
+                        created_at: {
+                            gte: startOfDay,
+                            lte: endOfDay
+                        }
+                    }
+                }),
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_receipt.findMany({
+                    where: {
+                        company_id: companyId,
+                        created_at: {
+                            gte: startOfDay,
+                            lte: endOfDay
+                        }
+                    },
+                    include: {
+                        hms_purchase_receipt_line: true
+                    }
+                }),
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                    where: {
+                        company_id: companyId,
+                        journal_entries: {
+                            date: {
+                                gte: startOfDay,
+                                lte: endOfDay
+                            },
+                            posted: true
+                        }
+                    },
+                    include: {
+                        accounts: true
+                    }
+                })
+            ]);
+            const summary = {
+                totalSales: sales.reduce((sum, s)=>sum + Number(s.total || 0), 0),
+                totalPaid: payments.reduce((sum, p)=>sum + Number(p.amount || 0), 0),
+                totalPurchases: purchases.reduce((sum, p)=>{
+                    const lineTotal = p.hms_purchase_receipt_line.reduce((lSum, l)=>{
+                        const meta = l.metadata;
+                        const lineTax = Number(meta?.tax_amount ?? 0);
+                        const lineSubtotal = Number(l.qty || 0) * Number(l.unit_price || 0) - (Number(meta?.discount_amt || 0) + Number(meta?.scheme_discount || 0));
+                        return lSum + lineSubtotal + lineTax;
+                    }, 0);
+                    return sum + lineTotal;
+                }, 0),
+                netCashFlow: 0,
+                revenueByAccount: {},
+                expenseByAccount: {},
+                deltas: {
+                    sales: 0,
+                    paid: 0,
+                    purchases: 0
+                }
+            };
+            journalLines.forEach((line)=>{
+                const type = line.accounts.type.toLowerCase();
+                const amount = Number(line.debit || 0) - Number(line.credit || 0);
+                if (type === 'revenue' || type === 'income') {
+                    const absVal = Math.abs(amount); // Revenue is usually credit
+                    summary.revenueByAccount[line.accounts.name] = (summary.revenueByAccount[line.accounts.name] || 0) + absVal;
+                } else if (type === 'expense') {
+                    summary.expenseByAccount[line.accounts.name] = (summary.expenseByAccount[line.accounts.name] || 0) + amount;
+                }
+            });
+            summary.netCashFlow = summary.totalPaid - summary.totalPurchases;
+            // FETCH PREVIOUS DAY DATA FOR DELTAS
+            const prevDay = new Date(startOfDay);
+            prevDay.setDate(prevDay.getDate() - 1);
+            const prevStart = new Date(prevDay);
+            const prevEnd = new Date(prevDay);
+            prevEnd.setHours(23, 59, 59, 999);
+            const [pSales, pPayments, pPurchases] = await Promise.all([
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findMany({
+                    where: {
+                        company_id: companyId,
+                        created_at: {
+                            gte: prevStart,
+                            lte: prevEnd
+                        }
+                    }
+                }),
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice_payments.findMany({
+                    where: {
+                        hms_invoice: {
+                            company_id: companyId
+                        },
+                        created_at: {
+                            gte: prevStart,
+                            lte: prevEnd
+                        }
+                    }
+                }),
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_receipt.findMany({
+                    where: {
+                        company_id: companyId,
+                        created_at: {
+                            gte: prevStart,
+                            lte: prevEnd
+                        }
+                    },
+                    include: {
+                        hms_purchase_receipt_line: true
+                    }
+                })
+            ]);
+            const pTotalSales = pSales.reduce((sum, s)=>sum + Number(s.total || 0), 0);
+            const pTotalPaid = pPayments.reduce((sum, p)=>sum + Number(p.amount || 0), 0);
+            const pTotalPurchases = pPurchases.reduce((sum, p)=>{
+                return sum + p.hms_purchase_receipt_line.reduce((lSum, l)=>{
+                    const meta = l.metadata;
+                    return lSum + Number(l.qty || 0) * Number(l.unit_price || 0) - (Number(meta?.discount_amt || 0) + Number(meta?.scheme_discount || 0)) + Number(meta?.tax_amount ?? 0);
+                }, 0);
+            }, 0);
+            const calcDelta = (curr, prev)=>{
+                if (prev === 0) return curr > 0 ? 100 : 0;
+                return (curr - prev) / prev * 100;
+            };
+            summary.deltas = {
+                sales: calcDelta(summary.totalSales, pTotalSales),
+                paid: calcDelta(summary.totalPaid, pTotalPaid),
+                purchases: calcDelta(summary.totalPurchases, pTotalPurchases)
+            };
+            return {
+                success: true,
+                data: summary
+            };
+        } catch (error) {
+            console.error("Daily Report Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Generates a Profit and Loss Statement.
+     */ static async getProfitAndLoss(companyId, startDate, endDate) {
+        try {
+            const journalLines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                where: {
+                    company_id: companyId,
+                    journal_entries: {
+                        date: {
+                            gte: startDate,
+                            lte: endDate
+                        },
+                        posted: true
+                    },
+                    accounts: {
+                        type: {
+                            in: [
+                                'Revenue',
+                                'Income',
+                                'Expense',
+                                'COGS'
+                            ]
+                        }
+                    }
+                },
+                include: {
+                    accounts: true
+                }
+            });
+            const report = {
+                revenue: [],
+                expenses: [],
+                cogs: [],
+                totalRevenue: 0,
+                totalExpenses: 0,
+                totalCOGS: 0,
+                netProfit: 0
+            };
+            const accountsMap = new Map();
+            journalLines.forEach((line)=>{
+                const existing = accountsMap.get(line.account_id) || {
+                    name: line.accounts.name,
+                    type: line.accounts.type,
+                    amount: 0
+                };
+                // Revenue/Income: Credit - Debit
+                // Expense/COGS: Debit - Credit
+                const type = line.accounts.type.toLowerCase();
+                if (type === 'revenue' || type === 'income') {
+                    existing.amount += Number(line.credit || 0) - Number(line.debit || 0);
+                } else {
+                    existing.amount += Number(line.debit || 0) - Number(line.credit || 0);
+                }
+                accountsMap.set(line.account_id, existing);
+            });
+            accountsMap.forEach((val)=>{
+                const type = val.type.toLowerCase();
+                if (type === 'revenue' || type === 'income') {
+                    report.revenue.push(val);
+                    report.totalRevenue += val.amount;
+                } else if (type === 'cogs') {
+                    report.cogs.push(val);
+                    report.totalCOGS += val.amount;
+                } else {
+                    report.expenses.push(val);
+                    report.totalExpenses += val.amount;
+                }
+            });
+            report.netProfit = report.totalRevenue - report.totalCOGS - report.totalExpenses;
+            return {
+                success: true,
+                data: report
+            };
+        } catch (error) {
+            console.error("P&L Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Generates a Balance Sheet.
+     */ static async getBalanceSheet(companyId, date = new Date()) {
+        try {
+            // Balance sheet is cumulative up to a date
+            const journalLines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                where: {
+                    company_id: companyId,
+                    journal_entries: {
+                        date: {
+                            lte: date
+                        },
+                        posted: true
+                    },
+                    accounts: {
+                        type: {
+                            in: [
+                                'Asset',
+                                'Liability',
+                                'Equity',
+                                'Revenue',
+                                'Income',
+                                'Expense',
+                                'COGS'
+                            ]
+                        }
+                    }
+                },
+                include: {
+                    accounts: true
+                }
+            });
+            const report = {
+                assets: [],
+                liabilities: [],
+                equity: [],
+                totalAssets: 0,
+                totalLiabilities: 0,
+                totalEquity: 0,
+                retainedEarnings: 0
+            };
+            const accountsMap = new Map();
+            journalLines.forEach((line)=>{
+                const existing = accountsMap.get(line.account_id) || {
+                    name: line.accounts.name,
+                    type: line.accounts.type,
+                    amount: 0
+                };
+                const type = line.accounts.type.toLowerCase();
+                // Asset / Expense / COGS: Debit - Credit
+                // Liability / Equity / Revenue / Income: Credit - Debit
+                if ([
+                    'asset',
+                    'expense',
+                    'cogs'
+                ].includes(type)) {
+                    existing.amount += Number(line.debit || 0) - Number(line.credit || 0);
+                } else {
+                    existing.amount += Number(line.credit || 0) - Number(line.debit || 0);
+                }
+                accountsMap.set(line.account_id, existing);
+            });
+            accountsMap.forEach((val)=>{
+                const type = val.type.toLowerCase();
+                if (type === 'asset') {
+                    report.assets.push(val);
+                    report.totalAssets += val.amount;
+                } else if (type === 'liability') {
+                    report.liabilities.push(val);
+                    report.totalLiabilities += val.amount;
+                } else if (type === 'equity') {
+                    report.equity.push(val);
+                    report.totalEquity += val.amount;
+                } else {
+                    // Revenue and Expenses transition to Retained Earnings
+                    // If Revenue: val.amount is positive (Cr-Dr)
+                    // If Expense: val.amount is negative (Cr-Dr would be negative since Dr is higher)
+                    // Actually for Expense, Cr-Dr is negative, which is correct for retained earnings reduction.
+                    report.retainedEarnings += val.amount;
+                }
+            });
+            report.totalEquity += report.retainedEarnings;
+            return {
+                success: true,
+                data: report
+            };
+        } catch (error) {
+            console.error("Balance Sheet Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts an Opening Balance for a Supplier (Liability) or Customer (Asset).
+     * 
+     * @param entityId - The ID of the supplier or customer
+     * @param entityType - 'supplier' | 'customer'
+     * @param amount - The amount (Positive for Owed TO Supplier, Positive for Owed BY Customer)
+     * @param date - The date of the opening balance
+     * @param userId - ID of the user performing the action
+     */ static async postOpeningBalance(entityId, entityType, amount, date, userId) {
+        try {
+            if (amount === 0) return {
+                success: true
+            };
+            let entityName = '';
+            let companyId = '';
+            let tenantId = '';
+            // 1. Fetch Entity Details
+            if (entityType === 'supplier') {
+                const s = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.findUnique({
+                    where: {
+                        id: entityId
+                    }
+                });
+                if (!s) throw new Error("Supplier not found");
+                entityName = s.name;
+                companyId = s.company_id;
+                tenantId = s.tenant_id;
+            } else {
+                // Future Support for Customers (Patients)
+                return {
+                    success: false,
+                    error: "Customer opening balance not yet supported"
+                };
+            }
+            // 2. Fetch/Create Accounts
+            // A. Opening Balance Equity (Contra/Offset)
+            let openingBalanceAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                where: {
+                    company_id: companyId,
+                    code: '3999'
+                }
+            });
+            if (!openingBalanceAccount) {
+                openingBalanceAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.create({
+                    data: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: 'Opening Balance Equity',
+                        code: '3999',
+                        type: 'Equity',
+                        is_active: true
+                    }
+                });
+            }
+            // B. AP/AR Account
+            let targetAccountCode = entityType === 'supplier' ? '2000' : '1200';
+            let targetAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                where: {
+                    company_id: companyId,
+                    code: targetAccountCode
+                }
+            });
+            // Check Accounting Settings if default code fails
+            if (!targetAccount) {
+                const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                    where: {
+                        company_id: companyId
+                    }
+                });
+                const settingId = entityType === 'supplier' ? settings?.ap_account_id : settings?.ar_account_id;
+                if (settingId) {
+                    targetAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findUnique({
+                        where: {
+                            id: settingId
+                        }
+                    });
+                }
+            }
+            if (!targetAccount) throw new Error(`${entityType === 'supplier' ? 'Accounts Payable' : 'Accounts Receivable'} account not found.`);
+            // 3. Prepare Journal Entry
+            // For Supplier (We Owe Them): Credit AP, Debit Opening Balance Equity
+            // For Customer (They Owe Us): Debit AR, Credit Opening Balance Equity
+            const journalLines = [];
+            if (entityType === 'supplier') {
+                // Debit Equity (Reduces Equity, balances the Liability)
+                journalLines.push({
+                    account_id: openingBalanceAccount.id,
+                    debit: amount,
+                    credit: 0,
+                    description: `Opening Balance Adjustment`
+                });
+                // Credit AP (Liability)
+                journalLines.push({
+                    account_id: targetAccount.id,
+                    debit: 0,
+                    credit: amount,
+                    description: `Opening Balance - ${entityName}`,
+                    partner_id: entityId
+                });
+            }
+            // 4. Create Transaction
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+                await tx.journal_entries.create({
+                    data: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        date: date,
+                        posted: true,
+                        posted_at: new Date(),
+                        created_by: userId,
+                        // currency_id: ... (Optional, defaults null for functional currency)
+                        amount_in_company_currency: amount,
+                        ref: `OB-${entityName.substring(0, 5)}-${date.getFullYear()}`,
+                        journal_entry_lines: {
+                            create: journalLines.map((line)=>({
+                                    tenant_id: tenantId,
+                                    company_id: companyId,
+                                    account_id: line.account_id,
+                                    debit: line.debit,
+                                    credit: line.credit,
+                                    description: line.description,
+                                    partner_id: line.partner_id
+                                }))
+                        }
+                    }
+                });
+            });
+            return {
+                success: true
+            };
+        } catch (error) {
+            console.error("Opening Balance Post Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Gets daily revenue and expense trends for the last 30 days.
+     */ static async getFinancialTrends(companyId) {
+        try {
+            const endDate = new Date();
+            const startDate = new Date();
+            startDate.setDate(startDate.getDate() - 30);
+            const journalLines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                where: {
+                    company_id: companyId,
+                    journal_entries: {
+                        date: {
+                            gte: startDate,
+                            lte: endDate
+                        },
+                        posted: true
+                    },
+                    accounts: {
+                        type: {
+                            in: [
+                                'Revenue',
+                                'Income',
+                                'Expense',
+                                'COGS'
+                            ]
+                        }
+                    }
+                },
+                include: {
+                    journal_entries: {
+                        select: {
+                            date: true
+                        }
+                    },
+                    accounts: {
+                        select: {
+                            type: true
+                        }
+                    }
+                }
+            });
+            const dailyMap = new Map();
+            // Initialize last 30 days
+            for(let i = 0; i <= 30; i++){
+                const d = new Date(startDate);
+                d.setDate(d.getDate() + i);
+                const dateStr = d.toISOString().split('T')[0];
+                dailyMap.set(dateStr, {
+                    date: dateStr,
+                    revenue: 0,
+                    expense: 0
+                });
+            }
+            journalLines.forEach((line)=>{
+                const dateStr = line.journal_entries.date.toISOString().split('T')[0];
+                const dayData = dailyMap.get(dateStr);
+                if (dayData) {
+                    const type = line.accounts.type.toLowerCase();
+                    const amount = Number(line.debit || 0) - Number(line.credit || 0);
+                    if (type === 'revenue' || type === 'income') {
+                        dayData.revenue += Math.abs(amount);
+                    } else {
+                        dayData.expense += Math.abs(amount);
+                    }
+                }
+            });
+            return {
+                success: true,
+                data: Array.from(dailyMap.values())
+            };
+        } catch (error) {
+            console.error("Trends Error:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Purchase Return (Debit Note) to the General Ledger.
+     */ static async postPurchaseReturn(returnId, userId) {
+        try {
+            const pReturn = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_return.findUnique({
+                where: {
+                    id: returnId
+                },
+                include: {
+                    lines: true,
+                    hms_supplier: true
+                }
+            });
+            if (!pReturn) throw new Error("Purchase Return not found");
+            const existingJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                where: {
+                    purchase_return_id: returnId
+                }
+            });
+            if (existingJournal) return {
+                success: true,
+                message: "Already posted"
+            };
+            const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: pReturn.company_id
+                }
+            });
+            if (!settings) throw new Error("Accounting settings not configured.");
+            const apAccount = settings.ap_account_id;
+            const inventoryAccount = settings.inventory_asset_account_id || settings.purchase_account_id;
+            if (!apAccount || !inventoryAccount) throw new Error("Accounts not configured.");
+            const journal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.create({
+                data: {
+                    tenant_id: pReturn.tenant_id,
+                    company_id: pReturn.company_id,
+                    purchase_return_id: returnId,
+                    ref: pReturn.return_number,
+                    date: pReturn.return_date,
+                    posted: true,
+                    posted_at: new Date(),
+                    created_by: userId,
+                    journal_entry_lines: {
+                        create: [
+                            {
+                                tenant_id: pReturn.tenant_id,
+                                company_id: pReturn.company_id,
+                                account_id: apAccount,
+                                debit: pReturn.total_amount,
+                                credit: 0,
+                                description: `Purchase Return ${pReturn.return_number} - ${pReturn.hms_supplier?.name || ''}`
+                            },
+                            {
+                                tenant_id: pReturn.tenant_id,
+                                company_id: pReturn.company_id,
+                                account_id: inventoryAccount,
+                                debit: 0,
+                                credit: pReturn.total_amount,
+                                description: `Purchase Return ${pReturn.return_number}`
+                            }
+                        ]
+                    }
+                }
+            });
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_return.update({
+                where: {
+                    id: returnId
+                },
+                data: {
+                    status: 'posted'
+                }
+            });
+            return {
+                success: true,
+                journalId: journal.id
+            };
+        } catch (error) {
+            console.error("Failed to post purchase return:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Sales Return (Credit Note) to the General Ledger.
+     */ static async postSalesReturn(returnId, userId) {
+        try {
+            const sReturn = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_sales_return.findUnique({
+                where: {
+                    id: returnId
+                },
+                include: {
+                    lines: true,
+                    hms_patient: true
+                }
+            });
+            if (!sReturn) throw new Error("Sales Return not found");
+            const existingJournal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findFirst({
+                where: {
+                    sales_return_id: returnId
+                }
+            });
+            if (existingJournal) return {
+                success: true,
+                message: "Already posted"
+            };
+            const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: sReturn.company_id
+                }
+            });
+            if (!settings) throw new Error("Accounting settings not configured.");
+            const arAccount = settings.ar_account_id;
+            const salesAccount = settings.sales_account_id;
+            if (!arAccount || !salesAccount) throw new Error("Accounts not configured.");
+            const journal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.create({
+                data: {
+                    tenant_id: sReturn.tenant_id,
+                    company_id: sReturn.company_id,
+                    sales_return_id: returnId,
+                    ref: sReturn.return_number,
+                    date: sReturn.return_date,
+                    posted: true,
+                    posted_at: new Date(),
+                    created_by: userId,
+                    journal_entry_lines: {
+                        create: [
+                            {
+                                tenant_id: sReturn.tenant_id,
+                                company_id: sReturn.company_id,
+                                account_id: salesAccount,
+                                debit: sReturn.total_amount,
+                                credit: 0,
+                                description: `Sales Return ${sReturn.return_number} - ${sReturn.hms_patient?.first_name || ''} ${sReturn.hms_patient?.last_name || ''}`
+                            },
+                            {
+                                tenant_id: sReturn.tenant_id,
+                                company_id: sReturn.company_id,
+                                account_id: arAccount,
+                                debit: 0,
+                                credit: sReturn.total_amount,
+                                description: `Sales Return ${sReturn.return_number}`
+                            }
+                        ]
+                    }
+                }
+            });
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_sales_return.update({
+                where: {
+                    id: returnId
+                },
+                data: {
+                    status: 'posted'
+                }
+            });
+            return {
+                success: true,
+                journalId: journal.id
+            };
+        } catch (error) {
+            console.error("Failed to post sales return:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Posts a Stock Adjustment (Wastage/Expiry/Audit) to the General Ledger.
+     */ static async postStockAdjustment(adjustmentId, userId) {
+        try {
+            const adj = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_adjustment.findUnique({
+                where: {
+                    id: adjustmentId
+                },
+                include: {
+                    lines: true
+                }
+            });
+            if (!adj) throw new Error("Stock Adjustment not found");
+            const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+                where: {
+                    company_id: adj.company_id
+                }
+            });
+            if (!settings) throw new Error("Accounting settings not configured.");
+            const inventoryAccount = settings.inventory_asset_account_id;
+            const expenseAccount = settings.purchase_account_id; // Usually Stock Loss/Adjustment expense, default to Purchase/COGS
+            if (!inventoryAccount || !expenseAccount) throw new Error("Accounts not configured.");
+            let totalValue = 0;
+            for (const line of adj.lines){
+                totalValue += Number(line.diff_qty) * Number(line.unit_cost || 0);
+            }
+            if (totalValue === 0) return {
+                success: true,
+                message: "No value adjustment needed"
+            };
+            // Positive totalValue = Stock Increase (Debit Inventory, Credit Adjustment)
+            // Negative totalValue = Stock Decrease (Debit Adjustment, Credit Inventory)
+            const isIncrease = totalValue > 0;
+            const absValue = Math.abs(totalValue);
+            const journal = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.create({
+                data: {
+                    tenant_id: adj.tenant_id,
+                    company_id: adj.company_id,
+                    stock_adjustment_id: adjustmentId,
+                    ref: adj.adj_number,
+                    date: adj.adj_date,
+                    posted: true,
+                    posted_at: new Date(),
+                    created_by: userId,
+                    journal_entry_lines: {
+                        create: [
+                            {
+                                tenant_id: adj.tenant_id,
+                                company_id: adj.company_id,
+                                account_id: isIncrease ? inventoryAccount : expenseAccount,
+                                debit: absValue,
+                                credit: 0,
+                                description: `Stock Adjustment ${adj.adj_number} (${adj.reason_code})`
+                            },
+                            {
+                                tenant_id: adj.tenant_id,
+                                company_id: adj.company_id,
+                                account_id: isIncrease ? expenseAccount : inventoryAccount,
+                                debit: 0,
+                                credit: absValue,
+                                description: `Stock Adjustment ${adj.adj_number} (${adj.reason_code})`
+                            }
+                        ]
+                    }
+                }
+            });
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_adjustment.update({
+                where: {
+                    id: adjustmentId
+                },
+                data: {
+                    status: 'posted'
+                }
+            });
+            return {
+                success: true,
+                journalId: journal.id
+            };
+        } catch (error) {
+            console.error("Failed to post stock adjustment:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+    /**
+     * Generates "Neural" AI insights by scanning for anomalies and trends.
+     */ static async getExecutiveInsights(companyId) {
+        try {
+            const today = new Date();
+            const startOfLast7 = new Date();
+            startOfLast7.setDate(today.getDate() - 7);
+            const [lines, pAndL] = await Promise.all([
+                __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                    where: {
+                        company_id: companyId,
+                        journal_entries: {
+                            date: {
+                                gte: startOfLast7
+                            },
+                            posted: true
+                        }
+                    },
+                    include: {
+                        accounts: true,
+                        journal_entries: {
+                            select: {
+                                date: true
+                            }
+                        }
+                    }
+                }),
+                this.getProfitAndLoss(companyId, new Date(today.getFullYear(), today.getMonth(), 1), today)
+            ]);
+            const insights = [];
+            // 1. ANOMALY DETECTION: High Expenses
+            const expenseMap = new Map();
+            lines.filter((l)=>l.accounts.type === 'Expense').forEach((l)=>{
+                const amt = Number(l.debit || 0) - Number(l.credit || 0);
+                expenseMap.set(l.accounts.name, (expenseMap.get(l.accounts.name) || 0) + amt);
+            });
+            const topExpense = Array.from(expenseMap.entries()).sort((a, b)=>b[1] - a[1])[0];
+            if (topExpense && topExpense[1] > 10000) {
+                insights.push(`Top outflow identified: ${topExpense[0]} has consumed ₹${topExpense[1].toLocaleString()} in the last 7 days.`);
+            }
+            // 2. PROFITABILITY FORECAST
+            if (pAndL.success && pAndL.data) {
+                const margin = pAndL.data.netProfit / (pAndL.data.totalRevenue || 1) * 100;
+                if (margin > 30) {
+                    insights.push(`Exceptional profitability: Monthly net margin is at ${margin.toFixed(1)}%, significantly above industry avg (15%).`);
+                } else if (margin < 5 && pAndL.data.totalRevenue > 0) {
+                    insights.push(`Margin Compression: Current net margin is low (${margin.toFixed(1)}%). Review operating overheads.`);
+                }
+            }
+            // 3. REVENUE STABILITY
+            const dailyRevenue = new Map();
+            lines.filter((l)=>[
+                    'Revenue',
+                    'Income'
+                ].includes(l.accounts.type)).forEach((l)=>{
+                const dateKey = l.journal_entries.date.toISOString().split('T')[0];
+                const amt = Math.abs(Number(l.debit || 0) - Number(l.credit || 0));
+                dailyRevenue.set(dateKey, (dailyRevenue.get(dateKey) || 0) + amt);
+            });
+            const revValues = Array.from(dailyRevenue.values());
+            if (revValues.length >= 3) {
+                const avg = revValues.reduce((a, b)=>a + b, 0) / revValues.length;
+                const last = revValues[revValues.length - 1];
+                if (last > avg * 1.5) {
+                    insights.push("Growth Spike: Revenue in the last 24 hours is 50%+ above the 7-day moving average.");
+                }
+            }
+            // Default fallback if no "smart" insights
+            if (insights.length === 0) {
+                insights.push("Financial trajectories are stable. No immediate liquidity anomalies detected.");
+                insights.push("Revenue streams are consistent with previous period baselines.");
+            }
+            return {
+                success: true,
+                data: insights
+            };
+        } catch (error) {
+            console.error("Insights Error:", error);
+            return {
+                success: false,
+                error: [
+                    "Intelligence engine calibration in progress..."
+                ]
+            };
+        }
+    }
+    /**
+     * Fetches Daybook entries for a specific date.
+     */ static async getDaybook(companyId, date = new Date()) {
+        const startOfDay = new Date(date);
+        startOfDay.setHours(0, 0, 0, 0);
+        const endOfDay = new Date(date);
+        endOfDay.setHours(23, 59, 59, 999);
+        try {
+            const entries = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findMany({
+                where: {
+                    company_id: companyId,
+                    date: {
+                        gte: startOfDay,
+                        lte: endOfDay
+                    },
+                    posted: true
+                },
+                include: {
+                    journal_entry_lines: {
+                        include: {
+                            accounts: true
+                        }
+                    }
+                },
+                orderBy: {
+                    date: 'asc'
+                }
+            });
+            return {
+                success: true,
+                data: entries,
+                openingBalance: 0
+            };
+        } catch (error) {
+            console.error("Daybook Error:", error);
+            return {
+                success: false,
+                error: error.message,
+                data: [],
+                openingBalance: 0
+            };
+        }
+    }
+    /**
+     * Fetches Cashbook or Bankbook entries.
+     * @param type - 'cash' | 'bank'
+     * @param specificAccountIds - Optional list of specific account IDs to filter by
+     */ static async getCashBankBook(companyId, type, startDate = new Date(), endDate, specificAccountIds) {
+        const start = new Date(startDate);
+        start.setHours(0, 0, 0, 0);
+        const end = new Date(endDate || startDate);
+        end.setHours(23, 59, 59, 999);
+        // Define account ranges/codes based on standard COA (including legacy fallback)
+        const codes = type === 'cash' ? [
+            '1610',
+            '1600'
+        ] : [
+            '1710',
+            '1700'
+        ];
+        try {
+            // 1. Find the target accounts for this company by codes AND by name
+            const startAccounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                where: {
+                    company_id: companyId,
+                    OR: [
+                        {
+                            code: {
+                                in: codes
+                            }
+                        },
+                        {
+                            name: {
+                                contains: type === 'cash' ? 'Cash' : 'Bank',
+                                mode: 'insensitive'
+                            }
+                        }
+                    ]
+                }
+            });
+            // If we found groups, we need to include all their descendants (recursively or at least deep)
+            const allTargetAccountIds = new Set();
+            const processAccount = async (acc, depth = 0)=>{
+                if (depth > 3) return; // Prevent infinite loops
+                allTargetAccountIds.add(acc.id);
+                if (acc.is_group) {
+                    const children = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                        where: {
+                            parent_id: acc.id
+                        }
+                    });
+                    for (const child of children){
+                        await processAccount(child, depth + 1);
+                    }
+                }
+            };
+            for (const acc of startAccounts){
+                await processAccount(acc);
+            }
+            const accountIds = Array.from(allTargetAccountIds);
+            if (accountIds.length === 0) {
+                // Last ditch: if still nothing, try to find any Asset account that might be a bank
+                const assets = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                    where: {
+                        company_id: companyId,
+                        type: 'Asset',
+                        is_group: false
+                    },
+                    take: 5
+                });
+                if (assets.length > 0) {
+                // We don't add them all, but it shows we tried. 
+                // Better to return empty than wrong data, but name check above should usually work.
+                }
+            }
+            if (accountIds.length === 0) return {
+                success: true,
+                data: [],
+                openingBalance: 0
+            };
+            // 1.5 Filter by specific account IDs if provided
+            const finalAccountIds = specificAccountIds && specificAccountIds.length > 0 ? accountIds.filter((id)=>specificAccountIds.includes(id)) : accountIds;
+            if (finalAccountIds.length === 0) return {
+                success: true,
+                data: [],
+                openingBalance: 0
+            };
+            // 2. Calculate Opening Balance (Cumulative net flow before start of day)
+            const obLines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+                where: {
+                    company_id: companyId,
+                    account_id: {
+                        in: finalAccountIds
+                    },
+                    journal_entries: {
+                        date: {
+                            lt: start
+                        },
+                        posted: true
+                    }
+                }
+            });
+            const openingBalance = obLines.reduce((sum, line)=>sum + (Number(line.debit || 0) - Number(line.credit || 0)), 0);
+            // 2.5 Calculate Opening Balance PER ACCOUNT
+            const accountSummaries = {};
+            // Initialize summaries
+            const accounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                where: {
+                    id: {
+                        in: finalAccountIds
+                    }
+                }
+            });
+            accounts.forEach((acc)=>{
+                accountSummaries[acc.id] = {
+                    id: acc.id,
+                    name: acc.name,
+                    code: acc.code || '',
+                    opening: 0,
+                    debit: 0,
+                    credit: 0,
+                    closing: 0
+                };
+            });
+            obLines.forEach((line)=>{
+                if (accountSummaries[line.account_id]) {
+                    accountSummaries[line.account_id].opening += Number(line.debit || 0) - Number(line.credit || 0);
+                }
+            });
+            // 3. Fetch entries for the range
+            const entries = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entries.findMany({
+                where: {
+                    company_id: companyId,
+                    date: {
+                        gte: start,
+                        lte: end
+                    },
+                    posted: true,
+                    journal_entry_lines: {
+                        some: {
+                            account_id: {
+                                in: finalAccountIds
+                            }
+                        }
+                    }
+                },
+                include: {
+                    journal_entry_lines: {
+                        where: {
+                            OR: [
+                                {
+                                    account_id: {
+                                        in: finalAccountIds
+                                    }
+                                },
+                                {
+                                    debit: {
+                                        gt: 0
+                                    }
+                                },
+                                {
+                                    credit: {
+                                        gt: 0
+                                    }
+                                }
+                            ]
+                        },
+                        include: {
+                            accounts: true
+                        }
+                    }
+                },
+                orderBy: {
+                    date: 'asc'
+                }
+            });
+            // 4. Calculate Debit/Credit PER ACCOUNT from entries
+            entries.forEach((e)=>{
+                e.journal_entry_lines.forEach((l)=>{
+                    if (accountSummaries[l.account_id]) {
+                        accountSummaries[l.account_id].debit += Number(l.debit || 0);
+                        accountSummaries[l.account_id].credit += Number(l.credit || 0);
+                    }
+                });
+            });
+            // 5. Finalize Closing Balances
+            Object.values(accountSummaries).forEach((s)=>{
+                s.closing = s.opening + s.debit - s.credit;
+            });
+            return {
+                success: true,
+                data: entries,
+                openingBalance,
+                accountIds: finalAccountIds,
+                accountSummaries: Object.values(accountSummaries)
+            };
+        } catch (error) {
+            console.error(`${type.toUpperCase()}book Error:`, error);
+            return {
+                success: false,
+                error: error.message,
+                data: [],
+                openingBalance: 0
+            };
+        }
+    }
+    /**
+     * Resolves the correct Accounts Receivable (AR) account for a patient 
+     * based on their categorization (accounting_group).
+     * Follows Hospital World-Standards for patient grouping.
+     */ static async resolvePatientARAccount(companyId, defaultArId, patient) {
+        if (!patient) return defaultArId;
+        const category = patient.metadata?.accounting_group || patient.metadata?.accounting_category || 'general';
+        let code = '1810'; // General Patients
+        if (category === 'insurance') code = '1820';
+        if (category === 'corporate') code = '1830';
+        const specificAr = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+            where: {
+                company_id: companyId,
+                code: code
+            }
+        });
+        return specificAr?.id || defaultArId;
+    }
+    /**
+     * Returns all accounts that qualify as 'cash' or 'bank' for a company.
+     */ static async getCategoryAccounts(companyId, type) {
+        const codes = type === 'cash' ? [
+            '1610',
+            '1600'
+        ] : [
+            '1710',
+            '1700'
+        ];
+        try {
+            const rootAccounts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                where: {
+                    company_id: companyId,
+                    OR: [
+                        {
+                            code: {
+                                in: codes
+                            }
+                        },
+                        {
+                            name: {
+                                contains: type === 'cash' ? 'Cash' : 'Bank',
+                                mode: 'insensitive'
+                            }
+                        }
+                    ]
+                }
+            });
+            const allAccounts = [];
+            const processedIds = new Set();
+            const collectDescendants = async (acc)=>{
+                if (processedIds.has(acc.id)) return;
+                processedIds.add(acc.id);
+                if (!acc.is_group) {
+                    allAccounts.push(acc);
+                }
+                if (acc.is_group) {
+                    const children = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findMany({
+                        where: {
+                            parent_id: acc.id
+                        }
+                    });
+                    for (const child of children){
+                        await collectDescendants(child);
+                    }
+                }
+            };
+            for (const acc of rootAccounts){
+                await collectDescendants(acc);
+            }
+            return {
+                success: true,
+                data: allAccounts
+            };
+        } catch (error) {
+            console.error("Error fetching category accounts:", error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[externals]/fs [external] (fs, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("fs", () => require("fs"));
+
+module.exports = mod;
+}),
+"[externals]/worker_threads [external] (worker_threads, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("worker_threads", () => require("worker_threads"));
+
+module.exports = mod;
+}),
+"[project]/src/lib/utils/pdf-generator.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "generateInvoicePDFBase64",
+    ()=>generateInvoicePDFBase64
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jspdf$2f$dist$2f$jspdf$2e$node$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/jspdf/dist/jspdf.node.min.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+async function generateInvoicePDFBase64(invoice, company, autoPrint = false) {
+    try {
+        const doc = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jspdf$2f$dist$2f$jspdf$2e$node$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsPDF"]('p', 'pt', 'a4');
+        const pageWidth = doc.internal.pageSize.getWidth();
+        // --- Branding & Configuration ---
+        const config = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPDFConfig"])(invoice.company_id, invoice.tenant_id);
+        const alignment = config?.headerAlignment || 'right';
+        const showLogo = config?.showLogo ?? true;
+        const logoUrl = company?.logo_url;
+        let headerY = 60;
+        const margin = 50;
+        const contentWidth = pageWidth - margin * 2;
+        // Hospital Details
+        const companyName = company?.name || 'Hospital Management System';
+        const meta = company?.metadata;
+        const address = meta?.address || 'Healthcare Excellence';
+        const contactStr = meta?.email || meta?.phone ? `${meta?.email || ''}${meta?.email && meta?.phone ? ' | ' : ''}${meta?.phone || ''}` : 'Premium Healthcare Services';
+        // 1. Draw Title (TAX INVOICE) - always top left
+        doc.setTextColor(68, 68, 68);
+        doc.setFontSize(14); // Reduced from 26
+        doc.setFont('helvetica', 'bold');
+        doc.text('TAX INVOICE', margin, headerY);
+        doc.setFontSize(8); // Slightly smaller
+        doc.setFont('helvetica', 'normal');
+        doc.text(`Invoice #: ${invoice.invoice_number}`, margin, headerY + 15);
+        doc.text(`Date: ${new Date(invoice.invoice_date || invoice.created_at).toLocaleDateString()}`, margin, headerY + 27);
+        // 2. Draw Logo if enabled
+        let logoHeight = 0;
+        if (showLogo && logoUrl) {
+            try {
+                let logoX = margin;
+                if (alignment === 'right') logoX = pageWidth - margin - 60;
+                else if (alignment === 'center') logoX = pageWidth / 2 - 30;
+                const logoBase64 = await fetchImageAsBase64(logoUrl);
+                if (logoBase64) {
+                    doc.addImage(logoBase64, 'PNG', logoX, headerY - 30, 60, 60, undefined, 'FAST');
+                    logoHeight = 40; // Space occupied by logo
+                }
+            } catch (e) {
+                console.error("[PDF-Logo] Failed to embed logo:", e);
+            }
+        }
+        // 3. Draw Branding Info
+        const brandX = alignment === 'right' ? pageWidth - margin : alignment === 'center' ? pageWidth / 2 : margin;
+        const textAlign = alignment;
+        doc.setTextColor(79, 70, 229); // Indigo-600
+        doc.setFontSize(config?.hospitalNameSize || 12); // Reduced default from 16
+        doc.setFont('helvetica', 'bold');
+        let brandY = headerY + logoHeight; // Move down if logo exists
+        if (alignment === 'center') brandY = headerY + 60;
+        if (alignment === 'left') brandY = headerY + 70;
+        doc.text(companyName, brandX, brandY, {
+            align: textAlign
+        });
+        doc.setTextColor(102, 102, 102);
+        doc.setFontSize(config?.addressSize || 8); // Reduced default from 10
+        doc.setFont('helvetica', 'normal');
+        doc.text(address, brandX, brandY + 12, {
+            align: textAlign
+        });
+        if (config?.showContactInfo !== false) {
+            doc.text(contactStr, brandX, brandY + 22, {
+                align: textAlign
+            });
+        }
+        if (meta?.gstin) {
+            doc.text(`GSTIN: ${meta.gstin}`, brandX, brandY + 32, {
+                align: textAlign
+            });
+        }
+        // Divider
+        doc.setDrawColor(238, 238, 238);
+        const dividerY = Math.max(brandY + 45, 125);
+        doc.line(margin, dividerY, pageWidth - margin, dividerY);
+        // --- Patient Info ---
+        doc.setTextColor(153, 153, 153);
+        doc.setFontSize(8);
+        doc.text('BILL TO', margin, dividerY + 20);
+        doc.setTextColor(0, 0, 0);
+        doc.setFontSize(10); // Reduced from 12
+        doc.setFont('helvetica', 'bold');
+        doc.text(`${invoice.hms_patient?.first_name} ${invoice.hms_patient?.last_name}`, margin, dividerY + 35); // Relative positioning
+        doc.setTextColor(102, 102, 102);
+        doc.setFontSize(8); // Reduced from 10
+        doc.setFont('helvetica', 'normal');
+        doc.text(`Patient ID: ${invoice.hms_patient?.patient_number || 'N/A'}`, margin, dividerY + 47);
+        doc.text(`Mobile: ${invoice.hms_patient?.contact?.phone || 'N/A'}`, margin, dividerY + 59);
+        const patientMeta = invoice.hms_patient?.metadata;
+        if (patientMeta?.registration_expiry) {
+            const expiryStr = new Date(patientMeta.registration_expiry).toLocaleDateString();
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(220, 38, 38); // Red-600
+            doc.text(`Registration Valid Till: ${expiryStr}`, margin, dividerY + 71);
+            doc.setTextColor(102, 102, 102);
+            doc.setFont('helvetica', 'normal');
+        }
+        // --- Table Headers ---
+        const tableTop = 230;
+        const currency = invoice.currency || 'INR';
+        const symbol = currency === 'INR' ? 'Rs. ' : currency + ' ';
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(68, 68, 68);
+        doc.text('Item Description', 50, tableTop);
+        doc.text('Qty', 300, tableTop, {
+            align: 'right'
+        });
+        doc.text(`Price (${currency})`, 400, tableTop, {
+            align: 'right'
+        });
+        doc.text(`Total (${currency})`, pageWidth - 50, tableTop, {
+            align: 'right'
+        });
+        doc.setDrawColor(238, 238, 238);
+        doc.line(50, tableTop + 7, pageWidth - 50, tableTop + 7);
+        // --- Table Rows ---
+        let currentY = tableTop + 25;
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(51, 51, 51);
+        invoice.hms_invoice_lines.forEach((item)=>{
+            const description = item.description || 'Item';
+            const qty = Number(item.quantity) || 0;
+            const price = Number(item.unit_price) || 0;
+            const total = Number(item.net_amount) || 0;
+            const splitDesc = doc.splitTextToSize(description, 230);
+            doc.text(splitDesc, 50, currentY);
+            doc.text(qty.toString(), 300, currentY, {
+                align: 'right'
+            });
+            doc.text(price.toLocaleString('en-IN'), 400, currentY, {
+                align: 'right'
+            });
+            doc.text(total.toLocaleString('en-IN'), pageWidth - 50, currentY, {
+                align: 'right'
+            });
+            currentY += Math.max(splitDesc.length * 12, 20) + 10;
+        });
+        // --- Totals Section ---
+        let totalsY = currentY + 20;
+        doc.line(350, totalsY, pageWidth - 50, totalsY);
+        const rightLabelX = 360;
+        const rightValueX = pageWidth - 50;
+        doc.setFontSize(10);
+        doc.text('Subtotal:', rightLabelX, totalsY + 20);
+        doc.text(`${symbol}${Number(invoice.subtotal).toLocaleString('en-IN')}`, rightValueX, totalsY + 20, {
+            align: 'right'
+        });
+        doc.text('Tax:', rightLabelX, totalsY + 35);
+        doc.text(`${symbol}${Number(invoice.total_tax).toLocaleString('en-IN')}`, rightValueX, totalsY + 35, {
+            align: 'right'
+        });
+        if (Number(invoice.total_discount) > 0) {
+            doc.setTextColor(239, 68, 68); // Red-500
+            doc.text('Discount:', rightLabelX, totalsY + 50);
+            doc.text(`-${symbol}${Number(invoice.total_discount).toLocaleString('en-IN')}`, rightValueX, totalsY + 50, {
+                align: 'right'
+            });
+            totalsY += 15;
+        }
+        const grandTotalY = totalsY + 65;
+        doc.setFillColor(248, 250, 252); // slate-50
+        doc.rect(350, grandTotalY - 15, pageWidth - 350 - 50, 40, 'F');
+        doc.setTextColor(15, 23, 42); // slate-900
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        doc.text('GRAND TOTAL', 365, grandTotalY + 10);
+        doc.setFontSize(16);
+        doc.text(`${symbol}${Number(invoice.total).toLocaleString('en-IN')}`, rightValueX - 10, grandTotalY + 10, {
+            align: 'right'
+        });
+        // --- Footer ---
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(153, 153, 153);
+        const footerText1 = 'This is a computer generated invoice and does not require a signature.';
+        const footerText2 = `Generated on ${new Date().toLocaleString()}`;
+        doc.text(footerText1, pageWidth / 2, 780, {
+            align: 'center'
+        });
+        doc.text(footerText2, pageWidth / 2, 795, {
+            align: 'center'
+        });
+        if (autoPrint) {
+            doc.autoPrint({
+                variant: 'non-conform'
+            });
+        }
+        return doc.output('datauristring').split(',')[1];
+    } catch (err) {
+        throw err;
+    }
+}
+/**
+ * Helper to fetch external image and convert to Base64 for PDF embedding
+ */ async function fetchImageAsBase64(url) {
+    try {
+        if (!url) return null;
+        if (url.startsWith('data:')) return url;
+        const response = await fetch(url);
+        if (!response.ok) return null;
+        const arrayBuffer = await response.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const mimeType = response.headers.get('content-type') || 'image/png';
+        return `data:${mimeType};base64,${buffer.toString('base64')}`;
+    } catch (error) {
+        console.error("fetchImageAsBase64 failed:", error);
+        return null;
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/utils/prescription-pdf-generator.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "generatePrescriptionPDFBase64",
+    ()=>generatePrescriptionPDFBase64
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jspdf$2f$dist$2f$jspdf$2e$node$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/jspdf/dist/jspdf.node.min.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+async function generatePrescriptionPDFBase64(prescription, company) {
+    try {
+        const doc = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jspdf$2f$dist$2f$jspdf$2e$node$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsPDF"]('p', 'pt', 'a4');
+        const pageWidth = doc.internal.pageSize.getWidth();
+        // --- Branding & Configuration ---
+        const config = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPDFConfig"])(prescription.company_id, prescription.tenant_id);
+        const alignment = config?.headerAlignment || 'right';
+        const showLogo = config?.showLogo ?? true;
+        const logoUrl = company?.logo_url;
+        let headerY = 60;
+        const margin = 50;
+        const contentWidth = pageWidth - margin * 2;
+        // Hospital Details
+        const companyName = company?.name || 'Hospital Management System';
+        const meta = company?.metadata;
+        const address = meta?.address || 'Healthcare Excellence';
+        const contactStr = meta?.email || meta?.phone ? `${meta?.email || ''}${meta?.email && meta?.phone ? ' | ' : ''}${meta?.phone || ''}` : 'Premium Healthcare Services';
+        // 1. Draw Title (PRESCRIPTION) - always top left
+        doc.setTextColor(68, 68, 68);
+        doc.setFontSize(14); // Reduced from 24
+        doc.setFont('helvetica', 'bold');
+        doc.text('PRESCRIPTION', margin, headerY);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'normal');
+        doc.text(`Date: ${new Date(prescription.created_at).toLocaleDateString()}`, margin, headerY + 15);
+        // 2. Draw Logo if enabled
+        let logoHeight = 0;
+        if (showLogo && logoUrl) {
+            try {
+                let logoX = margin;
+                if (alignment === 'right') logoX = pageWidth - margin - 60;
+                else if (alignment === 'center') logoX = pageWidth / 2 - 30;
+                const logoBase64 = await fetchImageAsBase64(logoUrl);
+                if (logoBase64) {
+                    doc.addImage(logoBase64, 'PNG', logoX, headerY - 30, 60, 60, undefined, 'FAST');
+                    logoHeight = 40;
+                }
+            } catch (e) {
+                console.error("[Prescription-Logo] Failed to embed logo:", e);
+            }
+        }
+        // 3. Draw Branding Info
+        const brandX = alignment === 'right' ? pageWidth - margin : alignment === 'center' ? pageWidth / 2 : margin;
+        const textAlign = alignment;
+        doc.setTextColor(79, 70, 229); // Indigo-600
+        doc.setFontSize(config?.hospitalNameSize || 12); // Reduced from 14
+        doc.setFont('helvetica', 'bold');
+        let brandY = headerY + logoHeight;
+        if (alignment === 'center') brandY = headerY + 60;
+        if (alignment === 'left') brandY = headerY + 70;
+        doc.text(companyName, brandX, brandY, {
+            align: textAlign
+        });
+        doc.setTextColor(102, 102, 102);
+        doc.setFontSize(config?.addressSize || 8); // Reduced from 10
+        doc.setFont('helvetica', 'normal');
+        doc.text(address, brandX, brandY + 12, {
+            align: textAlign
+        });
+        if (config?.showContactInfo !== false) {
+            doc.text(contactStr, brandX, brandY + 22, {
+                align: textAlign
+            });
+        }
+        // Divider
+        doc.setDrawColor(238, 238, 238);
+        const dividerY = Math.max(brandY + 35, 115);
+        doc.line(margin, dividerY, pageWidth - margin, dividerY);
+        // --- Patient Info ---
+        doc.setTextColor(153, 153, 153);
+        doc.setFontSize(8);
+        doc.text('PATIENT', margin, dividerY + 20);
+        doc.setTextColor(0, 0, 0);
+        doc.setFontSize(10); // Reduced from 12
+        doc.setFont('helvetica', 'bold');
+        doc.text(`${prescription.hms_patient?.first_name} ${prescription.hms_patient?.last_name}`, margin, dividerY + 35);
+        doc.setTextColor(102, 102, 102);
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'normal');
+        doc.text(`Age/Gender: ${prescription.hms_patient?.age || 'N/A'} / ${prescription.hms_patient?.gender || 'N/A'}`, margin, dividerY + 47);
+        const patientMeta = prescription.hms_patient?.metadata;
+        if (patientMeta?.registration_expiry) {
+            const expiryStr = new Date(patientMeta.registration_expiry).toLocaleDateString();
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(220, 38, 38); // Red-600
+            doc.text(`Registration Valid Till: ${expiryStr}`, margin, dividerY + 59);
+            doc.setTextColor(102, 102, 102);
+            doc.setFont('helvetica', 'normal');
+        }
+        // --- Clinical Findings ---
+        let currentY = 210;
+        const sections = [
+            {
+                label: 'Vitals',
+                value: prescription.vitals
+            },
+            {
+                label: 'Presenting Complaint',
+                value: prescription.complaint
+            },
+            {
+                label: 'Examination',
+                value: prescription.examination
+            },
+            {
+                label: 'Diagnosis',
+                value: prescription.diagnosis
+            }
+        ];
+        sections.forEach((section)=>{
+            if (section.value && section.value.trim()) {
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(9);
+                doc.setTextColor(68, 68, 68);
+                doc.text(section.label.toUpperCase(), 50, currentY);
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.setTextColor(51, 51, 51);
+                const splitText = doc.splitTextToSize(section.value, pageWidth - 100);
+                doc.text(splitText, 50, currentY + 15);
+                currentY += splitText.length * 12 + 35;
+            }
+        });
+        // --- Rx Symbol ---
+        doc.setFontSize(28);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(79, 70, 229);
+        doc.text('Rx', 50, currentY);
+        currentY += 30;
+        // --- Medicines Table ---
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(68, 68, 68);
+        doc.text('Medicine', 50, currentY);
+        doc.text('Dosage', 250, currentY);
+        doc.text('Duration', 400, currentY);
+        doc.text('Timing', 480, currentY);
+        doc.setDrawColor(238, 238, 238);
+        doc.line(50, currentY + 7, pageWidth - 50, currentY + 7);
+        currentY += 25;
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(51, 51, 51);
+        prescription.prescription_items.forEach((item)=>{
+            const medName = item.hms_product?.name || 'Medicine';
+            const dosage = `${item.morning}-${item.afternoon}-${item.evening}-${item.night}`;
+            const duration = `${item.days} Days`;
+            const timing = item.timing || 'After Food';
+            const splitMedName = doc.splitTextToSize(medName, 180);
+            doc.text(splitMedName, 50, currentY);
+            doc.text(dosage, 250, currentY);
+            doc.text(duration, 400, currentY);
+            doc.text(timing, 480, currentY);
+            currentY += Math.max(splitMedName.length * 12, 20) + 10;
+        });
+        // --- Plan/Notes ---
+        if (prescription.plan && prescription.plan.trim()) {
+            currentY += 20;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10);
+            doc.setTextColor(68, 68, 68);
+            doc.text('ADVICE / PLAN', 50, currentY);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(51, 51, 51);
+            const splitPlan = doc.splitTextToSize(prescription.plan, pageWidth - 100);
+            doc.text(splitPlan, 50, currentY + 15);
+        }
+        // --- Footer ---
+        doc.setFontSize(8);
+        doc.setTextColor(153, 153, 153);
+        const footerText1 = 'This is a computer generated prescription.';
+        const footerText2 = `Generated on ${new Date().toLocaleString()}`;
+        doc.text(footerText1, pageWidth / 2, 780, {
+            align: 'center'
+        });
+        doc.text(footerText2, pageWidth / 2, 795, {
+            align: 'center'
+        });
+        const pdfBase64 = doc.output('datauristring').split(',')[1];
+        return pdfBase64;
+    } catch (err) {
+        throw err;
+    }
+}
+/**
+ * Helper to fetch external image and convert to Base64 for PDF embedding
+ */ async function fetchImageAsBase64(url) {
+    try {
+        if (!url) return null;
+        if (url.startsWith('data:')) return url;
+        const response = await fetch(url);
+        if (!response.ok) return null;
+        const arrayBuffer = await response.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const mimeType = response.headers.get('content-type') || 'image/png';
+        return `data:${mimeType};base64,${buffer.toString('base64')}`;
+    } catch (error) {
+        console.error("fetchImageAsBase64 failed:", error);
+        return null;
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/services/notification.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "NotificationService",
+    ()=>NotificationService
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils/pdf-generator.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$prescription$2d$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils/prescription-pdf-generator.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$prescription$2d$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$prescription$2d$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+class NotificationService {
+    /**
+     * Sends an invoice notification to the patient via WhatsApp Business API / Gateway.
+     * Supports UltraMsg style WhatsApp Gateway by default.
+     */ static async sendInvoiceWhatsapp(invoiceId, tenantId, pdfBase64) {
+        try {
+            // 1. Fetch Invoice & Patient Details
+            const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findUnique({
+                where: {
+                    id: invoiceId
+                },
+                include: {
+                    hms_patient: true,
+                    hms_invoice_lines: true,
+                    hms_invoice_payments: true
+                }
+            });
+            const company = invoice?.company_id ? await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findUnique({
+                where: {
+                    id: invoice.company_id
+                }
+            }) : null;
+            if (!invoice || !invoice.hms_patient) {
+                return {
+                    success: false,
+                    error: 'Patient or Invoice not found'
+                };
+            }
+            // 2. Extract Phone Number
+            const contact = invoice.hms_patient.contact;
+            let phone = contact?.phone || contact?.mobile || contact?.primary_phone || '';
+            // Clean phone number (remove spaces, plus, etc)
+            phone = phone.replace(/\D/g, '');
+            // Ensure country code (Assumes India +91 if not present and starts with 10 digits)
+            if (phone.length === 10) {
+                phone = '91' + phone;
+            }
+            if (!phone) {
+                return {
+                    success: false,
+                    error: 'Patient phone number missing'
+                };
+            }
+            // 3. Generate PDF if not provided (Auto-generate)
+            let finalPdfBase64 = pdfBase64;
+            if (!finalPdfBase64) {
+                try {
+                    console.log(`[NotificationService] Auto-generating PDF for ${invoice.invoice_number}`);
+                    finalPdfBase64 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["generateInvoicePDFBase64"])(invoice, company);
+                } catch (pdfErr) {
+                    console.error("[NotificationService] PDF Generation failed, falling back to text only", pdfErr);
+                }
+            }
+            // 4. Construct Message
+            const patientName = `${invoice.hms_patient.first_name} ${invoice.hms_patient.last_name}`;
+            const companyName = company?.name || "HealthCare Center";
+            // Bill link removed per user request
+            const message = `Hello *${patientName}*,\n\n` + `Here is your invoice for *${invoice.currency} ${Number(invoice.total).toLocaleString('en-IN')}*.\n` + `Please find the attached PDF.\n\n` + `Thank you,\n*${companyName}*`;
+            // 5. Dynamic API Configuration
+            const dynamicConfig = await this.getDynamicConfig(invoice.company_id, tenantId);
+            if (!dynamicConfig.enabled) {
+                console.log(`[NotificationService] WhatsApp disabled for company ${invoice.company_id}`);
+                return {
+                    success: false,
+                    error: 'WhatsApp delivery is disabled in settings.'
+                };
+            }
+            const { instanceId, token } = dynamicConfig;
+            const isMock = !token || token.includes('mock');
+            // 6. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: finalPdfBase64 ? 'document' : 'chat',
+                pdfBase64: finalPdfBase64,
+                filename: `Invoice_${invoice.invoice_number}.pdf`,
+                provider: dynamicConfig.provider
+            });
+        } catch (error) {
+            console.error("[NotificationService] WhatsApp failed:", error);
+            return {
+                success: false,
+                error: 'Internal server error'
+            };
+        }
+    }
+    /**
+     * UNIFIED SENDER: Dispatches to either UltraMsg or Evolution API
+     */ static async dispatchWhatsApp(instanceId, token, phone, message, options) {
+        // Detect API Type (Priority: Explicit Provider > Token/ID naming convention)
+        const apiType = options.provider || (token === 'local' ? 'local-bridge' : token.startsWith('evo_') || instanceId.includes('-') ? 'evolution' : 'ultramsg');
+        let cleanId = instanceId.toString().trim();
+        if (cleanId.toLowerCase().startsWith('instance')) {
+            cleanId = cleanId.substring(8);
+        }
+        if (apiType === 'local-bridge') {
+            const baseUrl = 'http://localhost:8081';
+            const url = `${baseUrl}/send-message`;
+            const payload = {
+                number: phone,
+                message: message,
+                pdfBase64: options.pdfBase64,
+                filename: options.filename
+            };
+            console.log(`[WhatsApp-LocalBridge] Calling: ${url}`);
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            return result.success ? {
+                success: true,
+                message: 'Sent via Local Bridge'
+            } : {
+                success: false,
+                error: result.error || 'Failed'
+            };
+        } else if (apiType === 'evolution') {
+            // Priority: Internal Docker URL > Env Var > Default
+            const baseUrl = process.env.WHATSAPP_BASE_URL || 'http://localhost:8080';
+            const endpoint = options.endpoint === 'document' ? 'sendMedia' : 'sendText';
+            const url = `${baseUrl}/message/${endpoint}/${instanceId}`;
+            const payload = {
+                number: phone,
+                options: {
+                    delay: 1200,
+                    presence: "composing",
+                    linkPreview: false
+                }
+            };
+            if (options.endpoint === 'document') {
+                payload.media = `data:application/pdf;base64,${options.pdfBase64}`;
+                payload.mediatype = 'document';
+                payload.caption = message;
+                payload.fileName = options.filename || 'document.pdf';
+            } else {
+                payload.text = message;
+            }
+            console.log(`[WhatsApp-Evolution] Calling: ${url}`);
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': token
+                },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            return result?.key || result?.messageId || result?.status === 'SUCCESS' || result?.status === 200 ? {
+                success: true,
+                message: 'Sent via Evolution'
+            } : {
+                success: false,
+                error: JSON.stringify(result)
+            };
+        } else {
+            // Standard UltraMsg Logic
+            const resolvedInstanceId = `instance${cleanId.toLowerCase()}`;
+            const endpoint = options.endpoint === 'document' ? 'document' : 'chat';
+            const url = `https://api.ultramsg.com/${resolvedInstanceId}/messages/${endpoint}`;
+            const payload = {
+                token,
+                to: phone,
+                priority: 10
+            };
+            if (options.endpoint === 'document') {
+                payload.document = options.pdfBase64;
+                payload.filename = options.filename;
+                payload.caption = message;
+            } else {
+                payload.body = message;
+            }
+            console.log(`[WhatsApp-UltraMsg] Calling: ${url}`);
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            return result.sent === "true" || result.success === true || result.id ? {
+                success: true,
+                message: 'Sent via UltraMsg'
+            } : {
+                success: false,
+                error: JSON.stringify(result)
+            };
+        }
+    }
+    /**
+     * Sends a prescription to the patient via WhatsApp.
+     */ static async sendPrescriptionWhatsapp(prescriptionId, tenantId) {
+        try {
+            // 1. Fetch Prescription & Patient Details
+            const prescription = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].prescription.findUnique({
+                where: {
+                    id: prescriptionId
+                },
+                include: {
+                    hms_patient: true,
+                    prescription_items: {
+                        include: {
+                            hms_product: true
+                        }
+                    }
+                }
+            });
+            if (!prescription || !prescription.hms_patient) {
+                return {
+                    success: false,
+                    error: 'Prescription or Patient not found'
+                };
+            }
+            const companyId = prescription?.company_id;
+            const company = companyId && typeof companyId === 'string' && companyId !== "undefined" ? await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findUnique({
+                where: {
+                    id: companyId
+                }
+            }) : null;
+            // 2. Extract Phone
+            const patientName = `${prescription.hms_patient.first_name} ${prescription.hms_patient.last_name}`;
+            const contact = prescription.hms_patient.contact;
+            const patientMobile = contact?.phone || contact?.mobile || contact?.primary_phone || '';
+            // Sanitize phone number to digits only
+            const phone = (patientMobile || '').replace(/\D/g, '');
+            if (!phone) {
+                console.warn(`[WhatsApp-Prescription] No valid phone number for Patient: ${patientName}`);
+                return {
+                    success: false,
+                    error: 'No phone number'
+                };
+            }
+            // 3. Generate PDF
+            const pdfBase64 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$prescription$2d$pdf$2d$generator$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["generatePrescriptionPDFBase64"])(prescription, company);
+            // 4. Construct Message
+            const companyName = company?.name || "HealthCare Center";
+            const message = `Hello *${patientName}*,\n\n` + `Here is your digital prescription from *${companyName}*.\n` + `Please find the attached PDF.\n\n` + `Thank you.`;
+            // 5. Dynamic Configuration
+            const dynamicConfig = await this.getDynamicConfig(prescription.company_id, tenantId);
+            if (!dynamicConfig.enabled) {
+                return {
+                    success: false,
+                    error: 'WhatsApp delivery is disabled.'
+                };
+            }
+            const { instanceId, token } = dynamicConfig;
+            const isMock = !token || token.includes('mock');
+            if (isMock) {
+                console.log(`[WhatsApp-Prescription-Mock] To: ${phone}\n[WhatsApp-Prescription-Mock] Message: ${message}\n[WhatsApp-Prescription-Mock] Attachment: [PDF DETECTED]`);
+                return {
+                    success: true,
+                    message: "WhatsApp prescription simulated (Mock Mode)."
+                };
+            }
+            // 6. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: 'document',
+                pdfBase64: pdfBase64,
+                filename: `Prescription_${patientName.replace(/\s+/g, '_')}.pdf`,
+                provider: dynamicConfig.provider
+            });
+        } catch (error) {
+            console.error("[NotificationService] Prescription WhatsApp failed:", error);
+            return {
+                success: false,
+                error: 'Internal server error'
+            };
+        }
+    }
+    /**
+     * Sends a direct Razorpay payment link to the patient via WhatsApp.
+     */ static async sendPaymentLinkWhatsapp(patientId, amount, paymentLink, currency = '₹') {
+        try {
+            // 1. Fetch Patient Details
+            const patient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.findUnique({
+                where: {
+                    id: patientId
+                }
+            });
+            if (!patient) {
+                return {
+                    success: false,
+                    error: 'Patient not found'
+                };
+            }
+            // 2. Extract Phone Number
+            const patientName = `${patient.first_name} ${patient.last_name}`;
+            const contact = patient.contact;
+            const patientPhone = contact?.phone || contact?.mobile || contact?.primary_phone || '';
+            // Sanitize phone number to digits only
+            const phone = (patientPhone || '').replace(/\D/g, '');
+            if (!phone) {
+                console.warn(`[WhatsApp-Payment-Link] No valid phone number for Patient: ${patientName}`);
+                return {
+                    success: false,
+                    error: 'No phone number'
+                };
+            }
+            // 3. Construct Message
+            const message = `Hello *${patientName}*,\n\n` + `Greetings from our medical center.\n\n` + `A professional payment request of *${currency}${amount.toLocaleString('en-IN')}* has been generated for your recent visit.\n\n` + `Kindly pay securely using the link below:\n` + `🔗 *Payment Link:* ${paymentLink}\n\n` + `Thank you for choosing us!`;
+            // 4. API Configuration
+            // Since we only have patientId, we may need to find the tenantId/companyId if not provided.
+            // For now, let's assume this is called with context or just use process.env as last resort
+            // or better yet, fetch patient's company.
+            const dynamicConfig = await this.getDynamicConfig(patient.company_id, patient.tenant_id);
+            if (!dynamicConfig.enabled) {
+                return {
+                    success: false,
+                    error: 'WhatsApp delivery is disabled.'
+                };
+            }
+            const { instanceId, token } = dynamicConfig;
+            const isMock = !token || token.includes('mock');
+            if (isMock) {
+                console.log(`[WhatsApp-Link-Mock] To: ${phone}\n[WhatsApp-Link-Mock] Content: ${message}`);
+                return {
+                    success: true,
+                    message: "WhatsApp payment link simulated (Mock Mode)."
+                };
+            }
+            // 5. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: 'chat',
+                provider: dynamicConfig.provider
+            });
+        } catch (error) {
+            console.error("[NotificationService] Payment Link WhatsApp failed:", error);
+            return {
+                success: false,
+                error: 'Internal server error'
+            };
+        }
+    }
+    /**
+     * INTERNAL: Resolves the best WhatsApp configuration available.
+     * Priority: Dynamic Settings (DB) > Environment Variables (Only if not a specific tenant)
+     */ static async getDynamicConfig(companyId, tenantId) {
+        // Handle potentially missing IDs by broadening the log context
+        const safeCoId = companyId || 'Global';
+        const safeTeId = tenantId || 'Unknown';
+        const logPrefix = `[WhatsApp-Config][Co:${safeCoId.toString().slice(0, 8)}][Te:${safeTeId.toString().slice(0, 8)}]`;
+        try {
+            console.log(`${logPrefix} Resolving configuration...`);
+            const dbConfig = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getWhatsAppConfig"])(companyId, tenantId);
+            if (dbConfig) {
+                const hasToken = !!dbConfig.token;
+                console.log(`${logPrefix} Found DB config. Enabled: ${dbConfig.enabled}, Instance: ${dbConfig.instanceId}, TokenPresent: ${hasToken}`);
+                return {
+                    enabled: dbConfig.enabled ?? false,
+                    provider: dbConfig.provider ?? 'ultramsg',
+                    instanceId: dbConfig.instanceId || '',
+                    token: dbConfig.token || '',
+                    autoSendBill: dbConfig.autoSendBill ?? false,
+                    source: 'database'
+                };
+            }
+            console.log(`${logPrefix} No DB config found in settings table.`);
+        } catch (err) {
+            console.error(`${logPrefix} Dynamic config fetch failed:`, err);
+        }
+        // Fallback to Environment Variables ONLY if we don't have a clear tenant context or as a last resort
+        // In SaaS, we should be careful about using system tokens for tenant messages.
+        const envToken = process.env.WHATSAPP_TOKEN;
+        if (envToken && envToken.length > 5) {
+            console.log(`${logPrefix} Falling back to System Environment Variables.`);
+            return {
+                enabled: true,
+                provider: 'ultramsg',
+                instanceId: process.env.WHATSAPP_INSTANCE_ID || '',
+                token: envToken,
+                autoSendBill: false,
+                source: 'env'
+            };
+        }
+        console.warn(`${logPrefix} No configuration source available.`);
+        return {
+            enabled: false,
+            provider: 'ultramsg',
+            instanceId: '',
+            token: '',
+            autoSendBill: false,
+            source: 'none'
+        };
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/utils/is-uuid.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isUUID",
+    ()=>isUUID,
+    "safeNum",
+    ()=>safeNum
+]);
+function isUUID(str) {
+    if (typeof str !== 'string') return false;
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(str.trim());
+}
+function safeNum(val) {
+    if (val === null || val === undefined) return 0;
+    if (typeof val === 'number') return val;
+    // Strip everything except digits, dots and minus sign (for currency handling)
+    const cleaned = val.toString().replace(/[^0-9.-]/g, '');
+    const n = parseFloat(cleaned);
+    return isNaN(n) ? 0 : n;
+}
+}),
+"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"00388db89f9409da18e662700d562374d2b270537e":"getTaxConfiguration","00b946f672ab588457fd6e6a6565ad58637666ab6c":"getUoms","00df4fa4f631e0b8b370cfd768579ca09ddf43b344":"getBillableItems","4009c8593066df47cffda086ed40a649d1ee9993f6":"cancelInvoice","4013ddfdd82a8f5f26ddbd0b4c0b6d0bb8d8768737":"getNextVoucherNumber","401578f3fe96c87480a0867d8d29b9035ebeee1c81":"getInitialInvoiceData","40433c06c1f4d912be0b688d3b783282a1c33cfc0c":"getPatientBalance","408583314a251e4ab6a1476b75c2a2e19f8b2cb1a3":"createInvoice","40a329d95dc3d1a62d1e482a762f87e63308b336de":"getPatientLedger","40e262a8c91eef996f821f1d338179393c646f1ce2":"getPatientOutstandingBalance","40e5b9b5d47829439c65d11ea45099f2bddbc1f683":"generateConsultationInvoice","40f587896266518b5850eeacccfc69be5ca0a335ce":"getOpenRegistrationInvoice","6001830112147f6a5bd49341fb1cb42196b1bed78c":"voidPayment","6012293d892e0a7ee4a8654dd1af202e108dc6debd":"updateInvoice","601d2ccdb020eb572cceed0bc295cde4222d7052d5":"updateInvoiceStatus","6023de41a288144cc358d4877439ee60e48937cca5":"linkInvoiceToAppointment","603ba48760f4106aaa3ced755a007939dec191facf":"createQuickPatient","606179061d81a683b8b4bdfd15b55a633920f874bb":"shareInvoiceWhatsapp","608349f1b4763265beceb5d9cd891152ef32c6ab68":"generateRegistrationInvoice","700708bd6a2e5cd22125d980b1f1d664491f5ea502":"recordPatientConsumption","709a787099d74f0a77dcfa251a40d8c26f8b656d08":"recordPayment","78314c67a5a6f8686b0890d6a5d67c91f92e9b7032":"settlePatientDues"},"",""] */ __turbopack_context__.s([
+    "cancelInvoice",
+    ()=>cancelInvoice,
+    "createInvoice",
+    ()=>createInvoice,
+    "createQuickPatient",
+    ()=>createQuickPatient,
+    "generateConsultationInvoice",
+    ()=>generateConsultationInvoice,
+    "generateRegistrationInvoice",
+    ()=>generateRegistrationInvoice,
+    "getBillableItems",
+    ()=>getBillableItems,
+    "getInitialInvoiceData",
+    ()=>getInitialInvoiceData,
+    "getNextVoucherNumber",
+    ()=>getNextVoucherNumber,
+    "getOpenRegistrationInvoice",
+    ()=>getOpenRegistrationInvoice,
+    "getPatientBalance",
+    ()=>getPatientBalance,
+    "getPatientLedger",
+    ()=>getPatientLedger,
+    "getPatientOutstandingBalance",
+    ()=>getPatientOutstandingBalance,
+    "getTaxConfiguration",
+    ()=>getTaxConfiguration,
+    "getUoms",
+    ()=>getUoms,
+    "linkInvoiceToAppointment",
+    ()=>linkInvoiceToAppointment,
+    "recordPatientConsumption",
+    ()=>recordPatientConsumption,
+    "recordPayment",
+    ()=>recordPayment,
+    "settlePatientDues",
+    ()=>settlePatientDues,
+    "shareInvoiceWhatsapp",
+    ()=>shareInvoiceWhatsapp,
+    "updateInvoice",
+    ()=>updateInvoice,
+    "updateInvoiceStatus",
+    ()=>updateInvoiceStatus,
+    "voidPayment",
+    ()=>voidPayment
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/cache.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/services/accounting.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/services/notification.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils/is-uuid.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+async function getUoms() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        success: false,
+        error: "Unauthorized"
+    };
+    try {
+        const uoms = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findMany({
+            where: {
+                tenant_id: (session?.user).tenantId
+            },
+            orderBy: {
+                name: 'asc'
+            }
+        });
+        // Serialize Decimal fields for Client Components
+        const serializedUoms = uoms.map((u)=>({
+                ...u,
+                ratio: u.ratio?.toNumber() || 1,
+                rounding: u.rounding?.toNumber() || 0.01
+            }));
+        return {
+            success: true,
+            data: serializedUoms
+        };
+    } catch (err) {
+        return {
+            success: false,
+            error: err.message
+        };
+    }
+}
+async function getNextVoucherNumber(date = new Date().toISOString()) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_settings.findUnique({
+            where: {
+                company_id: companyId
+            },
+            select: {
+                numbering_prefix: true
+            }
+        });
+        const customPrefix = settings?.numbering_prefix || 'INV';
+        const invDate = new Date(date);
+        const month = invDate.getMonth();
+        const year = invDate.getFullYear();
+        let fyStart = year;
+        let fyEnd = year + 1;
+        if (month < 3) {
+            fyStart = year - 1;
+            fyEnd = year;
+        }
+        const fyString = `${fyStart.toString().slice(-2)}-${fyEnd.toString().slice(-2)}`;
+        const prefix = `${customPrefix}-${fyString}-`;
+        const lastInvoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findFirst({
+            where: {
+                company_id: companyId,
+                invoice_number: {
+                    startsWith: prefix
+                }
+            },
+            orderBy: {
+                created_at: 'desc'
+            },
+            select: {
+                invoice_number: true
+            }
+        });
+        let nextSeq = 1;
+        if (lastInvoice?.invoice_number) {
+            const parts = lastInvoice.invoice_number.split('-');
+            const lastSeqStr = parts[parts.length - 1];
+            const lastSeq = parseInt(lastSeqStr);
+            if (!isNaN(lastSeq)) nextSeq = lastSeq + 1;
+        }
+        const invoiceNo = `${prefix}${nextSeq.toString().padStart(5, '0')}`;
+        return {
+            success: true,
+            data: invoiceNo
+        };
+    } catch (error) {
+        return {
+            error: error.message
+        };
+    }
+}
+async function getBillableItems() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const items = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findMany({
+            where: {
+                tenant_id: session.user.tenantId,
+                company_id: companyId,
+                is_active: true
+            },
+            select: {
+                id: true,
+                sku: true,
+                name: true,
+                description: true,
+                uom: true,
+                price: true,
+                metadata: true,
+                is_service: true,
+                hms_product_price_history: {
+                    orderBy: {
+                        valid_from: 'desc'
+                    },
+                    take: 1,
+                    select: {
+                        price: true
+                    }
+                },
+                hms_product_category_rel: {
+                    include: {
+                        hms_product_category: {
+                            include: {
+                                tax_rates: true
+                            }
+                        }
+                    }
+                },
+                product_tax_rules: {
+                    where: {
+                        is_active: true
+                    },
+                    include: {
+                        tax_rates: true
+                    },
+                    orderBy: {
+                        priority: 'desc'
+                    },
+                    take: 1
+                },
+                hms_purchase_order_line: {
+                    orderBy: {
+                        created_at: 'desc'
+                    },
+                    take: 1
+                }
+            }
+        });
+        const itemIds = items.map((i)=>i.id);
+        // PROCUREMENT SYNC: Find the absolute latest purchase records (Invoices or Receipts)
+        const [lastInvoiceEntries, lastReceiptEntries, taxMaps] = await Promise.all([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_invoice_line.findMany({
+                where: {
+                    product_id: {
+                        in: itemIds
+                    },
+                    tenant_id: session.user.tenantId,
+                    hms_purchase_invoice: {
+                        status: {
+                            in: [
+                                'posted',
+                                'finalized',
+                                'paid',
+                                'draft',
+                                'approved'
+                            ]
+                        }
+                    }
+                },
+                orderBy: {
+                    created_at: 'desc'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_receipt_line.findMany({
+                where: {
+                    product_id: {
+                        in: itemIds
+                    },
+                    tenant_id: session.user.tenantId
+                },
+                orderBy: {
+                    created_at: 'desc'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+                where: {
+                    company_id: companyId
+                },
+                include: {
+                    tax_rates: true
+                }
+            })
+        ]);
+        // [OPTIMIZATION] Create O(1) Lookups for procurement data
+        const invoiceMap = new Map();
+        lastInvoiceEntries.forEach((entry)=>{
+            if (!invoiceMap.has(entry.product_id)) invoiceMap.set(entry.product_id, entry);
+        });
+        const receiptMap = new Map();
+        lastReceiptEntries.forEach((entry)=>{
+            if (!receiptMap.has(entry.product_id)) receiptMap.set(entry.product_id, entry);
+        });
+        // [OPTIMIZATION] Pre-fetch company tax rates to resolve IDs from rates if needed
+        const companyTaxRates = taxMaps.map((m)=>m.tax_rates).filter(Boolean);
+        const rateToIdMap = new Map(companyTaxRates.map((tr)=>[
+                Number(tr.rate),
+                tr.id
+            ]));
+        const idToRateObjMap = new Map(companyTaxRates.map((tr)=>[
+                tr.id,
+                tr
+            ]));
+        const defaultTaxId = taxMaps.find((m)=>m.is_default)?.tax_rate_id || null;
+        const flatItems = items.map((item)=>{
+            const priceHistory = item.hms_product_price_history?.[0];
+            const categoryRel = item.hms_product_category_rel?.[0];
+            const category = categoryRel?.hms_product_category;
+            const productTaxRule = item.product_tax_rules?.[0];
+            // 1. Resolve newest procurement record with reliable date comparison (O(1) lookup)
+            const piLine = invoiceMap.get(item.id);
+            const receiptLine = receiptMap.get(item.id);
+            const poLine = item.hms_purchase_order_line?.[0];
+            const dateRank = [
+                {
+                    rec: piLine,
+                    date: piLine?.created_at ? new Date(piLine.created_at) : null
+                },
+                {
+                    rec: receiptLine,
+                    date: receiptLine?.created_at ? new Date(receiptLine.created_at) : null
+                },
+                {
+                    rec: poLine,
+                    date: poLine?.created_at ? new Date(poLine.created_at) : null
+                }
+            ].filter((d)=>d.date !== null).sort((a, b)=>b.date.getTime() - a.date.getTime());
+            const latestPurchase = dateRank.length > 0 ? dateRank[0].rec : piLine || receiptLine || poLine;
+            let purchaseTaxId = null;
+            let purchaseTaxRate = 0;
+            // Robust tax extraction from the latest purchase record
+            const taxSource = latestPurchase?.tax || latestPurchase?.metadata?.tax;
+            if (taxSource && !(typeof taxSource === 'object' && Object.keys(taxSource).length === 0)) {
+                if (typeof taxSource === 'object' && !Array.isArray(taxSource)) {
+                    purchaseTaxId = taxSource.id || null;
+                    purchaseTaxRate = Number(taxSource.rate || 0);
+                } else if (Array.isArray(taxSource) && taxSource.length > 0) {
+                    purchaseTaxId = taxSource[0].id;
+                    purchaseTaxRate = Number(taxSource[0].rate || 0);
+                }
+            }
+            // CRITICAL: If we have a purchase rate but no ID, resolve the ID from company settings
+            if (!purchaseTaxId && purchaseTaxRate > 0) {
+                purchaseTaxId = rateToIdMap.get(purchaseTaxRate) || null;
+            }
+            // FINAL TAX RESOLUTION: Specific Rule > Latest Purchase Identity > Product Metadata > Category Default
+            const productMetadata = item.metadata || {};
+            let finalTaxId = productTaxRule?.tax_rate_id || purchaseTaxId || productMetadata.tax_id || productMetadata.tax?.id || category?.default_tax_rate_id || null;
+            // Resolve final numerical rate using O(1) map
+            let finalTaxRate = 0;
+            const resolvedRateObj = finalTaxId ? idToRateObjMap.get(finalTaxId) : null;
+            if (resolvedRateObj) {
+                finalTaxRate = Number(resolvedRateObj.rate);
+            } else {
+                // 3. FALLBACK: If ID was set but not found in company map (Ghost ID), RESET it.
+                // This is critical for data that might have been imported/restored with broken links.
+                finalTaxId = null;
+                // Resolve by rate values
+                const fallbackRate = Number(productTaxRule?.tax_rates?.rate) || purchaseTaxRate || Number(productMetadata.tax_rate) || Number(productMetadata.tax?.rate) || (!item.is_service ? Number(category?.tax_rates?.rate) : 0) || 0;
+                if (fallbackRate > 0) {
+                    finalTaxRate = fallbackRate;
+                    // RE-RESOLVE ID: Find matching ID by rate in company settings (O(1) lookup)
+                    finalTaxId = rateToIdMap.get(fallbackRate) || null;
+                }
+            }
+            // SERVICE OVERRIDE: Only if NO tax is explicitly found
+            // Previously we forced 0% for all services without a specific rule, which caused issues.
+            // Now we trust the resolution chain (Product Rule > Purchase > Category > Default).
+            if (item.is_service && !finalTaxId && !productTaxRule?.tax_rate_id) {
+            // Keep as is: No tax found, so 0% is correct.
+            // But do NOT clear it if finalTaxId is already set (e.g. from Category)
+            }
+            // Extract UOM pricing data from metadata
+            const metadata = item.metadata || {};
+            const uomData = metadata.uom_data || {};
+            const pricingStrategy = metadata.pricing_strategy || 'manual';
+            // PRIORITY: Strategy-based Choice > Last Sale Price > History > Base Price
+            let finalPrice = priceHistory?.price?.toNumber() || Number(item.price) || 0;
+            if (pricingStrategy === 'mrp' && metadata.last_mrp) {
+                finalPrice = Number(metadata.last_mrp);
+            } else if (metadata.last_sale_price) {
+                // This covers 'manual' and 'mrp_discount' (where the intended bill price is the discounted one)
+                finalPrice = Number(metadata.last_sale_price);
+            } else if (metadata.last_mrp) {
+                finalPrice = Number(metadata.last_mrp);
+            }
+            return {
+                id: item.id,
+                sku: item.sku || '',
+                label: item.name,
+                description: item.description || '',
+                uom: item.uom || 'Unit',
+                price: finalPrice,
+                type: item.is_service ? 'service' : 'item',
+                metadata: {
+                    ...metadata,
+                    // UOM Pricing (Industry Standard)
+                    baseUom: uomData.base_uom || item.uom || 'PCS',
+                    basePrice: finalPrice,
+                    conversionFactor: uomData.conversion_factor || 1,
+                    packUom: uomData.pack_uom || (uomData.conversion_factor > 1 ? `PACK-${uomData.conversion_factor}` : item.uom || 'PCS'),
+                    packPrice: uomData.pack_price || finalPrice * (uomData.conversion_factor || 1),
+                    packSize: uomData.pack_size || uomData.conversion_factor || 1,
+                    lastMrp: metadata.last_mrp,
+                    lastSalePrice: metadata.last_sale_price,
+                    pricingStrategy: pricingStrategy
+                },
+                // Extract tax for auto-suggest (prioritize rule > purchase > category)
+                categoryTaxId: finalTaxId,
+                categoryTaxRate: finalTaxRate
+            };
+        });
+        return {
+            success: true,
+            data: flatItems
+        };
+    } catch (error) {
+        console.error("Failed to fetch billable items:", error);
+        return {
+            error: "Failed to fetch items"
+        };
+    }
+}
+async function getTaxConfiguration() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        // 1. Fetch Company Tax Maps (Primary source of truth for allowed taxes)
+        const taxMaps = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+            where: {
+                company_id: companyId,
+                is_active: true
+            },
+            include: {
+                tax_rates: true
+            }
+        });
+        // 2. Map to simpler structure for the UI terminal
+        const taxRates = taxMaps.map((m)=>({
+                id: m.tax_rate_id,
+                name: m.tax_rates.name,
+                rate: m.tax_rates.rate.toNumber(),
+                isDefault: m.is_default
+            }));
+        const defaultRate = taxRates.find((t)=>t.isDefault) || taxRates[0];
+        return {
+            success: true,
+            data: {
+                defaultTax: defaultRate || null,
+                taxRates: taxRates
+            }
+        };
+    } catch (error) {
+        console.error("Failed to fetch tax configuration:", error);
+        return {
+            error: "Failed to fetch company taxes"
+        };
+    }
+}
+async function createInvoice(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const LOG_PREFIX = `[BILLING-ENGINE-${Date.now()}]`;
+    const tenantId = session?.user?.tenantId;
+    const companyId = (session?.user).companyId || tenantId;
+    const branchId = (session?.user).current_branch_id || (session?.user).branch_id;
+    const userId = session?.user?.id;
+    if (!tenantId || !companyId) {
+        console.error(`${LOG_PREFIX} createInvoice - Unauthorized or Missing Context`, {
+            tenantId,
+            companyId
+        });
+        return {
+            error: "Unauthorized or Missing Facility Context"
+        };
+    }
+    console.log(`${LOG_PREFIX} [EXECUTION-TRACE] createInvoice PID: ${data.patient_id}, APT: ${data.appointment_id || 'N/A'}, Status: ${data.status || 'draft'}`);
+    try {
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // [ATOMIC-GUARD] Use Postgres Advisory Lock to prevent concurrent creation for the same context
+            const lockKeyStr = data.appointment_id || data.patient_id;
+            await tx.$executeRawUnsafe(`SELECT pg_advisory_xact_lock(hashtext('${lockKeyStr}'))`);
+            // 1. Resolve Patient Identity
+            let resolvedPatientId = null;
+            const patientInput = data.patient_id;
+            const rawPatientId = patientInput && typeof patientInput === 'object' ? patientInput.id : patientInput;
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(rawPatientId)) {
+                resolvedPatientId = rawPatientId;
+            } else if (rawPatientId && rawPatientId.toString().startsWith('PAT-')) {
+                const p = await tx.hms_patient.findFirst({
+                    where: {
+                        tenant_id: tenantId,
+                        patient_number: rawPatientId.toString()
+                    },
+                    select: {
+                        id: true
+                    }
+                });
+                if (p) resolvedPatientId = p.id;
+            }
+            // [REGISTRATION-SYNC-LOCK] If this invoice contains a registration fee, we MUST synchronize with generateRegistrationInvoice
+            const hasRegFee = data.line_items?.some((l)=>{
+                const desc = l.description?.toLowerCase() || "";
+                // Nuclear Fuzzy Match: Catch any variation of Registration/Identity Fee
+                return desc.includes('reg') && desc.includes('fee') || desc.includes('identity service') || desc.includes('registration') || desc.includes('identity fee');
+            });
+            if (hasRegFee && resolvedPatientId) {
+                // Use the EXACT SAME lock string as generateRegistrationInvoice
+                await tx.$executeRawUnsafe(`SELECT pg_advisory_xact_lock(hashtext('${resolvedPatientId}_reg'))`);
+            }
+            // 2. [STRICT-GUARD] Check for existing invoice AFTER acquiring lock
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(data.appointment_id)) {
+                const existing = await tx.hms_invoice.findFirst({
+                    where: {
+                        appointment_id: data.appointment_id,
+                        tenant_id: tenantId,
+                        status: {
+                            in: [
+                                'draft',
+                                'posted'
+                            ]
+                        }
+                    },
+                    orderBy: {
+                        created_at: 'desc'
+                    }
+                });
+                if (existing) {
+                    console.log(`${LOG_PREFIX} [RACE-PREVENTED] Resuming ${existing.invoice_number} instead of creating duplicate.`);
+                    return {
+                        _isDuplicate: true,
+                        existingId: existing.id
+                    };
+                }
+            }
+            if (hasRegFee && resolvedPatientId) {
+                const existingReg = await tx.hms_invoice.findFirst({
+                    where: {
+                        patient_id: resolvedPatientId,
+                        tenant_id: tenantId,
+                        status: {
+                            in: [
+                                'draft',
+                                'posted',
+                                'paid'
+                            ]
+                        },
+                        hms_invoice_lines: {
+                            some: {
+                                OR: [
+                                    {
+                                        description: {
+                                            contains: 'Reg',
+                                            mode: 'insensitive'
+                                        }
+                                    },
+                                    {
+                                        description: {
+                                            contains: 'Registration',
+                                            mode: 'insensitive'
+                                        }
+                                    },
+                                    {
+                                        description: {
+                                            contains: 'Identity',
+                                            mode: 'insensitive'
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    orderBy: {
+                        created_at: 'desc'
+                    }
+                });
+                if (existingReg) {
+                    console.log(`${LOG_PREFIX} [REG-RACE-PREVENTED] Patient ${resolvedPatientId} already has a registration invoice ${existingReg.invoice_number} (Nuclear Match).`);
+                    return {
+                        _isDuplicate: true,
+                        existingId: existingReg.id
+                    };
+                }
+            }
+            // [DEDUPLICATION-FIX] Fuzzy intra-invoice deduplication
+            let processedLineItems = [
+                ...data.line_items || []
+            ];
+            let regFound = false;
+            processedLineItems = processedLineItems.filter((l)=>{
+                const desc = l.description?.toLowerCase() || "";
+                const isReg = desc.includes('registration fee') || desc.includes('identity service') || desc.includes('registration') && desc.includes('fee');
+                if (isReg) {
+                    if (regFound) return false; // Remove subsequent instances
+                    regFound = true;
+                    l.description = REG_FEE_DESCRIPTION; // Standardize
+                    return true;
+                }
+                return true;
+            });
+            // 4. Sequential Numbering
+            const voucherRes = await getNextVoucherNumber(data.date);
+            const invoiceNo = voucherRes.success ? voucherRes.data : `INV-QL-${Date.now().toString().slice(-6)}`;
+            // 5. Totals Calculation
+            const { line_items = [], payments = [], status = 'draft', total_discount = 0 } = data;
+            const subtotalCalc = processedLineItems.reduce((sum, l)=>sum + ((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.quantity) * (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.unit_price) - (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.discount_amount)), 0);
+            const taxTotalCalc = processedLineItems.reduce((sum, l)=>sum + (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.tax_amount), 0);
+            const grandTotalCalc = Math.max(0, subtotalCalc + taxTotalCalc - (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(total_discount));
+            const totalPaidCalc = payments.reduce((sum, p)=>sum + (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(p.amount), 0);
+            const outstandingCalc = status === 'paid' ? 0 : Math.max(0, grandTotalCalc - totalPaidCalc);
+            // 6. Persistence
+            const invoiceId = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
+            const invoice = await tx.hms_invoice.create({
+                data: {
+                    id: invoiceId,
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    invoice_number: invoiceNo,
+                    invoice_no: invoiceNo,
+                    invoice_date: new Date(data.date || new Date()),
+                    subtotal: subtotalCalc,
+                    total_tax: taxTotalCalc,
+                    total_discount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(total_discount),
+                    total: grandTotalCalc,
+                    total_paid: totalPaidCalc,
+                    status: status,
+                    outstanding_amount: outstandingCalc,
+                    patient_id: resolvedPatientId,
+                    appointment_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(data.appointment_id) ? data.appointment_id : null,
+                    branch_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(branchId) ? branchId : null,
+                    created_by: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(userId) ? userId : null,
+                    hms_invoice_lines: {
+                        create: processedLineItems.map((l, idx)=>({
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                line_idx: idx + 1,
+                                description: l.description || "Service",
+                                quantity: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.quantity) || 1,
+                                unit_price: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.unit_price),
+                                discount_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.discount_amount),
+                                tax_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.tax_amount),
+                                net_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.quantity) * (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.unit_price) - (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(l.discount_amount),
+                                product_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(l.product_id) ? l.product_id : null,
+                                tax_rate_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(l.tax_rate_id) ? l.tax_rate_id : null,
+                                uom: l.uom || 'Unit'
+                            }))
+                    },
+                    hms_invoice_payments: payments.length > 0 ? {
+                        create: payments.filter((p)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(p.amount) > 0).map((p)=>({
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(p.amount),
+                                method: [
+                                    'cash',
+                                    'card',
+                                    'upi',
+                                    'bank_transfer',
+                                    'insurance',
+                                    'adjustment'
+                                ].includes(p.method) ? p.method : 'cash',
+                                payment_reference: p.reference || 'COUNTER_SALE',
+                                paid_at: new Date()
+                            }))
+                    } : undefined
+                }
+            });
+            // --- WORLD CLASS STOCK SYNC (SALES) ---
+            // Deduct stock for all physical items in the invoice
+            for (const item of processedLineItems){
+                if (!item.product_id) continue;
+                const qtyToDeduct = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.quantity) || 1;
+                // 0. Resolve Location (Default to Main Warehouse for now)
+                let location = await tx.hms_stock_location.findFirst({
+                    where: {
+                        company_id: companyId,
+                        name: 'Main Warehouse'
+                    }
+                });
+                if (!location) {
+                    location = await tx.hms_stock_location.findFirst({
+                        where: {
+                            company_id: companyId
+                        }
+                    });
+                }
+                if (location) {
+                    // 1. Deduct Stock Level
+                    const level = await tx.hms_stock_levels.findFirst({
+                        where: {
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            location_id: location.id
+                        }
+                    });
+                    if (level) {
+                        await tx.hms_stock_levels.update({
+                            where: {
+                                id: level.id
+                            },
+                            data: {
+                                quantity: {
+                                    decrement: qtyToDeduct
+                                }
+                            }
+                        });
+                    } else {
+                        // Create negative stock level if not exists (allow for overselling if enabled, or just create record)
+                        await tx.hms_stock_levels.create({
+                            data: {
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                product_id: item.product_id,
+                                location_id: location.id,
+                                quantity: -qtyToDeduct,
+                                reserved: 0
+                            }
+                        });
+                    }
+                    // 2. Log Outward Movement in Ledger
+                    await tx.hms_stock_ledger.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            movement_type: 'out',
+                            qty: -qtyToDeduct,
+                            uom: item.uom || 'Unit',
+                            unit_cost: 0,
+                            total_cost: 0,
+                            from_location_id: location.id,
+                            reference: invoiceNo,
+                            related_type: 'hms_invoice',
+                            related_id: invoiceId
+                        }
+                    });
+                    // 3. Audit Move
+                    await tx.hms_stock_move.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            location_from: location.id,
+                            qty: -qtyToDeduct,
+                            uom: item.uom || 'Unit',
+                            move_type: 'out',
+                            source: 'Counter Sale',
+                            source_reference: invoiceId,
+                            created_by: userId
+                        }
+                    });
+                }
+            }
+            // Post-Hooks
+            if (status === 'paid' && (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(data.appointment_id)) {
+                await tx.hms_appointments.update({
+                    where: {
+                        id: data.appointment_id
+                    },
+                    data: {
+                        status: 'completed'
+                    }
+                });
+            }
+            if (hasRegFee && resolvedPatientId && (status === 'posted' || status === 'paid')) {
+                await trackRegistrationPayment(tx, resolvedPatientId, tenantId, companyId);
+            }
+            return invoice;
+        }, {
+            timeout: 15000
+        });
+        // Handle the duplicate signal outside the transaction to clean up
+        if (result._isDuplicate) {
+            return updateInvoice(result.existingId, data);
+        }
+        const invoiceId = result.id;
+        const status = result.status;
+        // Trigger Accounting & Notification (Outside transaction for performance and robustness)
+        if ((status === 'posted' || status === 'paid') && invoiceId) {
+            try {
+                const accountingRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(invoiceId, userId);
+                if (!accountingRes.success) {
+                    console.warn(`${LOG_PREFIX} Accounting Post Partial Failure:`, accountingRes.error);
+                }
+            } catch (err) {
+                console.error(`${LOG_PREFIX} Accounting Post Exception:`, err);
+            }
+            // WhatsApp Notification (Only if paid/posted and auto-send enabled)
+            if (status === 'paid' || status === 'posted') {
+                try {
+                    const config = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getWhatsAppConfig"])(companyId, tenantId);
+                    if (config?.autoSendBill) {
+                        const wsRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["NotificationService"].sendInvoiceWhatsapp(invoiceId, tenantId);
+                        if (!wsRes.success) console.warn(`${LOG_PREFIX} Auto-WhatsApp Send Failed:`, wsRes.error);
+                    }
+                } catch (err) {
+                    console.error(`${LOG_PREFIX} WhatsApp Notification Orchestration Failed:`, err);
+                }
+            }
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        return {
+            success: true,
+            data: result
+        };
+    } catch (err) {
+        console.error(`${LOG_PREFIX} [CRITICAL-FAIL] createInvoice:`, err);
+        return {
+            error: `BILLING_CORE_FATAL: ${err.message}`
+        };
+    }
+}
+// Helper to check if a transaction is locked based on lock date or roles
+async function checkTransactionLock(invoiceId, company_id, session) {
+    const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findUnique({
+        where: {
+            id: invoiceId
+        },
+        select: {
+            status: true,
+            invoice_date: true,
+            issued_at: true
+        }
+    });
+    if (!existing) throw new Error("Transaction node not found.");
+    // 1. Lock Date Check (Fiscal Period)
+    const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findUnique({
+        where: {
+            company_id
+        }
+    });
+    if (settings?.lock_date) {
+        const txDate = existing.invoice_date || existing.issued_at;
+        if (new Date(txDate) <= new Date(settings.lock_date)) {
+            return {
+                locked: true,
+                reason: `Fiscal period is closed. Transactions before ${new Date(settings.lock_date).toLocaleDateString()} are frozen.`
+            };
+        }
+    }
+    // 2. Role Check (Only Admin can edit posted/paid)
+    const isAdmin = session?.user?.isAdmin;
+    if (existing.status !== 'draft' && !isAdmin) {
+        return {
+            locked: true,
+            reason: "Administrative privileges required to modify a finalized ledger entry."
+        };
+    }
+    return {
+        locked: false,
+        existing
+    };
+}
+async function cancelInvoice(invoiceId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const lockCheck = await checkTransactionLock(invoiceId, companyId, session);
+        if (lockCheck.locked) return {
+            error: lockCheck.reason
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.update({
+            where: {
+                id: invoiceId
+            },
+            data: {
+                status: 'cancelled'
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        return {
+            success: true,
+            message: "Transaction voided successfully."
+        };
+    } catch (error) {
+        return {
+            error: error.message || "Failed to cancel transaction."
+        };
+    }
+}
+async function updateInvoice(invoiceId, data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const tenantId = session?.user?.tenantId;
+    const companyId = (session?.user).companyId || tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId) return {
+        error: "Unauthorized or Missing Tenant Context"
+    };
+    const lockCheck = await checkTransactionLock(invoiceId, companyId, session);
+    if (lockCheck.locked) return {
+        error: lockCheck.reason
+    };
+    const { patient_id, appointment_id, date, line_items, status = 'draft', total_discount = 0, payments = [], billing_metadata = {} } = data;
+    if (!line_items || line_items.length === 0) {
+        return {
+            error: "At least one line item is required"
+        };
+    }
+    try {
+        // Calculate totals
+        // Subtotal (Sum of [Qty * Price - Discount])
+        const subtotal = line_items.reduce((sum, item)=>{
+            const qty = Number(item.quantity) || 0;
+            const price = Number(item.unit_price) || 0;
+            const discount = Number(item.discount_amount) || 0;
+            const lineTotal = qty * price - discount;
+            return sum + lineTotal;
+        }, 0);
+        // Tax Total (Sum of line item taxes)
+        const totalTaxAmount = line_items.reduce((sum, item)=>sum + Number(item.tax_amount || 0), 0);
+        // Grand Total: Subtotal + Tax - Global Discount
+        const total = Math.max(0, subtotal + totalTaxAmount - Number(total_discount || 0));
+        // Calculate Payment Totals
+        const paymentList = payments || [];
+        const totalPaid = paymentList.reduce((sum, p)=>sum + (Number(p.amount) || 0), 0);
+        // Determine Outstanding
+        const outstandingAmount = status === 'paid' ? 0 : Math.max(0, total - totalPaid);
+        // [DEDUPLICATION-FIX] Fuzzy intra-invoice deduplication
+        let processedLineItems = [
+            ...line_items || []
+        ];
+        let regFound = false;
+        processedLineItems = processedLineItems.filter((l)=>{
+            const desc = l.description?.toLowerCase() || "";
+            const isReg = desc.includes('registration fee') || desc.includes('identity service') || desc.includes('registration') && desc.includes('fee');
+            if (isReg) {
+                if (regFound) return false;
+                regFound = true;
+                l.description = REG_FEE_DESCRIPTION; // Standardize
+                return true;
+            }
+            return true;
+        });
+        // RE-CALCULATE TOTALS AFTER DEDUPLICATION
+        const finalSubtotal = processedLineItems.reduce((sum, item)=>{
+            const qty = Number(item.quantity) || 0;
+            const price = Number(item.unit_price) || 0;
+            const discount = Number(item.discount_amount) || 0;
+            const lineTotal = qty * price - discount;
+            return sum + lineTotal;
+        }, 0);
+        const finalTaxTotal = processedLineItems.reduce((sum, item)=>sum + Number(item.tax_amount || 0), 0);
+        const finalGrandTotal = Math.max(0, finalSubtotal + finalTaxTotal - Number(total_discount || 0));
+        const finalOutstanding = status === 'paid' ? 0 : Math.max(0, finalGrandTotal - totalPaid);
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // 1. Update Invoice Header
+            const updatedInvoice = await tx.hms_invoice.update({
+                where: {
+                    id: invoiceId
+                },
+                data: {
+                    patient_id: patient_id || null,
+                    appointment_id: appointment_id || null,
+                    invoice_date: new Date(date),
+                    status: status,
+                    total: finalGrandTotal,
+                    subtotal: finalSubtotal,
+                    total_tax: finalTaxTotal,
+                    total_discount: Number(total_discount),
+                    total_paid: totalPaid,
+                    outstanding_amount: finalOutstanding,
+                    billing_metadata: billing_metadata
+                }
+            });
+            // 2. Delete existing lines (Simple approach for MVP)
+            await tx.hms_invoice_lines.deleteMany({
+                where: {
+                    invoice_id: invoiceId
+                }
+            });
+            // 3. Resolve Taxes & Create new lines
+            const resolvedLineItems = await Promise.all(processedLineItems.map(async (l)=>{
+                if (l.tax_rate_id && l.tax_rate_id.toString().startsWith('AUTO_')) {
+                    const rate = parseFloat(l.tax_rate_id.replace('AUTO_', ''));
+                    const realId = await resolveAutoTax(rate, session.user.tenantId, companyId);
+                    if (realId) return {
+                        ...l,
+                        tax_rate_id: realId
+                    };
+                }
+                return l;
+            }));
+            await tx.hms_invoice_lines.createMany({
+                data: resolvedLineItems.map((item, index)=>({
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        invoice_id: invoiceId,
+                        line_idx: index + 1,
+                        product_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(item.product_id) ? item.product_id : null,
+                        description: item.description || "Service Item",
+                        quantity: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.quantity) || 1,
+                        unit_price: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.unit_price),
+                        net_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.quantity) * (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.unit_price) - (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.discount_amount),
+                        // Tax details
+                        tax_rate_id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(item.tax_rate_id) ? item.tax_rate_id : null,
+                        tax_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.tax_amount),
+                        discount_amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.discount_amount),
+                        uom: item.uom || 'Unit',
+                        metadata: {
+                            batch_id: item.batch_id,
+                            batch_no: item.batch_no
+                        }
+                    }))
+            });
+            // 4. Update Payments (Sync approach)
+            await tx.hms_invoice_payments.deleteMany({
+                where: {
+                    invoice_id: invoiceId
+                }
+            });
+            if (paymentList.length > 0) {
+                await tx.hms_invoice_payments.createMany({
+                    data: paymentList.map((p)=>({
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            invoice_id: invoiceId,
+                            amount: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(p.amount),
+                            method: [
+                                'cash',
+                                'card',
+                                'upi',
+                                'bank_transfer',
+                                'insurance',
+                                'adjustment'
+                            ].includes(p.method) ? p.method : 'cash',
+                            payment_reference: p.reference || null,
+                            paid_at: new Date()
+                        }))
+                });
+                // WORLD CLASS: Auto-Allocation of Excess Funds (Reconciliation)
+                if (totalPaid > total && patient_id) {
+                    let excess = totalPaid - total;
+                    const oldInvoices = await tx.hms_invoice.findMany({
+                        where: {
+                            tenant_id: session.user.tenantId,
+                            company_id: companyId,
+                            patient_id: patient_id,
+                            status: 'posted',
+                            id: {
+                                not: invoiceId
+                            }
+                        },
+                        orderBy: {
+                            issued_at: 'asc'
+                        }
+                    });
+                    for (const oldInv of oldInvoices){
+                        if (excess <= 0) break;
+                        const due = Number(oldInv.outstanding_amount || 0);
+                        const paymentToApply = Math.min(due, excess);
+                        if (paymentToApply > 0) {
+                            await tx.hms_invoice.update({
+                                where: {
+                                    id: oldInv.id
+                                },
+                                data: {
+                                    total_paid: Number(oldInv.total_paid || 0) + paymentToApply,
+                                    outstanding_amount: due - paymentToApply,
+                                    status: due - paymentToApply <= 0.01 ? 'paid' : 'posted'
+                                }
+                            });
+                            excess -= paymentToApply;
+                        }
+                    }
+                }
+            }
+            // If status is paid and appointment is linked, mark appointment as completed
+            if (status === 'paid' && appointment_id) {
+                await tx.hms_appointments.update({
+                    where: {
+                        id: appointment_id
+                    },
+                    data: {
+                        status: 'completed'
+                    }
+                });
+            }
+            // [WORLD CLASS] Registration Fee Tracking
+            const hasRegistrationFee = line_items.some((l)=>{
+                const desc = (l.description || l.name || "").toLowerCase();
+                return desc.includes('registration fee') || desc.includes('registration & identity service');
+            });
+            if (hasRegistrationFee && patient_id && (status === 'posted' || status === 'paid')) {
+                await trackRegistrationPayment(tx, patient_id, session.user.tenantId, companyId);
+            }
+            // FORCE UPDATE TOTAL: Ensure DB triggers didn't override the total to 0
+            // This happens if a trigger calculates total from lines before lines are fully visible/committed
+            await tx.hms_invoice.update({
+                where: {
+                    id: invoiceId
+                },
+                data: {
+                    total: total,
+                    subtotal: subtotal,
+                    total_tax: totalTaxAmount,
+                    outstanding_amount: status === 'paid' ? 0 : Math.max(0, total - totalPaid)
+                }
+            });
+            // Note: Returning updatedInvoice here might not reflect the force update if fetched from 'update' result earlier.
+            // But since we just updated it again, if we wanted the fresh object we'd need to fetch it.
+            // For now, assuming the caller just needs the ID or basic success.
+            // To be safe, let's return a constructed object or just the earlier reference (the amount might be wrong in the returned object but correct in DB).
+            // Actually, let's just return the result of the LAST update.
+            return {
+                ...updatedInvoice,
+                total,
+                subtotal,
+                total_tax: totalTaxAmount
+            };
+        });
+        if ((result.status === 'posted' || result.status === 'paid') && result.id) {
+            try {
+                const accountingRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(result.id, session.user.id);
+                if (!accountingRes.success) {
+                    console.warn("Accounting Post Partial Failure:", accountingRes.error);
+                }
+            } catch (err) {
+                console.error("Accounting Post Exception:", err);
+            }
+            // WhatsApp Notification (Only if paid/posted and auto-send enabled)
+            if (result.status === 'paid' || result.status === 'posted') {
+                try {
+                    const config = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getWhatsAppConfig"])(companyId, session.user.tenantId);
+                    if (config?.autoSendBill) {
+                        const wsRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["NotificationService"].sendInvoiceWhatsapp(result.id, session.user.tenantId);
+                        if (!wsRes.success) console.warn("Auto-WhatsApp Send Failed:", wsRes.error);
+                    }
+                } catch (err) {
+                    console.error("WhatsApp Notification Orchestration Failed:", err);
+                }
+            }
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/hms/billing/${invoiceId}`);
+        return {
+            success: true,
+            data: result
+        };
+    } catch (error) {
+        console.error("Failed to update invoice:", error);
+        return {
+            error: `Failed to update invoice: ${error.message}`
+        };
+    }
+}
+async function updateInvoiceStatus(invoiceId, status) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findUnique({
+            where: {
+                id: invoiceId
+            }
+        });
+        if (!invoice) return {
+            error: "Invoice not found"
+        };
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            const updated = await tx.hms_invoice.update({
+                where: {
+                    id: invoiceId
+                },
+                data: {
+                    status: status,
+                    outstanding_amount: status === 'paid' ? 0 : status === 'posted' ? invoice.total : invoice.outstanding_amount,
+                    updated_at: new Date()
+                }
+            });
+            // If paid, close appointment
+            if (status === 'paid' && updated.appointment_id) {
+                await tx.hms_appointments.update({
+                    where: {
+                        id: updated.appointment_id
+                    },
+                    data: {
+                        status: 'completed'
+                    }
+                });
+            }
+            return updated;
+        });
+        // Trigger Accounting
+        if (status === 'posted' || status === 'paid') {
+            const accountingRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(invoiceId, session.user.id);
+            if (!accountingRes.success) {
+                console.warn("Accounting Post Failed:", accountingRes.error);
+                return {
+                    success: true,
+                    warning: accountingRes.error
+                };
+            }
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/hms/billing/${invoiceId}`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update status:", error);
+        return {
+            error: `Failed to update status: ${error.message}`
+        };
+    }
+}
+async function recordPayment(invoiceId, payment, newStatus = 'paid') {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findUnique({
+            where: {
+                id: invoiceId
+            },
+            include: {
+                hms_invoice_payments: true,
+                hms_invoice_lines: true
+            }
+        });
+        if (!invoice) return {
+            error: "Invoice not found"
+        };
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // 1. Create Payment Record
+            // Handle empty strings as null to prevent unique constraint violation on ""
+            const reference = payment.reference ? payment.reference.trim() : null;
+            const finalReference = reference === "" ? null : reference;
+            // Check for duplicate reference if provided
+            if (finalReference) {
+                const existing = await tx.hms_invoice_payments.findFirst({
+                    where: {
+                        tenant_id: session.user.tenantId,
+                        company_id: companyId,
+                        payment_reference: finalReference
+                    }
+                });
+                if (existing) {
+                    throw new Error(`Payment reference '${finalReference}' already exists.`);
+                }
+            }
+            await tx.hms_invoice_payments.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: session.user.tenantId,
+                    company_id: companyId,
+                    invoice_id: invoiceId,
+                    amount: payment.amount,
+                    method: payment.method,
+                    payment_reference: finalReference,
+                    paid_at: new Date()
+                }
+            });
+            // 2. Recalculate Totals
+            const totalPaid = Number(invoice.total_paid || 0) + Number(payment.amount);
+            const outstanding = Math.max(0, Number(invoice.total) - totalPaid);
+            const finalStatus = outstanding === 0 ? 'paid' : newStatus; // Auto-paid if fully settled
+            // 3. Update Invoice
+            const updated = await tx.hms_invoice.update({
+                where: {
+                    id: invoiceId
+                },
+                data: {
+                    total_paid: totalPaid,
+                    outstanding_amount: outstanding,
+                    status: finalStatus,
+                    updated_at: new Date()
+                }
+            });
+            // If paid, close appointment
+            if (finalStatus === 'paid' && updated.appointment_id) {
+                await tx.hms_appointments.update({
+                    where: {
+                        id: updated.appointment_id
+                    },
+                    data: {
+                        status: 'completed'
+                    }
+                });
+            }
+            // [WORLD CLASS] Registration Fee Audit Trigger
+            // If this invoice contains a Registration Fee, update the patient's expiry date
+            const regLine = invoice.hms_invoice_lines.find((l)=>l.description?.toLowerCase().includes('registration fee') || l.description?.toLowerCase().includes('identity service'));
+            if (regLine && finalStatus === 'paid' && invoice.patient_id) {
+                // [RCM-FIX] Fetch validity from settings instead of hardcoded 1 year
+                const hmsConfigRecord = await tx.hms_settings.findFirst({
+                    where: {
+                        company_id: companyId,
+                        tenant_id: session.user.tenantId,
+                        key: 'registration_config'
+                    }
+                });
+                const configData = hmsConfigRecord?.value || {};
+                const validityDays = parseInt(configData.validity || '7');
+                const expiryDate = new Date();
+                expiryDate.setDate(expiryDate.getDate() + validityDays);
+                const patient = await tx.hms_patient.findUnique({
+                    where: {
+                        id: invoice.patient_id
+                    }
+                });
+                const currentMeta = patient?.metadata || {};
+                await tx.hms_patient.update({
+                    where: {
+                        id: invoice.patient_id
+                    },
+                    data: {
+                        metadata: {
+                            ...currentMeta,
+                            registration_expiry: expiryDate.toISOString(),
+                            registration_fees_paid: true,
+                            registration_fee_date: new Date().toISOString(),
+                            status: 'active'
+                        }
+                    }
+                });
+            }
+            return updated;
+        });
+        // Trigger Accounting & Notification
+        if (result.status === 'paid' || result.status === 'posted') {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(invoiceId, session.user.id);
+            // Check for Auto-send setting before firing
+            try {
+                const wsConfig = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getWhatsAppConfig"])(session.user.companyId, session.user.tenantId);
+                if (wsConfig?.autoSendBill) {
+                    const wsRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["NotificationService"].sendInvoiceWhatsapp(invoiceId, session.user.tenantId);
+                    if (!wsRes.success) console.warn("[Billing-AutoSend] WhatsApp Send Failed:", wsRes.error);
+                }
+            } catch (err) {
+                console.error("[Billing-AutoSend] WhatsApp Notification Orchestration Failed:", err);
+            }
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/hms/billing/${invoiceId}`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/lab/dashboard'); // Refresh lab dashboard to show updated invoice status
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/reception/dashboard'); // Refresh reception dashboard
+        return {
+            success: true,
+            data: result
+        };
+    } catch (error) {
+        console.error("Failed to record payment:", error);
+        // Return a cleaner error message
+        if (error.message.includes("Unique constraint failed") || error.message.includes("already exists")) {
+            return {
+                error: `Payment Reference '${payment.reference}' is duplicate. Please use a unique reference.`
+            };
+        }
+        return {
+            error: error.message || "Failed to record payment"
+        };
+    }
+}
+async function settlePatientDues(patientId, amount, method, reference) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        if (amount <= 0) return {
+            error: "Amount must be greater than 0"
+        };
+        let remainingAmount = amount;
+        const settledInvoices = [];
+        // 1. Fetch Outstanding Invoices (Oldest First)
+        const invoices = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findMany({
+            where: {
+                company_id: companyId,
+                patient_id: patientId,
+                status: {
+                    in: [
+                        'posted',
+                        'draft'
+                    ]
+                },
+                outstanding_amount: {
+                    gt: 0
+                }
+            },
+            orderBy: {
+                created_at: 'asc'
+            }
+        });
+        const paymentResults = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            const results = [];
+            for (const inv of invoices){
+                if (remainingAmount <= 0) break;
+                const payAmount = Math.min(Number(inv.outstanding_amount), remainingAmount);
+                remainingAmount -= payAmount;
+                // Create Payment Record
+                const payment = await tx.hms_invoice_payments.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: session.user.tenantId,
+                        company_id: companyId,
+                        invoice_id: inv.id,
+                        amount: payAmount,
+                        method: [
+                            'cash',
+                            'card',
+                            'upi',
+                            'bank_transfer',
+                            'insurance',
+                            'adjustment'
+                        ].includes(method) ? method : 'cash',
+                        payment_reference: reference || `Settlement-${new Date().getTime()}`,
+                        paid_at: new Date()
+                    }
+                });
+                // Update Invoice
+                const totalPaid = Number(inv.total_paid || 0) + payAmount;
+                const outstanding = Number(inv.total) - totalPaid;
+                const newStatus = outstanding <= 0.01 ? 'paid' : 'posted'; // Tolerance for float
+                await tx.hms_invoice.update({
+                    where: {
+                        id: inv.id
+                    },
+                    data: {
+                        total_paid: totalPaid,
+                        outstanding_amount: outstanding,
+                        status: newStatus
+                    }
+                });
+                results.push({
+                    invoiceId: inv.id,
+                    payAmount,
+                    status: newStatus
+                });
+            }
+            // TODO: If remainingAmount > 0, store as Patient Advance (Ledger)
+            // For now, we only settle invoices. Ideally we would create a Credit Note or Advance Payment.
+            return results;
+        });
+        // 2. Trigger Accounting and Collect Errors
+        const accountingErrors = [];
+        const autoSendConfig = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getWhatsAppConfig"])(companyId, session.user.tenantId).catch(()=>null);
+        for (const res of paymentResults){
+            try {
+                const accountingRes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(res.invoiceId, session.user.id);
+                if (!accountingRes.success) accountingErrors.push(`Invoice ${res.invoiceId}: ${accountingRes.error}`);
+                // Trigger Auto-send if enabled and invoice is now finalized (paid or posted)
+                if ((res.status === 'paid' || res.status === 'posted') && autoSendConfig?.autoSendBill) {
+                    try {
+                        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["NotificationService"].sendInvoiceWhatsapp(res.invoiceId, session.user.tenantId);
+                    } catch (err) {
+                        console.error(`Failed to send WhatsApp for settled invoice ${res.invoiceId}:`, err);
+                    }
+                }
+            } catch (err) {
+                console.error(`Failed to post accounting/notification for settled invoice ${res.invoiceId}:`, err);
+                accountingErrors.push(`Invoice ${res.invoiceId}: ${err.message}`);
+            }
+        }
+        // 3. SELF-HEALING: If no invoices were settled (because they are already marked 'paid'?)
+        // but the user is trying to pay (implying 'getPatientBalance' showed a due),
+        // we might have a sync issue. Let's force-sync recent invoices.
+        let syncedCount = 0;
+        if (paymentResults.length === 0 && amount > 0) {
+            const recentPaidInvoices = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findMany({
+                where: {
+                    patient_id: patientId,
+                    // We check paid or posted invoices that might have unposted payments
+                    status: {
+                        in: [
+                            'paid',
+                            'posted'
+                        ]
+                    }
+                },
+                orderBy: {
+                    updated_at: 'desc'
+                },
+                take: 10
+            });
+            for (const inv of recentPaidInvoices){
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$accounting$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccountingService"].postSalesInvoice(inv.id, session.user.id);
+                syncedCount++;
+            }
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        let message = `Successfully settled ${paymentResults.length} invoice(s).`;
+        if (syncedCount > 0) message += ` (Synced ${syncedCount} historical invoices)`;
+        if (accountingErrors.length > 0) message += ` Accounting Warning: ${accountingErrors.join(', ')}`;
+        return {
+            success: accountingErrors.length === 0 || paymentResults.length > 0 || syncedCount > 0,
+            settled: paymentResults.length,
+            remainingOffset: remainingAmount,
+            message: message,
+            error: accountingErrors.length > 0 ? accountingErrors.join(', ') : undefined
+        };
+    } catch (error) {
+        console.error("Settlement Error:", error);
+        return {
+            error: error.message || "Failed to settle dues"
+        };
+    }
+}
+async function voidPayment(paymentId, reason = "Payment Failed/Reversed") {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const payment = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice_payments.findUnique({
+            where: {
+                id: paymentId
+            },
+            include: {
+                hms_invoice: true
+            }
+        });
+        if (!payment) return {
+            error: "Payment record not found"
+        };
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // 1. Update Invoice Totals
+            const invoice = payment.hms_invoice;
+            const newTotalPaid = Math.max(0, Number(invoice.total_paid || 0) - Number(payment.amount));
+            const newOutstanding = Math.min(Number(invoice.total), Number(invoice.outstanding_amount || 0) + Number(payment.amount));
+            // Revert status to posted if it was paid
+            const newStatus = newOutstanding > 0 ? 'posted' : 'paid';
+            await tx.hms_invoice.update({
+                where: {
+                    id: payment.invoice_id
+                },
+                data: {
+                    total_paid: newTotalPaid,
+                    outstanding_amount: newOutstanding,
+                    status: newStatus,
+                    updated_at: new Date()
+                }
+            });
+            // 2. Log in History
+            await tx.hms_invoice_history.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: companyId,
+                    invoice_id: payment.invoice_id,
+                    changed_by: session.user.id,
+                    change_type: 'payment_voided',
+                    delta: {
+                        payment_id: paymentId,
+                        amount: payment.amount,
+                        method: payment.method,
+                        reason: reason
+                    }
+                }
+            });
+            // 3. Reverse Registration Status if applicable
+            const regLine = await tx.hms_invoice_lines.findFirst({
+                where: {
+                    invoice_id: payment.invoice_id,
+                    OR: [
+                        {
+                            description: {
+                                contains: 'Registration Fee',
+                                mode: 'insensitive'
+                            }
+                        },
+                        {
+                            description: {
+                                contains: 'Identity Service',
+                                mode: 'insensitive'
+                            }
+                        }
+                    ]
+                }
+            });
+            if (regLine && invoice.patient_id) {
+                const patient = await tx.hms_patient.findUnique({
+                    where: {
+                        id: invoice.patient_id
+                    }
+                });
+                const currentMeta = patient?.metadata || {};
+                if (currentMeta.registration_fees_paid) {
+                    await tx.hms_patient.update({
+                        where: {
+                            id: invoice.patient_id
+                        },
+                        data: {
+                            metadata: {
+                                ...currentMeta,
+                                registration_fees_paid: false,
+                                status: 'inactive'
+                            }
+                        }
+                    });
+                }
+            }
+            // 4. Delete accounting journal if exists
+            const paymentRef = `PMT-${paymentId}`;
+            await tx.journal_entries.deleteMany({
+                where: {
+                    company_id: companyId,
+                    ref: paymentRef
+                }
+            });
+            // 5. Delete the specific payment record
+            await tx.hms_invoice_payments.delete({
+                where: {
+                    id: paymentId
+                }
+            });
+            return {
+                success: true
+            };
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/hms/billing/${payment.invoice_id}`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/reception/dashboard');
+        return result;
+    } catch (error) {
+        console.error("Failed to void payment:", error);
+        return {
+            error: error.message || "Failed to void payment"
+        };
+    }
+}
+async function shareInvoiceWhatsapp(invoiceId, pdfBase64) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$notification$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["NotificationService"].sendInvoiceWhatsapp(invoiceId, session.user.tenantId, pdfBase64);
+        return result;
+    } catch (error) {
+        console.error("Manual WhatsApp Share Failed:", error);
+        return {
+            error: error.message
+        };
+    }
+}
+async function getPatientBalance(patientId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const getLedgerBalance = async ()=>{
+            const result = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.aggregate({
+                where: {
+                    partner_id: patientId,
+                    company_id: companyId,
+                    journal_entries: {
+                        posted: true
+                    }
+                },
+                _sum: {
+                    debit: true,
+                    credit: true
+                }
+            });
+            const totalDebit = Number(result._sum.debit || 0);
+            const totalCredit = Number(result._sum.credit || 0);
+            return totalDebit - totalCredit;
+        };
+        let activeBalance = await getLedgerBalance();
+        // Add DRAFT invoices (Running Bills) which are not yet in Ledger
+        const draftInvoices = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.aggregate({
+            where: {
+                patient_id: patientId,
+                company_id: companyId,
+                status: 'draft'
+            },
+            _sum: {
+                outstanding_amount: true
+            }
+        });
+        const draftAmount = Number(draftInvoices._sum.outstanding_amount || 0);
+        // Effective Balance = Ledger (Posted/Paid) + Drafts (Unposted Consumption)
+        const finalBalance = activeBalance + draftAmount;
+        return {
+            success: true,
+            balance: Math.abs(finalBalance),
+            type: finalBalance > 0.1 ? 'due' : finalBalance < -0.1 ? 'advance' : 'due',
+            rawBalance: finalBalance,
+            breakdown: {
+                ledger: activeBalance,
+                draft: draftAmount
+            }
+        };
+    } catch (error) {
+        console.error("Failed to fetch patient balance:", error);
+        return {
+            error: "Failed to fetch balance"
+        };
+    }
+}
+async function createQuickPatient(name, phone) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        // Split name
+        const parts = name.trim().split(' ');
+        const firstName = parts[0];
+        const lastName = parts.slice(1).join(' ') || '.';
+        const count = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.count({
+            where: {
+                tenant_id: session.user.tenantId
+            }
+        });
+        const patientNumber = `P${new Date().getFullYear()}${String(count + 1).padStart(5, '0')}`;
+        const newPatient = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                company_id: companyId,
+                first_name: firstName,
+                last_name: lastName,
+                patient_number: patientNumber,
+                gender: 'unknown',
+                dob: new Date(),
+                contact: {
+                    phone: phone,
+                    address: 'Walk-in'
+                },
+                metadata: {
+                    source: 'quick_billing',
+                    is_walk_in: true
+                }
+            }
+        });
+        return {
+            success: true,
+            data: newPatient
+        };
+    } catch (error) {
+        console.error("Failed to create quick patient:", error);
+        if (error.code === 'P2002') {
+            return {
+                error: "Patient with this details might already exist."
+            };
+        }
+        return {
+            error: `Failed to create patient: ${error.message}`
+        };
+    }
+}
+async function recordPatientConsumption(patientId, items, notes) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId) return {
+        error: "Unauthorized"
+    };
+    if (!items || items.length === 0) return {
+        error: "No items to record"
+    };
+    try {
+        // 1. Find an Active (Draft) Invoice for this Patient (The "Running Bill")
+        const activeInvoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findFirst({
+            where: {
+                company_id: companyId,
+                patient_id: patientId,
+                status: 'draft'
+            },
+            orderBy: {
+                created_at: 'desc'
+            },
+            include: {
+                hms_invoice_lines: true
+            }
+        });
+        if (activeInvoice) {
+            // APPEND to Existing Draft
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+                // Determine next line index
+                const maxIdx = activeInvoice.hms_invoice_lines.reduce((max, l)=>Math.max(max, l.line_idx), 0);
+                let currentIdx = maxIdx + 1;
+                // Create Lines
+                await tx.hms_invoice_lines.createMany({
+                    data: items.map((item)=>({
+                            tenant_id: session.user.tenantId,
+                            company_id: companyId,
+                            invoice_id: activeInvoice.id,
+                            line_idx: currentIdx++,
+                            product_id: item.productId || null,
+                            description: item.name || item.description,
+                            quantity: item.quantity || 1,
+                            unit_price: item.price || 0,
+                            net_amount: (item.quantity || 1) * (item.price || 0),
+                            tax_amount: 0,
+                            discount_amount: 0,
+                            metadata: {
+                                added_at: new Date().toISOString(),
+                                notes: notes,
+                                type: 'consumption'
+                            }
+                        }))
+                });
+                // Recalculate Totals
+                // Fetch ALL lines again to ensure accuracy
+                const allLines = await tx.hms_invoice_lines.findMany({
+                    where: {
+                        invoice_id: activeInvoice.id
+                    }
+                });
+                const subtotal = allLines.reduce((sum, l)=>sum + Number(l.net_amount), 0);
+                const totalTax = allLines.reduce((sum, l)=>sum + Number(l.tax_amount || 0), 0);
+                const total = subtotal + totalTax;
+                await tx.hms_invoice.update({
+                    where: {
+                        id: activeInvoice.id
+                    },
+                    data: {
+                        subtotal,
+                        total_tax: totalTax,
+                        total,
+                        outstanding_amount: total - Number(activeInvoice.total_paid || 0),
+                        updated_at: new Date()
+                    }
+                });
+            });
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/billing');
+            return {
+                success: true,
+                message: `Added to running bill: ${activeInvoice.invoice_number}`,
+                invoiceId: activeInvoice.id
+            };
+        } else {
+            // CREATE New "Running Bill" (Draft Invoice)
+            const payload = {
+                patient_id: patientId,
+                date: new Date().toISOString(),
+                status: 'draft',
+                line_items: items.map((item)=>({
+                        product_id: item.productId,
+                        description: item.name || item.description,
+                        quantity: item.quantity || 1,
+                        unit_price: item.price || 0,
+                        tax_amount: 0,
+                        discount_amount: 0
+                    })),
+                billing_metadata: {
+                    notes: notes,
+                    origin: 'consumption_log',
+                    is_running_bill: true
+                }
+            };
+            const res = await createInvoice(payload);
+            if (res.error) throw new Error(res.error);
+            const newId = res.data?.id;
+            return {
+                success: true,
+                message: "Created new detailed bill",
+                invoiceId: newId
+            };
+        }
+    } catch (error) {
+        console.error("Failed to record consumption:", error);
+        return {
+            error: error.message
+        };
+    }
+}
+async function getPatientOutstandingBalance(patientId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId || !patientId) return {
+        error: "Unauthorized or missing ID"
+    };
+    try {
+        const invoices = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findMany({
+            where: {
+                tenant_id: session.user.tenantId,
+                company_id: companyId,
+                patient_id: patientId,
+                status: 'posted'
+            },
+            select: {
+                outstanding_amount: true
+            }
+        });
+        const totalDebt = invoices.reduce((sum, inv)=>sum + Number(inv.outstanding_amount || 0), 0);
+        return {
+            success: true,
+            balance: totalDebt
+        };
+    } catch (error) {
+        console.error("Ledger Fetch Failed:", error);
+        return {
+            error: "Could not compute patient balance"
+        };
+    }
+}
+async function getPatientLedger(patientId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = session?.user?.companyId || session?.user?.tenantId;
+    if (!companyId || !patientId) return {
+        error: "Unauthorized or missing ID"
+    };
+    try {
+        const lines = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].journal_entry_lines.findMany({
+            where: {
+                tenant_id: session.user.tenantId,
+                company_id: companyId,
+                partner_id: patientId
+            },
+            include: {
+                journal_entries: {
+                    select: {
+                        date: true,
+                        ref: true,
+                        journals: {
+                            select: {
+                                name: true,
+                                code: true
+                            }
+                        }
+                    }
+                },
+                accounts: {
+                    select: {
+                        name: true,
+                        code: true
+                    }
+                }
+            },
+            orderBy: {
+                journal_entries: {
+                    date: 'desc'
+                }
+            }
+        });
+        return {
+            success: true,
+            data: lines
+        };
+    } catch (error) {
+        console.error("Patient Ledger Fetch Failed:", error);
+        return {
+            error: "Could not fetch patient ledger"
+        };
+    }
+}
+const REG_FEE_DESCRIPTION = "Patient Registration Fee";
+async function generateRegistrationInvoice(patientId, appointmentId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const tenantId = session?.user?.tenantId;
+    let companyId = session?.user?.companyId;
+    if (!tenantId) return {
+        error: "SECURITY_AUTH_EXPIRED: Please login to verify clinical credentials."
+    };
+    if (!companyId) {
+        const fallback = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findFirst({
+            where: {
+                tenant_id: tenantId,
+                enabled: true
+            }
+        });
+        companyId = fallback?.id ?? null;
+    }
+    if (!companyId) return {
+        error: "FACILITY_UNLINKED: Billing terminal lacks active branch association."
+    };
+    try {
+        const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // [ATOMIC-GUARD] Use Postgres Advisory Lock to prevent concurrent registration billing for this patient
+            await tx.$executeRawUnsafe(`SELECT pg_advisory_xact_lock(hashtext(\'${patientId}_reg\'))`);
+            // [IDEMPOTENCY-FIX] Nuclear Match Check for existing registration invoice
+            const existing = await tx.hms_invoice.findFirst({
+                where: {
+                    OR: [
+                        appointmentId ? {
+                            appointment_id: appointmentId
+                        } : {},
+                        {
+                            patient_id: patientId
+                        }
+                    ],
+                    tenant_id: tenantId,
+                    status: {
+                        in: [
+                            'draft',
+                            'posted',
+                            'paid'
+                        ]
+                    },
+                    hms_invoice_lines: {
+                        some: {
+                            OR: [
+                                {
+                                    description: {
+                                        contains: 'Reg',
+                                        mode: 'insensitive'
+                                    }
+                                },
+                                {
+                                    description: {
+                                        contains: 'Registration',
+                                        mode: 'insensitive'
+                                    }
+                                },
+                                {
+                                    description: {
+                                        contains: 'Identity',
+                                        mode: 'insensitive'
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                select: {
+                    id: true,
+                    invoice_number: true,
+                    status: true,
+                    total: true,
+                    hms_invoice_lines: {
+                        select: {
+                            id: true,
+                            description: true,
+                            net_amount: true,
+                            unit_price: true
+                        }
+                    }
+                },
+                orderBy: {
+                    created_at: 'desc'
+                }
+            });
+            if (existing) {
+                console.log(`[RCM] Duplicate registration invoice blocked for patient ${patientId}. Reusing ${existing.invoice_number}`);
+                return existing;
+            }
+            // 1. Resolve Settings for Registration Fee
+            const settings = await tx.hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'billing'
+                }
+            });
+            const billingSettings = settings?.value || {};
+            const regFee = billingSettings.registrationFee || 150;
+            const regProductId = billingSettings.registrationProductId;
+            // 2. Resolve Product (Registration Fee)
+            let product = null;
+            if (regProductId) {
+                product = await tx.hms_product.findUnique({
+                    where: {
+                        id: regProductId
+                    }
+                });
+            }
+            if (!product) {
+                product = await tx.hms_product.findFirst({
+                    where: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: {
+                            contains: 'Registration Fee',
+                            mode: 'insensitive'
+                        }
+                    }
+                });
+            }
+            // Auto-create product if missing (Self-healing)
+            if (!product) {
+                product = await tx.hms_product.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name: "Patient Registration Fee",
+                        sku: "REG-FEE",
+                        is_service: true,
+                        price: regFee,
+                        is_active: true
+                    }
+                });
+            }
+            // 3. Generate Official Invoice Number
+            // NOTE: getNextVoucherNumber uses Prisma internally, if called here it might dead-lock or fail
+            // if not passed the transaction client. But since it's a separate async call, we'll risk it or 
+            // wrap it if possible. For now, using the standard pattern.
+            const invNoRes = await getNextVoucherNumber();
+            const invoiceNumber = invNoRes.success ? invNoRes.data : `INV-REG-${Date.now().toString().slice(-6)}`;
+            // 4. Create Invoice Record with Line Item
+            return await tx.hms_invoice.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    patient_id: patientId,
+                    appointment_id: appointmentId || null,
+                    invoice_number: invoiceNumber,
+                    issued_at: new Date(),
+                    subtotal: product.price || 0,
+                    total_tax: 0,
+                    total: product.price || 0,
+                    outstanding_amount: product.price || 0,
+                    status: 'posted',
+                    billing_metadata: {
+                        source: 'auto-registration-rcm',
+                        description: 'Automatic registration billing sequence'
+                    },
+                    branch_id: session.user.current_branch_id,
+                    created_by: session.user.id,
+                    hms_invoice_lines: {
+                        create: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            line_idx: 1,
+                            product_id: product.id,
+                            description: REG_FEE_DESCRIPTION,
+                            quantity: 1,
+                            unit_price: product.price || 0,
+                            net_amount: product.price || 0
+                        }
+                    }
+                },
+                select: {
+                    id: true,
+                    invoice_number: true,
+                    status: true,
+                    total: true,
+                    hms_invoice_lines: {
+                        select: {
+                            id: true,
+                            description: true,
+                            net_amount: true,
+                            unit_price: true
+                        }
+                    },
+                    hms_patient: {
+                        select: {
+                            id: true,
+                            first_name: true,
+                            last_name: true
+                        }
+                    }
+                }
+            });
+        }, {
+            timeout: 15000
+        });
+        return {
+            success: true,
+            data: invoice
+        };
+    } catch (err) {
+        console.error("FAILED_TO_GENERATE_REG_INVOICE:", err);
+        return {
+            error: err.message || "RCM_FAILURE: Could not generate auto-billing record."
+        };
+    }
+}
+async function getOpenRegistrationInvoice(patientId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const tenantId = session?.user?.tenantId;
+    if (!tenantId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findFirst({
+            where: {
+                patient_id: patientId,
+                tenant_id: tenantId,
+                status: {
+                    in: [
+                        'draft',
+                        'posted'
+                    ]
+                },
+                hms_invoice_lines: {
+                    some: {
+                        OR: [
+                            {
+                                description: {
+                                    contains: 'Reg',
+                                    mode: 'insensitive'
+                                }
+                            },
+                            {
+                                description: {
+                                    contains: 'Registration',
+                                    mode: 'insensitive'
+                                }
+                            },
+                            {
+                                description: {
+                                    contains: 'Identity',
+                                    mode: 'insensitive'
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            select: {
+                id: true,
+                invoice_number: true,
+                status: true,
+                total: true,
+                hms_invoice_lines: {
+                    select: {
+                        id: true,
+                        description: true,
+                        net_amount: true,
+                        unit_price: true
+                    }
+                },
+                hms_patient: {
+                    select: {
+                        id: true,
+                        first_name: true,
+                        last_name: true
+                    }
+                }
+            },
+            orderBy: {
+                created_at: 'desc'
+            }
+        });
+        return {
+            success: true,
+            data: invoice
+        };
+    } catch (err) {
+        return {
+            error: err.message
+        };
+    }
+}
+async function generateConsultationInvoice(appointmentId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const tenantId = session.user.tenantId;
+    const companyId = session.user.companyId || tenantId;
+    try {
+        const appointment = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.findUnique({
+            where: {
+                id: appointmentId
+            },
+            include: {
+                hms_clinician: true,
+                hms_patient: true
+            }
+        });
+        if (!appointment) return {
+            error: "Appointment not found"
+        };
+        const consultationFee = Number(appointment.hms_clinician?.consultation_fee) || 0;
+        // 1. Check for existing invoice
+        // [IDEMPOTENCY-FIX] Enhanced check with tenant scoping
+        const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findFirst({
+            where: {
+                appointment_id: appointmentId,
+                tenant_id: tenantId,
+                status: {
+                    not: 'cancelled'
+                }
+            }
+        });
+        if (existing) {
+            console.log(`[RCM] Duplicate consultation invoice blocked for appointment ${appointmentId}. Reusing ${existing.invoice_number}`);
+            return {
+                success: true,
+                data: existing
+            };
+        }
+        // 2. Generate Number
+        const invNoRes = await getNextVoucherNumber();
+        const invoiceNumber = invNoRes.success ? invNoRes.data : `INV-CONS-${Date.now().toString().slice(-6)}`;
+        // 3. Create Invoice
+        const invoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: tenantId,
+                company_id: companyId,
+                patient_id: appointment.patient_id,
+                appointment_id: appointmentId,
+                invoice_number: invoiceNumber,
+                issued_at: new Date(),
+                subtotal: consultationFee,
+                total: consultationFee,
+                outstanding_amount: consultationFee,
+                status: 'draft',
+                billing_metadata: {
+                    source: 'op-clinical-terminal',
+                    encounter_id: appointmentId
+                },
+                branch_id: session.user.current_branch_id,
+                created_by: session.user.id,
+                hms_invoice_lines: {
+                    create: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        line_idx: 1,
+                        description: `Consultation Fee - Dr. ${appointment.hms_clinician?.first_name} ${appointment.hms_clinician?.last_name}`,
+                        quantity: 1,
+                        unit_price: consultationFee,
+                        net_amount: consultationFee
+                    }
+                }
+            }
+        });
+        return {
+            success: true,
+            data: invoice
+        };
+    } catch (err) {
+        console.error("FAILED_TO_GENERATE_CONS_INVOICE:", err);
+        return {
+            error: err.message || "RCM_FAILURE: Could not generate consultation bill."
+        };
+    }
+}
+async function linkInvoiceToAppointment(invoiceId, appointmentId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.update({
+            where: {
+                id: invoiceId
+            },
+            data: {
+                appointment_id: appointmentId
+            }
+        });
+        return {
+            success: true
+        };
+    } catch (error) {
+        return {
+            error: error.message
+        };
+    }
+}
+async function getInitialInvoiceData(appointmentId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const tenantId = session.user.tenantId;
+    try {
+        const appointment = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_appointments.findUnique({
+            where: {
+                id: appointmentId
+            },
+            include: {
+                hms_clinician: true,
+                hms_patient: true
+            }
+        });
+        if (!appointment) return {
+            error: "Appointment not found"
+        };
+        let initialItems = [];
+        let initialInvoice = null;
+        // 0. Check for EXISTING DRAFT INVOICE
+        const draftInvoice = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_invoice.findFirst({
+            where: {
+                appointment_id: appointmentId,
+                status: {
+                    in: [
+                        'draft',
+                        'posted'
+                    ]
+                }
+            },
+            include: {
+                hms_invoice_lines: {
+                    include: {
+                        hms_product: true
+                    }
+                },
+                hms_patient: true
+            }
+        });
+        const hmsConfigRecord = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                tenant_id: tenantId,
+                company_id: session.user.companyId || tenantId,
+                key: 'registration_config'
+            }
+        });
+        const configData = hmsConfigRecord?.value || {};
+        const consultationBillingMode = configData.consultationBillingMode || 'post_visit';
+        if (draftInvoice) {
+            initialInvoice = draftInvoice;
+        }
+        // 1. Add Consultation Fee (Respect Mode)
+        const consultationFee = Number(appointment.hms_clinician?.consultation_fee) || 0;
+        let shouldAddConsultation = false;
+        if (consultationBillingMode === 'at_booking') {
+            shouldAddConsultation = true;
+        } else if (consultationBillingMode === 'post_visit') {
+            // Only add if NOT in booking/scheduled/arrived phase
+            shouldAddConsultation = ![
+                'scheduled',
+                'arrived'
+            ].includes(appointment.status);
+        }
+        if (consultationFee > 0 && shouldAddConsultation) {
+            const hasConsultation = draftInvoice?.hms_invoice_lines.some((l)=>l.description?.includes('Consultation Fee'));
+            if (!hasConsultation) {
+                initialItems.push({
+                    id: appointment.clinician_id,
+                    name: `Consultation Fee - Dr. ${appointment.hms_clinician?.first_name} ${appointment.hms_clinician?.last_name}`,
+                    price: consultationFee,
+                    quantity: 1,
+                    type: 'service'
+                });
+            }
+        }
+        // 2. Add Registration Fee (Fuzzy Logic)
+        const registrationPaid = appointment.hms_patient?.metadata?.registration_fees_paid;
+        if (!registrationPaid) {
+            const isRegFuzzy = (desc)=>{
+                const d = desc?.toLowerCase() || "";
+                return d.includes('registration fee') || d.includes('identity service') || d.includes('registration') && d.includes('fee');
+            };
+            const hasRegFee = draftInvoice?.hms_invoice_lines.some((l)=>isRegFuzzy(l.description || '')) || initialItems.some((i)=>isRegFuzzy(i.name));
+            if (!hasRegFee) {
+                const regFeeRecord = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_patient_registration_fees.findFirst({
+                    where: {
+                        tenant_id: tenantId,
+                        is_active: true
+                    }
+                });
+                if (regFeeRecord) {
+                    initialItems.push({
+                        id: 'reg-fee',
+                        name: REG_FEE_DESCRIPTION,
+                        price: Number(regFeeRecord.fee_amount),
+                        quantity: 1,
+                        type: 'service'
+                    });
+                }
+            }
+        }
+        // 3. Nurse Consumables
+        const stockMoves = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_move.findMany({
+            where: {
+                source_reference: appointmentId,
+                source: 'Nursing Consumption'
+            }
+        });
+        for (const move of stockMoves){
+            const alreadyInDraft = draftInvoice?.hms_invoice_lines.some((l)=>l.product_id === move.product_id);
+            if (!alreadyInDraft) {
+                const product = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findUnique({
+                    where: {
+                        id: move.product_id
+                    }
+                });
+                if (product) {
+                    initialItems.push({
+                        id: move.product_id,
+                        name: `(Nurse) ${product.name}`,
+                        price: Number(product.price) || 0,
+                        quantity: Number(move.qty),
+                        type: 'item'
+                    });
+                }
+            }
+        }
+        // 4. Prescriptions
+        const doctorPrescription = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].prescription.findFirst({
+            where: {
+                appointment_id: appointmentId
+            },
+            include: {
+                prescription_items: {
+                    include: {
+                        hms_product: {
+                            include: {
+                                hms_product_price_history: {
+                                    orderBy: {
+                                        valid_from: 'desc'
+                                    },
+                                    take: 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        if (doctorPrescription) {
+            doctorPrescription.prescription_items.forEach((item)=>{
+                const alreadyInDraft = draftInvoice?.hms_invoice_lines.some((l)=>l.product_id === item.medicine_id);
+                if (!alreadyInDraft && item.hms_product) {
+                    const days = Number(item.days || 1);
+                    const dailyQty = Number(item.morning || 0) + Number(item.afternoon || 0) + Number(item.evening || 0) + Number(item.night || 0);
+                    const totalQty = (dailyQty > 0 ? dailyQty : 1) * days;
+                    const price = item.hms_product.hms_product_price_history?.[0]?.price ? Number(item.hms_product.hms_product_price_history[0].price) : Number(item.hms_product.price) || 0;
+                    if (totalQty > 0) {
+                        initialItems.push({
+                            id: item.medicine_id,
+                            name: item.hms_product.name,
+                            price: price,
+                            quantity: totalQty,
+                            type: 'item'
+                        });
+                    }
+                }
+            });
+        }
+        return {
+            success: true,
+            data: {
+                initialItems,
+                initialInvoice,
+                patientId: appointment.patient_id
+            }
+        };
+    } catch (error) {
+        console.error("getInitialInvoiceData error:", error);
+        return {
+            error: error.message
+        };
+    }
+}
+// Helper to JIT Create/Resolve Tax Rates
+async function resolveAutoTax(rate, tenant_id, company_id) {
+    if (!rate && rate !== 0) return null;
+    try {
+        // 1. Find existing rate in GLOBAL rates first
+        const map = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findFirst({
+            where: {
+                company_id,
+                tax_rates: {
+                    rate: rate
+                }
+            },
+            include: {
+                tax_rates: true
+            }
+        });
+        if (map && map.tax_rates) return map.tax_rates.id;
+        // 2. Find any rate with matching value
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_rates.findFirst({
+            where: {
+                rate: rate,
+                is_active: true
+            }
+        });
+        if (existing) {
+            const alreadyMapped = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findFirst({
+                where: {
+                    company_id,
+                    tax_rate_id: existing.id
+                }
+            });
+            if (!alreadyMapped) {
+                const mapData = {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id,
+                    company_id,
+                    tax_rate_id: existing.id,
+                    tax_type_id: existing.tax_type_id,
+                    is_default: false
+                };
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.create({
+                    data: mapData
+                }).catch((e)=>console.error("Map create fail", e));
+            }
+            return existing.id;
+        }
+        // 3. Create NEW Type & Rate
+        const typeName = `AUTO_GST_${rate}`;
+        let taxType = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_types.findFirst({
+            where: {
+                name: typeName
+            }
+        });
+        if (!taxType) {
+            const typeData = {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                name: typeName,
+                description: `Auto Generated ${rate}%`,
+                is_active: true
+            };
+            try {
+                taxType = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_types.create({
+                    data: typeData
+                });
+            } catch (e) {
+                taxType = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_types.findFirst({
+                    where: {
+                        name: 'GST'
+                    }
+                });
+            }
+        }
+        if (!taxType) return null;
+        const rateData = {
+            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+            tax_type_id: taxType.id,
+            name: `${rate}%`,
+            rate: rate,
+            is_active: true
+        };
+        const newRate = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_rates.create({
+            data: rateData
+        });
+        const mapData = {
+            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+            tenant_id,
+            company_id,
+            tax_rate_id: newRate.id,
+            tax_type_id: taxType.id,
+            is_default: false
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.create({
+            data: mapData
+        }).catch((e)=>{});
+        return newRate.id;
+    } catch (e) {
+        console.error("Auto Tax Resolve Error:", e);
+        return null;
+    }
+}
+// Helper for unified registration tracking
+async function trackRegistrationPayment(tx, patientId, tenantId, companyId) {
+    try {
+        // [IDEMPOTENCY-FIX] Check if patient is already active and valid
+        const patient = await tx.hms_patient.findUnique({
+            where: {
+                id: patientId
+            },
+            select: {
+                metadata: true
+            }
+        });
+        if (!patient) return;
+        const currentMeta = patient.metadata || {};
+        const now = new Date();
+        // If they already have an expiry in the future, don't update (avoid flapping or nested transactional loops)
+        if (currentMeta.registration_fees_paid === true && currentMeta.registration_expiry) {
+            const expiry = new Date(currentMeta.registration_expiry);
+            if (expiry > now) {
+                console.log(`[REG-TRACK] Skipping update for patient ${patientId}. Existing valid registration until ${currentMeta.registration_expiry}`);
+                return;
+            }
+        }
+        // 1. Get validity period from settings
+        const hmsConfigRecord = await tx.hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'registration_config'
+            }
+        });
+        const configData = hmsConfigRecord?.value || {};
+        // Fallback to history check if config is missing
+        const activeFee = await tx.hms_patient_registration_fees.findFirst({
+            where: {
+                tenant_id: tenantId,
+                company_id: companyId,
+                is_active: true
+            }
+        });
+        const validityDays = activeFee?.validity_days || configData.validity || 7;
+        // 2. Calculate expiry
+        const expiryDate = new Date();
+        expiryDate.setDate(now.getDate() + validityDays);
+        // 3. Update Patient Metadata (using the already fetched patient object)
+        await tx.hms_patient.update({
+            where: {
+                id: patientId
+            },
+            data: {
+                metadata: {
+                    ...currentMeta,
+                    registration_fees_paid: true,
+                    registration_fee_date: now.toISOString(),
+                    registration_expiry: expiryDate.toISOString(),
+                    status: 'active' // Clear 'awaiting_payment' if present
+                }
+            }
+        });
+        console.log(`[REG-TRACK] Updated patient ${patientId} registration. Expiry: ${expiryDate.toISOString()}`);
+    } catch (err) {
+        console.error("[REG-TRACK] Failed to update patient registration status", err);
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    getUoms,
+    getNextVoucherNumber,
+    getBillableItems,
+    getTaxConfiguration,
+    createInvoice,
+    cancelInvoice,
+    updateInvoice,
+    updateInvoiceStatus,
+    recordPayment,
+    settlePatientDues,
+    voidPayment,
+    shareInvoiceWhatsapp,
+    getPatientBalance,
+    createQuickPatient,
+    recordPatientConsumption,
+    getPatientOutstandingBalance,
+    getPatientLedger,
+    generateRegistrationInvoice,
+    getOpenRegistrationInvoice,
+    generateConsultationInvoice,
+    linkInvoiceToAppointment,
+    getInitialInvoiceData
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getUoms, "00b946f672ab588457fd6e6a6565ad58637666ab6c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getNextVoucherNumber, "4013ddfdd82a8f5f26ddbd0b4c0b6d0bb8d8768737", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getBillableItems, "00df4fa4f631e0b8b370cfd768579ca09ddf43b344", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getTaxConfiguration, "00388db89f9409da18e662700d562374d2b270537e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createInvoice, "408583314a251e4ab6a1476b75c2a2e19f8b2cb1a3", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(cancelInvoice, "4009c8593066df47cffda086ed40a649d1ee9993f6", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateInvoice, "6012293d892e0a7ee4a8654dd1af202e108dc6debd", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateInvoiceStatus, "601d2ccdb020eb572cceed0bc295cde4222d7052d5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(recordPayment, "709a787099d74f0a77dcfa251a40d8c26f8b656d08", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(settlePatientDues, "78314c67a5a6f8686b0890d6a5d67c91f92e9b7032", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(voidPayment, "6001830112147f6a5bd49341fb1cb42196b1bed78c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(shareInvoiceWhatsapp, "606179061d81a683b8b4bdfd15b55a633920f874bb", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatientBalance, "40433c06c1f4d912be0b688d3b783282a1c33cfc0c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createQuickPatient, "603ba48760f4106aaa3ced755a007939dec191facf", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(recordPatientConsumption, "700708bd6a2e5cd22125d980b1f1d664491f5ea502", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatientOutstandingBalance, "40e262a8c91eef996f821f1d338179393c646f1ce2", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatientLedger, "40a329d95dc3d1a62d1e482a762f87e63308b336de", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(generateRegistrationInvoice, "608349f1b4763265beceb5d9cd891152ef32c6ab68", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getOpenRegistrationInvoice, "40f587896266518b5850eeacccfc69be5ca0a335ce", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(generateConsultationInvoice, "40e5b9b5d47829439c65d11ea45099f2bddbc1f683", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(linkInvoiceToAppointment, "6023de41a288144cc358d4877439ee60e48937cca5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getInitialInvoiceData, "401578f3fe96c87480a0867d8d29b9035ebeee1c81", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/lib/format-utils.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "DEFAULT_DATE_FORMAT",
+    ()=>DEFAULT_DATE_FORMAT,
+    "DEFAULT_PRECISION",
+    ()=>DEFAULT_PRECISION,
+    "DEFAULT_TIME_FORMAT",
+    ()=>DEFAULT_TIME_FORMAT,
+    "formatCurrencyWithSymbol",
+    ()=>formatCurrencyWithSymbol,
+    "formatDate",
+    ()=>formatDate,
+    "formatNumber",
+    ()=>formatNumber
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/date-fns/format.js [app-rsc] (ecmascript) <locals>");
+;
+const DEFAULT_DATE_FORMAT = 'dd/MM/yyyy';
+const DEFAULT_TIME_FORMAT = 'hh:mm aa';
+const DEFAULT_PRECISION = 2;
+function formatDate(date, formatString) {
+    if (!date) return '-';
+    const d = new Date(date);
+    if (isNaN(d.getTime())) return '-';
+    // Use provided format or fall back to system default
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(d, formatString || DEFAULT_DATE_FORMAT);
+}
+function formatNumber(amount, precision = DEFAULT_PRECISION) {
+    if (amount === undefined || amount === null) return '0.00';
+    return new Intl.NumberFormat('en-IN', {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision
+    }).format(amount);
+}
+function formatCurrencyWithSymbol(amount, symbol = '₹', precision = DEFAULT_PRECISION) {
+    const formatted = formatNumber(amount, precision);
+    // Standard symbol placement logic
+    if (symbol.length === 1 || symbol === 'A$' || symbol === 'C$' || symbol === 'S$') {
+        return `${symbol}${formatted}`;
+    } else {
+        return `${formatted} ${symbol}`;
+    }
+}
+}),
+"[project]/src/lib/currency.ts [app-rsc] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatCurrency",
+    ()=>formatCurrency,
+    "formatINR",
+    ()=>formatINR,
+    "getCurrencyCode",
+    ()=>getCurrencyCode,
+    "getCurrencySymbol",
+    ()=>getCurrencySymbol
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2d$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/format-utils.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/currency-constants.ts [app-rsc] (ecmascript)");
+;
+;
+;
+function getCurrencySymbol(countryCode) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CURRENCY_SYMBOLS"][countryCode?.toUpperCase()] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SYSTEM_DEFAULT_CURRENCY_SYMBOL"];
+}
+function getCurrencyCode(countryCode) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CURRENCY_CODES"][countryCode?.toUpperCase()] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SYSTEM_DEFAULT_CURRENCY_CODE"];
+}
+function formatCurrency(amount, currencyOrCountry = 'USD', precision = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2d$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DEFAULT_PRECISION"]) {
+    let symbol = '$';
+    const code = currencyOrCountry?.toUpperCase();
+    if (code === 'INR' || code === 'IN') symbol = '₹';
+    else if (code === 'USD' || code === 'US') symbol = '$';
+    else if (code === 'GBP' || code === 'GB') symbol = '£';
+    else if (code === 'EUR' || code === 'EU') symbol = '€';
+    else if (code === 'AED' || code === 'AE') symbol = 'AED';
+    else if (code === 'SAR' || code === 'SA') symbol = 'SAR';
+    else if (code === 'AUD' || code === 'AU') symbol = 'A$';
+    else if (code === 'CAD' || code === 'CA') symbol = 'C$';
+    else symbol = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CURRENCY_SYMBOLS"][code] || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SYSTEM_DEFAULT_CURRENCY_SYMBOL"];
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2d$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrencyWithSymbol"])(amount, symbol, precision);
+}
+function formatINR(amount, precision = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2d$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DEFAULT_PRECISION"]) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$format$2d$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrencyWithSymbol"])(amount, '₹', precision);
+}
+}),
+"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+/* __next_internal_action_entry_do_not_use__ [{"0034f67eeb4402a9e52c1cb7e004952b423c0a2f06":"getUOMs","005142d0a94aa9d10ae5bfe4277a9d724d32d8b1d5":"getInventoryDashboardStats","0066f5b04395e53b78090453ac7141aa0a91827993":"getLocations","008823941ba46327a90626b6578b6bbe0a347a7954":"getTaxRates","008cf95df8c7cd7c9dd0d4cec4bbdf6f528ebefbc1":"getCategories","00a57ecf33125b2134b93b2780a918f2bab25dc7ba":"getUOMCategories","00deec17a90f51ed5be70331723928edcf29ec8e02":"getManufacturers","00e0bbde732274ad8c749dddf99bb0162dd32892df":"getSuppliers","40142bc73045eed4951877f762a8ab4991035d4135":"importProductsCSV","40225acc51348d2b2b038ef6cc9838bc5917557365":"getProductBatches","4033810eacbb3566a4010c3cf91bdbd6ab0d04a7a5":"updateLocation","403dfabd7762c3af12e5a377080f02f595d1ce8bd1":"deleteCategory","405772251548342bf35d8f4344c5cca012a82564c6":"findOrCreateProductsBatch","405af090296d3e1d186c19d84e74d86a699718aeae":"deleteManufacturer","405ea5f61332b87f910801a08e96cc850db1edf06a":"findOrCreateUOM","406246e6eb3eed165d823b9c6d3a4456f110b3ba9d":"getProduct","407e892819e4d55dbcac292ead980e6dad658b5b4e":"findOrCreateUOMsBatch","40af1a8efc986b4cd0b10ca91e837c129c27194257":"createProduct","40bb30e2489683d3e2e4425f1d11b075d8c3b2eae6":"updateManufacturer","40cf043b06ec813c2296effd2efa4a4b8bce461068":"deleteLocation","40e32da27a9dd319487ff23436bc383254aff855fd":"updateProduct","40e88ba52f0e7891f26b7b12f5d2b03953cf0eb32a":"getBestBatch","40ea087eb469d52883501b029f3157c06cb9cd2ba0":"deleteUOM","40fa1cddf21806349414ee6842509e264740bc5257":"getBatchHistory","60265134bd4b9ca77db4d59e6f58f8c80c638404b0":"createCategory","6030b393eccb2a94607b792355933ea0d1d7a942e0":"updateUOM","6035e23407b4df99ef7b061187cc18f9d55474ede3":"createManufacturer","606974da8dd67798b181eb0f13a52f83598addbc3e":"getSuppliersList","608d2e9973bc8408fae2ea07918a2ecc50c0abb58a":"adjustStock","608d9c9f3b67f13df0b0f705ee39c75f0fafb90001":"getStockReport","6094ee5da228ee9381bf547282100e1b66dedc866a":"createUOMCategory","60a44f4f08ebdda32538199597a6d8ce1ae8b2d6b5":"updateProductBatch","60be42115a889f22545e6ef659ae39e21afd13fa28":"createUOM","60c7e89b0e3357039ceec6d27e788134a3d1eef0f9":"createLocation","60e2f1339bb04f4a4848366006bbec106990929c19":"findOrCreateProduct","60e380aa5c9dd55db7e9c4662eda057ff0f0d45dba":"updateCategory","704b5927e84e8eae2a32e403917120dde926674933":"getProductsPremium","707d1a46f57734b2bb5a03a9234ae59728ffd1e04f":"getStockMoves"},"",""] */ __turbopack_context__.s([
+    "adjustStock",
+    ()=>adjustStock,
+    "createCategory",
+    ()=>createCategory,
+    "createLocation",
+    ()=>createLocation,
+    "createManufacturer",
+    ()=>createManufacturer,
+    "createProduct",
+    ()=>createProduct,
+    "createUOM",
+    ()=>createUOM,
+    "createUOMCategory",
+    ()=>createUOMCategory,
+    "deleteCategory",
+    ()=>deleteCategory,
+    "deleteLocation",
+    ()=>deleteLocation,
+    "deleteManufacturer",
+    ()=>deleteManufacturer,
+    "deleteUOM",
+    ()=>deleteUOM,
+    "findOrCreateProduct",
+    ()=>findOrCreateProduct,
+    "findOrCreateProductsBatch",
+    ()=>findOrCreateProductsBatch,
+    "findOrCreateUOM",
+    ()=>findOrCreateUOM,
+    "findOrCreateUOMsBatch",
+    ()=>findOrCreateUOMsBatch,
+    "getBatchHistory",
+    ()=>getBatchHistory,
+    "getBestBatch",
+    ()=>getBestBatch,
+    "getCategories",
+    ()=>getCategories,
+    "getInventoryDashboardStats",
+    ()=>getInventoryDashboardStats,
+    "getLocations",
+    ()=>getLocations,
+    "getManufacturers",
+    ()=>getManufacturers,
+    "getProduct",
+    ()=>getProduct,
+    "getProductBatches",
+    ()=>getProductBatches,
+    "getProductsPremium",
+    ()=>getProductsPremium,
+    "getStockMoves",
+    ()=>getStockMoves,
+    "getStockReport",
+    ()=>getStockReport,
+    "getSuppliers",
+    ()=>getSuppliers,
+    "getSuppliersList",
+    ()=>getSuppliersList,
+    "getTaxRates",
+    ()=>getTaxRates,
+    "getUOMCategories",
+    ()=>getUOMCategories,
+    "getUOMs",
+    ()=>getUOMs,
+    "importProductsCSV",
+    ()=>importProductsCSV,
+    "updateCategory",
+    ()=>updateCategory,
+    "updateLocation",
+    ()=>updateLocation,
+    "updateManufacturer",
+    ()=>updateManufacturer,
+    "updateProduct",
+    ()=>updateProduct,
+    "updateProductBatch",
+    ()=>updateProductBatch,
+    "updateUOM",
+    ()=>updateUOM
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/prisma.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/cache.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/currency.ts [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/currency-constants.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/@prisma/client [external] (@prisma/client, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$xlsx$2f$xlsx$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/xlsx/xlsx.mjs [app-rsc] (ecmascript)");
+// --- Product Management ---
+// -- Helpers for Dropdowns --
+var __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/fs [external] (fs, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/path [external] (path, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+;
+;
+;
+async function getInventoryDashboardStats() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        const companyId = session.user.companyId;
+        // 1. Total Products
+        const totalProducts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.count({
+            where: {
+                company_id: companyId,
+                is_active: true
+            }
+        });
+        // 2. Low Stock Alerts (Using default threshold of 10)
+        const lowStockItems = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_levels.findMany({
+            where: {
+                company_id: companyId
+            }
+        });
+        const lowStockCount = lowStockItems.filter((item)=>{
+            const qty = Number(item.quantity || 0);
+            const threshold = 10; // Default threshold
+            return qty < threshold;
+        }).length;
+        // 3. Inventory Value (Sum of Stock * Unit Cost)
+        // We'll approximate this by summing hms_stock_ledger current value or
+        // by summing stock_levels.quantity * product.price (if cost not available)
+        // Let's use hms_stock_levels * product.price (assuming price ~ value for now if cost is missing)
+        const stockItems = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_levels.findMany({
+            where: {
+                company_id: companyId
+            },
+            include: {
+                hms_product: {
+                    select: {
+                        price: true
+                    } // Using selling price as proxy if cost is null
+                }
+            }
+        });
+        let totalValue = 0;
+        stockItems.forEach((item)=>{
+            const qty = Number(item.quantity || 0);
+            const price = Number(item.hms_product?.price || 0); // fallback to 0
+            totalValue += qty * price;
+        });
+        // 4. Recent Activity (Stock Moves)
+        const recentMoves = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_ledger.findMany({
+            where: {
+                company_id: companyId
+            },
+            take: 5,
+            orderBy: {
+                created_at: 'desc'
+            },
+            include: {
+                hms_product: {
+                    select: {
+                        name: true,
+                        sku: true
+                    }
+                }
+            }
+        });
+        return {
+            success: true,
+            data: {
+                totalProducts,
+                lowStockCount,
+                totalValue,
+                recentMoves: recentMoves.map((m)=>({
+                        id: m.id,
+                        product: m.hms_product?.name || 'Unknown',
+                        sku: m.hms_product?.sku,
+                        type: m.movement_type,
+                        qty: Number(m.qty),
+                        date: m.created_at
+                    }))
+            }
+        };
+    } catch (error) {
+        console.error("Failed to fetch inventory stats:", error);
+        return {
+            error: "Failed to load dashboard data"
+        };
+    }
+}
+;
+;
+function logDebug(message) {
+    try {
+        const logPath = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd(), 'inventory_debug.log');
+        __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["default"].appendFileSync(logPath, new Date().toISOString() + ': ' + message + '\n');
+    } catch (e) {
+    // ignore
+    }
+}
+async function getSuppliers() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    // Debug logging
+    logDebug(`getSuppliers: companyId=${session?.user?.companyId}, tenantId=${session?.user?.tenantId}`);
+    if (!session?.user?.companyId) return [];
+    try {
+        let suppliers = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.findMany({
+            where: {
+                company_id: session.user.companyId,
+                is_active: true
+            },
+            select: {
+                id: true,
+                name: true
+            }
+        });
+        if (suppliers.length === 0) {
+            logDebug('getSuppliers: Seeding default supplier');
+            if (session.user.tenantId) {
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.create({
+                    data: {
+                        tenant_id: session.user.tenantId,
+                        company_id: session.user.companyId,
+                        name: 'General Vendor',
+                        is_active: true
+                    }
+                });
+                suppliers = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.findMany({
+                    where: {
+                        company_id: session.user.companyId,
+                        is_active: true
+                    },
+                    select: {
+                        id: true,
+                        name: true
+                    }
+                });
+            } else {
+                logDebug('getSuppliers: Missing tenantId, cannot seed');
+            }
+        }
+        return suppliers;
+    } catch (error) {
+        logDebug(`getSuppliers Error: ${error}`);
+        console.error("Failed to fetch suppliers:", error);
+        return [];
+    }
+}
+async function getTaxRates() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    logDebug(`getTaxRates: companyId=${session?.user?.companyId}`);
+    if (!session?.user?.companyId) return [];
+    try {
+        const companyId = session.user.companyId;
+        // 1. Fetch Company Specific Taxes (Custom Definition)
+        const customTaxes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_taxes.findMany({
+            where: {
+                company_id: companyId,
+                is_active: true
+            },
+            select: {
+                id: true,
+                name: true,
+                rate: true
+            }
+        });
+        // 2. Fetch Global Mapped Taxes (Map Table)
+        const taxMaps = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+            where: {
+                company_id: companyId,
+                is_active: true
+            },
+            include: {
+                tax_rates: {
+                    select: {
+                        id: true,
+                        name: true,
+                        rate: true
+                    }
+                }
+            }
+        });
+        const mappedTaxes = taxMaps.map((tm)=>({
+                id: tm.tax_rates.id,
+                name: tm.tax_rates.name,
+                rate: Number(tm.tax_rates.rate)
+            }));
+        // 3. Fetch Accounting Settings Defaults (Company Settings)
+        const settings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_accounting_settings.findFirst({
+            where: {
+                company_id: companyId
+            },
+            include: {
+                tax_rates_company_accounting_settings_default_sale_tax_idTotax_rates: true,
+                tax_rates_company_accounting_settings_default_purchase_tax_idTotax_rates: true
+            }
+        });
+        const settingTaxes = [];
+        if (settings?.tax_rates_company_accounting_settings_default_sale_tax_idTotax_rates) {
+            const t = settings.tax_rates_company_accounting_settings_default_sale_tax_idTotax_rates;
+            settingTaxes.push({
+                id: t.id,
+                name: t.name,
+                rate: Number(t.rate)
+            });
+        }
+        if (settings?.tax_rates_company_accounting_settings_default_purchase_tax_idTotax_rates) {
+            const t = settings.tax_rates_company_accounting_settings_default_purchase_tax_idTotax_rates;
+            settingTaxes.push({
+                id: t.id,
+                name: t.name,
+                rate: Number(t.rate)
+            });
+        }
+        // Combine and Deduplicate
+        const allTaxesMap = new Map();
+        [
+            ...customTaxes.map((t)=>({
+                    ...t,
+                    rate: Number(t.rate)
+                })),
+            ...mappedTaxes,
+            ...settingTaxes
+        ].forEach((t)=>{
+            allTaxesMap.set(t.id, t);
+        });
+        // 4. Fallback: Fetch Country Default Taxes if auto-load is true or no taxes found
+        const compSettings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_settings.findUnique({
+            where: {
+                company_id: companyId
+            }
+        });
+        if (allTaxesMap.size === 0 || compSettings?.auto_load_taxes_from_country !== false) {
+            const company = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company.findUnique({
+                where: {
+                    id: companyId
+                },
+                select: {
+                    country_id: true
+                }
+            });
+            const countryTaxesWhere = {};
+            if (company?.country_id) {
+                countryTaxesWhere.country_id = company.country_id;
+            }
+            const countryTaxes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].country_tax_mappings.findMany({
+                where: countryTaxesWhere,
+                include: {
+                    tax_rates: true
+                }
+            });
+            countryTaxes.forEach((ct)=>{
+                if (ct.tax_rates && !allTaxesMap.has(ct.tax_rates.id)) {
+                    allTaxesMap.set(ct.tax_rates.id, {
+                        id: ct.tax_rates.id,
+                        name: ct.tax_rates.name,
+                        rate: Number(ct.tax_rates.rate)
+                    });
+                }
+            });
+        }
+        // 5. Final Data-Driven Fallback: If still nothing, seed global rates if empty and try again
+        if (allTaxesMap.size === 0) {
+            const { ensureGlobalTaxes } = await __turbopack_context__.A("[project]/src/lib/services/tax-seed.ts [app-rsc] (ecmascript, async loader)");
+            await ensureGlobalTaxes();
+            const globalTaxes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].tax_rates.findMany({
+                take: 50
+            });
+            globalTaxes.forEach((t)=>{
+                allTaxesMap.set(t.id, {
+                    id: t.id,
+                    name: t.name,
+                    rate: Number(t.rate)
+                });
+            });
+        }
+        let allTaxes = Array.from(allTaxesMap.values());
+        return allTaxes;
+    } catch (error) {
+        logDebug(`getTaxRates Error: ${error}`);
+        console.error("Failed to fetch tax rates:", error);
+        return [];
+    }
+}
+async function getUOMs() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    logDebug(`getUOMs: companyId=${session?.user?.companyId}`);
+    if (!session?.user?.companyId || !session?.user?.tenantId) return [];
+    try {
+        let uoms = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findMany({
+            where: {
+                company_id: session.user.companyId,
+                is_active: true
+            },
+            orderBy: {
+                name: 'asc'
+            },
+            select: {
+                id: true,
+                name: true,
+                category_id: true,
+                ratio: true,
+                rounding: true,
+                uom_type: true
+            }
+        });
+        // Serialization fix: convert Decimals to numbers
+        let serializedUoms = uoms.map((u)=>({
+                ...u,
+                ratio: Number(u.ratio),
+                rounding: Number(u.rounding || 0)
+            }));
+        // --- AUTO-HEAL LEGACY CATEGORIES ---
+        // If there are multiple 'reference' units in the same category, extract them into their own categories
+        // to comply with Odoo's 1-reference-per-category rule.
+        const refUoms = serializedUoms.filter((u)=>u.uom_type === 'reference');
+        const refsByCategory = refUoms.reduce((acc, u)=>{
+            acc[u.category_id] = acc[u.category_id] || [];
+            acc[u.category_id].push(u);
+            return acc;
+        }, {});
+        let needsRefetch = false;
+        for (const [catId, refsArray] of Object.entries(refsByCategory)){
+            const refs = refsArray;
+            if (refs.length > 1) {
+                logDebug(`getUOMs: Auto-healing category ${catId}. Found ${refs.length} reference units.`);
+                // Keep the first one in the category, move the rest to new categories
+                for(let i = 1; i < refs.length; i++){
+                    const refToMove = refs[i];
+                    let catName = `${refToMove.name} Category`;
+                    let newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.findFirst({
+                        where: {
+                            company_id: session.user.companyId,
+                            name: catName
+                        }
+                    });
+                    if (!newCategory) {
+                        newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.create({
+                            data: {
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: session.user.tenantId,
+                                company_id: session.user.companyId,
+                                name: catName
+                            }
+                        });
+                    }
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.update({
+                        where: {
+                            id: refToMove.id
+                        },
+                        data: {
+                            category_id: newCategory.id
+                        }
+                    });
+                    needsRefetch = true;
+                }
+            }
+        }
+        if (needsRefetch) {
+            uoms = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findMany({
+                where: {
+                    company_id: session.user.companyId,
+                    is_active: true
+                },
+                orderBy: {
+                    name: 'asc'
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    category_id: true,
+                    ratio: true,
+                    rounding: true,
+                    uom_type: true
+                }
+            });
+            serializedUoms = uoms.map((u)=>({
+                    ...u,
+                    ratio: Number(u.ratio),
+                    rounding: Number(u.rounding || 0)
+                }));
+        }
+        // --- END AUTO-HEAL ---
+        return serializedUoms;
+    } catch (error) {
+        logDebug(`getUOMs Error: ${error}`);
+        console.error("Failed to fetch UOMs:", error);
+        return [];
+    }
+}
+async function getUOMCategories() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return [];
+    try {
+        const categories = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.findMany({
+            where: {
+                company_id: session.user.companyId
+            },
+            include: {
+                hms_uom: true
+            }
+        });
+        // Serialization fix for Nested UOM records
+        const serialized = categories.map((cat)=>({
+                ...cat,
+                hms_uom: cat.hms_uom.map((u)=>({
+                        ...u,
+                        ratio: Number(u.ratio),
+                        rounding: Number(u.rounding || 0)
+                    }))
+            }));
+        // Removed heavy auto-seeding to prevent Serverless/Vercel timeout.
+        return serialized;
+    } catch (error) {
+        console.error("Failed to fetch UOM categories:", error);
+        return [];
+    }
+}
+async function createUOMCategory(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const name = formData.get("name");
+    if (!name) return {
+        error: "Name is required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/uom');
+        return {
+            success: true
+        };
+    } catch (error) {
+        return {
+            error: "Failed to create category"
+        };
+    }
+}
+async function createUOM(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const name = formData.get("name");
+    let categoryId = formData.get("categoryId");
+    const type = formData.get("type") || 'reference';
+    const ratio = Number(formData.get("ratio") || 1);
+    const baseUnitId = formData.get("baseUnitId");
+    if (!name) return {
+        error: "Name is required"
+    };
+    try {
+        if (type === 'derived') {
+            if (!baseUnitId) return {
+                error: "Base Unit is required for alternative units."
+            };
+            const baseUnit = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findUnique({
+                where: {
+                    id: baseUnitId,
+                    company_id: session.user.companyId
+                }
+            });
+            if (!baseUnit) return {
+                error: "Selected Base Unit not found."
+            };
+            categoryId = baseUnit.category_id;
+        } else {
+            let catName = `${name} Category`;
+            let newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.findFirst({
+                where: {
+                    company_id: session.user.companyId,
+                    name: catName
+                }
+            });
+            if (!newCategory) {
+                newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: session.user.tenantId,
+                        company_id: session.user.companyId,
+                        name: catName
+                    }
+                });
+            }
+            categoryId = newCategory.id;
+        }
+        const uomRatio = type === 'reference' ? 1 : ratio;
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                category_id: categoryId,
+                name,
+                uom_type: type,
+                ratio: new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__["Prisma"].Decimal(uomRatio)
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/uom');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to create UOM:", error);
+        return {
+            error: "Failed to create UOM: " + error.message
+        };
+    }
+}
+async function findOrCreateUOM(name) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return "";
+    const cleanName = name.trim().toUpperCase() || "PCS";
+    try {
+        // 1. Search existing
+        const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findFirst({
+            where: {
+                company_id: session.user.companyId,
+                name: {
+                    equals: cleanName,
+                    mode: 'insensitive'
+                }
+            }
+        });
+        if (existing) return existing.id;
+        // 2. Create Category if missing
+        let catName = `${cleanName} Category`;
+        let category = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.findFirst({
+            where: {
+                company_id: session.user.companyId,
+                name: catName
+            }
+        });
+        if (!category) {
+            category = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    name: catName
+                }
+            });
+        }
+        // 3. Create UOM
+        const newUom = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.create({
+            data: {
+                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                category_id: category.id,
+                name: cleanName,
+                uom_type: 'reference',
+                ratio: 1,
+                rounding: 0.01,
+                is_active: true
+            }
+        });
+        return newUom.id;
+    } catch (error) {
+        console.error("findOrCreateUOM Error:", error);
+        return "";
+    }
+}
+async function findOrCreateUOMsBatch(names) {
+    const results = new Map();
+    const uniqueNames = Array.from(new Set(names.filter(Boolean).map((n)=>n.trim().toUpperCase())));
+    // Process sequentially to avoid race conditions on category creation for now, 
+    // or we could optimize with more complex logic. Given the small number of lines, 
+    // sequential is safer and usually fast enough for a single scan.
+    for (const name of uniqueNames){
+        const id = await findOrCreateUOM(name);
+        if (id) results.set(name, id);
+    }
+    return results;
+}
+async function updateUOM(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const name = formData.get("name");
+    let categoryId = formData.get("categoryId");
+    const type = formData.get("type") || 'reference';
+    const ratio = Number(formData.get("ratio") || 1);
+    const baseUnitId = formData.get("baseUnitId");
+    if (!id || !name) return {
+        error: "ID and Name are required"
+    };
+    try {
+        const uomRatio = type === 'reference' ? 1 : ratio;
+        let updateData = {
+            name,
+            uom_type: type,
+            ratio: new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$29$__["Prisma"].Decimal(uomRatio)
+        };
+        const currentUom = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findUnique({
+            where: {
+                id,
+                company_id: session.user.companyId
+            }
+        });
+        if (type === 'derived') {
+            if (!baseUnitId) return {
+                error: "Base Unit is required for alternative units."
+            };
+            const baseUnit = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findUnique({
+                where: {
+                    id: baseUnitId,
+                    company_id: session.user.companyId
+                }
+            });
+            if (!baseUnit) return {
+                error: "Selected Base Unit not found."
+            };
+            updateData.category_id = baseUnit.category_id;
+        } else if (currentUom?.uom_type === 'derived') {
+            // Type changed from derived to reference. Needs its own category.
+            let catName = `${name} Category`;
+            let newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.findFirst({
+                where: {
+                    company_id: session.user.companyId,
+                    name: catName
+                }
+            });
+            if (!newCategory) {
+                newCategory = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom_category.create({
+                    data: {
+                        id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                        tenant_id: session.user.tenantId,
+                        company_id: session.user.companyId,
+                        name: catName
+                    }
+                });
+            }
+            updateData.category_id = newCategory.id;
+        }
+        if (categoryId && !updateData.category_id) {
+            updateData.category_id = categoryId;
+        }
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: updateData
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/uom');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update UOM:", error);
+        return {
+            error: "Failed to update UOM"
+        };
+    }
+}
+async function deleteUOM(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                is_active: false
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/uom');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to delete UOM:", error);
+        return {
+            error: "Failed to delete UOM. It might be in use."
+        };
+    }
+}
+async function getCategories() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return [];
+    try {
+        let categories = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.findMany({
+            where: {
+                company_id: session.user.companyId
+            },
+            select: {
+                id: true,
+                name: true,
+                default_tax_rate_id: true,
+                income_account_id: true,
+                expense_account_id: true
+            }
+        });
+        if (categories.length === 0) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    name: "General"
+                }
+            });
+            categories = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.findMany({
+                where: {
+                    company_id: session.user.companyId
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    default_tax_rate_id: true,
+                    income_account_id: true,
+                    expense_account_id: true
+                }
+            });
+        }
+        return categories;
+    } catch (error) {
+        console.error("Failed to fetch categories:", error);
+        return [];
+    }
+}
+async function createCategory(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const name = formData.get("name");
+    const taxRateId = formData.get("taxRateId");
+    const incomeAccountId = formData.get("incomeAccountId");
+    const expenseAccountId = formData.get("expenseAccountId");
+    if (!name) return {
+        error: "Name is required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name,
+                default_tax_rate_id: taxRateId || null,
+                income_account_id: incomeAccountId || null,
+                expense_account_id: expenseAccountId || null
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/categories');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to create category:", error);
+        return {
+            error: "Failed to create category"
+        };
+    }
+}
+async function updateCategory(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const name = formData.get("name");
+    const taxRateId = formData.get("taxRateId");
+    const incomeAccountId = formData.get("incomeAccountId");
+    const expenseAccountId = formData.get("expenseAccountId");
+    if (!id || !name) return {
+        error: "ID and Name are required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                name,
+                default_tax_rate_id: taxRateId || null,
+                income_account_id: incomeAccountId || null,
+                expense_account_id: expenseAccountId || null
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/categories');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update category:", error);
+        return {
+            error: "Failed to update category"
+        };
+    }
+}
+async function deleteCategory(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.delete({
+            where: {
+                id,
+                company_id: session.user.companyId
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/categories');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to delete category:", error);
+        return {
+            error: "Failed to delete category"
+        };
+    }
+}
+async function getManufacturers() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return [];
+    try {
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_manufacturer.findMany({
+            where: {
+                company_id: session.user.companyId,
+                is_active: true
+            },
+            orderBy: {
+                name: 'asc'
+            },
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                website: true
+            }
+        });
+    } catch (error) {
+        console.error("Failed to fetch manufacturers:", error);
+        return [];
+    }
+}
+async function createManufacturer(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const name = formData.get("name");
+    const website = formData.get("website");
+    const description = formData.get("description");
+    if (!name) return {
+        error: "Name is required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_manufacturer.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name,
+                website: website || null,
+                description: description || null
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/manufacturers');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/[id]', 'page');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to create manufacturer:", error);
+        return {
+            error: "Failed to create manufacturer: " + error.message
+        };
+    }
+}
+async function updateManufacturer(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const name = formData.get("name");
+    const website = formData.get("website");
+    const description = formData.get("description");
+    if (!id || !name) return {
+        error: "ID and Name are required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_manufacturer.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                name,
+                website,
+                description
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/manufacturers');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products/new');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update manufacturer:", error);
+        return {
+            error: "Failed to update manufacturer"
+        };
+    }
+}
+async function deleteManufacturer(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_manufacturer.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                is_active: false
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/manufacturers');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to delete manufacturer:", error);
+        return {
+            error: "Failed to delete manufacturer"
+        };
+    }
+}
+async function getLocations() {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return [];
+    try {
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].global_stock_location.findMany({
+            where: {
+                company_id: session.user.companyId,
+                is_active: true
+            },
+            orderBy: {
+                name: 'asc'
+            },
+            select: {
+                id: true,
+                name: true,
+                location_type: true,
+                code: true
+            }
+        });
+    } catch (error) {
+        console.error("Failed to fetch locations:", error);
+        return [];
+    }
+}
+async function createLocation(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const name = formData.get("name");
+    const code = formData.get("code");
+    const type = formData.get("type") || 'internal';
+    if (!name) return {
+        error: "Name is required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].global_stock_location.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name,
+                code,
+                location_type: type
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/locations');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to create location:", error);
+        return {
+            error: "Failed to create location"
+        };
+    }
+}
+async function updateLocation(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const name = formData.get("name");
+    const code = formData.get("code");
+    const type = formData.get("type");
+    if (!id || !name) return {
+        error: "ID and Name are required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].global_stock_location.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                name,
+                code,
+                location_type: type
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/locations');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update location:", error);
+        return {
+            error: "Failed to update location"
+        };
+    }
+}
+async function deleteLocation(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].global_stock_location.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                is_active: false
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/locations');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to delete location:", error);
+        return {
+            error: "Failed to delete location"
+        };
+    }
+}
+async function getProductsPremium(query, page = 1, supplierId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+    try {
+        const where = {
+            company_id: session.user.companyId,
+            is_active: true
+        };
+        // If supplierId is provided, filter products to only those bought from this supplier before
+        if (supplierId) {
+            const supplierProductIds = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_purchase_receipt_line.findMany({
+                where: {
+                    hms_purchase_receipt: {
+                        supplier_id: supplierId,
+                        company_id: session.user.companyId
+                    }
+                },
+                select: {
+                    product_id: true
+                }
+            });
+            const uniqueIds = Array.from(new Set(supplierProductIds.map((sp)=>sp.product_id)));
+            if (uniqueIds.length > 0) {
+                where.id = {
+                    in: uniqueIds
+                };
+            } else {
+                // If no items found for this supplier, we don't apply the filter strictly 
+                // but we could. User asked to "filter", but if 0 items, search yields 0.
+                // Let's stick to the request: filter.
+                where.id = "NOT_FOUND"; // Force zero results if strictly filtering and no purchase history
+            }
+        }
+        if (query) {
+            where.OR = [
+                {
+                    name: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    sku: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    default_barcode: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                }
+            ];
+        }
+        const [products, total, companySettings] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findMany({
+                where,
+                skip,
+                take: pageSize,
+                orderBy: {
+                    created_at: 'desc'
+                },
+                include: {
+                    hms_stock_levels: {
+                        select: {
+                            quantity: true
+                        }
+                    },
+                    hms_product_category_rel: {
+                        include: {
+                            hms_product_category: true
+                        }
+                    },
+                    hms_uom: true
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.count({
+                where
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_settings.findUnique({
+                where: {
+                    company_id: session.user.companyId
+                },
+                select: {
+                    currencies: {
+                        select: {
+                            symbol: true
+                        }
+                    }
+                }
+            })
+        ]);
+        const processed = products.map((p)=>{
+            const totalStock = p.hms_stock_levels.reduce((sum, lvl)=>sum + Number(lvl.quantity || 0), 0);
+            let status = 'In Stock';
+            if (totalStock === 0) status = 'Out of Stock';
+            else if (totalStock < 10) status = 'Low Stock';
+            // Extract brand from metadata if exists
+            const metadata = p.metadata || {};
+            return {
+                ...p,
+                price: Number(p.price || 0),
+                totalStock,
+                stockStatus: status,
+                category: p.hms_product_category_rel[0]?.hms_product_category?.name || 'Uncategorized',
+                brand: metadata.brand || '',
+                uom: p.hms_uom?.name || p.uom,
+                default_cost: Number(metadata.cost_price || p.default_cost || 0),
+                mrp: Number(metadata.mrp || p.price || 0)
+            };
+        });
+        // Default to system default if not set
+        const currencySymbol = companySettings?.currencies?.symbol || __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$currency$2d$constants$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SYSTEM_DEFAULT_CURRENCY_SYMBOL"];
+        return {
+            success: true,
+            data: processed,
+            meta: {
+                total,
+                page,
+                totalPages: Math.ceil(total / pageSize),
+                currencySymbol
+            }
+        };
+    } catch (error) {
+        console.error("DEBUG: getProductsPremium failed:", error);
+        return {
+            error: "Failed to fetch products: " + (error instanceof Error ? error.message : String(error))
+        };
+    }
+}
+async function createProduct(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId || !session.user.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    // Essential Fields
+    const name = formData.get("name");
+    const sku = formData.get("sku");
+    const price = parseFloat(formData.get("price")) || 0;
+    const type = formData.get("type") || 'goods';
+    const description = formData.get("description");
+    // New Fields
+    const brand = formData.get("brand");
+    const barcode = formData.get("barcode");
+    const uomId = formData.get("uomId");
+    const supplierId = formData.get("supplierId");
+    const taxRateId = formData.get("taxRateId");
+    const categoryId = formData.get("categoryId");
+    const tracking = formData.get("tracking") || 'none'; // none, batch, serial
+    const imageUrl = formData.get("image_url");
+    const manufacturerId = formData.get("manufacturerId");
+    if (!name || !sku) {
+        return {
+            error: "Name and SKU are required"
+        };
+    }
+    const costPrice = parseFloat(formData.get("costPrice")) || 0;
+    const mrp = parseFloat(formData.get("mrp")) || 0;
+    try {
+        // Construct Metadata
+        const metadata = {
+            brand: brand || null,
+            tracking: tracking,
+            cost_price: costPrice,
+            mrp: mrp
+        };
+        let uomName = 'each';
+        if (uomId) {
+            const uomData = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findUnique({
+                where: {
+                    id: uomId
+                },
+                select: {
+                    name: true
+                }
+            });
+            if (uomData) uomName = uomData.name;
+        }
+        const newProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.create({
+            data: {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                name,
+                sku,
+                is_stockable: type === 'goods',
+                is_service: type === 'service',
+                price,
+                description,
+                uom: uomName,
+                uom_id: uomId || null,
+                manufacturer_id: manufacturerId || null,
+                default_barcode: barcode || null,
+                metadata,
+                created_by: session.user.id,
+                is_active: true
+            }
+        });
+        // Link Supplier if provided
+        if (supplierId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_supplier.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: newProduct.id,
+                    supplier_id: supplierId,
+                    is_primary: true
+                }
+            });
+        }
+        // Link Tax Rate if provided
+        if (taxRateId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: newProduct.id,
+                    tax_rate_id: taxRateId,
+                    priority: 1
+                }
+            });
+        }
+        // Link Image if provided
+        if (imageUrl) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_image.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: newProduct.id,
+                    url: imageUrl,
+                    created_by: session.user.id
+                }
+            });
+        }
+        // Link Category if provided
+        if (categoryId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category_rel.create({
+                data: {
+                    product_id: newProduct.id,
+                    category_id: categoryId
+                }
+            });
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to create product:", error);
+        return {
+            error: "Failed to create product"
+        };
+    }
+}
+async function getProduct(id) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return null;
+    try {
+        const product = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findUnique({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            include: {
+                hms_product_supplier: {
+                    where: {
+                        is_primary: true
+                    },
+                    take: 1
+                },
+                product_tax_rules: {
+                    include: {
+                        tax_rates: true
+                    },
+                    take: 1,
+                    orderBy: {
+                        priority: 'asc'
+                    }
+                },
+                hms_product_image: {
+                    take: 1,
+                    orderBy: {
+                        created_at: 'desc'
+                    }
+                },
+                hms_product_category_rel: true,
+                hms_stock_levels: true
+            }
+        });
+        if (!product) return null;
+        const metadata = product.metadata || {};
+        return {
+            ...product,
+            price: Number(product.price || 0),
+            mrp: Number(metadata.mrp || product.price || 0),
+            hsn: metadata.hsn || '',
+            packing: metadata.packing || '',
+            brand: metadata.brand || '',
+            tracking: metadata.tracking || 'none',
+            supplierId: product.hms_product_supplier[0]?.supplier_id || '',
+            taxRateId: product.product_tax_rules[0]?.tax_rate_id || '',
+            taxRate: Number(product.product_tax_rules[0]?.tax_rates?.rate || 0),
+            imageUrl: product.hms_product_image[0]?.url || '',
+            default_cost: Number(metadata.cost_price || product.default_cost || 0),
+            categoryId: product.hms_product_category_rel[0]?.category_id || '',
+            manufacturerId: product.manufacturer_id || '',
+            stock_levels: product.hms_stock_levels
+        };
+    } catch (error) {
+        console.error("Failed to fetch product:", error);
+        return null;
+    }
+}
+async function updateProduct(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    const id = formData.get("id");
+    const name = formData.get("name");
+    const sku = formData.get("sku");
+    const price = parseFloat(formData.get("price")) || 0;
+    const description = formData.get("description");
+    const brand = formData.get("brand");
+    const barcode = formData.get("barcode");
+    const uomId = formData.get("uomId");
+    const supplierId = formData.get("supplierId");
+    const taxRateId = formData.get("taxRateId");
+    const categoryId = formData.get("categoryId");
+    const tracking = formData.get("tracking") || 'none';
+    const imageUrl = formData.get("image_url");
+    const manufacturerId = formData.get("manufacturerId");
+    if (!id || !name || !sku) {
+        return {
+            error: "Missing required fields"
+        };
+    }
+    try {
+        const existingProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findUnique({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            select: {
+                metadata: true
+            }
+        });
+        const currentMetadata = existingProduct?.metadata || {};
+        const costPrice = parseFloat(formData.get("costPrice")) || 0;
+        const mrp = parseFloat(formData.get("mrp")) || 0;
+        const metadata = {
+            ...currentMetadata,
+            brand: brand || null,
+            tracking: tracking,
+            cost_price: costPrice,
+            mrp: mrp
+        };
+        let uomName = 'each';
+        if (uomId) {
+            const uomData = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_uom.findUnique({
+                where: {
+                    id: uomId
+                },
+                select: {
+                    name: true
+                }
+            });
+            if (uomData) uomName = uomData.name;
+        }
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                name,
+                sku,
+                price,
+                description,
+                uom: uomName,
+                uom_id: uomId || null,
+                manufacturer_id: manufacturerId || null,
+                default_barcode: barcode || null,
+                metadata,
+                updated_by: session.user.id,
+                updated_at: new Date()
+            }
+        });
+        // Update Supplier Link
+        // First delete existing primary link (simplification)
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_supplier.deleteMany({
+            where: {
+                product_id: id,
+                is_primary: true
+            }
+        });
+        if (supplierId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_supplier.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: id,
+                    supplier_id: supplierId,
+                    is_primary: true
+                }
+            });
+        }
+        // Update Tax Rule
+        // Delete existing rule
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.deleteMany({
+            where: {
+                product_id: id
+            }
+        });
+        if (taxRateId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: id,
+                    tax_rate_id: taxRateId,
+                    priority: 1
+                }
+            });
+        }
+        // Add New Image if provided
+        if (imageUrl) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_image.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: id,
+                    url: imageUrl,
+                    created_by: session.user.id
+                }
+            });
+        }
+        // Update Category
+        if (categoryId) {
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category_rel.deleteMany({
+                where: {
+                    product_id: id
+                }
+            });
+            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category_rel.create({
+                data: {
+                    product_id: id,
+                    category_id: categoryId
+                }
+            });
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products');
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/hms/inventory/products/${id}/edit`);
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update product:", error);
+        return {
+            error: "Failed to update product"
+        };
+    }
+}
+async function getProductBatches(productId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return [];
+    try {
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_batch.findMany({
+            where: {
+                product_id: productId,
+                company_id: session.user.companyId
+            },
+            orderBy: {
+                expiry_date: 'asc'
+            }
+        });
+    } catch (error) {
+        console.error("Failed to fetch product batches:", error);
+        return [];
+    }
+}
+async function getBestBatch(productId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return null;
+    try {
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_batch.findFirst({
+            where: {
+                product_id: productId,
+                company_id: session.user.companyId,
+                qty_on_hand: {
+                    gt: 0
+                }
+            },
+            orderBy: [
+                {
+                    expiry_date: 'asc'
+                },
+                {
+                    created_at: 'asc'
+                }
+            ]
+        });
+    } catch (error) {
+        console.error("Failed to fetch best batch:", error);
+        return null;
+    }
+}
+async function updateProductBatch(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId) return {
+        error: "Unauthorized"
+    };
+    const id = formData.get("id");
+    const mrp = parseFloat(formData.get("mrp")) || 0;
+    const expiryDate = formData.get("expiryDate");
+    if (!id) return {
+        error: "Batch ID is required"
+    };
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_batch.update({
+            where: {
+                id,
+                company_id: session.user.companyId
+            },
+            data: {
+                mrp,
+                expiry_date: expiryDate ? new Date(expiryDate) : null
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Failed to update batch:", error);
+        return {
+            error: "Failed to update batch"
+        };
+    }
+}
+async function getSuppliersList(query, page = 1) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+    try {
+        const where = {
+            company_id: session.user.companyId,
+            is_active: true
+        };
+        if (query) {
+            where.name = {
+                contains: query,
+                mode: 'insensitive'
+            };
+        }
+        const [suppliers, total] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.findMany({
+                where,
+                skip,
+                take: pageSize,
+                orderBy: {
+                    created_at: 'desc'
+                },
+                include: {
+                    _count: {
+                        select: {
+                            hms_product_supplier: true,
+                            hms_purchase_order: true
+                        }
+                    }
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_supplier.count({
+                where
+            })
+        ]);
+        return {
+            success: true,
+            data: suppliers.map((s)=>{
+                const meta = s.metadata || {};
+                return {
+                    id: s.id,
+                    name: s.name,
+                    gstin: meta.gstin || '',
+                    address: meta.address || '',
+                    productCount: s._count.hms_product_supplier,
+                    orderCount: s._count.hms_purchase_order,
+                    createdAt: s.created_at
+                };
+            }),
+            meta: {
+                total,
+                page,
+                totalPages: Math.ceil(total / pageSize)
+            }
+        };
+    } catch (error) {
+        console.error("Failed to fetch suppliers list:", error);
+        return {
+            error: "Failed to fetch suppliers"
+        };
+    }
+}
+async function getStockMoves(query, page = 1, options) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const pageSize = 50;
+    const skip = (page - 1) * pageSize;
+    try {
+        const where = {
+            company_id: session.user.companyId
+        };
+        // Advanced Search (Product Name, SKU, or Reference)
+        if (query) {
+            where.OR = [
+                {
+                    reference: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    hms_product: {
+                        name: {
+                            contains: query,
+                            mode: 'insensitive'
+                        }
+                    }
+                },
+                {
+                    hms_product: {
+                        sku: {
+                            contains: query,
+                            mode: 'insensitive'
+                        }
+                    }
+                }
+            ];
+        }
+        // Date Filtering (Ensuring day boundaries in UTC for the provided dates)
+        if (options?.fromDate || options?.toDate) {
+            where.created_at = {};
+            if (options.fromDate) {
+                const from = new Date(options.fromDate);
+                from.setUTCHours(0, 0, 0, 0);
+                where.created_at.gte = from;
+            }
+            if (options.toDate) {
+                const to = new Date(options.toDate);
+                to.setUTCHours(23, 59, 59, 999);
+                where.created_at.lte = to;
+            }
+        }
+        // Type Filtering (Mapping frontend uppercase filters to DB values)
+        if (options?.type && options.type !== 'ALL') {
+            const mappedType = options.type.toUpperCase();
+            if (mappedType === 'ADJUSTMENT') {
+                where.movement_type = {
+                    contains: 'adjustment',
+                    mode: 'insensitive'
+                };
+            } else if (mappedType === 'IN' || mappedType === 'RECEIPT') {
+                // Purchases/Receipts are stored as 'in' or 'RECEIPT' or 'hms_purchase_receipt'
+                where.movement_type = {
+                    in: [
+                        'in',
+                        'RECEIPT',
+                        'hms_purchase_receipt',
+                        'adjustment-in',
+                        'sale_return',
+                        'return'
+                    ]
+                };
+            } else if (mappedType === 'OUT' || mappedType === 'SALE') {
+                // Sales/Dispensing are stored as 'out' or 'SALE' or 'hms_invoice'
+                where.movement_type = {
+                    in: [
+                        'out',
+                        'SALE',
+                        'hms_invoice',
+                        'adjustment-out',
+                        'purchase_return'
+                    ]
+                };
+            } else if (mappedType === 'RETURN') {
+                where.movement_type = {
+                    contains: 'return',
+                    mode: 'insensitive'
+                };
+            } else {
+                where.movement_type = {
+                    equals: options.type,
+                    mode: 'insensitive'
+                };
+            }
+        }
+        const [moves, total] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_ledger.findMany({
+                where,
+                skip,
+                take: pageSize,
+                orderBy: {
+                    created_at: 'desc'
+                },
+                include: {
+                    hms_product: {
+                        select: {
+                            name: true,
+                            sku: true,
+                            uom: true
+                        }
+                    }
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_ledger.count({
+                where
+            })
+        ]);
+        return {
+            success: true,
+            data: moves.map((m)=>({
+                    id: m.id,
+                    date: m.created_at,
+                    productName: m.hms_product?.name,
+                    sku: m.hms_product?.sku,
+                    type: m.movement_type,
+                    qty: Number(m.qty),
+                    uom: m.uom || m.hms_product?.uom,
+                    reference: m.reference
+                })),
+            meta: {
+                total,
+                page,
+                totalPages: Math.ceil(total / pageSize)
+            }
+        };
+    } catch (error) {
+        console.error("Failed to fetch stock moves:", error);
+        return {
+            error: "Failed to fetch stock moves"
+        };
+    }
+}
+async function getStockReport(query, page = 1) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return {
+        error: "Unauthorized"
+    };
+    const pageSize = 50;
+    const skip = (page - 1) * pageSize;
+    try {
+        const where = {
+            company_id: session.user.companyId,
+            is_active: true
+        };
+        if (query) {
+            where.OR = [
+                {
+                    name: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    sku: {
+                        contains: query,
+                        mode: 'insensitive'
+                    }
+                }
+            ];
+        }
+        // 1. Fetch Products
+        const [products, total] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findMany({
+                where,
+                select: {
+                    id: true,
+                    name: true,
+                    sku: true,
+                    default_cost: true,
+                    uom: true,
+                    hms_product_category_rel: {
+                        include: {
+                            hms_product_category: {
+                                select: {
+                                    name: true
+                                }
+                            }
+                        }
+                    }
+                },
+                take: pageSize,
+                skip,
+                orderBy: {
+                    name: 'asc'
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.count({
+                where
+            })
+        ]);
+        if (products.length === 0) {
+            return {
+                success: true,
+                data: [],
+                meta: {
+                    total: 0,
+                    page,
+                    totalPages: 0
+                }
+            };
+        }
+        // 3. Aggregate Stock from Current Levels (Source of Truth)
+        const productIds = products.map((p)=>p.id);
+        const aggregates = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_levels.groupBy({
+            by: [
+                'product_id'
+            ],
+            where: {
+                product_id: {
+                    in: productIds
+                },
+                company_id: session.user.companyId
+            },
+            _sum: {
+                quantity: true
+            }
+        });
+        const stockMap = new Map();
+        aggregates.forEach((agg)=>{
+            stockMap.set(agg.product_id, Number(agg._sum.quantity || 0));
+        });
+        // 4. Map Results
+        const reportData = products.map((p)=>{
+            const stock = stockMap.get(p.id) || 0;
+            const cost = Number(p.default_cost || 0);
+            return {
+                id: p.id,
+                sku: p.sku,
+                name: p.name,
+                category: p.hms_product_category_rel[0]?.hms_product_category?.name || 'Uncategorized',
+                uom: p.uom,
+                stockOnHand: stock,
+                stockValue: stock * cost,
+                status: stock <= 0 ? 'Out of Stock' : stock < 10 ? 'Low Stock' : 'In Stock'
+            };
+        });
+        // 5. Calculate Global Totals (across all pages)
+        // We use hms_stock_levels for global aggregation as it's more efficient than aggregating the entire ledger
+        let totalStockOnHand = 0;
+        let totalValue = 0;
+        try {
+            const allMatchingStock = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_levels.findMany({
+                where: {
+                    company_id: session.user.companyId,
+                    hms_product: {
+                        is_active: true,
+                        ...query ? {
+                            OR: [
+                                {
+                                    name: {
+                                        contains: query,
+                                        mode: 'insensitive'
+                                    }
+                                },
+                                {
+                                    sku: {
+                                        contains: query,
+                                        mode: 'insensitive'
+                                    }
+                                }
+                            ]
+                        } : {}
+                    }
+                },
+                include: {
+                    hms_product: {
+                        select: {
+                            default_cost: true
+                        }
+                    }
+                }
+            });
+            allMatchingStock.forEach((item)=>{
+                const qty = Number(item.quantity || 0);
+                const cost = Number(item.hms_product?.default_cost || 0);
+                totalStockOnHand += qty;
+                totalValue += qty * cost;
+            });
+        } catch (e) {
+            console.error("Failed to calculate global totals:", e);
+        // Fail silently on totals if optimization fails
+        }
+        return {
+            success: true,
+            data: reportData,
+            meta: {
+                total,
+                page,
+                totalPages: Math.ceil(total / pageSize),
+                summary: {
+                    totalStockOnHand,
+                    totalValue
+                }
+            }
+        };
+    } catch (error) {
+        console.error("Failed to generate stock report:", error);
+        return {
+            error: "Failed to generate stock report"
+        };
+    }
+}
+async function findOrCreateProduct(productName, additionalData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) {
+        return {
+            error: "Unauthorized"
+        };
+    }
+    try {
+        const companyId = session.user.companyId;
+        const tenantId = session.user.tenantId;
+        // 1. Try to find existing product by exact name match
+        let product = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findFirst({
+            where: {
+                company_id: companyId,
+                name: {
+                    equals: productName,
+                    mode: 'insensitive'
+                }
+            }
+        });
+        if (product) {
+            // CRITICAL: Even if product exists, ensure it has a Tax Rule if the scan provided one
+            if (additionalData?.taxRate) {
+                const taxRateVal = Number(additionalData.taxRate);
+                if (taxRateVal > 0) {
+                    const existingRule = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.findFirst({
+                        where: {
+                            product_id: product.id,
+                            is_active: true
+                        }
+                    });
+                    if (!existingRule) {
+                        const taxMaps = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+                            where: {
+                                company_id: companyId
+                            },
+                            include: {
+                                tax_rates: true
+                            }
+                        });
+                        const match = taxMaps.find((m)=>Math.abs(Number(m.tax_rates.rate) - taxRateVal) < 0.1);
+                        if (match) {
+                            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                                data: {
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: tenantId,
+                                    company_id: companyId,
+                                    product_id: product.id,
+                                    tax_rate_id: match.tax_rate_id,
+                                    priority: 1,
+                                    is_active: true
+                                }
+                            });
+                            console.log(`✅ UPDATE: Auto-created tax rule for EXISTING product (Exact Match): ${product.name}, Rate: ${taxRateVal}%`);
+                        }
+                    }
+                }
+            }
+            return {
+                productId: product.id,
+                productName: product.name,
+                created: false
+            };
+        }
+        // 2. If not found, try fuzzy match
+        const similarProducts = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findMany({
+            where: {
+                company_id: companyId,
+                name: {
+                    contains: productName,
+                    mode: 'insensitive'
+                }
+            },
+            take: 1
+        });
+        if (similarProducts.length > 0) {
+            product = similarProducts[0];
+            // CRITICAL: Even if product exists, ensure it has a Tax Rule if the scan provided one
+            if (additionalData?.taxRate) {
+                const taxRateVal = Number(additionalData.taxRate);
+                if (taxRateVal > 0) {
+                    const existingRule = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.findFirst({
+                        where: {
+                            product_id: product.id,
+                            is_active: true
+                        }
+                    });
+                    if (!existingRule) {
+                        const taxMaps = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+                            where: {
+                                company_id: companyId
+                            },
+                            include: {
+                                tax_rates: true
+                            }
+                        });
+                        const match = taxMaps.find((m)=>Math.abs(Number(m.tax_rates.rate) - taxRateVal) < 0.1);
+                        if (match) {
+                            await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                                data: {
+                                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                    tenant_id: tenantId,
+                                    company_id: companyId,
+                                    product_id: product.id,
+                                    tax_rate_id: match.tax_rate_id,
+                                    priority: 1,
+                                    is_active: true
+                                }
+                            });
+                            console.log(`✅ UPDATE: Auto-created tax rule for EXISTING product: ${product.name}, Rate: ${taxRateVal}%`);
+                        }
+                    }
+                }
+            }
+            return {
+                productId: product.id,
+                productName: product.name,
+                created: false,
+                fuzzyMatch: true
+            };
+        }
+        // 3. Auto-create new product
+        const newProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.create({
+            data: {
+                tenant_id: tenantId,
+                company_id: companyId,
+                name: productName,
+                description: productName,
+                price: additionalData?.mrp || 0,
+                default_cost: 0,
+                sku: `AUTO-${Date.now()}`,
+                is_active: true,
+                is_service: false,
+                is_stockable: true,
+                metadata: {
+                    ...additionalData?.hsn && {
+                        hsn: additionalData.hsn
+                    },
+                    ...additionalData?.packing && {
+                        packing: additionalData.packing
+                    },
+                    tax_rate: additionalData?.taxRate,
+                    autoCreated: true,
+                    created_from: 'invoice_scan',
+                    scan_details: additionalData
+                }
+            }
+        });
+        // 4. IMMEDIATE TAX RULE CREATION (Critical for Billing)
+        if (additionalData?.taxRate) {
+            const taxRateVal = Number(additionalData.taxRate);
+            if (taxRateVal > 0) {
+                // Find matching tax ID in company settings
+                const taxMaps = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_tax_maps.findMany({
+                    where: {
+                        company_id: companyId
+                    },
+                    include: {
+                        tax_rates: true
+                    }
+                });
+                const match = taxMaps.find((m)=>Math.abs(Number(m.tax_rates.rate) - taxRateVal) < 0.1);
+                if (match) {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: newProduct.id,
+                            tax_rate_id: match.tax_rate_id,
+                            priority: 1,
+                            is_active: true
+                        }
+                    });
+                    console.log(`✅ Auto-created tax rule for product: ${productName}, Rate: ${taxRateVal}%`);
+                }
+            }
+        }
+        console.log(`✅ Auto-created product: ${productName}`);
+        return {
+            productId: newProduct.id,
+            productName: newProduct.name,
+            created: true
+        };
+    } catch (error) {
+        console.error("Failed to find/create product:", error);
+        return {
+            error: "Failed to process product"
+        };
+    }
+}
+async function findOrCreateProductsBatch(items) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const results = [];
+    const companyId = session.user.companyId;
+    // Process sequentially but in a single server call from the UI
+    for (const item of items){
+        const res = await findOrCreateProduct(item.productName, item);
+        results.push({
+            ...res,
+            originalName: item.productName
+        });
+    }
+    return {
+        success: true,
+        data: results
+    };
+}
+// Helper for CSV Parsing
+function parseCSVLine(line) {
+    const result = [];
+    let start = 0;
+    let inQuotes = false;
+    for(let i = 0; i < line.length; i++){
+        if (line[i] === '"') {
+            inQuotes = !inQuotes;
+        } else if (line[i] === ',' && !inQuotes) {
+            let val = line.substring(start, i).trim();
+            if (val.startsWith('"') && val.endsWith('"')) val = val.slice(1, -1);
+            result.push(val.replace(/""/g, '"'));
+            start = i + 1;
+        }
+    }
+    let lastVal = line.substring(start).trim();
+    if (lastVal.startsWith('"') && lastVal.endsWith('"')) lastVal = lastVal.slice(1, -1);
+    result.push(lastVal.replace(/""/g, '"'));
+    return result;
+}
+async function importProductsCSV(formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId || !session?.user?.tenantId) return {
+        error: "Unauthorized"
+    };
+    const companyId = session.user.companyId;
+    const tenantId = session.user.tenantId;
+    const file = formData.get("file");
+    const defaultCategory = formData.get("defaultCategory");
+    const defaultUom = formData.get("defaultUom") || 'UNIT';
+    const defaultTaxRate = parseFloat(formData.get("defaultTaxRate")) || 0;
+    if (!file) return {
+        error: "No file uploaded"
+    };
+    let lines = [];
+    const fileName = file.name.toLowerCase();
+    if (fileName.endsWith('.csv')) {
+        const text = await file.text();
+        lines = text.split(/\r?\n/);
+    } else if (fileName.endsWith('.xlsx') || fileName.endsWith('.xls')) {
+        const buffer = await file.arrayBuffer();
+        const workbook = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$xlsx$2f$xlsx$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["read"](buffer, {
+            type: 'array'
+        });
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        // Convert to CSV string then split by lines
+        const csvContent = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$xlsx$2f$xlsx$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["utils"].sheet_to_csv(worksheet);
+        lines = csvContent.split(/\r?\n/);
+    } else {
+        return {
+            error: "Unsupported file format. Please upload CSV or Excel (.xlsx, .xls)."
+        };
+    }
+    if (lines.length < 2) return {
+        error: "Empty or invalid file"
+    };
+    // 1. Parse Headers
+    const headers = parseCSVLine(lines[0]).map((h)=>h.toLowerCase().trim());
+    const getIdx = (patterns)=>headers.findIndex((h)=>patterns.some((p)=>h.includes(p)));
+    const idxName = getIdx([
+        'name',
+        'product name',
+        'item name'
+    ]);
+    const idxSku = getIdx([
+        'sku',
+        'code',
+        'item code'
+    ]);
+    const idxBarcode = getIdx([
+        'barcode',
+        'ean',
+        'upc'
+    ]);
+    const idxPrice = getIdx([
+        'sale price',
+        'selling price',
+        'price',
+        'rate',
+        'mrp'
+    ]);
+    const idxMrp = getIdx([
+        'mrp',
+        'max retail price'
+    ]);
+    const idxPurchase = getIdx([
+        'purchase price',
+        'cost',
+        'buy price'
+    ]);
+    const idxTax = getIdx([
+        'tax',
+        'gst',
+        'vat'
+    ]);
+    const idxCat = getIdx([
+        'category',
+        'group',
+        'type',
+        'classification'
+    ]);
+    const idxUom = getIdx([
+        'uom',
+        'unit',
+        'packing'
+    ]);
+    const idxBrand = getIdx([
+        'brand',
+        'manufacturer'
+    ]);
+    const idxDesc = getIdx([
+        'description',
+        'desc',
+        'details',
+        'account'
+    ]);
+    const idxStock = getIdx([
+        'stock',
+        'quantity',
+        'qty',
+        'opening'
+    ]);
+    const idxBatch = getIdx([
+        'batch'
+    ]);
+    const idxExpiry = getIdx([
+        'expiry',
+        'exp'
+    ]);
+    const idxManufacturer = getIdx([
+        'manufacturer',
+        'mfg'
+    ]);
+    if (idxName === -1) {
+        return {
+            error: "CSV must contain a 'Name' column."
+        };
+    }
+    // 2. Pre-fetch Data for mapping
+    const [existingCats, existingTaxes] = await Promise.all([
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.findMany({
+            where: {
+                company_id: companyId
+            },
+            select: {
+                id: true,
+                name: true,
+                default_tax_rate_id: true
+            }
+        }),
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].company_taxes.findMany({
+            where: {
+                company_id: companyId
+            },
+            select: {
+                id: true,
+                rate: true
+            }
+        })
+    ]);
+    let createdCount = 0;
+    let updatedCount = 0;
+    const errors = [];
+    // 3. Process Rows
+    for(let i = 1; i < lines.length; i++){
+        const line = lines[i].trim();
+        if (!line) continue;
+        try {
+            const row = parseCSVLine(line);
+            // Check row length matches roughly or reuse logic
+            // Just access safely
+            const name = idxName !== -1 ? row[idxName] : null;
+            if (!name) continue;
+            const sku = idxSku !== -1 && row[idxSku] ? row[idxSku] : `PRD-${name.toUpperCase().replace(/[^A-Z0-9]/g, '-').slice(0, 30)}`;
+            // Basic sanitization for SKU
+            const sanitizedSku = sku.trim().replace(/[^a-zA-Z0-9-]/g, '');
+            const salePrice = idxPrice !== -1 ? parseFloat(row[idxPrice]) || 0 : 0;
+            const mrp = idxMrp !== -1 ? parseFloat(row[idxMrp]) || 0 : 0;
+            const purchaseCost = idxPurchase !== -1 ? parseFloat(row[idxPurchase]) || 0 : 0;
+            const taxRateVal = idxTax !== -1 ? parseFloat(row[idxTax]) : defaultTaxRate;
+            const openingStock = idxStock !== -1 ? parseFloat(row[idxStock]) || 0 : 0;
+            const uomStr = idxUom !== -1 && row[idxUom] ? row[idxUom] : defaultUom;
+            // Resolve Category
+            let categoryId = null;
+            const catNameInput = idxCat !== -1 && row[idxCat] ? row[idxCat] : defaultCategory;
+            if (catNameInput) {
+                const catName = catNameInput;
+                const existing = existingCats.find((c)=>c.name.toLowerCase() === catName.toLowerCase());
+                if (existing) categoryId = existing.id;
+                else {
+                    // Try to find reasonable default accounts for the new category
+                    let incomeAccountId = undefined;
+                    let expenseAccountId = undefined;
+                    if (catName.toLowerCase().includes('pharmacy') || catName.toLowerCase().includes('medicine')) {
+                        const phAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                            where: {
+                                company_id: companyId,
+                                code: '4200'
+                            } // Pharmacy Sales
+                        });
+                        if (phAccount) incomeAccountId = phAccount.id;
+                    } else if (catName.toLowerCase().includes('consultation') || catName.toLowerCase().includes('op')) {
+                        const opAccount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].accounts.findFirst({
+                            where: {
+                                company_id: companyId,
+                                code: '4020'
+                            } // OP Income
+                        });
+                        if (opAccount) incomeAccountId = opAccount.id;
+                    }
+                    const newCat = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category.create({
+                        data: {
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            name: catName,
+                            income_account_id: incomeAccountId,
+                            expense_account_id: expenseAccountId
+                        }
+                    });
+                    existingCats.push(newCat);
+                    categoryId = newCat.id;
+                }
+            }
+            // Upsert Product Logic
+            const existingProduct = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.findFirst({
+                where: {
+                    company_id: companyId,
+                    sku: sanitizedSku
+                }
+            });
+            let productId;
+            const metadata = {
+                brand: idxBrand !== -1 ? row[idxBrand] : undefined,
+                manufacturer: idxManufacturer !== -1 ? row[idxManufacturer] : undefined,
+                mrp: mrp > 0 ? mrp : undefined,
+                purchase_price: purchaseCost > 0 ? purchaseCost : undefined
+            };
+            if (existingProduct) {
+                // Update
+                const updated = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.update({
+                    where: {
+                        id: existingProduct.id
+                    },
+                    data: {
+                        name,
+                        price: salePrice > 0 ? salePrice : existingProduct.price,
+                        description: idxDesc !== -1 && row[idxDesc] ? row[idxDesc] : existingProduct.description,
+                        metadata: {
+                            ...existingProduct.metadata,
+                            ...metadata
+                        }
+                    }
+                });
+                productId = updated.id;
+                updatedCount++;
+            } else {
+                // Create
+                const created = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product.create({
+                    data: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        name,
+                        sku: sanitizedSku,
+                        price: salePrice,
+                        description: idxDesc !== -1 ? row[idxDesc] : '',
+                        uom: uomStr,
+                        is_active: true,
+                        is_stockable: true,
+                        is_service: false,
+                        created_by: session.user.id,
+                        default_barcode: idxBarcode !== -1 ? row[idxBarcode] : null,
+                        metadata
+                    }
+                });
+                productId = created.id;
+                createdCount++;
+            }
+            // Always Link Category if provided (for both New and Existing)
+            if (categoryId) {
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_category_rel.upsert({
+                    where: {
+                        product_id_category_id: {
+                            product_id: productId,
+                            category_id: categoryId
+                        }
+                    },
+                    update: {},
+                    create: {
+                        product_id: productId,
+                        category_id: categoryId
+                    }
+                });
+            }
+            // 4. Handle Tax Rule
+            let taxRateToApply = taxRateVal;
+            let taxRateIdToApply = null;
+            // If no specific tax rate in CSV, try Category default
+            if (idxTax === -1 || isNaN(parseFloat(row[idxTax]))) {
+                const cat = existingCats.find((c)=>c.id === categoryId);
+                if (cat?.default_tax_rate_id) {
+                    taxRateIdToApply = cat.default_tax_rate_id;
+                }
+            }
+            if (taxRateIdToApply) {
+                const existingRule = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.findFirst({
+                    where: {
+                        product_id: productId
+                    }
+                });
+                if (!existingRule) {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                        data: {
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: productId,
+                            tax_rate_id: taxRateIdToApply,
+                            priority: 1
+                        }
+                    });
+                }
+            } else if (!isNaN(taxRateToApply)) {
+                const match = existingTaxes.find((t)=>Math.abs(Number(t.rate) - taxRateToApply) < 0.1);
+                if (match) {
+                    const existingRule = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.findFirst({
+                        where: {
+                            product_id: productId
+                        }
+                    });
+                    if (!existingRule) {
+                        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].product_tax_rules.create({
+                            data: {
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                product_id: productId,
+                                tax_rate_id: match.id,
+                                priority: 1
+                            }
+                        });
+                    }
+                }
+            }
+            // 5. Handle Opening Stock
+            if (openingStock > 0) {
+                // Handle Batch
+                let batchId = null;
+                if (idxBatch !== -1 && row[idxBatch]) {
+                    const batchNo = row[idxBatch];
+                    const expiry = idxExpiry !== -1 && row[idxExpiry] ? new Date(row[idxExpiry]) : null;
+                    // Upsert Batch
+                    const batch = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_batch.upsert({
+                        where: {
+                            tenant_id_company_id_product_id_batch_no: {
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                product_id: productId,
+                                batch_no: batchNo
+                            }
+                        },
+                        create: {
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: productId,
+                            batch_no: batchNo,
+                            expiry_date: expiry,
+                            qty_on_hand: openingStock
+                        },
+                        update: {
+                            qty_on_hand: {
+                                increment: openingStock
+                            }
+                        }
+                    });
+                    batchId = batch.id;
+                }
+                // Get Last Balance
+                let currentBalance = 0;
+                const lastLedger = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_stock_ledger.findFirst({
+                    where: {
+                        product_id: productId
+                    },
+                    orderBy: {
+                        created_at: 'desc'
+                    }
+                });
+                if (lastLedger) currentBalance = Number(lastLedger.balance_qty);
+                const newBalance = currentBalance + openingStock;
+                // Create Ledger Entry
+                await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_product_stock_ledger.create({
+                    data: {
+                        tenant_id: tenantId,
+                        company_id: companyId,
+                        product_id: productId,
+                        movement_type: 'OPENING',
+                        change_qty: openingStock,
+                        balance_qty: newBalance,
+                        batch_id: batchId,
+                        reference: `IMPORT-${Date.now()}-${i}`,
+                        cost: purchaseCost > 0 ? purchaseCost : undefined
+                    }
+                });
+            }
+        } catch (e) {
+            const msg = e.message;
+            errors.push({
+                row: i + 1,
+                error: msg
+            });
+        }
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products');
+    return {
+        success: true,
+        message: `Import complete. ${createdCount} new products added, ${updatedCount} existing products updated.`,
+        created: createdCount,
+        updated: updatedCount,
+        errors
+    };
+}
+async function getBatchHistory(batchId) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.companyId) return [];
+    try {
+        return await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_stock_ledger.findMany({
+            where: {
+                batch_id: batchId,
+                company_id: session.user.companyId
+            },
+            orderBy: {
+                created_at: 'desc'
+            }
+        });
+    } catch (error) {
+        console.error("Failed to fetch batch history:", error);
+        return [];
+    }
+}
+async function adjustStock(prevState, formData) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    if (!session?.user?.id || !session.user.companyId) return {
+        error: "Unauthorized"
+    };
+    const batchId = formData.get("batchId");
+    const multiplier = parseFloat(formData.get("multiplier")) || 1;
+    const changeQty = (parseFloat(formData.get("changeQty")) || 0) * multiplier;
+    const reason = formData.get("reason") || "Manual Adjustment";
+    if (!batchId || changeQty === 0) return {
+        error: "Invalid data"
+    };
+    const companyId = session.user.companyId; // Store after null check
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction(async (tx)=>{
+            // 1. Get current batch and product info
+            const batch = await tx.hms_product_batch.findUnique({
+                where: {
+                    id: batchId,
+                    company_id: companyId
+                }
+            });
+            if (!batch) throw new Error("Batch not found");
+            // 2. Find Main Warehouse
+            let warehouse = await tx.hms_stock_location.findFirst({
+                where: {
+                    company_id: companyId,
+                    code: {
+                        equals: 'WH-MAIN'
+                    }
+                }
+            });
+            if (!warehouse) {
+                warehouse = await tx.hms_stock_location.findFirst({
+                    where: {
+                        company_id: companyId
+                    }
+                });
+            }
+            if (!warehouse) throw new Error("No stock location found");
+            // 3. Update Batch Qty
+            const updatedBatch = await tx.hms_product_batch.update({
+                where: {
+                    id: batchId
+                },
+                data: {
+                    qty_on_hand: {
+                        increment: changeQty
+                    }
+                }
+            });
+            // 4. Update Stock Levels
+            const stockLevelWhere = {
+                tenant_id: session.user.tenantId,
+                company_id: session.user.companyId,
+                product_id: batch.product_id,
+                location_id: warehouse.id,
+                batch_id: batchId
+            };
+            const existingLevel = await tx.hms_stock_levels.findFirst({
+                where: stockLevelWhere
+            });
+            if (existingLevel) {
+                await tx.hms_stock_levels.update({
+                    where: {
+                        id: existingLevel.id
+                    },
+                    data: {
+                        quantity: {
+                            increment: changeQty
+                        },
+                        updated_at: new Date()
+                    }
+                });
+            } else {
+                await tx.hms_stock_levels.create({
+                    data: {
+                        tenant_id: session.user.tenantId,
+                        company_id: session.user.companyId,
+                        product_id: batch.product_id,
+                        location_id: warehouse.id,
+                        batch_id: batchId,
+                        quantity: changeQty,
+                        reserved: 0
+                    }
+                });
+            }
+            // 5. Create Ledger Entry
+            await tx.hms_stock_ledger.create({
+                data: {
+                    tenant_id: session.user.tenantId,
+                    company_id: session.user.companyId,
+                    product_id: batch.product_id,
+                    movement_type: changeQty > 0 ? 'adjustment-in' : 'adjustment-out',
+                    qty: Math.abs(changeQty),
+                    batch_id: batchId,
+                    reference: reason,
+                    to_location_id: changeQty > 0 ? warehouse.id : null,
+                    from_location_id: changeQty < 0 ? warehouse.id : null,
+                    metadata: {
+                        previous_qty: Number(batch.qty_on_hand),
+                        new_qty: Number(updatedBatch.qty_on_hand),
+                        adjusted_by: session.user.name
+                    }
+                }
+            });
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/hms/inventory/products');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error("Adjustment failed:", error);
+        return {
+            error: "Failed to process adjustment"
+        };
+    }
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    getInventoryDashboardStats,
+    getSuppliers,
+    getTaxRates,
+    getUOMs,
+    getUOMCategories,
+    createUOMCategory,
+    createUOM,
+    findOrCreateUOM,
+    findOrCreateUOMsBatch,
+    updateUOM,
+    deleteUOM,
+    getCategories,
+    createCategory,
+    updateCategory,
+    deleteCategory,
+    getManufacturers,
+    createManufacturer,
+    updateManufacturer,
+    deleteManufacturer,
+    getLocations,
+    createLocation,
+    updateLocation,
+    deleteLocation,
+    getProductsPremium,
+    createProduct,
+    getProduct,
+    updateProduct,
+    getProductBatches,
+    getBestBatch,
+    updateProductBatch,
+    getSuppliersList,
+    getStockMoves,
+    getStockReport,
+    findOrCreateProduct,
+    findOrCreateProductsBatch,
+    importProductsCSV,
+    getBatchHistory,
+    adjustStock
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getInventoryDashboardStats, "005142d0a94aa9d10ae5bfe4277a9d724d32d8b1d5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getSuppliers, "00e0bbde732274ad8c749dddf99bb0162dd32892df", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getTaxRates, "008823941ba46327a90626b6578b6bbe0a347a7954", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getUOMs, "0034f67eeb4402a9e52c1cb7e004952b423c0a2f06", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getUOMCategories, "00a57ecf33125b2134b93b2780a918f2bab25dc7ba", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createUOMCategory, "6094ee5da228ee9381bf547282100e1b66dedc866a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createUOM, "60be42115a889f22545e6ef659ae39e21afd13fa28", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(findOrCreateUOM, "405ea5f61332b87f910801a08e96cc850db1edf06a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(findOrCreateUOMsBatch, "407e892819e4d55dbcac292ead980e6dad658b5b4e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateUOM, "6030b393eccb2a94607b792355933ea0d1d7a942e0", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteUOM, "40ea087eb469d52883501b029f3157c06cb9cd2ba0", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getCategories, "008cf95df8c7cd7c9dd0d4cec4bbdf6f528ebefbc1", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createCategory, "60265134bd4b9ca77db4d59e6f58f8c80c638404b0", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateCategory, "60e380aa5c9dd55db7e9c4662eda057ff0f0d45dba", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteCategory, "403dfabd7762c3af12e5a377080f02f595d1ce8bd1", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getManufacturers, "00deec17a90f51ed5be70331723928edcf29ec8e02", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createManufacturer, "6035e23407b4df99ef7b061187cc18f9d55474ede3", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateManufacturer, "40bb30e2489683d3e2e4425f1d11b075d8c3b2eae6", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteManufacturer, "405af090296d3e1d186c19d84e74d86a699718aeae", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getLocations, "0066f5b04395e53b78090453ac7141aa0a91827993", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createLocation, "60c7e89b0e3357039ceec6d27e788134a3d1eef0f9", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateLocation, "4033810eacbb3566a4010c3cf91bdbd6ab0d04a7a5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteLocation, "40cf043b06ec813c2296effd2efa4a4b8bce461068", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getProductsPremium, "704b5927e84e8eae2a32e403917120dde926674933", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createProduct, "40af1a8efc986b4cd0b10ca91e837c129c27194257", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getProduct, "406246e6eb3eed165d823b9c6d3a4456f110b3ba9d", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateProduct, "40e32da27a9dd319487ff23436bc383254aff855fd", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getProductBatches, "40225acc51348d2b2b038ef6cc9838bc5917557365", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getBestBatch, "40e88ba52f0e7891f26b7b12f5d2b03953cf0eb32a", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateProductBatch, "60a44f4f08ebdda32538199597a6d8ce1ae8b2d6b5", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getSuppliersList, "606974da8dd67798b181eb0f13a52f83598addbc3e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getStockMoves, "707d1a46f57734b2bb5a03a9234ae59728ffd1e04f", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getStockReport, "608d9c9f3b67f13df0b0f705ee39c75f0fafb90001", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(findOrCreateProduct, "60e2f1339bb04f4a4848366006bbec106990929c19", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(findOrCreateProductsBatch, "405772251548342bf35d8f4344c5cca012a82564c6", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(importProductsCSV, "40142bc73045eed4951877f762a8ab4991035d4135", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getBatchHistory, "40fa1cddf21806349414ee6842509e264740bc5257", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(adjustStock, "608d2e9973bc8408fae2ea07918a2ecc50c0abb58a", null);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/.next-internal/server/app/hms/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/company.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/.next-internal/server/app/hms/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "000f1e53f3d721e8e3eafebdfaacde020ba810013e",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getTenantCompanies"],
+    "001d846c340e0b0dc03631f5abb6a919b37618be0c",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auditAndFixMenuPermissions"],
+    "00388db89f9409da18e662700d562374d2b270537e",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getTaxConfiguration"],
+    "007da8a383d393bc3e0c883ec0243c8394a0988218",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getMenuItems"],
+    "0080b205f1acae75e69db7a6bcb4173b5d3e51a5dc",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAllPermissions"],
+    "0084944294869cb8b4434babef93dc48d5753dadf6",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["logout"],
+    "00a5b65af8017d39c7ba824646cee4cc0be7500946",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getCurrentCompany"],
+    "00a6f84a8e6477a0104223506d74bc4dfe9481b3d4",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getRoles"],
+    "00b3d4806a5f0a59b1ba375ae313a48c60867df645",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["seedRolesAndPermissions"],
+    "00b946f672ab588457fd6e6a6565ad58637666ab6c",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getUoms"],
+    "00c43413ab5f835c1eea3961fbd59612ae369029fa",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getTenant"],
+    "00df4fa4f631e0b8b370cfd768579ca09ddf43b344",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getBillableItems"],
+    "00e1e20b68fcf111e2adb0663e0e74e48a42a2e964",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getHMSSettings"],
+    "00ee7cb30127714f93eb99d84e6378a1b9d5f71a82",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getUserProfile"],
+    "4007ccdb75d82f2c333a0ba67acb0596c56de86a40",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getTenantBrandingByHost"],
+    "4009c8593066df47cffda086ed40a649d1ee9993f6",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cancelInvoice"],
+    "400aea7f551c1a892a3af07602f3d22df1ae8396ce",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["switchCompany"],
+    "400c20c3242d9ec681541ba29d024c15419e6e9923",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateAppointmentDetails"],
+    "4013ddfdd82a8f5f26ddbd0b4c0b6d0bb8d8768737",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getNextVoucherNumber"],
+    "401578f3fe96c87480a0867d8d29b9035ebeee1c81",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getInitialInvoiceData"],
+    "40169b5368e6475727db0c91f5d04fe6addcb062f6",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getBranches"],
+    "40225acc51348d2b2b038ef6cc9838bc5917557365",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getProductBatches"],
+    "4029c36e9e4cbb469275ea3b8aa688934c39bc7192",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatientById"],
+    "40433c06c1f4d912be0b688d3b783282a1c33cfc0c",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatientBalance"],
+    "404f8eef86e7a928257f21d02e0dcb5aeb8922daf9",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createRole"],
+    "407793196ca4fd907dc854c625b75c571dcc2579b3",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"],
+    "407d6ddb5b17871ab747ad147174fb46838dba5d10",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["switchBranch"],
+    "408286af0dd3bd2d67448b9352533aee38bea53e42",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createAppointment"],
+    "408583314a251e4ab6a1476b75c2a2e19f8b2cb1a3",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createInvoice"],
+    "408f1a5020e6ba461ea2ab0f6cc2c241264c88fb87",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteRole"],
+    "40a18ef6ef9ff95f524a8fc838c6be9565ccc80335",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getUserPermissions"],
+    "40a329d95dc3d1a62d1e482a762f87e63308b336de",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatientLedger"],
+    "40be938594ca7001681ec054bce9804c80446e2204",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createCompany"],
+    "40e262a8c91eef996f821f1d338179393c646f1ce2",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatientOutstandingBalance"],
+    "40e5b9b5d47829439c65d11ea45099f2bddbc1f683",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["generateConsultationInvoice"],
+    "40e88ba52f0e7891f26b7b12f5d2b03953cf0eb32a",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getBestBatch"],
+    "40f587896266518b5850eeacccfc69be5ca0a335ce",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getOpenRegistrationInvoice"],
+    "6001830112147f6a5bd49341fb1cb42196b1bed78c",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["voidPayment"],
+    "6012293d892e0a7ee4a8654dd1af202e108dc6debd",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateInvoice"],
+    "601d2ccdb020eb572cceed0bc295cde4222d7052d5",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateInvoiceStatus"],
+    "6023de41a288144cc358d4877439ee60e48937cca5",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["linkInvoiceToAppointment"],
+    "603265b48c110da148cea32af57be4ad9aa9e022c6",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAppointmentsByClinician"],
+    "603b64924af9a59930e1af6f2434856fdc89fe2319",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["uploadFile"],
+    "603ba48760f4106aaa3ced755a007939dec191facf",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createQuickPatient"],
+    "605a1b1564ee1b438dc1de20d9db2102e6ebff257e",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createPatientV10"],
+    "606179061d81a683b8b4bdfd15b55a633920f874bb",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["shareInvoiceWhatsapp"],
+    "60660fbc726854ba5c95d6c1506c1006864e56857e",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPDFConfig"],
+    "60784d78965906d3fa7bb25a8e3f7fc16bbb25e266",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateAppointmentStatus"],
+    "6079b9612e1fe52d990c15df9204be8bd86d38ceb2",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateRole"],
+    "608349f1b4763265beceb5d9cd891152ef32c6ab68",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["generateRegistrationInvoice"],
+    "60c021be98a362a1fe876b51ae89a00102ea0ba49d",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAppointmentsProp"],
+    "700708bd6a2e5cd22125d980b1f1d664491f5ea502",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["recordPatientConsumption"],
+    "704260891327b42a52553211f322a7c7c002e3e9d7",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateAppointmentDate"],
+    "709a787099d74f0a77dcfa251a40d8c26f8b656d08",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["recordPayment"],
+    "78314c67a5a6f8686b0890d6a5d67c91f92e9b7032",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["settlePatientDues"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$hms$2f$dashboard$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE1__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE2__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE3__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE4__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE5__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE6__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE7__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE8__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE9__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE10__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE11__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i('[project]/.next-internal/server/app/hms/dashboard/page/actions.js { ACTIONS_MODULE0 => "[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)", ACTIONS_MODULE1 => "[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)", ACTIONS_MODULE2 => "[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)", ACTIONS_MODULE3 => "[project]/src/app/actions/company.ts [app-rsc] (ecmascript)", ACTIONS_MODULE4 => "[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)", ACTIONS_MODULE5 => "[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)", ACTIONS_MODULE6 => "[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)", ACTIONS_MODULE7 => "[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)", ACTIONS_MODULE8 => "[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)", ACTIONS_MODULE9 => "[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)", ACTIONS_MODULE10 => "[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)", ACTIONS_MODULE11 => "[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)" } [app-rsc] (server actions loader, ecmascript) <locals>');
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/company.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$hms$2f$dashboard$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE1__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE2__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE3__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE4__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE5__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE6__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE7__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE8__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE9__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE10__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE11__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$hms$2f$dashboard$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE1__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE2__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE3__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE4__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE5__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE6__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE7__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE8__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE9__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE10__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29222c$__ACTIONS_MODULE11__$3d3e$__$225b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$branding$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$navigation$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$company$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$tenant$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$appointment$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$patient$2d$v10$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$upload$2d$file$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$billing$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$inventory$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__b8547c38._.js.map

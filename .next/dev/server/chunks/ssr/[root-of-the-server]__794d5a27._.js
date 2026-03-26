@@ -329,6 +329,24 @@ async function ensureDefaultAccounts(companyId, tenantId) {
             parentCode: '4000'
         },
         {
+            code: '4020',
+            name: 'OP Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4030',
+            name: 'Casualty Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4040',
+            name: 'IP Income / Ward Charges',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
             code: '4100',
             name: 'Lab Test Revenue',
             type: 'Revenue',
@@ -2614,13 +2632,17 @@ __turbopack_async_result__();
 
 return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 
-/* __next_internal_action_entry_do_not_use__ [{"0017bc7bd76d12c4fa0332c041f8dc72f971161904":"getPaymentMappings","00e1e20b68fcf111e2adb0663e0e74e48a42a2e964":"getHMSSettings","00ee7cb30127714f93eb99d84e6378a1b9d5f71a82":"getUserProfile","401fbfa1dcf731b9d7863ef7a624aabc6f9c601520":"updateGlobalSettings","4031046d1e88ab01ac04a97d7373e9b675b9b2102e":"updateHMSSettings","4033f0ad3178ccda49f8634ca8f6313b462889bdb0":"updateWhatsAppSettings","405d8eea04931e98fb50c32271a9ab145ae6f8d465":"createDesignation","4098cc338ddde8532ea628809839b63f72ed6e703e":"updatePaymentGatewaySettings","40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa":"updatePDFSettings","40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6":"updateTenantSettings","40c1ce8bac6bd0294860e6dbb06e4ca911bd121437":"createBranch","40c78bda30257384bf051704051785bf4620f8ae50":"getDesignation","40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9":"updatePaymentMappings","40f5ad1ddc48abb6f590059867aca153fb43763d61":"deleteDesignation","6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c":"updateBranch","600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506":"getPDFSettings","604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0":"getPaymentGatewayConfig","6061fbcb1a881f4e8692dead2c43587d3634d83fe1":"getWhatsAppSettings","60660fbc726854ba5c95d6c1506c1006864e56857e":"getPDFConfig","60825e363deb70c92d1882c2041a21532c1b8cea9a":"getWhatsAppConfig","60978e108f0c867559c6c352cdc1209191fb6cd822":"updateDesignation","60af4c4a57d0c5c26681b16bf66e53126bb318bbab":"updateProfile","60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775":"getPaymentGatewaySettings"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"0017bc7bd76d12c4fa0332c041f8dc72f971161904":"getPaymentMappings","00e1e20b68fcf111e2adb0663e0e74e48a42a2e964":"getHMSSettings","00ee7cb30127714f93eb99d84e6378a1b9d5f71a82":"getUserProfile","401fbfa1dcf731b9d7863ef7a624aabc6f9c601520":"updateGlobalSettings","4031046d1e88ab01ac04a97d7373e9b675b9b2102e":"updateHMSSettings","4033f0ad3178ccda49f8634ca8f6313b462889bdb0":"updateWhatsAppSettings","405d8eea04931e98fb50c32271a9ab145ae6f8d465":"createDesignation","408df1093956fc035cc68154d5d98c525f414c0317":"updateAISettings","4098cc338ddde8532ea628809839b63f72ed6e703e":"updatePaymentGatewaySettings","40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa":"updatePDFSettings","40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6":"updateTenantSettings","40c1ce8bac6bd0294860e6dbb06e4ca911bd121437":"createBranch","40c78bda30257384bf051704051785bf4620f8ae50":"getDesignation","40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9":"updatePaymentMappings","40f5ad1ddc48abb6f590059867aca153fb43763d61":"deleteDesignation","6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c":"updateBranch","600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506":"getPDFSettings","604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0":"getPaymentGatewayConfig","6061fbcb1a881f4e8692dead2c43587d3634d83fe1":"getWhatsAppSettings","60660fbc726854ba5c95d6c1506c1006864e56857e":"getPDFConfig","6066d3905d83653ad33bde20210544c6df1c8f8477":"getAISettings","60825e363deb70c92d1882c2041a21532c1b8cea9a":"getWhatsAppConfig","608dd6755d4938c38cd9057e16d303d139cba113ed":"getAIConfig","60978e108f0c867559c6c352cdc1209191fb6cd822":"updateDesignation","60af4c4a57d0c5c26681b16bf66e53126bb318bbab":"updateProfile","60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775":"getPaymentGatewaySettings"},"",""] */ __turbopack_context__.s([
     "createBranch",
     ()=>createBranch,
     "createDesignation",
     ()=>createDesignation,
     "deleteDesignation",
     ()=>deleteDesignation,
+    "getAIConfig",
+    ()=>getAIConfig,
+    "getAISettings",
+    ()=>getAISettings,
     "getDesignation",
     ()=>getDesignation,
     "getHMSSettings",
@@ -2641,6 +2663,8 @@ return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, _
     ()=>getWhatsAppConfig,
     "getWhatsAppSettings",
     ()=>getWhatsAppSettings,
+    "updateAISettings",
+    ()=>updateAISettings,
     "updateBranch",
     ()=>updateBranch,
     "updateDesignation",
@@ -2820,7 +2844,8 @@ async function updateGlobalSettings(data) {
                     },
                     data: {
                         currency_id: data.currencyId,
-                        numbering_prefix: data.invoicePrefix
+                        numbering_prefix: data.invoicePrefix,
+                        rounding_precision: data.roundingPrecision
                     }
                 });
             } else {
@@ -2830,7 +2855,8 @@ async function updateGlobalSettings(data) {
                         tenant_id: session.user.tenantId,
                         company_id: data.companyId,
                         currency_id: data.currencyId,
-                        numbering_prefix: data.invoicePrefix || 'INV'
+                        numbering_prefix: data.invoicePrefix || 'INV',
+                        rounding_precision: data.roundingPrecision || 2
                     }
                 });
             }
@@ -2849,9 +2875,15 @@ async function updateGlobalSettings(data) {
 }
 async function updateTenantSettings(data) {
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
-    if (!session?.user?.id || !session.user.isTenantAdmin) {
+    if (!session?.user?.id || !session.user.isTenantAdmin && !session.user.isAdmin) {
         return {
-            error: "Unauthorized. Tenant Admin access required."
+            error: "Unauthorized. Admin access required."
+        };
+    }
+    // Safety check: Ensure they are updating THEIR tenant
+    if (!session.user.isTenantAdmin && data.tenantId !== session.user.tenantId) {
+        return {
+            error: "Permission denied: You can only update your own organization settings."
         };
     }
     try {
@@ -2877,7 +2909,10 @@ async function updateTenantSettings(data) {
                 app_name: data.appName,
                 logo_url: data.logoUrl,
                 db_url: data.dbUrl,
-                metadata: updatedMeta
+                metadata: {
+                    ...updatedMeta,
+                    date_format: data.dateFormat || updatedMeta.date_format || 'dd/MM/yyyy'
+                }
             }
         });
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
@@ -2992,6 +3027,10 @@ async function getHMSSettings() {
                 enableCardIssuance: configData.enableCardIssuance ?? true,
                 consultationBillingMode: configData.consultationBillingMode || 'post_visit',
                 defaultDoctorId: configData.defaultDoctorId || null,
+                opSlipPreprintedLetterhead: configData.opSlipPreprintedLetterhead ?? false,
+                opSlipHeaderHeight: configData.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: configData.billPreprintedLetterhead ?? false,
+                billHeaderHeight: configData.billHeaderHeight || '4.5',
                 feeHistory: feeHistory.map((f)=>({
                         id: f.id,
                         amount: Number(f.fee_amount),
@@ -3125,6 +3164,10 @@ async function updateHMSSettings(data) {
                 validity: validityDays,
                 enableCardIssuance: !!data.enableCardIssuance,
                 consultationBillingMode: data.consultationBillingMode || 'post_visit',
+                opSlipPreprintedLetterhead: !!data.opSlipPreprintedLetterhead,
+                opSlipHeaderHeight: data.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: !!data.billPreprintedLetterhead,
+                billHeaderHeight: data.billHeaderHeight || '4.5',
                 fee: feeAmount,
                 productId: regProduct.id,
                 defaultDoctorId: data.defaultDoctorId || null,
@@ -3626,6 +3669,7 @@ async function getWhatsAppSettings(providedCompanyId, providedTenantId) {
             success: true,
             settings: {
                 enabled: data.enabled ?? false,
+                provider: data.provider ?? 'ultramsg',
                 instanceId: data.instanceId ?? '',
                 hasToken: hasToken,
                 autoSendBill: data.autoSendBill ?? false
@@ -3679,6 +3723,7 @@ async function updateWhatsAppSettings(data) {
         const formattedInstanceId = `instance${cleanInstanceId}`;
         const configValue = {
             enabled: data.enabled,
+            provider: data.provider || 'ultramsg',
             instanceId: formattedInstanceId,
             token: data.token && data.token.trim() !== '' ? data.token.trim() : existingData.token || '',
             autoSendBill: data.autoSendBill,
@@ -3854,6 +3899,148 @@ async function updatePDFSettings(data) {
         };
     }
 }
+async function getAISettings(providedCompanyId, providedTenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        const hasKey = !!(data.apiKey && data.apiKey.length > 0);
+        return {
+            success: true,
+            settings: {
+                enabled: data.enabled ?? true,
+                hasKey: hasKey,
+                apiKey: '' // Never return the key to the frontend
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updateAISettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = data.companyId || session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    console.log(`[AI-SAVE] Attempting to save for Company: ${companyId}, Tenant: ${tenantId}`);
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        // Try multiple ways to find existing record to ensure we don't duplicate or lose data
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                key: 'ai_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const existingData = existing?.value || {};
+        const finalApiKey = data.apiKey && data.apiKey.trim() !== '' ? data.apiKey.trim() : existingData.apiKey || '';
+        console.log(`[AI-SAVE] Final Key Length: ${finalApiKey?.length || 0}`);
+        const configValue = {
+            enabled: data.enabled,
+            apiKey: finalApiKey,
+            updatedAt: new Date().toISOString()
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    OR: [
+                        {
+                            company_id: companyId,
+                            key: 'ai_config'
+                        },
+                        {
+                            tenant_id: tenantId,
+                            key: 'ai_config'
+                        }
+                    ]
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'ai_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        console.log(`[AI-SAVE] SUCCESS. Result saved in database.`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('[AI-SAVE] FAILED:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getAIConfig(companyId, tenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+        where: {
+            company_id: companyId,
+            tenant_id: tenantId,
+            key: 'ai_config'
+        }
+    });
+    if (!record) {
+        record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+    }
+    return record?.value || null;
+}
 async function getPDFConfig(companyId, tenantId) {
     try {
         const record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
@@ -3892,6 +4079,9 @@ async function getPDFConfig(companyId, tenantId) {
     getWhatsAppConfig,
     getPDFSettings,
     updatePDFSettings,
+    getAISettings,
+    updateAISettings,
+    getAIConfig,
     getPDFConfig
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateProfile, "60af4c4a57d0c5c26681b16bf66e53126bb318bbab", null);
@@ -3916,6 +4106,9 @@ async function getPDFConfig(companyId, tenantId) {
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getWhatsAppConfig, "60825e363deb70c92d1882c2041a21532c1b8cea9a", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFSettings, "600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updatePDFSettings, "40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAISettings, "6066d3905d83653ad33bde20210544c6df1c8f8477", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAISettings, "408df1093956fc035cc68154d5d98c525f414c0317", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAIConfig, "608dd6755d4938c38cd9057e16d303d139cba113ed", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFConfig, "60660fbc726854ba5c95d6c1506c1006864e56857e", null);
 __turbopack_async_result__();
 } catch(e) { __turbopack_async_result__(e); } }, false);}),
@@ -3948,7 +4141,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 [__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$settings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
 ;
 ;
-async function generateInvoicePDFBase64(invoice, company) {
+async function generateInvoicePDFBase64(invoice, company, autoPrint = false) {
     try {
         const doc = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jspdf$2f$dist$2f$jspdf$2e$node$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsPDF"]('p', 'pt', 'a4');
         const pageWidth = doc.internal.pageSize.getWidth();
@@ -4130,6 +4323,11 @@ async function generateInvoicePDFBase64(invoice, company) {
         doc.text(footerText2, pageWidth / 2, 795, {
             align: 'center'
         });
+        if (autoPrint) {
+            doc.autoPrint({
+                variant: 'non-conform'
+            });
+        }
         return doc.output('datauristring').split(',')[1];
     } catch (err) {
         throw err;
@@ -4466,37 +4664,40 @@ class NotificationService {
             }
             const { instanceId, token } = dynamicConfig;
             const isMock = !token || token.includes('mock');
-            if (isMock) {
-                console.log(`[WhatsApp-Mock] To: ${phone}\n[WhatsApp-Mock] Message: ${message}${finalPdfBase64 ? '\n[WhatsApp-Mock] Attachment: [PDF DETECTED]' : ''}`);
-                return {
-                    success: true,
-                    message: "WhatsApp notification simulated (Mock Mode)."
-                };
-            }
-            // 6. Send Real HTTP Request (Switch between Chat and Document)
-            let endpoint = 'chat'; // Initialize endpoint
-            const payload = {
-                token: token,
-                to: phone,
-                priority: 10
+            // 6. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: finalPdfBase64 ? 'document' : 'chat',
+                pdfBase64: finalPdfBase64,
+                filename: `Invoice_${invoice.invoice_number}.pdf`,
+                provider: dynamicConfig.provider
+            });
+        } catch (error) {
+            console.error("[NotificationService] WhatsApp failed:", error);
+            return {
+                success: false,
+                error: 'Internal server error'
             };
-            if (finalPdfBase64) {
-                endpoint = 'document';
-                payload.document = finalPdfBase64;
-                payload.filename = `Invoice_${invoice.invoice_number}.pdf`;
-                payload.caption = message;
-            } else {
-                payload.body = message;
-            }
-            // Ensure instanceId format is correct (e.g. instance12345)
-            let cleanId = instanceId.toString().trim();
-            if (cleanId.toLowerCase().startsWith('instance')) {
-                cleanId = cleanId.substring(8); // Remove 'instance' 
-            }
-            const resolvedInstanceId = `instance${cleanId.toLowerCase()}`;
-            const url = `https://api.ultramsg.com/${resolvedInstanceId}/messages/${endpoint}`;
-            const maskedToken = token.length > 5 ? `${token.slice(0, 4)}...${token.slice(-2)}` : 'INVALID';
-            console.log(`[WhatsApp-Fetch] ${endpoint} | URL: ${url} | Token: ${maskedToken} | To: ${phone}`);
+        }
+    }
+    /**
+     * UNIFIED SENDER: Dispatches to either UltraMsg or Evolution API
+     */ static async dispatchWhatsApp(instanceId, token, phone, message, options) {
+        // Detect API Type (Priority: Explicit Provider > Token/ID naming convention)
+        const apiType = options.provider || (token === 'local' ? 'local-bridge' : token.startsWith('evo_') || instanceId.includes('-') ? 'evolution' : 'ultramsg');
+        let cleanId = instanceId.toString().trim();
+        if (cleanId.toLowerCase().startsWith('instance')) {
+            cleanId = cleanId.substring(8);
+        }
+        if (apiType === 'local-bridge') {
+            const baseUrl = 'http://localhost:8081';
+            const url = `${baseUrl}/send-message`;
+            const payload = {
+                number: phone,
+                message: message,
+                pdfBase64: options.pdfBase64,
+                filename: options.filename
+            };
+            console.log(`[WhatsApp-LocalBridge] Calling: ${url}`);
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -4505,26 +4706,83 @@ class NotificationService {
                 body: JSON.stringify(payload)
             });
             const result = await response.json();
-            console.log(`[WhatsApp-Result] Raw:`, JSON.stringify(result));
-            if (result.sent === "true" || result.success === true || result.id) {
-                console.log(`[WhatsApp-Success] Delivered to ${phone}`);
-                return {
-                    success: true,
-                    message: 'WhatsApp sent successfully'
-                };
-            } else {
-                console.error('[WhatsApp-Error]', result);
-                const errorMsg = typeof result.error === 'object' ? JSON.stringify(result.error) : result.error || result.message || 'Failed to deliver message';
-                return {
-                    success: false,
-                    error: errorMsg
-                };
-            }
-        } catch (error) {
-            console.error("[NotificationService] WhatsApp failed:", error);
-            return {
+            return result.success ? {
+                success: true,
+                message: 'Sent via Local Bridge'
+            } : {
                 success: false,
-                error: 'Internal server error'
+                error: result.error || 'Failed'
+            };
+        } else if (apiType === 'evolution') {
+            // Priority: Internal Docker URL > Env Var > Default
+            const baseUrl = process.env.WHATSAPP_BASE_URL || 'http://localhost:8080';
+            const endpoint = options.endpoint === 'document' ? 'sendMedia' : 'sendText';
+            const url = `${baseUrl}/message/${endpoint}/${instanceId}`;
+            const payload = {
+                number: phone,
+                options: {
+                    delay: 1200,
+                    presence: "composing",
+                    linkPreview: false
+                }
+            };
+            if (options.endpoint === 'document') {
+                payload.media = `data:application/pdf;base64,${options.pdfBase64}`;
+                payload.mediatype = 'document';
+                payload.caption = message;
+                payload.fileName = options.filename || 'document.pdf';
+            } else {
+                payload.text = message;
+            }
+            console.log(`[WhatsApp-Evolution] Calling: ${url}`);
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': token
+                },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            return result?.key || result?.messageId || result?.status === 'SUCCESS' || result?.status === 200 ? {
+                success: true,
+                message: 'Sent via Evolution'
+            } : {
+                success: false,
+                error: JSON.stringify(result)
+            };
+        } else {
+            // Standard UltraMsg Logic
+            const resolvedInstanceId = `instance${cleanId.toLowerCase()}`;
+            const endpoint = options.endpoint === 'document' ? 'document' : 'chat';
+            const url = `https://api.ultramsg.com/${resolvedInstanceId}/messages/${endpoint}`;
+            const payload = {
+                token,
+                to: phone,
+                priority: 10
+            };
+            if (options.endpoint === 'document') {
+                payload.document = options.pdfBase64;
+                payload.filename = options.filename;
+                payload.caption = message;
+            } else {
+                payload.body = message;
+            }
+            console.log(`[WhatsApp-UltraMsg] Calling: ${url}`);
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            return result.sent === "true" || result.success === true || result.id ? {
+                success: true,
+                message: 'Sent via UltraMsg'
+            } : {
+                success: false,
+                error: JSON.stringify(result)
             };
         }
     }
@@ -4593,46 +4851,13 @@ class NotificationService {
                     message: "WhatsApp prescription simulated (Mock Mode)."
                 };
             }
-            // 6. Send Real Request
-            const payload = {
-                token: token,
-                to: phone,
-                priority: 10,
-                document: pdfBase64,
+            // 6. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: 'document',
+                pdfBase64: pdfBase64,
                 filename: `Prescription_${patientName.replace(/\s+/g, '_')}.pdf`,
-                caption: `Medical Prescription for ${patientName}`
-            };
-            // Ensure instanceId format is correct (e.g. instance12345)
-            let cleanId = instanceId.toString().trim();
-            if (cleanId.toLowerCase().startsWith('instance')) {
-                cleanId = cleanId.substring(8); // Remove 'instance' 
-            }
-            const resolvedInstanceId = `instance${cleanId.toLowerCase()}`;
-            const url = `https://api.ultramsg.com/${resolvedInstanceId}/messages/document`;
-            const maskedToken = token.length > 5 ? `${token.slice(0, 4)}...${token.slice(-2)}` : 'INVALID';
-            console.log(`[WhatsApp-Fetch-Prescription] POST ${url} | Token: ${maskedToken} | To: ${phone}`);
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
+                provider: dynamicConfig.provider
             });
-            const result = await response.json();
-            console.log(`[WhatsApp-Prescription-Result] Raw:`, JSON.stringify(result));
-            if (result.sent === "true" || result.success === true || result.id) {
-                console.log(`[WhatsApp-Prescription-Success] Delivered to ${phone}`);
-                return {
-                    success: true,
-                    message: 'Prescription sent via WhatsApp'
-                };
-            } else {
-                console.error('[WhatsApp-Prescription-Error]', result);
-                return {
-                    success: false,
-                    error: typeof result.error === 'object' ? JSON.stringify(result.error) : result.error || result.message || 'Failed to deliver prescription'
-                };
-            }
         } catch (error) {
             console.error("[NotificationService] Prescription WhatsApp failed:", error);
             return {
@@ -4692,44 +4917,11 @@ class NotificationService {
                     message: "WhatsApp payment link simulated (Mock Mode)."
                 };
             }
-            // 5. Send Real Request
-            const payload = {
-                token: token,
-                to: phone,
-                body: message,
-                priority: 10
-            };
-            // Ensure instanceId format is correct (e.g. instance12345)
-            let cleanId = instanceId.toString().trim();
-            if (cleanId.toLowerCase().startsWith('instance')) {
-                cleanId = cleanId.substring(8); // Remove 'instance' 
-            }
-            const resolvedInstanceId = `instance${cleanId.toLowerCase()}`;
-            const url = `https://api.ultramsg.com/${resolvedInstanceId}/messages/chat`;
-            const maskedToken = token.length > 5 ? `${token.slice(0, 4)}...${token.slice(-2)}` : 'INVALID';
-            console.log(`[WhatsApp-Fetch-Link] POST ${url} | Token: ${maskedToken} | To: ${phone}`);
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
+            // 5. Dispatch via Unified Sender
+            return await this.dispatchWhatsApp(instanceId, token, phone, message, {
+                endpoint: 'chat',
+                provider: dynamicConfig.provider
             });
-            const result = await response.json();
-            console.log(`[WhatsApp-Payment-Link-Result] Raw:`, JSON.stringify(result));
-            if (result.sent === "true" || result.success === true || result.id) {
-                console.log(`[WhatsApp-Payment-Link-Success] Delivered to ${phone}`);
-                return {
-                    success: true,
-                    message: 'Payment link sent via WhatsApp'
-                };
-            } else {
-                console.error('[WhatsApp-Payment-Link-Error]', result);
-                return {
-                    success: false,
-                    error: typeof result.error === 'object' ? JSON.stringify(result.error) : result.error || result.message || 'Failed to send WhatsApp link'
-                };
-            }
         } catch (error) {
             console.error("[NotificationService] Payment Link WhatsApp failed:", error);
             return {
@@ -4754,6 +4946,7 @@ class NotificationService {
                 console.log(`${logPrefix} Found DB config. Enabled: ${dbConfig.enabled}, Instance: ${dbConfig.instanceId}, TokenPresent: ${hasToken}`);
                 return {
                     enabled: dbConfig.enabled ?? false,
+                    provider: dbConfig.provider ?? 'ultramsg',
                     instanceId: dbConfig.instanceId || '',
                     token: dbConfig.token || '',
                     autoSendBill: dbConfig.autoSendBill ?? false,
@@ -4771,6 +4964,7 @@ class NotificationService {
             console.log(`${logPrefix} Falling back to System Environment Variables.`);
             return {
                 enabled: true,
+                provider: 'ultramsg',
                 instanceId: process.env.WHATSAPP_INSTANCE_ID || '',
                 token: envToken,
                 autoSendBill: false,
@@ -4780,6 +4974,7 @@ class NotificationService {
         console.warn(`${logPrefix} No configuration source available.`);
         return {
             enabled: false,
+            provider: 'ultramsg',
             instanceId: '',
             token: '',
             autoSendBill: false,
@@ -5472,6 +5667,95 @@ async function createInvoice(data) {
                     } : undefined
                 }
             });
+            // --- WORLD CLASS STOCK SYNC (SALES) ---
+            // Deduct stock for all physical items in the invoice
+            for (const item of processedLineItems){
+                if (!item.product_id) continue;
+                const qtyToDeduct = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["safeNum"])(item.quantity) || 1;
+                // 0. Resolve Location (Default to Main Warehouse for now)
+                let location = await tx.hms_stock_location.findFirst({
+                    where: {
+                        company_id: companyId,
+                        name: 'Main Warehouse'
+                    }
+                });
+                if (!location) {
+                    location = await tx.hms_stock_location.findFirst({
+                        where: {
+                            company_id: companyId
+                        }
+                    });
+                }
+                if (location) {
+                    // 1. Deduct Stock Level
+                    const level = await tx.hms_stock_levels.findFirst({
+                        where: {
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            location_id: location.id
+                        }
+                    });
+                    if (level) {
+                        await tx.hms_stock_levels.update({
+                            where: {
+                                id: level.id
+                            },
+                            data: {
+                                quantity: {
+                                    decrement: qtyToDeduct
+                                }
+                            }
+                        });
+                    } else {
+                        // Create negative stock level if not exists (allow for overselling if enabled, or just create record)
+                        await tx.hms_stock_levels.create({
+                            data: {
+                                id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                                tenant_id: tenantId,
+                                company_id: companyId,
+                                product_id: item.product_id,
+                                location_id: location.id,
+                                quantity: -qtyToDeduct,
+                                reserved: 0
+                            }
+                        });
+                    }
+                    // 2. Log Outward Movement in Ledger
+                    await tx.hms_stock_ledger.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            movement_type: 'out',
+                            qty: -qtyToDeduct,
+                            uom: item.uom || 'Unit',
+                            unit_cost: 0,
+                            total_cost: 0,
+                            from_location_id: location.id,
+                            reference: invoiceNo,
+                            related_type: 'hms_invoice',
+                            related_id: invoiceId
+                        }
+                    });
+                    // 3. Audit Move
+                    await tx.hms_stock_move.create({
+                        data: {
+                            id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                            tenant_id: tenantId,
+                            company_id: companyId,
+                            product_id: item.product_id,
+                            location_from: location.id,
+                            qty: -qtyToDeduct,
+                            uom: item.uom || 'Unit',
+                            move_type: 'out',
+                            source: 'Counter Sale',
+                            source_reference: invoiceId,
+                            created_by: userId
+                        }
+                    });
+                }
+            }
             // Post-Hooks
             if (status === 'paid' && (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$is$2d$uuid$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["isUUID"])(data.appointment_id)) {
                 await tx.hms_appointments.update({
