@@ -1,0 +1,320 @@
+{
+  "node": {
+    "4007ccdb75d82f2c333a0ba67acb0596c56de86a40": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenantBrandingByHost",
+          "filename": "src/app/actions/branding.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getTenantBrandingByHost",
+      "filename": "src/app/actions/branding.ts"
+    },
+    "001d846c340e0b0dc03631f5abb6a919b37618be0c": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "auditAndFixMenuPermissions",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "auditAndFixMenuPermissions",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "007da8a383d393bc3e0c883ec0243c8394a0988218": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getMenuItems",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getMenuItems",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "0080b205f1acae75e69db7a6bcb4173b5d3e51a5dc": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getAllPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getAllPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00a6f84a8e6477a0104223506d74bc4dfe9481b3d4": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getRoles",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getRoles",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00b3d4806a5f0a59b1ba375ae313a48c60867df645": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "seedRolesAndPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "seedRolesAndPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "404f8eef86e7a928257f21d02e0dcb5aeb8922daf9": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "createRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "407793196ca4fd907dc854c625b75c571dcc2579b3": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "checkPermission",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "checkPermission",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "408f1a5020e6ba461ea2ab0f6cc2c241264c88fb87": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "deleteRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40a18ef6ef9ff95f524a8fc838c6be9565ccc80335": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getUserPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getUserPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "6079b9612e1fe52d990c15df9204be8bd86d38ceb2": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "updateRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "000f1e53f3d721e8e3eafebdfaacde020ba810013e": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenantCompanies",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "getTenantCompanies",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00a5b65af8017d39c7ba824646cee4cc0be7500946": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getCurrentCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getCurrentCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "400aea7f551c1a892a3af07602f3d22df1ae8396ce": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "switchCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "switchCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40169b5368e6475727db0c91f5d04fe6addcb062f6": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getBranches",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "getBranches",
+      "filename": "src/app/actions/company.ts"
+    },
+    "407d6ddb5b17871ab747ad147174fb46838dba5d10": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "switchBranch",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "switchBranch",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40be938594ca7001681ec054bce9804c80446e2204": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00c43413ab5f835c1eea3961fbd59612ae369029fa": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenant",
+          "filename": "src/app/actions/tenant.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getTenant",
+      "filename": "src/app/actions/tenant.ts"
+    },
+    "0084944294869cb8b4434babef93dc48d5753dadf6": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "logout",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "00ee7cb30127714f93eb99d84e6378a1b9d5f71a82": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getUserProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "action-browser"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "00560162416ab8d272185024c36b1245c436b04f73": {
+      "workers": {
+        "app/hms/analytics/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/analytics/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/analytics.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getGlobalAnalytics",
+          "filename": "src/app/actions/analytics.ts"
+        }
+      },
+      "layer": {
+        "app/hms/analytics/page": "rsc"
+      },
+      "exportedName": "getGlobalAnalytics",
+      "filename": "src/app/actions/analytics.ts"
+    }
+  },
+  "edge": {}
+}

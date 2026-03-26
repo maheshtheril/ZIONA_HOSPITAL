@@ -1,0 +1,1130 @@
+{
+  "node": {
+    "4007ccdb75d82f2c333a0ba67acb0596c56de86a40": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenantBrandingByHost",
+          "filename": "src/app/actions/branding.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getTenantBrandingByHost",
+      "filename": "src/app/actions/branding.ts"
+    },
+    "001d846c340e0b0dc03631f5abb6a919b37618be0c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "auditAndFixMenuPermissions",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "auditAndFixMenuPermissions",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "007da8a383d393bc3e0c883ec0243c8394a0988218": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getMenuItems",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getMenuItems",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "0080b205f1acae75e69db7a6bcb4173b5d3e51a5dc": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getAllPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getAllPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00a6f84a8e6477a0104223506d74bc4dfe9481b3d4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getRoles",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getRoles",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00b3d4806a5f0a59b1ba375ae313a48c60867df645": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "seedRolesAndPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "seedRolesAndPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "404f8eef86e7a928257f21d02e0dcb5aeb8922daf9": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "407793196ca4fd907dc854c625b75c571dcc2579b3": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "checkPermission",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "checkPermission",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "408f1a5020e6ba461ea2ab0f6cc2c241264c88fb87": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "deleteRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40a18ef6ef9ff95f524a8fc838c6be9565ccc80335": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getUserPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getUserPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "6079b9612e1fe52d990c15df9204be8bd86d38ceb2": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "000f1e53f3d721e8e3eafebdfaacde020ba810013e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenantCompanies",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getTenantCompanies",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00a5b65af8017d39c7ba824646cee4cc0be7500946": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getCurrentCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getCurrentCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "400aea7f551c1a892a3af07602f3d22df1ae8396ce": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "switchCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "switchCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40169b5368e6475727db0c91f5d04fe6addcb062f6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getBranches",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getBranches",
+      "filename": "src/app/actions/company.ts"
+    },
+    "407d6ddb5b17871ab747ad147174fb46838dba5d10": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "switchBranch",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "switchBranch",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40be938594ca7001681ec054bce9804c80446e2204": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00c43413ab5f835c1eea3961fbd59612ae369029fa": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTenant",
+          "filename": "src/app/actions/tenant.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getTenant",
+      "filename": "src/app/actions/tenant.ts"
+    },
+    "0084944294869cb8b4434babef93dc48d5753dadf6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "logout",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "00ee7cb30127714f93eb99d84e6378a1b9d5f71a82": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getUserProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "00388db89f9409da18e662700d562374d2b270537e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getTaxConfiguration",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getTaxConfiguration",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "00b946f672ab588457fd6e6a6565ad58637666ab6c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getUoms",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getUoms",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "00df4fa4f631e0b8b370cfd768579ca09ddf43b344": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getBillableItems",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getBillableItems",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "4009c8593066df47cffda086ed40a649d1ee9993f6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "cancelInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "cancelInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "4013ddfdd82a8f5f26ddbd0b4c0b6d0bb8d8768737": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getNextVoucherNumber",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getNextVoucherNumber",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "401578f3fe96c87480a0867d8d29b9035ebeee1c81": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getInitialInvoiceData",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getInitialInvoiceData",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40433c06c1f4d912be0b688d3b783282a1c33cfc0c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPatientBalance",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPatientBalance",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "408583314a251e4ab6a1476b75c2a2e19f8b2cb1a3": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40a329d95dc3d1a62d1e482a762f87e63308b336de": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPatientLedger",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPatientLedger",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40e262a8c91eef996f821f1d338179393c646f1ce2": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPatientOutstandingBalance",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPatientOutstandingBalance",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40e5b9b5d47829439c65d11ea45099f2bddbc1f683": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "generateConsultationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "generateConsultationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40f587896266518b5850eeacccfc69be5ca0a335ce": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getOpenRegistrationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getOpenRegistrationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "6001830112147f6a5bd49341fb1cb42196b1bed78c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "voidPayment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "voidPayment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "6012293d892e0a7ee4a8654dd1af202e108dc6debd": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "601d2ccdb020eb572cceed0bc295cde4222d7052d5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateInvoiceStatus",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateInvoiceStatus",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "6023de41a288144cc358d4877439ee60e48937cca5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "linkInvoiceToAppointment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "linkInvoiceToAppointment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "603ba48760f4106aaa3ced755a007939dec191facf": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createQuickPatient",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createQuickPatient",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "606179061d81a683b8b4bdfd15b55a633920f874bb": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "shareInvoiceWhatsapp",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "shareInvoiceWhatsapp",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "608349f1b4763265beceb5d9cd891152ef32c6ab68": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "generateRegistrationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "generateRegistrationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "700708bd6a2e5cd22125d980b1f1d664491f5ea502": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "recordPatientConsumption",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "recordPatientConsumption",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "709a787099d74f0a77dcfa251a40d8c26f8b656d08": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "recordPayment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "recordPayment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "78314c67a5a6f8686b0890d6a5d67c91f92e9b7032": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "settlePatientDues",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "settlePatientDues",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "0017bc7bd76d12c4fa0332c041f8dc72f971161904": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPaymentMappings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentMappings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "00e1e20b68fcf111e2adb0663e0e74e48a42a2e964": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getHMSSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getHMSSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "401fbfa1dcf731b9d7863ef7a624aabc6f9c601520": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateGlobalSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateGlobalSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "4031046d1e88ab01ac04a97d7373e9b675b9b2102e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateHMSSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateHMSSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "4033f0ad3178ccda49f8634ca8f6313b462889bdb0": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateWhatsAppSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateWhatsAppSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "405d8eea04931e98fb50c32271a9ab145ae6f8d465": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "4098cc338ddde8532ea628809839b63f72ed6e703e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updatePaymentGatewaySettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePaymentGatewaySettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updatePDFSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePDFSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateTenantSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateTenantSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40c1ce8bac6bd0294860e6dbb06e4ca911bd121437": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createBranch",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createBranch",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40c78bda30257384bf051704051785bf4620f8ae50": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updatePaymentMappings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePaymentMappings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40f5ad1ddc48abb6f590059867aca153fb43763d61": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "deleteDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateBranch",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateBranch",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPDFSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPDFSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPaymentGatewayConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentGatewayConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "6061fbcb1a881f4e8692dead2c43587d3634d83fe1": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getWhatsAppSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getWhatsAppSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60660fbc726854ba5c95d6c1506c1006864e56857e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPDFConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPDFConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60825e363deb70c92d1882c2041a21532c1b8cea9a": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getWhatsAppConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getWhatsAppConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60978e108f0c867559c6c352cdc1209191fb6cd822": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60af4c4a57d0c5c26681b16bf66e53126bb318bbab": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPaymentGatewaySettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentGatewaySettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60c021be98a362a1fe876b51ae89a00102ea0ba49d": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getAppointmentsProp",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getAppointmentsProp",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "704260891327b42a52553211f322a7c7c002e3e9d7": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateAppointmentDate",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentDate",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "408286af0dd3bd2d67448b9352533aee38bea53e42": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createAppointment",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createAppointment",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "400c20c3242d9ec681541ba29d024c15419e6e9923": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateAppointmentDetails",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentDetails",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "4029c36e9e4cbb469275ea3b8aa688934c39bc7192": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getPatientById",
+          "filename": "src/app/actions/patient-v10.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPatientById",
+      "filename": "src/app/actions/patient-v10.ts"
+    },
+    "605a1b1564ee1b438dc1de20d9db2102e6ebff257e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createPatientV10",
+          "filename": "src/app/actions/patient-v10.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createPatientV10",
+      "filename": "src/app/actions/patient-v10.ts"
+    },
+    "603b64924af9a59930e1af6f2434856fdc89fe2319": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "uploadFile",
+          "filename": "src/app/actions/upload-file.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "uploadFile",
+      "filename": "src/app/actions/upload-file.ts"
+    },
+    "60784d78965906d3fa7bb25a8e3f7fc16bbb25e266": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateAppointmentStatus",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentStatus",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "603265b48c110da148cea32af57be4ad9aa9e022c6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getAppointmentsByClinician",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getAppointmentsByClinician",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "40e88ba52f0e7891f26b7b12f5d2b03953cf0eb32a": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getBestBatch",
+          "filename": "src/app/actions/inventory.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getBestBatch",
+      "filename": "src/app/actions/inventory.ts"
+    },
+    "40225acc51348d2b2b038ef6cc9838bc5917557365": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/hms/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/branding.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/navigation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/app/actions/rbac.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/src/app/actions/company.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/src/app/actions/tenant.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/src/app/actions/settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/src/app/actions/billing.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE8 => \"[project]/src/app/actions/appointment.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE9 => \"[project]/src/app/actions/patient-v10.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE10 => \"[project]/src/app/actions/upload-file.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE11 => \"[project]/src/app/actions/inventory.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getProductBatches",
+          "filename": "src/app/actions/inventory.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getProductBatches",
+      "filename": "src/app/actions/inventory.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,3 @@
+{
+  "/api/recognize-prescription/route": "app/api/recognize-prescription/route.js"
+}

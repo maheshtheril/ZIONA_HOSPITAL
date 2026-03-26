@@ -1,0 +1,425 @@
+{
+  "node": {
+    "40d456d05ed4e3803eeeca36440bf18173652030a4": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getTenantBrandingByHost",
+          "filename": "src/app/actions/branding.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getTenantBrandingByHost",
+      "filename": "src/app/actions/branding.ts"
+    },
+    "009c9fcb77bdf8037fa4fc66675bf3ba4ce5276f56": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getMenuItems",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getMenuItems",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "009f740fed13ef3f494cc2819e6555a7fb76bbc78d": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "auditAndFixMenuPermissions",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "auditAndFixMenuPermissions",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "000da21a3d832a98b95628ea99049903dbdc6fb406": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "seedRolesAndPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "seedRolesAndPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "007d011dffeb718d909981ce49b0028643aef3fc79": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getRoles",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getRoles",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "008fb9f01247ca0fc5c68211a09722eba3d5ba9860": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getAllPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getAllPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "404d192ac0cf83d88b21805476a3f1b09748a00d44": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getUserPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getUserPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "4082bde4c5e286d20c3d3c358cbcf14befe18e630a": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "checkPermission",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "checkPermission",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40d48e6653d9f92263578e88a775cf482e08bd8164": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "createRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "createRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40de58e5712729666ae9510ee6801d6c86692aee82": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "deleteRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "deleteRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "600ab5bd542e11f6fa3b0bc34f4e53b34608794118": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "updateRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "updateRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00da0ca2d954ea3b06869c3e7719891ca075057a18": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getCurrentCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getCurrentCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00eb031fd1df14c944547b09053c6395a40f504300": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getTenantCompanies",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "getTenantCompanies",
+      "filename": "src/app/actions/company.ts"
+    },
+    "405ff75c55b25fc7e3ad181ab6a6d0cab5baef74e4": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getBranches",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "getBranches",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40a20ff026b43d44a2c525b2ea366b4add79ceef2e": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "switchCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "switchCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40abcf8936e7eded4647cc66fc5fd647e454d1f322": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "switchBranch",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "switchBranch",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40f3984b38829c6d252e265bfa0f3ce0a5517d077e": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "004b45fe7478b8bc03935ae718617c9a508c437fbe": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getTenant",
+          "filename": "src/app/actions/tenant.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getTenant",
+      "filename": "src/app/actions/tenant.ts"
+    },
+    "00dc3635b259e924c089132b916d7b642ca4e8e4e7": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "checkCrmLoginStatus",
+          "filename": "src/app/actions/crm/auth.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "checkCrmLoginStatus",
+      "filename": "src/app/actions/crm/auth.ts"
+    },
+    "4064d3a06866c7fca85718980cec52fec9bebbf6fc": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "completeFollowup",
+          "filename": "src/app/actions/crm/auth.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "completeFollowup",
+      "filename": "src/app/actions/crm/auth.ts"
+    },
+    "70ab13c30e6a35c838c17ac6f59354a840a8294f26": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "markAttendance",
+          "filename": "src/app/actions/crm/auth.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "markAttendance",
+      "filename": "src/app/actions/crm/auth.ts"
+    },
+    "0025c2d23c46cc2b674fa788d9f06225e6adfa30cd": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "logout",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "0044ce07c1a5f0d3de2bf9c9ea0db5aa0f4bfa7064": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getUserProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "401a812c79833adbddd320bb28898fcff93a24cfa3": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "checkAndBlockUser",
+          "filename": "src/app/actions/crm/target-compliance.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "checkAndBlockUser",
+      "filename": "src/app/actions/crm/target-compliance.ts"
+    },
+    "40a3f82ab218346fb260e79c2f8800f5a12d5382bd": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "updateTargetProgress",
+          "filename": "src/app/actions/crm/target-compliance.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "updateTargetProgress",
+      "filename": "src/app/actions/crm/target-compliance.ts"
+    },
+    "40be92e77e0fb2de365e1af1a76cfb53878abb82c7": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "adminBlockUserIfTargetMissed",
+          "filename": "src/app/actions/crm/target-compliance.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "adminBlockUserIfTargetMissed",
+      "filename": "src/app/actions/crm/target-compliance.ts"
+    },
+    "40de38aa9877f00487b33f7fd5979208029fee1be4": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "getUserComplianceStatus",
+          "filename": "src/app/actions/crm/target-compliance.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "rsc"
+      },
+      "exportedName": "getUserComplianceStatus",
+      "filename": "src/app/actions/crm/target-compliance.ts"
+    },
+    "409fbf1f2500d1d01f5e0f5b804d9bb5f2df7606c4": {
+      "workers": {
+        "app/crm/contacts/new/page": {
+          "moduleId": 387984,
+          "async": true,
+          "exportedName": "createContact",
+          "filename": "src/app/actions/crm/contacts.ts"
+        }
+      },
+      "layer": {
+        "app/crm/contacts/new/page": "action-browser"
+      },
+      "exportedName": "createContact",
+      "filename": "src/app/actions/crm/contacts.ts"
+    }
+  },
+  "edge": {}
+}

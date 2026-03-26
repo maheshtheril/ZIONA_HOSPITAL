@@ -1,0 +1,10 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/setup-registry-fee/route.js")
+R.c("server/chunks/[root-of-the-server]__8d394b07._.js")
+R.c("server/chunks/node_modules_next_dist_bc5c1ff1._.js")
+R.c("server/chunks/node_modules_next_594ba3a6._.js")
+R.c("server/chunks/node_modules_next_dist_2426a97b._.js")
+R.c("server/chunks/[root-of-the-server]__27b34f30._.js")
+R.c("server/chunks/_e0ab1d3e._.js")
+R.c("server/chunks/_next-internal_server_app_api_setup-registry-fee_route_actions_c8d075c0.js")
+R.m(159348)
+module.exports=R.m(159348).exports

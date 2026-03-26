@@ -1,0 +1,1175 @@
+{
+  "node": {
+    "40d456d05ed4e3803eeeca36440bf18173652030a4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getTenantBrandingByHost",
+          "filename": "src/app/actions/branding.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getTenantBrandingByHost",
+      "filename": "src/app/actions/branding.ts"
+    },
+    "009c9fcb77bdf8037fa4fc66675bf3ba4ce5276f56": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getMenuItems",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getMenuItems",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "009f740fed13ef3f494cc2819e6555a7fb76bbc78d": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "auditAndFixMenuPermissions",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "auditAndFixMenuPermissions",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "000da21a3d832a98b95628ea99049903dbdc6fb406": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "seedRolesAndPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "seedRolesAndPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "007d011dffeb718d909981ce49b0028643aef3fc79": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getRoles",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getRoles",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "008fb9f01247ca0fc5c68211a09722eba3d5ba9860": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getAllPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getAllPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "404d192ac0cf83d88b21805476a3f1b09748a00d44": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getUserPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getUserPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "4082bde4c5e286d20c3d3c358cbcf14befe18e630a": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "checkPermission",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "checkPermission",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40d48e6653d9f92263578e88a775cf482e08bd8164": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40de58e5712729666ae9510ee6801d6c86692aee82": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "deleteRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "deleteRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "600ab5bd542e11f6fa3b0bc34f4e53b34608794118": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "00da0ca2d954ea3b06869c3e7719891ca075057a18": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getCurrentCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getCurrentCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "00eb031fd1df14c944547b09053c6395a40f504300": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getTenantCompanies",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getTenantCompanies",
+      "filename": "src/app/actions/company.ts"
+    },
+    "405ff75c55b25fc7e3ad181ab6a6d0cab5baef74e4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getBranches",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getBranches",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40a20ff026b43d44a2c525b2ea366b4add79ceef2e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "switchCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "switchCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40abcf8936e7eded4647cc66fc5fd647e454d1f322": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "switchBranch",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "switchBranch",
+      "filename": "src/app/actions/company.ts"
+    },
+    "40f3984b38829c6d252e265bfa0f3ce0a5517d077e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createCompany",
+          "filename": "src/app/actions/company.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createCompany",
+      "filename": "src/app/actions/company.ts"
+    },
+    "004b45fe7478b8bc03935ae718617c9a508c437fbe": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getTenant",
+          "filename": "src/app/actions/tenant.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getTenant",
+      "filename": "src/app/actions/tenant.ts"
+    },
+    "0025c2d23c46cc2b674fa788d9f06225e6adfa30cd": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "logout",
+          "filename": "src/app/actions/auth.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "src/app/actions/auth.ts"
+    },
+    "0044ce07c1a5f0d3de2bf9c9ea0db5aa0f4bfa7064": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getUserProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getUserProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60554cde89304a1a1af9fe56991863878d0357b172": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getAppointmentsProp",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getAppointmentsProp",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "707a2502ef19ee3131ec8901283b397d89c27eb712": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateAppointmentDate",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentDate",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "40d5f53a248db8041a60b1bef86b35a65ab4697eb5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createAppointment",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createAppointment",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "402be61b77f909d2793af1783d2d0cff8286d09a78": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateAppointmentDetails",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentDetails",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "60b7edc2b58ae38f1ef13fbec1fae44ed8a1ea7585": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createPatientV10",
+          "filename": "src/app/actions/patient-v10.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "createPatientV10",
+      "filename": "src/app/actions/patient-v10.ts"
+    },
+    "60b5e278f087e12259e0c16278af7f2185c675ae9f": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "uploadFile",
+          "filename": "src/app/actions/upload-file.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "uploadFile",
+      "filename": "src/app/actions/upload-file.ts"
+    },
+    "00987283f2aaaf60ac8da3f3535157e498b7a81a4e": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getHMSSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getHMSSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40969ba12f4bae63c0d33143f92fb0a64419a67a86": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "60aadf9883af907e503c1d4051e99c8f7cda8f0dfb": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "404cee32cb09242d3847bc6e5a9b0e25d910539b9f": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "cancelInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "cancelInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "60cb544fff418b57072d319cd5184088a9fcfd9917": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createQuickPatient",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createQuickPatient",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40764b3aae70bcffefdb5f45967cebe2afd0a616cf": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPatientOutstandingBalance",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPatientOutstandingBalance",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40cd9b21cdcc753b972eca1fa88002b0571ddf91a7": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPatientLedger",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPatientLedger",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "4005e06d02e3709bcd2cafd6fec3286a7032ce5d70": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getNextVoucherNumber",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getNextVoucherNumber",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "6046b2750e848ddeca3a9b7a62fb88c191096bcafe": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "shareInvoiceWhatsapp",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "shareInvoiceWhatsapp",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "60b0d9bf16366e39ceef18d0416966fc0623c97381": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPDFConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPDFConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40ecc959fa9df8601312decbffaa7a62a01c961102": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getBestBatch",
+          "filename": "src/app/actions/inventory.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getBestBatch",
+      "filename": "src/app/actions/inventory.ts"
+    },
+    "40c80060e4557f8e91304a93799e6b8d80196b8ed2": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getProductBatches",
+          "filename": "src/app/actions/inventory.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getProductBatches",
+      "filename": "src/app/actions/inventory.ts"
+    },
+    "00959bc06c78eda7db9dbe30152011933331a5ffab": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getUoms",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getUoms",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "007c854f66dba6cfcac8428597222e435ae4c0678d": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getBillableItems",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getBillableItems",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "009a38a645368d5c8ae607339fd2129824ee03f214": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getTaxConfiguration",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getTaxConfiguration",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "606a5d65b799a6139096e8dfff94b2397634588d5b": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateInvoiceStatus",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateInvoiceStatus",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "708915f7c53adba01c74a76677e55255c93b559973": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "recordPayment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "recordPayment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "78aec5ec4f2b2bb0e5c766b80e040c03f39b708e4b": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "settlePatientDues",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "settlePatientDues",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "60f4c6d3c794e910695fcc62a8561820ffbb6feefb": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "voidPayment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "voidPayment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40db0fbff646abbfae489ff376f29c9050ed4a5717": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPatientBalance",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPatientBalance",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "70159468a0fe2829e27bed0818cb5b9bed701b8522": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "recordPatientConsumption",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "recordPatientConsumption",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "60693df3fef705b1f9139abc6a3366a85125b3c612": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "generateRegistrationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "generateRegistrationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "4053acbd3802f8e3544a3e326c2302cc29c1cb4642": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getOpenRegistrationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getOpenRegistrationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "40651aef329fdb516f591c2c80fe96feebc91f43d4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "generateConsultationInvoice",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "generateConsultationInvoice",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "6014a006d63d6a53db8b8ad681d4959b76fe98036c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "linkInvoiceToAppointment",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "linkInvoiceToAppointment",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "407a0f5078dadc0c9fe5785dd67e7719ebe9f2777b": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getInitialInvoiceData",
+          "filename": "src/app/actions/billing.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getInitialInvoiceData",
+      "filename": "src/app/actions/billing.ts"
+    },
+    "4056c747171e3db72174f6f436fbaa66f8b8bf6f14": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPatientById",
+          "filename": "src/app/actions/patient-v10.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getPatientById",
+      "filename": "src/app/actions/patient-v10.ts"
+    },
+    "609bc606a286c53e1dd5664669e2b74b7b088544b9": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateAppointmentStatus",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "updateAppointmentStatus",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "60cd825368598dc06dfb852c10d2234ca85f672caf": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getAppointmentsByClinician",
+          "filename": "src/app/actions/appointment.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "action-browser"
+      },
+      "exportedName": "getAppointmentsByClinician",
+      "filename": "src/app/actions/appointment.ts"
+    },
+    "00b4a701e45a5a1ae1168c58d0f60a9c475e88fa23": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPaymentMappings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentMappings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40015bdadde153d651c524f4640651dad7837f9b56": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "4012fd428547af84f9b2eade3ed98b8ba9e3bd1911": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updatePDFSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePDFSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "404feb5e3399171ae384d712c2c35270b97c92fa88": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateGlobalSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateGlobalSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "407ee772fe54a4b7f7023a802a5cffbd5b06620139": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createBranch",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createBranch",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "407f40685c8cda979b3a13f04c6d438c64b06895cc": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateAISettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateAISettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "408867291786b27c26607376f2184941661270aade": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateHMSSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateHMSSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40a501e5adc17c87a72dd8036c4f1fc56791fc40b5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updatePaymentMappings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePaymentMappings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40adfc1ee0c903bf58bc5b6251544b3be55a5e60a6": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateTenantSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateTenantSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40c4671775d444fe78a198b19fe5700073efa58992": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "deleteDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "deleteDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40c80e81280075fa63d287279ffba9d99c6bdc2b80": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "createDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "createDesignation",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40f91dffa5e66c340a8787152815580dad3743115a": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updatePaymentGatewaySettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updatePaymentGatewaySettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "40ff0b9b602172b347558c7e3eec7fcfc660e6478c": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateWhatsAppSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateWhatsAppSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "6002d6a2559d71e423f39f9fbe70fd37b0e59da6bc": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPaymentGatewaySettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentGatewaySettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "600b7a915487400dc7db719c5ad3588abcdf0e52a4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateProfile",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateProfile",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "6092fc5aa15966bd426e2507799756d28d4dbe79a4": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPaymentGatewayConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPaymentGatewayConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "6096b33c9931e3d5d8578734a2f52cc005ebc3e5af": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getAISettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getAISettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60a748f04451c75c8a87ef57542076f3d5819d9191": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getWhatsAppSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getWhatsAppSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60b92872c0a2bb68990d95dc4ed1ed0d8ed3bfc3e5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getPDFSettings",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getPDFSettings",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60bd3dc0bca91c242b9f18811ed350367be3b40045": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateBranch",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateBranch",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60d87d66457c80d35ecc3ee3ee273d6ad7a28647b5": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getWhatsAppConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getWhatsAppConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60d88f5feb287bf26a5231ac542df3879b9d281799": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "getAIConfig",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "getAIConfig",
+      "filename": "src/app/actions/settings.ts"
+    },
+    "60efd4c3accb77564e8d010cd9d27227d840eec199": {
+      "workers": {
+        "app/hms/appointments/page": {
+          "moduleId": 869983,
+          "async": true,
+          "exportedName": "updateDesignation",
+          "filename": "src/app/actions/settings.ts"
+        }
+      },
+      "layer": {
+        "app/hms/appointments/page": "rsc"
+      },
+      "exportedName": "updateDesignation",
+      "filename": "src/app/actions/settings.ts"
+    }
+  },
+  "edge": {}
+}

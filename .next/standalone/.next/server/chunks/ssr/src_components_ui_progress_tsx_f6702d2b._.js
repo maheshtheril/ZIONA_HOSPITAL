@@ -1,0 +1,3 @@
+module.exports=[173390,a=>{"use strict";var b=a.i(187924),c=a.i(572131),d=a.i(368114);let e=c.forwardRef(({className:a,value:c,...e},f)=>(0,b.jsx)("div",{ref:f,className:(0,d.cn)("relative h-4 w-full overflow-hidden rounded-full bg-secondary",a),...e,children:(0,b.jsx)("div",{className:"h-full w-full flex-1 bg-primary transition-all",style:{transform:`translateX(-${100-(c||0)}%)`}})}));e.displayName="Progress",a.s(["Progress",()=>e])}];
+
+//# sourceMappingURL=src_components_ui_progress_tsx_f6702d2b._.js.map

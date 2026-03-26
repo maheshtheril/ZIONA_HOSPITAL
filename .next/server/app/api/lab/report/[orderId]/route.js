@@ -1,0 +1,13 @@
+var R=require("../../../../../chunks/[turbopack]_runtime.js")("server/app/api/lab/report/[orderId]/route.js")
+R.c("server/chunks/[root-of-the-server]__781d28a3._.js")
+R.c("server/chunks/node_modules_next_594ba3a6._.js")
+R.c("server/chunks/node_modules_next_dist_bc5c1ff1._.js")
+R.c("server/chunks/_e0ab1d3e._.js")
+R.c("server/chunks/node_modules_next_dist_2426a97b._.js")
+R.c("server/chunks/node_modules_next_92aaecbe._.js")
+R.c("server/chunks/[root-of-the-server]__27b34f30._.js")
+R.c("server/chunks/_5b04f715._.js")
+R.c("server/chunks/node_modules_bcryptjs_index_42ebb250.js")
+R.c("server/chunks/_next-internal_server_app_api_lab_report_[orderId]_route_actions_8e67aa8e.js")
+R.m(204941)
+module.exports=R.m(204941).exports

@@ -1,0 +1,215 @@
+{
+  "node": {
+    "40d456d05ed4e3803eeeca36440bf18173652030a4": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getTenantBrandingByHost",
+          "filename": "src/app/actions/branding.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "getTenantBrandingByHost",
+      "filename": "src/app/actions/branding.ts"
+    },
+    "009c9fcb77bdf8037fa4fc66675bf3ba4ce5276f56": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getMenuItems",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "getMenuItems",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "009f740fed13ef3f494cc2819e6555a7fb76bbc78d": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "auditAndFixMenuPermissions",
+          "filename": "src/app/actions/navigation.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "auditAndFixMenuPermissions",
+      "filename": "src/app/actions/navigation.ts"
+    },
+    "000da21a3d832a98b95628ea99049903dbdc6fb406": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "seedRolesAndPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "seedRolesAndPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "007d011dffeb718d909981ce49b0028643aef3fc79": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getRoles",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "getRoles",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "008fb9f01247ca0fc5c68211a09722eba3d5ba9860": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getAllPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "getAllPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "404d192ac0cf83d88b21805476a3f1b09748a00d44": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getUserPermissions",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "getUserPermissions",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "4082bde4c5e286d20c3d3c358cbcf14befe18e630a": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "checkPermission",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "checkPermission",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40d48e6653d9f92263578e88a775cf482e08bd8164": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "createRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "createRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "40de58e5712729666ae9510ee6801d6c86692aee82": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "deleteRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "deleteRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "600ab5bd542e11f6fa3b0bc34f4e53b34608794118": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "updateRole",
+          "filename": "src/app/actions/rbac.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "rsc"
+      },
+      "exportedName": "updateRole",
+      "filename": "src/app/actions/rbac.ts"
+    },
+    "602da4da534a9e458ba0e7fd3fd80df3b2bab32451": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getSubdivisions",
+          "filename": "src/app/actions/geography.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "action-browser"
+      },
+      "exportedName": "getSubdivisions",
+      "filename": "src/app/actions/geography.ts"
+    },
+    "00f08a81b2d6648934d017d6987853c2abcba54184": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getCountries",
+          "filename": "src/app/actions/geography.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "action-browser"
+      },
+      "exportedName": "getCountries",
+      "filename": "src/app/actions/geography.ts"
+    },
+    "009e85c00e0095fa8c364deef6a8a5f98cdb364c52": {
+      "workers": {
+        "app/geo-playground/page": {
+          "moduleId": 37259,
+          "async": true,
+          "exportedName": "getCompanyCountry",
+          "filename": "src/app/actions/geography.ts"
+        }
+      },
+      "layer": {
+        "app/geo-playground/page": "action-browser"
+      },
+      "exportedName": "getCompanyCountry",
+      "filename": "src/app/actions/geography.ts"
+    }
+  },
+  "edge": {}
+}

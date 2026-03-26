@@ -1,0 +1,3 @@
+{
+  "/api/recognize-handwriting/route": "app/api/recognize-handwriting/route.js"
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/app/settings/inventory/uoms/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation'\r\n\r\nexport default async function RedirectToNewUOMPage() {\r\n    redirect('/hms/inventory/uom')\r\n}\r\n"],"names":[],"mappings":"4WAAA,EAAA,CAAA,CAAA,QAAA,IAAA,EAAA,EAAA,CAAA,CAAA,QAEe,eAAe,IAC1B,CAAA,EAAA,EAAA,QAAA,AAAQ,EAAC,qBACb"}

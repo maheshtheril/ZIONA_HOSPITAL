@@ -1,0 +1,3 @@
+{
+  "/api/fix-db-restore/route": "app/api/fix-db-restore/route.js"
+}
