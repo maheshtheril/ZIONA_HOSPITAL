@@ -1,0 +1,13 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/appointments/[appointmentId]/route.js")
+R.c("server/chunks/[root-of-the-server]__0929b7ee._.js")
+R.c("server/chunks/node_modules_next_594ba3a6._.js")
+R.c("server/chunks/node_modules_next_dist_bc5c1ff1._.js")
+R.c("server/chunks/_e0ab1d3e._.js")
+R.c("server/chunks/node_modules_bcryptjs_index_42ebb250.js")
+R.c("server/chunks/[root-of-the-server]__27b34f30._.js")
+R.c("server/chunks/node_modules_next_dist_2426a97b._.js")
+R.c("server/chunks/_5b04f715._.js")
+R.c("server/chunks/node_modules_next_92aaecbe._.js")
+R.c("server/chunks/ce889_server_app_api_appointments_[appointmentId]_route_actions_1ba2a1be.js")
+R.m(785360)
+module.exports=R.m(785360).exports

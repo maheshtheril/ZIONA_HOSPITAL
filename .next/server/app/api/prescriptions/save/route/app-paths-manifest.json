@@ -1,0 +1,3 @@
+{
+  "/api/prescriptions/save/route": "app/api/prescriptions/save/route.js"
+}

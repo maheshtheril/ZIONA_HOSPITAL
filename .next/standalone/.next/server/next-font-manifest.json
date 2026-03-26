@@ -1,0 +1,627 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/coa/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/customer/receipts/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/customer/receipts/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/journals/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/ledger/[accountId]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/vendor/payments/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/accounting/vendor/payments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/admin/database-cleanup/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/auth/accept-invite/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/branding/preview/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/accounts/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/accounts/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/activities/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/activities/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/attendance/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/contacts/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/contacts/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/deals/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/deals/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/deals/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/deals/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/departments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/employees/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/employees/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/employees/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/employees/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/import/leads/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/intelligence/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/leads/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/leads/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/leads/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/leads/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/org-chart/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/pipeline/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/reports/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/scheduler/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/targets/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/targets/management/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/targets/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/crm/targets/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/debug-permissions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/debug/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/debug/suppliers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/developer/menus/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/geo-playground/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/@modal/(.)prescriptions/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/bankbook/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/bills/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/bills/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/cashbook/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/coa/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/daybook/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/invoices/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/journals/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/payments/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/payments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/receipts/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/accounting/receipts/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/analytics/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/appointments/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/appointments/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/appointments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/attendance/analytics/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/attendance/logs/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/attendance/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/attendance/roster/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/@modal/(.)[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/@modal/(.)new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/[id]/print/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/qr/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/returns/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/billing/returns/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/debug-tenant/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/debug/menus/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/debug/seed/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/debug/tenant-check/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/doctor/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/doctors/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/doctors/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/doctors/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/categories/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/debug/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/locations/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/manufacturers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/moves/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/operations/receive/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/products/[id]/edit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/products/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/products/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/reports/stock/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/suppliers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/uom/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/inventory/verify-receive/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/lab/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/nursing/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/nursing/inventory/usage/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/nursing/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/nursing/vitals/[appointmentId]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/patients/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/patients/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/patients/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/pharmacy/billing/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/prescriptions/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/prescriptions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/orders/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/orders/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/receipts/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/receipts/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/receipts/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/returns/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/returns/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/purchasing/suppliers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/reception/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/reception/emergency/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/reception/registration-voucher/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/settings/companies/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/settings/companies/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/settings/prescriptions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/test-dialog/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/hms/wards/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/login/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/accounting/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/branches/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/branches/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/branches/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/crm/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/custom-fields/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/designations/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/designations/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/designations/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/geography/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/global/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/hms/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/holidays/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/inventory/uoms/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/permissions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/profile/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/roles/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/users/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/settings/users/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/signup/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/tenant/companies/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ],
+    "[project]/src/app/tenant/companies/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/2f13ad8e538108e0-s.p.9b936cf7.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
