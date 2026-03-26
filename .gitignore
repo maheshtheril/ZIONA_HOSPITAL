@@ -4,22 +4,31 @@
 
 # Dependencies & Cache
 node_modules/
-.next/cache/
-.vercel/
+!.next/
+!public/
+!prisma/
+.env
+.env.local
+!package.json
+!package-lock.json
+
+# CRITICAL: Allow database engines & drivers (No Internet Install)
+!node_modules/.prisma/
+!node_modules/@prisma/
+!node_modules/prisma/
+!node_modules/pg/
+!node_modules/dotenv/
+
+# Ensure Next.js large binary is NEVER tracked
+node_modules/@next/swc-win32-x64-msvc/
 
 # Logs & Temp
 *.log
 .DS_Store
 Thumbs.db
 *.tmp
-
-# Ensure these ARE tracked for the standalone server
-!.next/
-!public/
-!prisma/
-!.env
-!package.json
-!package-lock.json
+.next/cache/
+.vercel/
 !*.bat
 !*.js
 !*.sql

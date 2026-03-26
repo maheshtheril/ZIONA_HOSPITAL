@@ -23,18 +23,13 @@ echo             (THE ZIONA STANDARD UNLOCK)
 echo  =========================================================
 echo.
 
-echo [1/2] Checking Dependencies...
+echo [1/2] Checking Environment Core...
 where node >nul 2>&1
 if !ERRORLEVEL! NEQ 0 (
     echo [ERROR] Node.js is missing. Please install it.
     pause & exit /b
 )
-where psql >nul 2>&1
-if !ERRORLEVEL! NEQ 0 (
-    echo [ERROR] PostgreSQL is missing. Please install it.
-    pause & exit /b
-)
-echo [SUCCESS] Environment Ready.
+echo [SUCCESS] Platform Ready.
 echo.
 
 echo [2/2] Launching Ziona Standard Orchestrator...

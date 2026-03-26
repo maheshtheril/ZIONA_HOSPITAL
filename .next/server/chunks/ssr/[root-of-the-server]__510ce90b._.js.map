@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/app/crm/pipeline/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation';\r\n\r\nexport default function PipelinePage() {\r\n    redirect('/crm/deals?view=board');\r\n}\r\n"],"names":[],"mappings":"4WAAA,EAAA,CAAA,CAAA,QAAA,IAAA,EAAA,EAAA,CAAA,CAAA,QAEe,SAAS,IACpB,CAAA,EAAA,EAAA,QAAA,AAAQ,EAAC,wBACb"}
