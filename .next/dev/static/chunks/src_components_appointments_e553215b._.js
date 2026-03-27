@@ -316,7 +316,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/use-toast.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/branding/ziona-logo.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$maximize$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Maximize2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/maximize-2.js [app-client] (ecmascript) <export default as Maximize2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$minimize$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Minimize2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/minimize-2.js [app-client] (ecmascript) <export default as Minimize2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldAlert$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-alert.js [app-client] (ecmascript) <export default as ShieldAlert>");
@@ -324,7 +323,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-client] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$minus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Minus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/minus.js [app-client] (ecmascript) <export default as Minus>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1d3256__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:1d3256 [app-client] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:7ed7b4 [app-client] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$e3bc50__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:e3bc50 [app-client] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$billing$2f$patient$2d$payment$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/hms/billing/patient-payment-dialog.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$446eea__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:446eea [app-client] (ecmascript) <text/javascript>");
@@ -335,7 +334,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 ;
@@ -508,7 +506,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AppointmentForm.useEffect": ()=>{
             if (editingAppointment) return; // Don't override when editing an existing appointment
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1d3256__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])().then({
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])().then({
                 "AppointmentForm.useEffect": (res)=>{
                     if (res.success && res.settings?.defaultDoctorId) {
                         // Only pre-select if receptionist hasn't already picked a doctor
@@ -644,7 +642,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
     // HMS Settings (Reg Fee, etc.)
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AppointmentForm.useEffect": ()=>{
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1d3256__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])().then({
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])().then({
                 "AppointmentForm.useEffect": (res)=>{
                     if (res.success) setHmsSettings(res.settings);
                 }
@@ -894,12 +892,12 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                             className: "h-12 w-12 text-emerald-600 dark:text-emerald-400 animate-bounce"
                         }, void 0, false, {
                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                            lineNumber: 507,
+                            lineNumber: 506,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 506,
+                        lineNumber: 505,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -911,13 +909,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                 children: "Finalized"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 510,
+                                lineNumber: 509,
                                 columnNumber: 135
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 510,
+                        lineNumber: 509,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -925,7 +923,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                         children: "Patient flow initiated for OP Consultation"
                     }, void 0, false, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 511,
+                        lineNumber: 510,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -933,7 +931,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                         children: "The medical record has been securely saved and synchronized with the clinical terminal."
                     }, void 0, false, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 513,
+                        lineNumber: 512,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,51 +971,67 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: Arial, sans-serif; background: white; color: #1a202c; padding: 2cm; }
   @media print { @page { margin: 0; size: A4; } body { padding: 2cm; } }
-  .header { text-align: center; border-bottom: 1px solid #cbd5e0; padding-bottom: 14px; margin-bottom: 24px; }
-  .header img { height: 56px; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
-  .header h1 { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; }
-  .header p { font-size: 11px; color: #718096; margin-top: 4px; }
-  .slip { background: #f7fafc; border-radius: 10px; padding: 20px 24px; }
-  .slip-row { display: flex; justify-content: space-between; align-items: flex-start; }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 25px; }
+  .header-left { display: flex; align-items: center; gap: 15px; }
+  .header-logo { height: 60px; width: 60px; object-fit: contain; }
+  .header-info h1 { font-size: 18px; font-weight: 700; text-transform: uppercase; color: #1a202c; margin: 0 0 2px 0; }
+  .header-info p { font-size: 10px; color: #64748b; font-weight: 500; margin: 0; }
+  .header-right { text-align: right; }
+  .header-right p { margin: 0; font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+
+  .slip { background: #f8fafc; border-radius: 8px; padding: 15px 20px; border: 1px solid #f1f5f9; }
+  .slip-row { display: flex; justify-content: space-between; align-items: center; }
   .token-box { text-align: right; }
-  .lbl { font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; color: #a0aec0; display: block; margin-bottom: 4px; }
-  .patient-name { font-size: 22px; font-weight: 900; color: #1a202c; line-height: 1; }
-  .patient-meta { font-size: 11px; font-weight: 600; color: #718096; margin-top: 5px; }
-  .token-num { font-size: 26px; font-weight: 900; color: #1a202c; line-height: 1; }
-  .divider { border: none; border-top: 1px solid #e2e8f0; margin: 16px 0; }
-  .info-row { display: flex; gap: 40px; }
+  .lbl { font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748b; display: block; margin-bottom: 2px; }
+  .patient-name { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+  .patient-meta { font-size: 11px; font-weight: 500; color: #64748b; margin-top: 2px; }
+  .token-num { font-size: 24px; font-weight: 800; color: #1e293b; line-height: 1; }
+  .divider { border: none; border-top: 1px solid #f1f5f9; margin: 12px 0; }
+  .info-row { display: flex; gap: 30px; }
   .info-block { flex: 1; }
-  .val-md { font-size: 14px; font-weight: 900; color: #1a202c; margin-top: 3px; }
+  .val-md { font-size: 13px; font-weight: 700; color: #334155; margin-top: 2px; }
 </style></head><body>
-<div class="header">
-  ${logo ? `<img src="${logo}" />` : ''}
-  ${hospName ? `<h1>${hospName}</h1>` : ''}
-  ${hospAddress ? `<p>${hospAddress}${hospPhone ? ' | ' + hospPhone : ''}</p>` : ''}
-</div>
+${hmsSettings?.opSlipPreprintedLetterhead ? `<div style="height: ${hmsSettings?.opSlipHeaderHeight || '4.5'}cm;"></div>` : `<div class="header">
+  <div class="header-left">
+      ${logo ? `<img src="${logo}" class="header-logo" />` : ''}
+      <div class="header-info">
+          ${hospName ? `<h1>${hospName}</h1>` : ''}
+          <p>${hospAddress || ''} ${hospPhone ? ' | ' + hospPhone : ''}</p>
+      </div>
+  </div>
+  <div class="header-right">
+      <p>OP VISIT SLIP</p>
+      <p style="margin-top:2px;">${date}</p>
+  </div>
+</div>`}
 <div class="slip">
   <div class="slip-row">
     <div>
-      <span class="lbl">Patient Name</span>
+      <span class="lbl">Patient Details</span>
       <div class="patient-name">${patientName}</div>
-      <div class="patient-meta">ID: ${appt.patient?.patient_number || 'N/A'} &nbsp;|&nbsp; ${appt.patient?.gender || ''}</div>
+      <div class="patient-meta">
+        ID: ${appt.patient?.patient_number || 'N/A'} &nbsp;|&nbsp; 
+        ${appt.patient?.gender || ''} &nbsp;|&nbsp; 
+        Age: ${appt.patient?.age || (appt.patient?.dob ? new Date().getFullYear() - new Date(appt.patient.dob).getFullYear() : 'N/A')}
+      </div>
     </div>
     <div class="token-box">
-      <span class="lbl">Token</span>
-      <div class="token-num">${tokenNumber}</div>
+      <span class="lbl">TOKEN NO</span>
+      <div class="token-num">#${tokenNumber}</div>
     </div>
   </div>
   <hr class="divider" />
   <div class="info-row">
     <div class="info-block">
-      <span class="lbl">Consulting Doctor</span>
+      <span class="lbl">Consulting Clinician</span>
       <div class="val-md">${doctorName}</div>
     </div>
-    <div class="info-block">
-      <span class="lbl">Date &amp; Time</span>
-      <div class="val-md">${date} &nbsp; ${time}</div>
+    <div class="info-block" style="text-align:right;">
+      <span class="lbl">Encounter Time</span>
+      <div class="val-md">${time}</div>
     </div>
   </div>
-</div>
+</div></div>
 </body></html>`);
                                         },
                                         className: "w-full py-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl shadow-xl shadow-emerald-600/20 font-black uppercase text-[10px] tracking-[0.2em] transition-all active:scale-95 flex items-center justify-center gap-2",
@@ -1026,14 +1040,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 593,
+                                                lineNumber: 611,
                                                 columnNumber: 29
                                             }, this),
                                             " OP Slip (A4)"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 520,
+                                        lineNumber: 519,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1068,20 +1082,20 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 624,
+                                                lineNumber: 642,
                                                 columnNumber: 29
                                             }, this),
                                             " Patient Label"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 596,
+                                        lineNumber: 614,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 519,
+                                lineNumber: 518,
                                 columnNumber: 21
                             }, this),
                             paidInvoiceId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1093,14 +1107,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 635,
+                                        lineNumber: 653,
                                         columnNumber: 29
                                     }, this),
                                     " Print Registration Receipt"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 630,
+                                lineNumber: 648,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1116,14 +1130,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 648,
+                                        lineNumber: 666,
                                         columnNumber: 25
                                     }, this),
                                     " Register New Patient"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 639,
+                                lineNumber: 657,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1132,24 +1146,24 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                 children: "Return to Dashboard"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 651,
+                                lineNumber: 669,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 518,
+                        lineNumber: 517,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                lineNumber: 505,
+                lineNumber: 504,
                 columnNumber: 13
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-            lineNumber: 504,
+            lineNumber: 503,
             columnNumber: 9
         }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1164,45 +1178,25 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center gap-4",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        type: "button",
-                                        onClick: onClose,
-                                        className: "p-2 hover:bg-white/10 rounded-xl transition-all group",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
-                                            className: "h-6 w-6 text-white/70 group-hover:text-white"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 671,
-                                            columnNumber: 29
-                                        }, this)
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    onClick: onClose,
+                                    className: "p-2 hover:bg-white/10 rounded-xl transition-all group",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                                        className: "h-6 w-6 text-white/70 group-hover:text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 670,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-white rounded-lg p-1",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ZionaLogo"], {
-                                            size: 32,
-                                            variant: "icon",
-                                            theme: "light",
-                                            speed: "slow",
-                                            colorScheme: "signature"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 674,
-                                            columnNumber: 29
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 673,
-                                        columnNumber: 25
+                                        lineNumber: 689,
+                                        columnNumber: 29
                                     }, this)
-                                ]
-                            }, void 0, true, {
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/appointments/appointment-form.tsx",
+                                    lineNumber: 688,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 669,
+                                lineNumber: 687,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1215,13 +1209,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 className: "h-4 w-4 text-indigo-400 animate-pulse"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 679,
+                                                lineNumber: 694,
                                                 columnNumber: 50
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 678,
+                                        lineNumber: 693,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1232,14 +1226,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 children: "Active Encounter"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 682,
+                                                lineNumber: 697,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-1 w-1 rounded-full bg-white/20"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 683,
+                                                lineNumber: 698,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1247,25 +1241,25 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 children: "ZIONA-HMS Deployment: V10.2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 684,
+                                                lineNumber: 699,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 681,
+                                        lineNumber: 696,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 677,
+                                lineNumber: 692,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 668,
+                        lineNumber: 686,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1282,19 +1276,19 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 691,
+                                            lineNumber: 706,
                                             columnNumber: 153
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 691,
+                                        lineNumber: 706,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-4 w-[1px] bg-white/10"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 692,
+                                        lineNumber: 707,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1306,26 +1300,26 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 className: "h-3.5 w-3.5 text-indigo-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 694,
+                                                lineNumber: 709,
                                                 columnNumber: 44
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$maximize$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Maximize2$3e$__["Maximize2"], {
                                                 className: "h-3.5 w-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 694,
+                                                lineNumber: 709,
                                                 columnNumber: 100
                                             }, this),
                                             isMaximized ? 'Dock Terminal' : 'Fullscreen'
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 693,
+                                        lineNumber: 708,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 690,
+                                lineNumber: 705,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1342,32 +1336,32 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         className: "h-5 w-5 animate-spin"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 709,
+                                        lineNumber: 724,
                                         columnNumber: 60
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
                                         className: "h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 709,
+                                        lineNumber: 724,
                                         columnNumber: 107
                                     }, this),
                                     editingAppointment ? 'Update Encounter' : 'Save'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 699,
+                                lineNumber: 714,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 689,
+                        lineNumber: 704,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                lineNumber: 667,
+                lineNumber: 685,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1384,7 +1378,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                         value: editingAppointment.id
                     }, void 0, false, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 720,
+                        lineNumber: 735,
                         columnNumber: 40
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1393,7 +1387,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                         value: "dashboard"
                     }, void 0, false, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 721,
+                        lineNumber: 736,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1413,7 +1407,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         children: "OP"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 728,
+                                                        lineNumber: 743,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1424,7 +1418,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 children: "Patient Number"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 730,
+                                                                lineNumber: 745,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1435,32 +1429,32 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                         children: "PENDING"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                        lineNumber: 732,
+                                                                        lineNumber: 747,
                                                                         columnNumber: 77
                                                                     }, this),
                                                                     selectedPatient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$badge$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BadgeCheck$3e$__["BadgeCheck"], {
                                                                         className: "h-5 w-5 text-emerald-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                        lineNumber: 733,
+                                                                        lineNumber: 748,
                                                                         columnNumber: 61
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 731,
+                                                                lineNumber: 746,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 729,
+                                                        lineNumber: 744,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 727,
+                                                lineNumber: 742,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1470,7 +1464,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         className: "h-10 w-[1px] bg-slate-200 dark:bg-white/10"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 739,
+                                                        lineNumber: 754,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1478,32 +1472,32 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5 flex items-center justify-end gap-1",
-                                                                children: "Reg Audit"
+                                                                children: "Registration Status"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 741,
+                                                                lineNumber: 756,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: `text-sm font-black tracking-tight ${activeRegStatus.status === 'loading' ? 'text-slate-400 animate-pulse' : activeRegStatus.status === 'none' ? 'text-slate-300' : activeRegStatus.shouldCharge ? 'text-red-500' : 'text-emerald-500'}`,
-                                                                children: activeRegStatus.status === 'loading' ? 'CHECKING...' : activeRegStatus.status === 'none' ? '---' : activeRegStatus.shouldCharge ? 'PAYMENT REQUIRED' : 'FEES CLEARED'
+                                                                children: activeRegStatus.status === 'loading' ? 'AUDITING...' : activeRegStatus.status === 'none' ? 'UNLINKED' : activeRegStatus.shouldCharge ? 'EXPIRED / DUE' : 'LIFETIME VALID'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 742,
+                                                                lineNumber: 757,
                                                                 columnNumber: 37
                                                             }, this),
                                                             activeRegStatus.status !== 'none' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-[9px] font-medium text-slate-400 leading-none mt-1",
-                                                                children: activeRegStatus.expiryDate ? `Expires: ${new Date(activeRegStatus.expiryDate).toLocaleDateString()}` : activeRegStatus.status === 'expired' && activeRegStatus.reason ? activeRegStatus.reason : ''
+                                                                className: "text-[9px] font-bold text-slate-400 leading-none mt-1 uppercase tracking-tighter",
+                                                                children: activeRegStatus.expiryDate ? `Ends: ${new Date(activeRegStatus.expiryDate).toLocaleDateString()}` : activeRegStatus.status === 'expired' ? 'Action Required: Renew Fee' : 'Valid Protocol Active'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 746,
+                                                                lineNumber: 761,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 740,
+                                                        lineNumber: 755,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1511,36 +1505,39 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5 uppercase",
-                                                                children: "Validity Expiry"
+                                                                children: "Audit Timestamp"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 753,
+                                                                lineNumber: 768,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: `text-xs font-bold ${activeRegStatus.status === 'loading' ? 'text-slate-400 animate-pulse' : 'text-slate-500'}`,
-                                                                children: activeRegStatus.status === 'loading' ? 'FETCHING...' : activeRegStatus.expiryDate ? new Date(activeRegStatus.expiryDate).toLocaleDateString() : 'N/A (New Record)'
+                                                                className: `text-xs font-bold ${activeRegStatus.status === 'loading' ? 'text-slate-400 animate-pulse' : 'text-slate-500 font-mono italic'}`,
+                                                                children: activeRegStatus.status === 'loading' ? 'SYNCING...' : new Date().toLocaleTimeString([], {
+                                                                    hour: '2-digit',
+                                                                    minute: '2-digit'
+                                                                })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 754,
+                                                                lineNumber: 769,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 752,
+                                                        lineNumber: 767,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 738,
+                                                lineNumber: 753,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 726,
+                                        lineNumber: 741,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$appointments$2f$patient$2d$doctor$2d$selectors$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PatientDoctorSelectors"], {
@@ -1553,7 +1550,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         onNewPatientClick: ()=>setShowNewPatientModal(true)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 761,
+                                        lineNumber: 776,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$billing$2f$patient$2d$payment$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PatientPaymentDialog"], {
@@ -1565,7 +1562,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         isRegistrationFee: true,
                                         trigger: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 779,
+                                            lineNumber: 794,
                                             columnNumber: 38
                                         }, void 0),
                                         onPaymentSuccess: (data)=>{
@@ -1578,7 +1575,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 772,
+                                        lineNumber: 787,
                                         columnNumber: 25
                                     }, this),
                                     activeRegStatus.shouldCharge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1591,7 +1588,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         className: "h-5 w-5 text-amber-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 791,
+                                                        lineNumber: 806,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1601,7 +1598,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 children: "Fee Due"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 793,
+                                                                lineNumber: 808,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1609,19 +1606,19 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 children: "Patient Registration Fee — collect to enable booking"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 794,
+                                                                lineNumber: 809,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 792,
+                                                        lineNumber: 807,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 790,
+                                                lineNumber: 805,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1631,13 +1628,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 children: "Collect"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 797,
+                                                lineNumber: 812,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 789,
+                                        lineNumber: 804,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1654,14 +1651,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     className: "h-3.5 w-3.5 inline mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 811,
+                                                                    lineNumber: 826,
                                                                     columnNumber: 148
                                                                 }, this),
                                                                 " Appointment Date"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 811,
+                                                            lineNumber: 826,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1673,13 +1670,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                             className: "w-full p-2.5 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 812,
+                                                            lineNumber: 827,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                    lineNumber: 810,
+                                                    lineNumber: 825,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1691,14 +1688,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     className: "h-3.5 w-3.5 inline mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 822,
+                                                                    lineNumber: 837,
                                                                     columnNumber: 148
                                                                 }, this),
                                                                 " Estimated Slot"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 822,
+                                                            lineNumber: 837,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1710,7 +1707,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                             className: `w-full p-2.5 bg-white dark:bg-slate-950 border ${suggestedTime === 'Fully Booked' ? 'border-amber-500 ring-2 ring-amber-500/20' : 'border-gray-200 dark:border-slate-700'} rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none font-medium`
                                                         }, suggestedTime, false, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 823,
+                                                            lineNumber: 838,
                                                             columnNumber: 37
                                                         }, this),
                                                         suggestedTime === 'Fully Booked' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1718,24 +1715,24 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                             children: "⚠️ Late Hours / Fully Booked (Override possible)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 833,
+                                                            lineNumber: 848,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                    lineNumber: 821,
+                                                    lineNumber: 836,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 809,
+                                            lineNumber: 824,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 808,
+                                        lineNumber: 823,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1751,7 +1748,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 className: "h-4 w-4 text-indigo-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 843,
+                                                                lineNumber: 858,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1759,13 +1756,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 children: "Reason for Visit / History"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 844,
+                                                                lineNumber: 859,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 842,
+                                                        lineNumber: 857,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1775,13 +1772,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         children: isListening ? 'Stop Listening' : 'Voice Dictate'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 846,
+                                                        lineNumber: 861,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 841,
+                                                lineNumber: 856,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1793,7 +1790,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 placeholder: "State symptoms, history, or patient complaint..."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 850,
+                                                lineNumber: 865,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1803,7 +1800,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         className: "h-3 w-3 text-indigo-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 859,
+                                                        lineNumber: 874,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1811,25 +1808,25 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                         children: "Medical Transcription Engine L2 Active"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 860,
+                                                        lineNumber: 875,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 858,
+                                                lineNumber: 873,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 840,
+                                        lineNumber: 855,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 724,
+                                lineNumber: 739,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1847,7 +1844,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                             children: "Visit Type"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 869,
+                                                            lineNumber: 884,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1860,7 +1857,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     children: "🩺 Consultation Visit"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 871,
+                                                                    lineNumber: 886,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1868,7 +1865,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     children: "🔄 Follow-Up Session"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 872,
+                                                                    lineNumber: 887,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1876,7 +1873,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     children: "🚨 Emergency Admission"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 873,
+                                                                    lineNumber: 888,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1884,19 +1881,19 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                     children: "💉 Clinical Procedure"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 874,
+                                                                    lineNumber: 889,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 870,
+                                                            lineNumber: 885,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                    lineNumber: 868,
+                                                    lineNumber: 883,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1906,7 +1903,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                             children: "Encounter Mode"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 878,
+                                                            lineNumber: 893,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1923,7 +1920,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                             className: "text-indigo-600 focus:ring-0"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                            lineNumber: 881,
+                                                                            lineNumber: 896,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1931,13 +1928,13 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                             children: "On-Site Clinic Visit"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                            lineNumber: 882,
+                                                                            lineNumber: 897,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 880,
+                                                                    lineNumber: 895,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1951,7 +1948,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                             className: "text-indigo-600 focus:ring-0"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                            lineNumber: 885,
+                                                                            lineNumber: 900,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1959,36 +1956,36 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                             children: "Video Consultation"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                            lineNumber: 886,
+                                                                            lineNumber: 901,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                    lineNumber: 884,
+                                                                    lineNumber: 899,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                            lineNumber: 879,
+                                                            lineNumber: 894,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                    lineNumber: 877,
+                                                    lineNumber: 892,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                            lineNumber: 867,
+                                            lineNumber: 882,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 866,
+                                        lineNumber: 881,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1999,7 +1996,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                 children: "Clinical Priority"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 894,
+                                                lineNumber: 909,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2022,7 +2019,7 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 onChange: ()=>{}
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 898,
+                                                                lineNumber: 913,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2030,36 +2027,36 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                                                 children: p
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                                lineNumber: 899,
+                                                                lineNumber: 914,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, p, true, {
                                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                        lineNumber: 897,
+                                                        lineNumber: 912,
                                                         columnNumber: 37
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                                lineNumber: 895,
+                                                lineNumber: 910,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 893,
+                                        lineNumber: 908,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 865,
+                                lineNumber: 880,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 723,
+                        lineNumber: 738,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2072,14 +2069,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         children: "⛔"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 911,
+                                        lineNumber: 926,
                                         columnNumber: 29
                                     }, this),
                                     activeRegStatus.status === 'expired' ? 'Registration expired — renew fee to enable booking' : 'Registration fee pending — collect fee to enable booking'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 910,
+                                lineNumber: 925,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2092,32 +2089,32 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                         className: "h-4 w-4 animate-spin"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 921,
+                                        lineNumber: 936,
                                         columnNumber: 60
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                        lineNumber: 921,
+                                        lineNumber: 936,
                                         columnNumber: 107
                                     }, this),
                                     editingAppointment ? 'Update Record' : 'Finalize & Save'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                lineNumber: 915,
+                                lineNumber: 930,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                        lineNumber: 908,
+                        lineNumber: 923,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                lineNumber: 715,
+                lineNumber: 730,
                 columnNumber: 13
             }, this),
             showNewPatientModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2133,14 +2130,14 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                                    lineNumber: 935,
+                                    lineNumber: 950,
                                     columnNumber: 29
                                 }, this),
                                 " Cancel Overlay (Esc)"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                            lineNumber: 931,
+                            lineNumber: 946,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$create$2d$patient$2d$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CreatePatientForm"], {
@@ -2149,24 +2146,24 @@ function AppointmentForm({ patients, doctors, appointments = [], billableItems =
                             hideBilling: true
                         }, void 0, false, {
                             fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                            lineNumber: 937,
+                            lineNumber: 952,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                    lineNumber: 930,
+                    lineNumber: 945,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/appointments/appointment-form.tsx",
-                lineNumber: 929,
+                lineNumber: 944,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/appointments/appointment-form.tsx",
-        lineNumber: 664,
+        lineNumber: 682,
         columnNumber: 9
     }, this);
 }

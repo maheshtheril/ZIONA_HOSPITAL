@@ -2391,13 +2391,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$file$2d$upload$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/file-upload.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1d3256__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:1d3256 [app-client] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:7ed7b4 [app-client] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$patient$2d$id$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/hms/patient-id-card.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/branding/ziona-logo.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 ;
@@ -2429,7 +2427,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
             const syncSettings = {
                 "CreatePatientForm.useEffect.syncSettings": async ()=>{
                     try {
-                        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1d3256__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])();
+                        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])();
                         if (res.success && res.settings) {
                             setRegistrationFee(res.settings.registrationFee);
                             setRegistrationValidity(res.settings.registrationValidity);
@@ -2621,27 +2619,17 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                 className: "flex items-center gap-3",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "h-12 w-12 bg-black rounded-xl flex items-center justify-center shadow-2xl shadow-indigo-500/20 border border-white/10 shrink-0",
-                                        children: appName?.includes('Ziona') ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ZionaLogo"], {
-                                            size: 32,
-                                            variant: "icon",
-                                            theme: "dark",
-                                            speed: "slow",
-                                            colorScheme: "signature"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                            lineNumber: 251,
-                                            columnNumber: 33
-                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
+                                        className: "h-12 w-12 bg-slate-900 dark:bg-slate-800 rounded-xl flex items-center justify-center shadow-lg border border-white/10 shrink-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
                                             className: "h-6 w-6 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                            lineNumber: 253,
-                                            columnNumber: 33
+                                            lineNumber: 249,
+                                            columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 249,
+                                        lineNumber: 248,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2651,7 +2639,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                 children: initialData ? 'Update Profile' : 'New Patient Registration'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 252,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2661,26 +2649,26 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                         className: "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                        lineNumber: 261,
+                                                        lineNumber: 256,
                                                         columnNumber: 33
                                                     }, this),
                                                     appName?.includes('Ziona') ? "Digital Registry • Powered by Ziona" : `${appName} • Trusted Digital Registry`
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 260,
+                                                lineNumber: 255,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 256,
+                                        lineNumber: 251,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                lineNumber: 248,
+                                lineNumber: 247,
                                 columnNumber: 21
                             }, this),
                             (onClose || !isDialog) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2696,20 +2684,20 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 269,
                                                 columnNumber: 48
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mic$3e$__["Mic"], {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 269,
                                                 columnNumber: 81
                                             }, this),
                                             isListening ? 'Listening...' : 'Voice Register'
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 268,
+                                        lineNumber: 263,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2720,24 +2708,24 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                            lineNumber: 282,
+                                            lineNumber: 277,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 277,
+                                        lineNumber: 272,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                lineNumber: 267,
+                                lineNumber: 262,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                        lineNumber: 247,
+                        lineNumber: 246,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2764,24 +2752,24 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                             className: `h-3 w-3 ${activeTab === tab.id ? 'text-indigo-500' : ''}`
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 299,
                                             columnNumber: 33
                                         }, this),
                                         tab.label
                                     ]
                                 }, tab.id, true, {
                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                    lineNumber: 295,
+                                    lineNumber: 290,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                            lineNumber: 290,
+                            lineNumber: 285,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                        lineNumber: 289,
+                        lineNumber: 284,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -2907,18 +2895,18 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 417,
+                                                    lineNumber: 412,
                                                     columnNumber: 67
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 417,
+                                                    lineNumber: 412,
                                                     columnNumber: 106
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 416,
+                                                lineNumber: 411,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2926,13 +2914,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                 children: message.text
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 419,
+                                                lineNumber: 414,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 415,
+                                        lineNumber: 410,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2956,14 +2944,14 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     className: "h-4 w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 432,
+                                                                                    lineNumber: 427,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 " Personal Details"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 431,
+                                                                            lineNumber: 426,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2977,7 +2965,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Title"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 436,
+                                                                                            lineNumber: 431,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2993,41 +2981,41 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                             children: "Mr."
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 439,
+                                                                                                            lineNumber: 434,
                                                                                                             columnNumber: 61
                                                                                                         }, this),
                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                             children: "Mrs."
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 439,
+                                                                                                            lineNumber: 434,
                                                                                                             columnNumber: 81
                                                                                                         }, this),
                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                             children: "Ms."
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 439,
+                                                                                                            lineNumber: 434,
                                                                                                             columnNumber: 102
                                                                                                         }, this),
                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                             children: "Dr."
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 439,
+                                                                                                            lineNumber: 434,
                                                                                                             columnNumber: 122
                                                                                                         }, this),
                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                             children: "Baby"
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 439,
+                                                                                                            lineNumber: 434,
                                                                                                             columnNumber: 142
                                                                                                         }, this)
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 438,
+                                                                                                    lineNumber: 433,
                                                                                                     columnNumber: 57
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3035,19 +3023,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     children: "▼"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 441,
+                                                                                                    lineNumber: 436,
                                                                                                     columnNumber: 57
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 437,
+                                                                                            lineNumber: 432,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 435,
+                                                                                    lineNumber: 430,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3060,7 +3048,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     children: "First Name"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 446,
+                                                                                                    lineNumber: 441,
                                                                                                     columnNumber: 57
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3073,13 +3061,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     className: "w-full h-10 px-3 pr-10 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 dark:text-slate-200 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 447,
+                                                                                                    lineNumber: 442,
                                                                                                     columnNumber: 57
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 445,
+                                                                                            lineNumber: 440,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3089,7 +3077,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     children: "Last Name"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 450,
+                                                                                                    lineNumber: 445,
                                                                                                     columnNumber: 57
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3101,31 +3089,31 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     className: "w-full h-10 px-3 pr-10 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 dark:text-slate-200 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 451,
+                                                                                                    lineNumber: 446,
                                                                                                     columnNumber: 57
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 449,
+                                                                                            lineNumber: 444,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 444,
+                                                                                    lineNumber: 439,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 434,
+                                                                            lineNumber: 429,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 430,
+                                                                    lineNumber: 425,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3138,14 +3126,14 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     className: "h-4 w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 460,
+                                                                                    lineNumber: 455,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 " Vitals & Demographics"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 459,
+                                                                            lineNumber: 454,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3158,7 +3146,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Gender"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 464,
+                                                                                            lineNumber: 459,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3175,7 +3163,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                         children: g
                                                                                                     }, g, false, {
                                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                        lineNumber: 467,
+                                                                                                        lineNumber: 462,
                                                                                                         columnNumber: 61
                                                                                                     }, this)),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3184,19 +3172,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     value: gender
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 471,
+                                                                                                    lineNumber: 466,
                                                                                                     columnNumber: 57
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 465,
+                                                                                            lineNumber: 460,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 463,
+                                                                                    lineNumber: 458,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3206,7 +3194,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Blood Group"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 475,
+                                                                                            lineNumber: 470,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3216,7 +3204,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     className: "absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-rose-400"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 477,
+                                                                                                    lineNumber: 472,
                                                                                                     columnNumber: 57
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3229,7 +3217,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                             children: "Select Group"
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                            lineNumber: 479,
+                                                                                                            lineNumber: 474,
                                                                                                             columnNumber: 61
                                                                                                         }, this),
                                                                                                         [
@@ -3246,31 +3234,31 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                                 children: bg
                                                                                                             }, bg, false, {
                                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                                lineNumber: 480,
+                                                                                                                lineNumber: 475,
                                                                                                                 columnNumber: 123
                                                                                                             }, this))
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 478,
+                                                                                                    lineNumber: 473,
                                                                                                     columnNumber: 57
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 476,
+                                                                                            lineNumber: 471,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 474,
+                                                                                    lineNumber: 469,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 462,
+                                                                            lineNumber: 457,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3281,7 +3269,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "Accounting Group (AR Category)"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 487,
+                                                                                    lineNumber: 482,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3312,14 +3300,14 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                         className: `w-1.5 h-1.5 rounded-full bg-${group.color}-500`
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                        lineNumber: 503,
+                                                                                                        lineNumber: 498,
                                                                                                         columnNumber: 61
                                                                                                     }, this),
                                                                                                     group.label
                                                                                                 ]
                                                                                             }, group.id, true, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 494,
+                                                                                                lineNumber: 489,
                                                                                                 columnNumber: 57
                                                                                             }, this)),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3328,13 +3316,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             value: accountingGroup
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 507,
+                                                                                            lineNumber: 502,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 488,
+                                                                                    lineNumber: 483,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3342,13 +3330,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "* This determines which Accounts Receivable (AR) head the billing will be posted to."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 509,
+                                                                                    lineNumber: 504,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 486,
+                                                                            lineNumber: 481,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3362,7 +3350,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Date of Birth"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 515,
+                                                                                            lineNumber: 510,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3373,13 +3361,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             className: "w-full h-10 px-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 text-sm outline-none focus:border-indigo-500"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 516,
+                                                                                            lineNumber: 511,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 514,
+                                                                                    lineNumber: 509,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3389,12 +3377,12 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         children: "OR"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 519,
+                                                                                        lineNumber: 514,
                                                                                         columnNumber: 53
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 518,
+                                                                                    lineNumber: 513,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3405,7 +3393,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Age"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 522,
+                                                                                            lineNumber: 517,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3416,13 +3404,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             placeholder: "0"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 523,
+                                                                                            lineNumber: 518,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 521,
+                                                                                    lineNumber: 516,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3433,7 +3421,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                             children: "Unit"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 526,
+                                                                                            lineNumber: 521,
                                                                                             columnNumber: 53
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3445,51 +3433,51 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                     children: "Years"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 528,
+                                                                                                    lineNumber: 523,
                                                                                                     columnNumber: 57
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                     children: "Months"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 528,
+                                                                                                    lineNumber: 523,
                                                                                                     columnNumber: 79
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                                     children: "Days"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                    lineNumber: 528,
+                                                                                                    lineNumber: 523,
                                                                                                     columnNumber: 102
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                            lineNumber: 527,
+                                                                                            lineNumber: 522,
                                                                                             columnNumber: 53
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 525,
+                                                                                    lineNumber: 520,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 513,
+                                                                            lineNumber: 508,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 458,
+                                                                    lineNumber: 453,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 428,
+                                                            lineNumber: 423,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3506,12 +3494,12 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     className: "h-4 w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 540,
+                                                                                    lineNumber: 535,
                                                                                     columnNumber: 53
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 539,
+                                                                                lineNumber: 534,
                                                                                 columnNumber: 49
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3521,7 +3509,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         children: "Contact & Location"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 543,
+                                                                                        lineNumber: 538,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3529,19 +3517,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         children: "Communication"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 544,
+                                                                                        lineNumber: 539,
                                                                                         columnNumber: 53
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 542,
+                                                                                lineNumber: 537,
                                                                                 columnNumber: 49
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                        lineNumber: 538,
+                                                                        lineNumber: 533,
                                                                         columnNumber: 45
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3558,13 +3546,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 children: "*"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 549,
+                                                                                                lineNumber: 544,
                                                                                                 columnNumber: 158
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 549,
+                                                                                        lineNumber: 544,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3574,7 +3562,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-300 group-focus-within:text-indigo-500 transition-colors"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 551,
+                                                                                                lineNumber: 546,
                                                                                                 columnNumber: 57
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3590,19 +3578,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "w-full h-10 pl-9 pr-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 dark:text-slate-200 outline-none focus:border-indigo-500 transition-all text-sm tracking-wide"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 552,
+                                                                                                lineNumber: 547,
                                                                                                 columnNumber: 57
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 550,
+                                                                                        lineNumber: 545,
                                                                                         columnNumber: 53
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 548,
+                                                                                lineNumber: 543,
                                                                                 columnNumber: 49
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3612,7 +3600,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         children: "Email Address"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 567,
+                                                                                        lineNumber: 562,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3622,7 +3610,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-300 group-focus-within:text-indigo-500 transition-colors"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 569,
+                                                                                                lineNumber: 564,
                                                                                                 columnNumber: 57
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3633,19 +3621,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "w-full h-10 pl-9 pr-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 dark:text-slate-200 outline-none focus:border-indigo-500 transition-all text-sm"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 570,
+                                                                                                lineNumber: 565,
                                                                                                 columnNumber: 57
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 568,
+                                                                                        lineNumber: 563,
                                                                                         columnNumber: 53
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 566,
+                                                                                lineNumber: 561,
                                                                                 columnNumber: 49
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3655,7 +3643,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         children: "Address"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 574,
+                                                                                        lineNumber: 569,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -3666,7 +3654,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                         className: "w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl font-bold text-slate-700 dark:text-slate-200 text-xs outline-none focus:border-indigo-500 transition-all min-h-[50px] resize-none"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 575,
+                                                                                        lineNumber: 570,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3680,7 +3668,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "w-full h-9 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 outline-none focus:border-indigo-500 transition-all text-xs"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 577,
+                                                                                                lineNumber: 572,
                                                                                                 columnNumber: 57
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3691,47 +3679,47 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                                 className: "w-full h-9 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-bold text-slate-700 outline-none focus:border-indigo-500 transition-all text-xs"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                                lineNumber: 578,
+                                                                                                lineNumber: 573,
                                                                                                 columnNumber: 57
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                        lineNumber: 576,
+                                                                                        lineNumber: 571,
                                                                                         columnNumber: 53
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 573,
+                                                                                lineNumber: 568,
                                                                                 columnNumber: 49
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                        lineNumber: 547,
+                                                                        lineNumber: 542,
                                                                         columnNumber: 45
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                lineNumber: 537,
+                                                                lineNumber: 532,
                                                                 columnNumber: 41
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 536,
+                                                            lineNumber: 531,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 426,
+                                                    lineNumber: 421,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 425,
+                                                lineNumber: 420,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3746,7 +3734,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                     className: "absolute top-0 right-0 p-40 bg-indigo-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 591,
+                                                                    lineNumber: 586,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3758,12 +3746,12 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                 className: "h-7 w-7 text-indigo-300"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                lineNumber: 595,
+                                                                                lineNumber: 590,
                                                                                 columnNumber: 49
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 594,
+                                                                            lineNumber: 589,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3773,7 +3761,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "Digital Vault"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 598,
+                                                                                    lineNumber: 593,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3781,19 +3769,19 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "Secure storage for patient identity and documents."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 599,
+                                                                                    lineNumber: 594,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 597,
+                                                                            lineNumber: 592,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 593,
+                                                                    lineNumber: 588,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3807,7 +3795,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "Patient Photo"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 605,
+                                                                                    lineNumber: 600,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$file$2d$upload$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FileUpload"], {
@@ -3819,7 +3807,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     compact: false
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 606,
+                                                                                    lineNumber: 601,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3828,13 +3816,13 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     value: profileImageUrl
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 607,
+                                                                                    lineNumber: 602,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 604,
+                                                                            lineNumber: 599,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3845,7 +3833,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     children: "Government ID Proof"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 610,
+                                                                                    lineNumber: 605,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$file$2d$upload$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FileUpload"], {
@@ -3856,7 +3844,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     compact: false
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 611,
+                                                                                    lineNumber: 606,
                                                                                     columnNumber: 49
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3865,25 +3853,25 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                                     value: idCardUrl
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                                    lineNumber: 612,
+                                                                                    lineNumber: 607,
                                                                                     columnNumber: 49
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 609,
+                                                                            lineNumber: 604,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 603,
+                                                                    lineNumber: 598,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 590,
+                                                            lineNumber: 585,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3893,7 +3881,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                     className: "h-5 w-5 text-amber-600 shrink-0 mt-0.5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 618,
+                                                                    lineNumber: 613,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3903,7 +3891,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                             children: "Privacy Notice"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 620,
+                                                                            lineNumber: 615,
                                                                             columnNumber: 45
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3911,42 +3899,42 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                                             children: "Documents uploaded here are encrypted at rest. Access is restricted to authorized clinical and administrative staff only."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                            lineNumber: 621,
+                                                                            lineNumber: 616,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                                    lineNumber: 619,
+                                                                    lineNumber: 614,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 617,
+                                                            lineNumber: 612,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 589,
+                                                    lineNumber: 584,
                                                     columnNumber: 33
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 588,
+                                                lineNumber: 583,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 423,
+                                        lineNumber: 418,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                lineNumber: 413,
+                                lineNumber: 408,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3966,12 +3954,12 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                         className: "w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                        lineNumber: 638,
+                                                        lineNumber: 633,
                                                         columnNumber: 41
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 637,
+                                                    lineNumber: 632,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3981,7 +3969,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                             children: "Print ID Card"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 646,
+                                                            lineNumber: 641,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3989,24 +3977,24 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                             children: "Show QR Code & Details"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                            lineNumber: 649,
+                                                            lineNumber: 644,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                    lineNumber: 645,
+                                                    lineNumber: 640,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                            lineNumber: 636,
+                                            lineNumber: 631,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 633,
+                                        lineNumber: 628,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4019,7 +4007,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 658,
+                                                lineNumber: 653,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4031,44 +4019,44 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                                         className: "h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                        lineNumber: 671,
+                                                        lineNumber: 666,
                                                         columnNumber: 37
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                        lineNumber: 673,
+                                                        lineNumber: 668,
                                                         columnNumber: 37
                                                     }, this),
                                                     initialData ? 'Update Profile' : 'Save Patient'
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                                lineNumber: 665,
+                                                lineNumber: 660,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 657,
+                                        lineNumber: 652,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                lineNumber: 632,
+                                lineNumber: 627,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                        lineNumber: 311,
+                        lineNumber: 306,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                lineNumber: 244,
+                lineNumber: 243,
                 columnNumber: 13
             }, this),
             showIDCard && savedPatient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4084,7 +4072,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                     children: "Patient ID Card"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                    lineNumber: 689,
+                                    lineNumber: 684,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4094,18 +4082,18 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                         className: "h-5 w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                        lineNumber: 694,
+                                        lineNumber: 689,
                                         columnNumber: 37
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                    lineNumber: 690,
+                                    lineNumber: 685,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                            lineNumber: 688,
+                            lineNumber: 683,
                             columnNumber: 29
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$hms$2f$patient$2d$id$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PatientIDCard"], {
@@ -4114,7 +4102,7 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                             upiId: "hospital@upi"
                         }, void 0, false, {
                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                            lineNumber: 697,
+                            lineNumber: 692,
                             columnNumber: 29
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4132,29 +4120,29 @@ function CreatePatientForm({ tenantCountry = 'IN', onClose, onSuccess, isDialog 
                                 children: "Close"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                                lineNumber: 703,
+                                lineNumber: 698,
                                 columnNumber: 33
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                            lineNumber: 702,
+                            lineNumber: 697,
                             columnNumber: 29
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                    lineNumber: 687,
+                    lineNumber: 682,
                     columnNumber: 25
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/hms/create-patient-form.tsx",
-                lineNumber: 686,
+                lineNumber: 681,
                 columnNumber: 21
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/hms/create-patient-form.tsx",
-        lineNumber: 243,
+        lineNumber: 242,
         columnNumber: 9
     }, this);
 }
@@ -5179,6 +5167,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:7ed7b4 [app-client] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Printer$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/printer.js [app-client] (ecmascript) <export default as Printer>");
@@ -5192,10 +5181,32 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hospitalInfo }) {
     _s();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [printMode, setPrintMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(defaultPrintMode);
+    const [hmsSettings, setHmsSettings] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "OpSlipDialog.useEffect": ()=>{
+            if (!isOpen) return;
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$7ed7b4__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getHMSSettings"])().then({
+                "OpSlipDialog.useEffect": (res)=>{
+                    if (res.success) {
+                        setHmsSettings(res.settings);
+                        if (res.settings?.opSlipPreprintedLetterhead && defaultPrintMode === 'standard') {
+                            setPrintMode('letterhead');
+                        }
+                    }
+                }
+            }["OpSlipDialog.useEffect"]).catch({
+                "OpSlipDialog.useEffect": ()=>{}
+            }["OpSlipDialog.useEffect"]);
+        }
+    }["OpSlipDialog.useEffect"], [
+        isOpen,
+        defaultPrintMode
+    ]);
     const handlePrint = ()=>{
         const printWindow = window.open('', '_blank');
         if (!printWindow) return;
@@ -5310,194 +5321,349 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                 </html>
             `;
         } else {
+            // A4 Professional OP Slip (Standard or Letterhead)
+            const showHeader = printMode !== 'letterhead';
+            const headerHeight = hmsSettings?.opSlipHeaderHeight || '4.5';
             html = `
                 <!DOCTYPE html>
                 <html>
                     <head>
                         <title>OP Slip - ${patientName}</title>
                         <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-                            body { 
-                                font-family: 'Inter', sans-serif; 
-                                line-height: 1.4; 
-                                padding: ${printMode === 'letterhead' ? '4.5cm 1.5cm 1.5cm 1.5cm' : '1.5cm'};
-                                color: #1a202c;
-                                background: white;
-                            }
-                            @media print {
-                                @page { margin: 0; size: A4; }
-                                body { margin: 0; }
-                            }
-                            .header { 
-                                text-align: center; 
-                                margin-bottom: 1cm; 
-                                display: ${printMode === 'letterhead' ? 'none' : 'block'};
-                                border-bottom: 3px solid #000;
-                                padding-bottom: 10px;
-                            }
-                            .header h1 { margin: 0; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
-                            .header p { margin: 0; font-weight: 700; font-size: 12px; color: #4a5568; text-transform: uppercase; tracking: 2px; }
+                            @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
                             
-                            .ticket-info {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-top: 20px;
-                                margin-bottom: 25px;
-                                background: #f7fafc;
-                                padding: 15px;
-                                border-radius: 8px;
+                            * { box-sizing: border-box; }
+                            
+                            @page { 
+                                size: A4; 
+                                margin: 0; 
                             }
-                            .token-box {
-                                background: #000;
-                                color: white;
-                                padding: 10px 20px;
-                                border-radius: 6px;
-                                text-align: center;
+                            
+                            body { 
+                                font-family: 'Outfit', sans-serif; 
+                                margin: 0;
+                                padding: 0;
+                                color: #1e293b;
+                                background: white;
+                                -webkit-print-color-adjust: exact;
+                                print-color-adjust: exact;
                             }
-                            .token-label { font-size: 10px; font-weight: 900; color: #cbd5e0; text-transform: uppercase; }
-                            .token-value { font-size: 24px; font-weight: 900; color: white; }
 
-                            .info-grid {
-                                display: grid;
-                                grid-template-cols: 1.5fr 1fr;
-                                gap: 30px;
-                                margin-bottom: 30px;
-                            }
-                            .section-title { 
-                                font-size: 11px; 
-                                font-weight: 900; 
-                                text-transform: uppercase; 
-                                color: white; 
-                                background: #2d3748;
-                                padding: 4px 10px;
-                                display: inline-block;
-                                margin-bottom: 10px;
-                                border-radius: 4px;
-                            }
-                            .label { font-weight: bold; text-transform: uppercase; font-size: 10px; color: #718096; display: block; }
-                            .value { font-weight: 900; font-size: 16px; margin-bottom: 4px; line-height: 1.1; }
-
-                            /* CLINICAL SECTIONS */
-                            .vitals-grid {
-                                display: grid;
-                                grid-template-cols: repeat(5, 1fr);
-                                gap: 10px;
-                                border: 2px solid #edf2f7;
-                                padding: 15px;
-                                border-radius: 12px;
-                                margin-bottom: 30px;
-                            }
-                            .vital-box {
-                                border-right: 1px solid #edf2f7;
-                                padding-right: 10px;
-                            }
-                            .vital-box:last-child { border: none; }
-                            .vital-input { border-bottom: 1px dashed #cbd5e0; height: 25px; margin-top: 5px; }
-
-                            .clinical-container {
-                                border: 2px solid #2d3748;
-                                border-radius: 12px;
-                                min-height: 16cm;
-                                padding: 20px;
+                            .page {
+                                width: 210mm;
+                                height: 297mm;
+                                padding: ${showHeader ? '15mm' : `${headerHeight}cm 15mm 15mm 15mm`};
                                 position: relative;
                             }
-                            .rx-symbol {
-                                font-size: 60px;
-                                font-weight: 900;
-                                color: #edf2f7;
-                                position: absolute;
-                                top: 10px;
-                                left: 20px;
-                                font-style: italic;
-                                z-index: -1;
+
+                            /* --- HEADER SECTION --- */
+                            .hospital-header {
+                                display: ${showHeader ? 'flex' : 'none'};
+                                align-items: center;
+                                justify-content: center;
+                                margin-bottom: 20px;
+                                position: relative;
+                                border-bottom: 2px solid #334155;
+                                padding-bottom: 20px;
                             }
                             
-                            .footer {
-                                margin-top: 30px;
+                            .logo-container {
+                                position: absolute;
+                                left: 0;
+                                height: 100px;
+                                width: 100px;
+                            }
+                            
+                            .logo-container img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: contain;
+                            }
+
+                            .header-content {
+                                text-align: center;
+                                max-width: 65%;
+                            }
+
+                            .hospital-name {
+                                font-size: 28pt;
+                                font-weight: 900;
+                                color: #1e3a8a;
+                                text-transform: uppercase;
+                                margin: 0;
+                                letter-spacing: -1px;
+                            }
+
+                            .dept-name {
+                                font-size: 14pt;
+                                font-weight: 700;
+                                color: #475569;
+                                margin: 5px 0;
+                                text-transform: uppercase;
+                            }
+
+                            .hospital-meta {
+                                font-size: 9pt;
+                                color: #64748b;
+                                font-weight: 500;
+                                margin-top: 5px;
+                            }
+
+                            /* --- PATIENT SECTION --- */
+                            .info-strip {
+                                display: grid;
+                                grid-template-cols: 1.5fr 1fr;
+                                gap: 40px;
+                                margin-top: 10px;
+                                border-bottom: 1.5px solid #e2e8f0;
+                                padding-bottom: 15px;
+                                margin-bottom: 20px;
+                            }
+
+                            .patient-details h2 {
+                                font-size: 10pt;
+                                color: #64748b;
+                                margin: 0 0 8px 0;
+                                text-transform: uppercase;
+                                font-weight: 800;
+                                letter-spacing: 1px;
+                            }
+
+                            .p-name { font-size: 16pt; font-weight: 900; color: #0f172a; text-transform: uppercase; line-height: 1.1; }
+                            .p-addr { font-size: 10pt; color: #475569; margin: 3px 0; font-weight: 600; }
+                            .p-meta { font-size: 11pt; font-weight: 700; color: #1e293b; margin-top: 8px; }
+
+                            .visit-details {
+                                text-align: right;
+                                display: grid;
+                                grid-template-cols: 1fr 1fr;
+                                font-size: 10.5pt;
+                                gap: 2px 15px;
+                            }
+                            
+                            .v-label { font-weight: 800; color: #64748b; text-transform: uppercase; font-size: 9pt; text-align: right; }
+                            .v-value { font-weight: 700; color: #0f172a; text-align: left; }
+
+                            /* --- MAIN BODY & SIDEBAR --- */
+                            .main-layout {
+                                display: grid;
+                                grid-template-cols: 1fr 65mm;
+                                gap: 30px;
+                                height: 16.5cm;
+                            }
+
+                            .doctor-notes {
+                                border-right: 1.5px dashed #e2e8f0;
+                                position: relative;
+                            }
+                            
+                            .rx-watermark {
+                                font-size: 60pt;
+                                color: #f8fafc;
+                                font-weight: 900;
+                                position: absolute;
+                                top: 40px;
+                                left: 0;
+                                z-index: -1;
+                            }
+
+                            .clinical-sidebar {
+                                padding-left: 0px;
+                            }
+
+                            .vitals-sec {
+                                margin-bottom: 30px;
+                            }
+
+                            .vital-row {
                                 display: flex;
                                 justify-content: space-between;
-                                font-size: 10px;
-                                color: #a0aec0;
-                                border-top: 1px solid #edf2f7;
-                                padding-top: 10px;
+                                align-items: flex-end;
+                                margin-bottom: 12px;
                             }
+
+                            .vital-label { font-size: 10pt; font-weight: 900; color: #475569; width: 60px; text-transform: uppercase; }
+                            .vital-box { 
+                                flex: 1; 
+                                border-bottom: 1px dotted #cbd5e1; 
+                                height: 18px; 
+                                margin-bottom: 2px;
+                            }
+
+                            /* --- TEST CHECKLIST --- */
+                            .labs-sec {
+                                border-top: 1px solid #f1f5f9;
+                                pt: 15px;
+                            }
+                            
+                            .lab-item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin-bottom: 8px;
+                            }
+                            
+                            .lab-name { font-size: 9pt; font-weight: 800; color: #1e293b; text-transform: uppercase; }
+                            .lab-check { 
+                                width: 14pt; 
+                                height: 14pt; 
+                                border: 1.5pt solid #334155; 
+                                border-radius: 2pt;
+                            }
+
+                            /* --- FOOTER --- */
+                            .footer {
+                                position: absolute;
+                                bottom: 20mm;
+                                left: 15mm;
+                                right: 15mm;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                border-top: 1.5px solid #e2e8f0;
+                                padding-top: 15px;
+                            }
+                            
+                            .f-legal { font-size: 8pt; font-weight: 600; color: #94a3b8; }
+                            .f-sig { text-align: center; }
+                            .sig-line { width: 180px; border-top: 1.5px solid #0f172a; margin-bottom: 5px; }
+                            .sig-text { font-size: 9pt; font-weight: 900; color: #0f172a; text-transform: uppercase; }
+
                         </style>
                     </head>
                     <body>
-                        <div class="header">
-                            ${hospitalInfo?.logo_url ? `<img src="${hospitalInfo.logo_url}" style="height: 60px; margin-bottom: 10px;" />` : ''}
-                            <h1>${hospitalInfo?.name || 'Clinical OP Visit Slip'}</h1>
-                            <p>${hospitalInfo?.metadata?.address || 'Medical Center - Outpatient Department'}</p>
-                        </div>
-                        
-                        <div class="ticket-info">
-                            <div>
-                                <span class="label">Patient Name & ID</span>
-                                <div class="value">${patientName}</div>
-                                <div style="font-size: 12px; font-weight: 700;">ID: ${appointment.patient?.patient_number} | ${appointment.patient?.gender || 'N/A'}</div>
-                            </div>
-                            <div class="token-box">
-                                <span class="token-label">OP TOKEN</span>
-                                <div class="token-value">#${tokenNumber}</div>
-                            </div>
-                        </div>
-
-                        <div class="info-grid">
-                            <div>
-                                <span class="section-title">Encounter Details</span>
-                                <div style="display: grid; grid-template-cols: 1fr 1fr; gap: 15px;">
-                                    <div>
-                                        <span class="label">Consulting With</span>
-                                        <div class="value">${doctorName}</div>
-                                        <div style="font-size: 10px; font-weight: bold;">${appointment.clinician?.role || 'Clinician'}</div>
-                                    </div>
-                                    <div>
-                                        <span class="label">Date & Time</span>
-                                        <div class="value">${date}</div>
-                                        <div style="font-size: 10px; font-weight: bold;">${time}</div>
+                        <div class="page">
+                            <!-- HOSPITAL HEADER -->
+                            <div class="hospital-header">
+                                <div class="logo-container">
+                                    ${hospitalInfo?.logo_url ? `<img src="${hospitalInfo.logo_url}" />` : '<div style="background: #f1f5f9; width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #cbd5e1;">LOGO</div>'}
+                                </div>
+                                <div class="header-content">
+                                    <h1 class="hospital-name">${hospitalInfo?.name || 'GLOBAL MEDICARE HOSPITAL'}</h1>
+                                    <div class="dept-name">${appointment.clinician?.metadata?.department || hospitalInfo?.metadata?.department || 'SMART EMERGENCY DEPARTMENT'}</div>
+                                    <div class="hospital-meta">
+                                        📍 ${hospitalInfo?.metadata?.address || 'MEDICAL PLAZA, SECTOR 4'} &nbsp;
+                                        ☎️ ${hospitalInfo?.metadata?.phone || '0495-2520588'} <br/>
+                                        📧 ${hospitalInfo?.metadata?.email || 'hospital@gmail.com'} &nbsp;
+                                        🌐 ${hospitalInfo?.metadata?.website || 'www.globalmedicare.com'}
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <span class="section-title">Visit Protocol</span>
-                                <div class="value" style="text-transform: uppercase; font-size: 12px;">${appointment.type || 'Standard Consultation'}</div>
-                                <div style="font-size: 10px; font-weight: bold;">Priority: ${appointment.priority?.toUpperCase() || 'NORMAL'}</div>
-                            </div>
-                        </div>
 
-                        <span class="section-title">Nurse Vitals Audit</span>
-                        <div class="vitals-grid">
-                            <div class="vital-box">
-                                <span class="label">BP (mmHg)</span>
-                                <div class="vital-input"></div>
+                            <!-- PATIENT & VISIT STRIP -->
+                            <div class="info-strip">
+                                <div class="patient-details">
+                                    <h2>Patient Details :</h2>
+                                    <div class="p-name">${patientName}</div>
+                                    <div class="p-addr">${appointment.patient?.address || 'LOCAL ADDRESS NOT SPECIFIED'}</div>
+                                    <div class="p-meta">
+                                        ${appointment.patient?.contact_no || 'NO CONTACT'} &nbsp;|&nbsp;
+                                        Sex : ${appointment.patient?.gender || 'N/A'} &nbsp;|&nbsp;
+                                        Age : ${appointment.patient?.age || (appointment.patient?.dob ? new Date().getFullYear() - new Date(appointment.patient.dob).getFullYear() : 'N/A')}
+                                    </div>
+                                </div>
+                                <div class="visit-details">
+                                    <span class="v-label">No</span><span class="v-value">: ${appointment.patient?.patient_number || '38822'}</span>
+                                    <span class="v-label">Date</span><span class="v-value">: ${date}</span>
+                                    <span class="v-label">Renew Date</span><span class="v-value">: ${new Date(new Date(appointment.start_time).getTime() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString()}</span>
+                                    <span class="v-label">Token No</span><span class="v-value">: ${tokenNumber}</span>
+                                </div>
                             </div>
-                            <div class="vital-box">
-                                <span class="label">Pulse (bpm)</span>
-                                <div class="vital-input"></div>
-                            </div>
-                            <div class="vital-box">
-                                <span class="label">Temp (°F)</span>
-                                <div class="vital-input"></div>
-                            </div>
-                            <div class="vital-box">
-                                <span class="label">SPO2 (%)</span>
-                                <div class="vital-input"></div>
-                            </div>
-                            <div class="vital-box">
-                                <span class="label">Weight (kg)</span>
-                                <div class="vital-input"></div>
-                            </div>
-                        </div>
 
-                        <span class="section-title">Clinical Consultation & Rx</span>
-                        <div class="clinical-container">
-                            <div class="rx-symbol">℞</div>
-                        </div>
+                            <!-- CLINICAL LAYOUT -->
+                            <div class="main-layout">
+                                <div class="doctor-notes">
+                                    <div class="rx-watermark">℞</div>
+                                    <!-- This area is left blank for handwriting as shown in image -->
+                                </div>
+                                
+                                <div class="clinical-sidebar">
+                                    <!-- VITALS -->
+                                    <div class="vitals-sec">
+                                        <div class="vital-row">
+                                            <span class="vital-label">BP</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.systolic ? `${Math.round(appointment.vitals.systolic)} / ${Math.round(appointment.vitals.diastolic)}` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">SPO2</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.spo2 ? `${Math.round(appointment.vitals.spo2)}%` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">PR</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.pulse ? `${Math.round(appointment.vitals.pulse)} bpm` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">RR</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.respiration ? `${Math.round(appointment.vitals.respiration)} /min` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">WT</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.weight ? `${appointment.vitals.weight} kg` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">TEMP</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 700;">
+                                                ${appointment.vitals?.temperature ? `${appointment.vitals.temperature}°F` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="vital-row">
+                                            <span class="vital-label">B_GRP</span>
+                                            <div class="vital-box" style="display: flex; align-items: center; padding-left: 5px; font-weight: 900; color: #dc2626;">
+                                                ${appointment.patient?.blood_group || ''}
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="footer">
-                            <div>V10-OPP-PROTOCOL | SYSTEM GENERATED</div>
-                            <div>SIGNATURE: __________________________</div>
+                                    <!-- LAB TEST CHECKBOXES -->
+                                    <div class="labs-sec">
+                                        <div style="font-size: 8pt; font-weight: 900; color: #94a3b8; margin-bottom: 12px; border-bottom: 1px solid #f1f5f9;">ORDER INVESTIGATION</div>
+                                        ${[
+                'CBC',
+                'ESR',
+                'CRP',
+                'LFT',
+                'RFT',
+                'TROPI',
+                'TSH / TFT',
+                'HBA1C',
+                'D-DIAMER',
+                'DENGUECARD TEST',
+                'URE',
+                'URINE C/S',
+                'X-RAY',
+                'MRI',
+                'CT'
+            ].map((test)=>`
+                                            <div class="lab-item">
+                                                <span class="lab-name">${test}</span>
+                                                <div class="lab-check"></div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FOOTER -->
+                            <div class="footer">
+                                <div class="f-legal">
+                                    ZIONA HMS - OP SLIP PROTOCOL V4.2 <br/>
+                                    GEN: ${new Date().toLocaleString()} | ID: ${appointment.id.slice(0, 8)}
+                                </div>
+                                <div class="f-sig">
+                                    <div class="sig-line"></div>
+                                    <div class="sig-text">${appointment.clinician?.first_name ? 'Dr. ' + appointment.clinician.first_name.toUpperCase() : 'CONSULTING DOCTOR'}</div>
+                                </div>
+                            </div>
                         </div>
 
                         <script>
@@ -5529,19 +5695,19 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                             className: "h-3.5 w-3.5"
                         }, void 0, false, {
                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                            lineNumber: 348,
+                            lineNumber: 502,
                             columnNumber: 25
                         }, this),
                         "Print OP Slip"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                    lineNumber: 347,
+                    lineNumber: 501,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                lineNumber: 345,
+                lineNumber: 499,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -5558,12 +5724,12 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                         className: "h-7 w-7 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 511,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 510,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5577,13 +5743,13 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                     children: "Protocol"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 361,
+                                                    lineNumber: 515,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 360,
+                                            lineNumber: 514,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5591,19 +5757,19 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                             children: "Select Print Configuration"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 363,
+                                            lineNumber: 517,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 359,
+                                    lineNumber: 513,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                            lineNumber: 355,
+                            lineNumber: 509,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5622,12 +5788,12 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                        lineNumber: 374,
+                                                        lineNumber: 528,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 373,
+                                                    lineNumber: 527,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5638,7 +5804,7 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Full Standard Print (A4)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 377,
+                                                            lineNumber: 531,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5646,32 +5812,32 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Includes Hospital Header & Info"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 378,
+                                                            lineNumber: 532,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 376,
+                                                    lineNumber: 530,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 372,
+                                            lineNumber: 526,
                                             columnNumber: 29
                                         }, this),
                                         printMode === 'standard' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                             className: "h-5 w-5 text-indigo-600"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 381,
+                                            lineNumber: 535,
                                             columnNumber: 58
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 368,
+                                    lineNumber: 522,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -5687,12 +5853,12 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                        lineNumber: 390,
+                                                        lineNumber: 544,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 389,
+                                                    lineNumber: 543,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5703,7 +5869,7 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Letterhead Optimized (A4)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 393,
+                                                            lineNumber: 547,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5711,32 +5877,32 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Leaves 10cm space for pre-printed paper"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 394,
+                                                            lineNumber: 548,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 392,
+                                                    lineNumber: 546,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 388,
+                                            lineNumber: 542,
                                             columnNumber: 29
                                         }, this),
                                         printMode === 'letterhead' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                             className: "h-5 w-5 text-indigo-600"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 397,
+                                            lineNumber: 551,
                                             columnNumber: 60
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 384,
+                                    lineNumber: 538,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -5752,12 +5918,12 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                        lineNumber: 406,
+                                                        lineNumber: 560,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 559,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5768,7 +5934,7 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Thermal Slip (80mm)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 409,
+                                                            lineNumber: 563,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5776,32 +5942,32 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Optimized for point-of-sale printers"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 410,
+                                                            lineNumber: 564,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 408,
+                                                    lineNumber: 562,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 558,
                                             columnNumber: 29
                                         }, this),
                                         printMode === 'thermal' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                             className: "h-5 w-5 text-indigo-600"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 413,
+                                            lineNumber: 567,
                                             columnNumber: 57
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 400,
+                                    lineNumber: 554,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -5817,12 +5983,12 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 576,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 421,
+                                                    lineNumber: 575,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5833,7 +5999,7 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Patient Label (50x25mm)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 425,
+                                                            lineNumber: 579,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5841,38 +6007,38 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                                             children: "Concise sticky label for files/samples"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                            lineNumber: 426,
+                                                            lineNumber: 580,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                                    lineNumber: 424,
+                                                    lineNumber: 578,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 420,
+                                            lineNumber: 574,
                                             columnNumber: 29
                                         }, this),
                                         printMode === 'label' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                             className: "h-5 w-5 text-indigo-600"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 429,
+                                            lineNumber: 583,
                                             columnNumber: 55
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 416,
+                                    lineNumber: 570,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                            lineNumber: 367,
+                            lineNumber: 521,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5885,7 +6051,7 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 434,
+                                    lineNumber: 588,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -5896,41 +6062,41 @@ function OpSlipDialog({ appointment, trigger, defaultPrintMode = 'standard', hos
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                            lineNumber: 445,
+                                            lineNumber: 599,
                                             columnNumber: 29
                                         }, this),
                                         "Launch Print"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                                    lineNumber: 441,
+                                    lineNumber: 595,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                            lineNumber: 433,
+                            lineNumber: 587,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                    lineNumber: 354,
+                    lineNumber: 508,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-                lineNumber: 353,
+                lineNumber: 507,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/hms/reception/op-slip-dialog.tsx",
-        lineNumber: 344,
+        lineNumber: 498,
         columnNumber: 9
     }, this);
 }
-_s(OpSlipDialog, "RF9NAYEPv5zJP8tgJHIDtuwrXGc=");
+_s(OpSlipDialog, "P5riUiRGxeaHrLsLOx/+8TDEQU8=");
 _c = OpSlipDialog;
 var _c;
 __turbopack_context__.k.register(_c, "OpSlipDialog");
@@ -5987,7 +6153,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$b
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/input.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/select.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$72615a__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:72615a [app-client] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$50e5c5__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:50e5c5 [app-client] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$6d3026__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:6d3026 [app-client] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/use-toast.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/avatar.tsx [app-client] (ecmascript)");
@@ -6183,7 +6349,7 @@ function ReceptionActionCenter({ todayAppointments, patients, doctors, dailyColl
         if (!confirm("Are you sure you want to VOID this payment? This will reopen the invoice and revert registration status if applicable.")) return;
         setVoidingId(paymentId);
         try {
-            const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$50e5c5__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["voidPayment"])(paymentId, "Voided from Reception Dashboard");
+            const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$6d3026__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["voidPayment"])(paymentId, "Voided from Reception Dashboard");
             if (res.success) {
                 toast({
                     title: "Payment Voided",

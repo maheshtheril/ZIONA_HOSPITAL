@@ -415,17 +415,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$info$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Info$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/info.js [app-ssr] (ecmascript) <export default as Info>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$qrcode$2e$react$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/qrcode.react/lib/esm/index.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$services$2f$pos$2d$device$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/services/pos-device.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$6335bb__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:6335bb [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$2457fa__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:2457fa [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$fee684__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:fee684 [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$fd9a5f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:fd9a5f [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$8064f2__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:8064f2 [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$df4fdc__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:df4fdc [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f5f068__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:f5f068 [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$3ee254__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:3ee254 [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f3acff__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:f3acff [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$04c07f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:04c07f [app-ssr] (ecmascript) <text/javascript>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$50403d__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:50403d [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f9eaae__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:f9eaae [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1e1724__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:1e1724 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$94aa05__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:94aa05 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$18d66f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:18d66f [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$3d4820__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:3d4820 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$e624b4__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:e624b4 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$38ba97__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:38ba97 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$5b977c__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:5b977c [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$8313d4__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:8313d4 [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$16a8ef__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:16a8ef [app-ssr] (ecmascript) <text/javascript>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$891dab__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__ = __turbopack_context__.i("[project]/src/app/actions/data:891dab [app-ssr] (ecmascript) <text/javascript>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$searchable$2d$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/searchable-select.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-auth/react.js [app-ssr] (ecmascript)");
@@ -433,7 +433,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$b
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/input.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/label.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/branding/ziona-logo.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$billing$2f$batch$2d$selector$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/billing/batch-selector-dialog.tsx [app-ssr] (ecmascript)");
 'use client';
 ;
@@ -453,8 +452,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$billing
 ;
 ;
 ;
-;
-function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, initialPatientId, initialMedicines, appointmentId, initialInvoice, onClose, onPaymentSuccess, currency = '₹', isRegistrationFee = false, gatewayConfig = null }) {
+function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, initialPatientId, initialMedicines, appointmentId, initialInvoice, onClose, onPaymentSuccess, currency = '₹', isRegistrationFee = false, gatewayConfig = null, defaultTaxMode }) {
     const getUomOptions = (itemType, currentUom)=>{
         // Enforce world standard: only use UOMs from the database master table
         const dbUnitNames = uoms.map((u)=>u.name.toUpperCase());
@@ -482,6 +480,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     // UI State
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [pricingMode, setPricingMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('standard');
+    const [taxMode, setTaxMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(defaultTaxMode || 'exempt');
     const [isMaximized, setIsMaximized] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isQuickPatientOpen, setIsQuickPatientOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isPaymentModalOpen, setIsPaymentModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -576,7 +575,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     // Fetch provisional number on mount and date change
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!activeInvoice?.invoice_number) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f5f068__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getNextVoucherNumber"])(date).then((res)=>{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$38ba97__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getNextVoucherNumber"])(date).then((res)=>{
                 if (res.success && res.data) setProvisionalNo(res.data);
             });
         } else {
@@ -659,7 +658,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
         const loadConfig = async ()=>{
             try {
                 if (tenantId && companyId) {
-                    const pdf = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f3acff__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPDFConfig"])(companyId, tenantId);
+                    const pdf = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$8313d4__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPDFConfig"])(companyId, tenantId);
                     if (pdf) setPdfConfig(pdf);
                 }
             } catch (e) {
@@ -868,7 +867,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const items = lines.filter((l)=>l.product_id && !l.batch_id && l.item_type === 'item');
         items.forEach((line)=>{
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$04c07f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(line.product_id).then((batch)=>{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$16a8ef__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(line.product_id).then((batch)=>{
                 if (batch) {
                     setLines((current)=>current.map((l)=>l.id === line.id ? {
                                 ...l,
@@ -894,8 +893,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     const [batchProductName, setBatchProductName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     // Totals
     const subtotal = Number(lines.reduce((sum, line)=>sum + (line.quantity * line.unit_price - (line.discount_amount || 0)), 0).toFixed(2));
-    const totalTax = Number(lines.reduce((sum, line)=>sum + (line.tax_amount || 0), 0).toFixed(2));
-    const grandTotal = Number(Math.max(0, subtotal + totalTax - globalDiscount).toFixed(2));
+    // World Standard Tax Logic
+    const totalTax = taxMode === 'exempt' ? 0 : Number(lines.reduce((sum, line)=>{
+        if (taxMode === 'inclusive') {
+            // Calculate tax from inclusive price
+            const taxRateObj = extendedTaxRates.find((t)=>t.id === line.tax_rate_id);
+            const rate = taxRateObj ? Number(taxRateObj.rate) : 0;
+            const lineTotal = line.quantity * line.unit_price - (line.discount_amount || 0);
+            const taxAmt = lineTotal - lineTotal / (1 + rate / 100);
+            return sum + taxAmt;
+        }
+        return sum + (line.tax_amount || 0);
+    }, 0).toFixed(2));
+    const grandTotal = Number(Math.max(0, taxMode === 'inclusive' ? subtotal : subtotal + totalTax - globalDiscount).toFixed(2));
     const totalPaid = Number(payments.reduce((sum, p)=>sum + (p.amount || 0), 0).toFixed(2));
     const balanceDue = Number(Math.max(0, grandTotal - totalPaid).toFixed(2));
     // Reliable Settlement Flags (handles floating point precision for currency)
@@ -907,7 +917,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (selectedPatientId) {
             setIsWalkIn(false);
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$8064f2__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPatientOutstandingBalance"])(selectedPatientId).then((res)=>{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$3d4820__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPatientOutstandingBalance"])(selectedPatientId).then((res)=>{
                 if (res.success) setPatientBalance(res.balance || 0);
             });
             // AUTO FOCUS TO PRODUCT SEARCH
@@ -937,7 +947,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
     const handleQuickPatientCreate = async ()=>{
         if (!quickPatientName || !quickPatientPhone) return;
         setIsCreatingPatient(true);
-        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$fd9a5f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["createQuickPatient"])(quickPatientName, quickPatientPhone);
+        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$18d66f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["createQuickPatient"])(quickPatientName, quickPatientPhone);
         if (res.success && res.data) {
             setSelectedPatientId(res.data.id);
             setIsQuickPatientOpen(false);
@@ -997,7 +1007,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                         updated.metadata = item.metadata;
                         // WORLD CLASS FEFO: Auto-select best batch
                         if (item.type === 'item' || !item.type) {
-                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$04c07f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(item.id).then((batch)=>{
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$16a8ef__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(item.id).then((batch)=>{
                                 if (batch) {
                                     setLines((current)=>current.map((l)=>l.id === id ? {
                                                 ...l,
@@ -1058,19 +1068,43 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
             patient_id: isWalkIn ? null : selectedPatientId,
             appointment_id: appointmentId || searchParams.get('appointmentId') || undefined,
             date,
-            line_items: lines.filter((l)=>l.description || l.product_id),
+            line_items: lines.filter((l)=>l.description || l.product_id).map((l)=>{
+                if (taxMode === 'exempt') return {
+                    ...l,
+                    tax_amount: 0,
+                    tax_rate_id: null
+                };
+                if (taxMode === 'inclusive') {
+                    const taxRateObj = extendedTaxRates.find((t)=>t.id === l.tax_rate_id);
+                    const rate = taxRateObj ? Number(taxRateObj.rate) : 0;
+                    const lineNet = l.quantity * l.unit_price - (l.discount_amount || 0);
+                    const baseValue = lineNet / (1 + rate / 100);
+                    const taxValue = lineNet - baseValue;
+                    // For inclusive, the unit_price is already the "net" (gross - tax) or we store original price?
+                    // Standard practice: unit_price should be the base (pre-tax) price.
+                    return {
+                        ...l,
+                        unit_price: l.unit_price / (1 + rate / 100),
+                        tax_amount: taxValue
+                    };
+                }
+                return l;
+            }),
             status: effectiveStatus,
             total_discount: globalDiscount,
             payments: finalPayments,
-            billing_metadata: isWalkIn ? {
-                is_walk_in: true,
-                patient_name: walkInName,
-                patient_phone: walkInPhone
-            } : {}
+            billing_metadata: {
+                ...isWalkIn ? {
+                    is_walk_in: true,
+                    patient_name: walkInName,
+                    patient_phone: walkInPhone
+                } : {},
+                tax_mode: taxMode
+            }
         };
         try {
             // Create or update based on activeInvoice state (which handles post-initial-fetch resolution)
-            const res = await (activeInvoice?.id ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$2457fa__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["updateInvoice"])(activeInvoice.id, payload) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$6335bb__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["createInvoice"])(payload));
+            const res = await (activeInvoice?.id ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$1e1724__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["updateInvoice"])(activeInvoice.id, payload) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$f9eaae__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["createInvoice"])(payload));
             if (res.success) {
                 let tallyMsg = `Transaction serialized as ${effectiveStatus}.`;
                 if (totalPaid > 0) {
@@ -1094,7 +1128,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                 // WORLD CLASS: Auto-Print Trigger (Trigger on Paid or Posted settlement)
                 if ((effectiveStatus === 'paid' || effectiveStatus === 'posted') && pdfConfig?.autoPrint && invoiceId) {
                     // Trigger IMMEDIATELY to bypass popup blockers (most browsers allow window.open if it's "close enough" to the click)
-                    window.open(`/hms/billing/${invoiceId}/print`, '_blank');
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = `/api/billing/${invoiceId}/pdf?autoPrint=true`;
+                    document.body.appendChild(iframe);
+                    setTimeout(()=>{
+                        if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                    }, 10000);
                 }
                 // [WORLD CLASS STABILITY] Delay the parent callback to allow success screen to mount first
                 // and ensure the terminal doesn't unmount due to parent state updates immediately.
@@ -1152,7 +1192,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
         if (!confirmed) return;
         setLoading(true);
         try {
-            const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$fee684__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["cancelInvoice"])(initialInvoice.id);
+            const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$94aa05__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["cancelInvoice"])(initialInvoice.id);
             if (res.success) {
                 toast({
                     title: "Node Invalidated",
@@ -1405,7 +1445,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                     const taxId = billable?.categoryTaxId !== undefined ? billable.categoryTaxId : defaultTaxId;
                     const finalPrice = billable?.price || Number(m.price || 0);
                     // FEFO Batch Selection
-                    const batch = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$04c07f__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(m.id);
+                    const batch = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$16a8ef__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getBestBatch"])(m.id);
                     // Calculate tax
                     const taxRateObj = extendedTaxRates.find((t)=>t.id === taxId);
                     const rate = taxRateObj ? Number(taxRateObj.rate) : 0;
@@ -1491,12 +1531,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                 className: "h-12 w-12 text-white stroke-[3px]"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 986,
+                                lineNumber: 1025,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 985,
+                            lineNumber: 1024,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1504,7 +1544,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                             children: "TRANSACTION FINALIZED"
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 988,
+                            lineNumber: 1027,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1516,14 +1556,22 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 989,
+                            lineNumber: 1028,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-1 md:grid-cols-5 gap-4 w-full mb-12",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>window.open(`/hms/billing/${lastSavedId}/print`, '_blank'),
+                                    onClick: ()=>{
+                                        const iframe = document.createElement('iframe');
+                                        iframe.style.display = 'none';
+                                        iframe.src = `/api/billing/${lastSavedId}/pdf?autoPrint=true`;
+                                        document.body.appendChild(iframe);
+                                        setTimeout(()=>{
+                                            if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                                        }, 10000);
+                                    },
                                     className: "group p-6 bg-slate-50 dark:bg-slate-800/50 rounded-[2.5rem] border border-slate-100 dark:border-white/5 hover:border-indigo-500 transition-all text-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1532,12 +1580,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 className: "h-6 w-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 998,
+                                                lineNumber: 1043,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 997,
+                                            lineNumber: 1042,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1545,7 +1593,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "Print node"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1000,
+                                            lineNumber: 1045,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1553,19 +1601,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "RECEIPT"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1001,
+                                            lineNumber: 1046,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 993,
+                                    lineNumber: 1032,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: async ()=>{
                                         if (!lastSavedId) return;
-                                        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$3ee254__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["shareInvoiceWhatsapp"])(lastSavedId);
+                                        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$5b977c__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["shareInvoiceWhatsapp"])(lastSavedId);
                                         if (res.success) {
                                             toast({
                                                 title: "WhatsApp Sent",
@@ -1589,12 +1637,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 className: "h-6 w-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1025,
+                                                lineNumber: 1070,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1024,
+                                            lineNumber: 1069,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1602,7 +1650,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "Share Node"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1027,
+                                            lineNumber: 1072,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1610,13 +1658,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "WHATSAPP"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1028,
+                                            lineNumber: 1073,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1005,
+                                    lineNumber: 1050,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1629,12 +1677,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 className: "h-6 w-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1037,
+                                                lineNumber: 1082,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1036,
+                                            lineNumber: 1081,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1642,7 +1690,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "New Sync"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1039,
+                                            lineNumber: 1084,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1650,13 +1698,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "NEXT BILL"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1040,
+                                            lineNumber: 1085,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1032,
+                                    lineNumber: 1077,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1669,12 +1717,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 className: "h-6 w-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1049,
+                                                lineNumber: 1094,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1048,
+                                            lineNumber: 1093,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1682,7 +1730,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "Audit Node"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1051,
+                                            lineNumber: 1096,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1690,13 +1738,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "LEDGER"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1052,
+                                            lineNumber: 1097,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1044,
+                                    lineNumber: 1089,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1714,12 +1762,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 className: "h-6 w-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1066,
+                                                lineNumber: 1111,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1065,
+                                            lineNumber: 1110,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1727,7 +1775,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "Complete"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1068,
+                                            lineNumber: 1113,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1735,19 +1783,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "EXIT TO HUB"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1069,
+                                            lineNumber: 1114,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1056,
+                                    lineNumber: 1101,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 991,
+                            lineNumber: 1030,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1755,23 +1803,23 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                             children: "Financial Cycle Closed • Identity Node Deselected"
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1073,
+                            lineNumber: 1118,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                    lineNumber: 984,
+                    lineNumber: 1023,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                lineNumber: 983,
+                lineNumber: 1022,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-            lineNumber: 982,
+            lineNumber: 1021,
             columnNumber: 7
         }, this);
     }
@@ -1796,7 +1844,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                lineNumber: 1084,
+                lineNumber: 1129,
                 columnNumber: 7
             }, this),
             loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1808,7 +1856,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                             className: "h-12 w-12 animate-spin text-indigo-600"
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1109,
+                            lineNumber: 1154,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1816,18 +1864,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                             children: "Syncing Ledger Node..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1110,
+                            lineNumber: 1155,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                    lineNumber: 1108,
+                    lineNumber: 1153,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                lineNumber: 1107,
+                lineNumber: 1152,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1837,101 +1885,62 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                     className: `relative flex flex-col bg-white dark:bg-slate-900 shadow-[2xl] overflow-hidden border border-slate-200 dark:border-slate-800 transition-all duration-500 ease-out ${isMaximized ? 'w-full h-full' : 'w-full max-w-[98vw] h-[95vh] rounded-[2.5rem]'}`,
                     onClick: (e)=>e.stopPropagation(),
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>onClose ? onClose() : router.back(),
-                            className: "absolute top-3 right-3 z-[500] flex items-center gap-1.5 px-3 py-2 bg-red-600 hover:bg-red-700 text-white text-[10px] font-black uppercase tracking-widest rounded-xl shadow-lg shadow-red-600/40 transition-all active:scale-95 no-print",
-                            title: "Close Billing Terminal",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                    className: "h-4 w-4"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1125,
-                                    columnNumber: 11
-                                }, this),
-                                "CLOSE"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1120,
-                            columnNumber: 9
-                        }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex items-center justify-between px-6 py-2 border-b border-[#006666] bg-[#004d4d] z-20 no-print",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex items-center gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-[#002b2b] p-1.5 rounded border border-[#008080]",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$branding$2f$ziona$2d$logo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ZionaLogo"], {
-                                                size: 20,
-                                                variant: "icon",
-                                                theme: "dark",
-                                                speed: "slow",
-                                                colorScheme: "signature"
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                className: "text-[12px] font-black text-[#ffffcc] tracking-tight truncate",
+                                                children: "FINANCIAL BILLING TERMINAL - Ziona HMS v4.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1133,
+                                                lineNumber: 1169,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 mt-0.5",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-[9px] font-black uppercase tracking-[0.2em] text-[#64ffff]",
+                                                        children: "GATEWAY OF BILLING"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                        lineNumber: 1171,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "h-1 w-1 rounded-full bg-[#006666]"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                        lineNumber: 1172,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-[9px] font-black uppercase tracking-[0.2em] text-[#ffffcc]/60",
+                                                        children: "Transaction Mode: Standard Ledger Node"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                        lineNumber: 1173,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                lineNumber: 1170,
                                                 columnNumber: 15
                                             }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1132,
-                                            columnNumber: 13
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "text-[12px] font-black text-[#ffffcc] tracking-tight truncate",
-                                                    children: "FINANCIAL BILLING TERMINAL - Ziona HMS v4.5"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1136,
-                                                    columnNumber: 15
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-2 mt-0.5",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-[9px] font-black uppercase tracking-[0.2em] text-[#64ffff]",
-                                                            children: "GATEWAY OF BILLING"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1138,
-                                                            columnNumber: 17
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "h-1 w-1 rounded-full bg-[#006666]"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1139,
-                                                            columnNumber: 17
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-[9px] font-black uppercase tracking-[0.2em] text-[#ffffcc]/60",
-                                                            children: "Transaction Mode: Standard Ledger Node"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1140,
-                                                            columnNumber: 17
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1137,
-                                                    columnNumber: 15
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1135,
-                                            columnNumber: 13
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                        lineNumber: 1168,
+                                        columnNumber: 13
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1131,
+                                    lineNumber: 1167,
                                     columnNumber: 11
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1949,66 +1958,66 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-3.5 w-3.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1149,
+                                                            lineNumber: 1182,
                                                             columnNumber: 17
                                                         }, this),
                                                         " Pull Prescription"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1148,
+                                                    lineNumber: 1181,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "h-4 w-[1px] bg-slate-200 mx-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1152,
+                                                    lineNumber: 1185,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg border border-slate-200 dark:border-slate-700",
+                                                    className: "flex items-center h-10 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             onClick: ()=>applyPricingMode('standard'),
-                                                            className: `px-3 py-1.5 text-[8px] font-black rounded-md transition-all ${pricingMode === 'standard' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`,
+                                                            className: `h-full px-3 text-[8px] font-black rounded-md transition-all ${pricingMode === 'standard' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`,
                                                             children: "INTELLIGENT"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1155,
+                                                            lineNumber: 1188,
                                                             columnNumber: 17
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             onClick: ()=>applyPricingMode('mrp'),
-                                                            className: `px-3 py-1.5 text-[8px] font-black rounded-md transition-all ${pricingMode === 'mrp' ? 'bg-amber-600 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`,
+                                                            className: `h-full px-3 text-[8px] font-black rounded-md transition-all ${pricingMode === 'mrp' ? 'bg-amber-600 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`,
                                                             children: "MRP MODE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1161,
+                                                            lineNumber: 1194,
                                                             columnNumber: 17
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1154,
+                                                    lineNumber: 1187,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1147,
+                                            lineNumber: 1180,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center bg-slate-200/50 dark:bg-slate-800/50 p-1 rounded-xl border border-slate-200/50 dark:border-slate-700",
+                                            className: "flex items-center h-10 bg-slate-200/50 dark:bg-slate-800/50 p-1 rounded-xl border border-slate-200/50 dark:border-slate-700",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>setIsWalkIn(false),
-                                                    className: `px-4 py-1.5 text-[9px] font-black rounded-lg transition-all ${!isWalkIn ? 'bg-white dark:bg-slate-700 text-indigo-600 shadow-sm' : 'text-slate-500'}`,
+                                                    className: `h-full px-4 text-[9px] font-black rounded-lg transition-all ${!isWalkIn ? 'bg-white dark:bg-slate-700 text-indigo-600 shadow-sm' : 'text-slate-500'}`,
                                                     children: "REGISTERED"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1172,
+                                                    lineNumber: 1204,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2016,17 +2025,17 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         setIsWalkIn(true);
                                                         setSelectedPatientId('');
                                                     },
-                                                    className: `px-4 py-1.5 text-[9px] font-black rounded-lg transition-all ${isWalkIn ? 'bg-white dark:bg-slate-700 text-pink-600 shadow-sm' : 'text-slate-500'}`,
+                                                    className: `h-full px-4 text-[9px] font-black rounded-lg transition-all ${isWalkIn ? 'bg-white dark:bg-slate-700 text-pink-600 shadow-sm' : 'text-slate-500'}`,
                                                     children: "WALK-IN GUEST"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1173,
+                                                    lineNumber: 1205,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1171,
+                                            lineNumber: 1203,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2045,7 +2054,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-10 bg-white dark:bg-slate-950 border-transparent focus:border-pink-500 rounded-xl text-[10px] font-black tracking-widest uppercase"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1180,
+                                                                lineNumber: 1212,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2056,13 +2065,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-10 bg-white dark:bg-slate-950 border-transparent focus:border-pink-500 rounded-xl text-[10px] font-black tracking-widest uppercase"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1181,
+                                                                lineNumber: 1213,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1179,
+                                                        lineNumber: 1211,
                                                         columnNumber: 19
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$searchable$2d$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SearchableSelect"], {
                                                         value: selectedPatientId,
@@ -2082,12 +2091,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         disabled: isPaymentModalOpen || loading
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1184,
+                                                        lineNumber: 1216,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1177,
+                                                    lineNumber: 1209,
                                                     columnNumber: 15
                                                 }, this),
                                                 !isWalkIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2099,20 +2108,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1208,
+                                                            lineNumber: 1240,
                                                             columnNumber: 19
                                                         }, this),
                                                         " New Patient"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1203,
+                                                    lineNumber: 1235,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1176,
+                                            lineNumber: 1208,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2125,12 +2134,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1213,
+                                                        lineNumber: 1245,
                                                         columnNumber: 165
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1213,
+                                                    lineNumber: 1245,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2141,30 +2150,30 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1215,
+                                                        lineNumber: 1247,
                                                         columnNumber: 17
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1214,
+                                                    lineNumber: 1246,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1212,
+                                            lineNumber: 1244,
                                             columnNumber: 13
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1145,
+                                    lineNumber: 1178,
                                     columnNumber: 11
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1130,
+                            lineNumber: 1166,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2181,7 +2190,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "VOUCHER NO:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1225,
+                                                    lineNumber: 1257,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2189,20 +2198,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: provisionalNo
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1226,
+                                                    lineNumber: 1258,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1224,
+                                            lineNumber: 1256,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "h-3 w-[1px] bg-[#006666]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1230,
+                                            lineNumber: 1262,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2213,7 +2222,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "DATE:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1232,
+                                                    lineNumber: 1264,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2223,20 +2232,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "bg-transparent border-none text-[10px] font-black text-[#ffffcc] focus:ring-0 cursor-pointer p-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1233,
+                                                    lineNumber: 1265,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1231,
+                                            lineNumber: 1263,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "h-3 w-[1px] bg-[#006666]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1240,
+                                            lineNumber: 1272,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2247,32 +2256,79 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "PARTICULARS:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1242,
+                                                    lineNumber: 1274,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "text-[10px] font-black text-[#ffffcc]",
-                                                    children: patients.find((p)=>p.id === selectedPatientId)?.label?.toUpperCase() || 'WALK-IN PATIENT'
+                                                    children: (isWalkIn ? walkInName || 'WALK-IN PATIENT' : selectedPatientLabel || 'WALK-IN PATIENT').toUpperCase()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1243,
+                                                    lineNumber: 1275,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1241,
+                                            lineNumber: 1273,
                                             columnNumber: 13
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1223,
+                                    lineNumber: 1255,
                                     columnNumber: 11
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-4",
+                                    className: "flex items-center gap-6 animate-in slide-in-from-right-4",
                                     children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-[#002b2b] p-1 rounded-xl flex items-center gap-2 border border-[#006666]",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-[8px] font-black uppercase tracking-widest text-[#64ffff] px-2 italic",
+                                                    children: "GST Mode:"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                    lineNumber: 1283,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex gap-1",
+                                                    children: [
+                                                        {
+                                                            m: 'exempt',
+                                                            l: 'Unregistered'
+                                                        },
+                                                        {
+                                                            m: 'inclusive',
+                                                            l: 'B2C (Incl)'
+                                                        },
+                                                        {
+                                                            m: 'exclusive',
+                                                            l: 'B2B (Excl)'
+                                                        }
+                                                    ].map((opt)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>setTaxMode(opt.m),
+                                                            className: `px-3 py-1.5 rounded-lg text-[9px] font-black uppercase transition-all ${taxMode === opt.m ? 'bg-[#64ffff] text-[#003333] shadow-lg scale-105' : 'text-[#64ffff]/50 hover:text-[#64ffff] hover:bg-[#004d4d]'}`,
+                                                            children: opt.l
+                                                        }, opt.m, false, {
+                                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                            lineNumber: 1290,
+                                                            columnNumber: 25
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                                    lineNumber: 1284,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
+                                            lineNumber: 1282,
+                                            columnNumber: 13
+                                        }, this),
                                         patientBalance > 0 && !isWalkIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 px-4 py-1 rounded-full animate-in slide-in-from-right-4 duration-500",
                                             children: [
@@ -2286,20 +2342,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1253,
+                                                                    lineNumber: 1307,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "relative inline-flex rounded-full h-2 w-2 bg-amber-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1254,
+                                                                    lineNumber: 1308,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1252,
+                                                            lineNumber: 1306,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2307,13 +2363,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Previous Balance Detected:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1256,
+                                                            lineNumber: 1310,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1251,
+                                                    lineNumber: 1305,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2324,14 +2380,14 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1258,
+                                                    lineNumber: 1312,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>{
                                                         setIsFetchingLedger(true);
                                                         setIsLedgerOpen(true);
-                                                        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$df4fdc__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPatientLedger"])(selectedPatientId).then((res)=>{
+                                                        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$e624b4__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getPatientLedger"])(selectedPatientId).then((res)=>{
                                                             if (res.success) setLedgerData(res.data || []);
                                                             setIsFetchingLedger(false);
                                                         });
@@ -2340,13 +2396,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "View Ledger Node"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1259,
+                                                    lineNumber: 1313,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1250,
+                                            lineNumber: 1304,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2356,7 +2412,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "h-1 w-1 rounded-full bg-emerald-500 animate-pulse"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1276,
+                                                    lineNumber: 1330,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2364,25 +2420,25 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "Secure Node Enabled"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1277,
+                                                    lineNumber: 1331,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1275,
+                                            lineNumber: 1329,
                                             columnNumber: 13
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1247,
+                                    lineNumber: 1281,
                                     columnNumber: 11
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1222,
+                            lineNumber: 1254,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2404,7 +2460,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Item Description"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1289,
+                                                                lineNumber: 1343,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2412,7 +2468,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Type"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1290,
+                                                                lineNumber: 1344,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2420,7 +2476,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Qty"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1291,
+                                                                lineNumber: 1345,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2428,7 +2484,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "UOM"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1292,
+                                                                lineNumber: 1346,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2436,7 +2492,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Rate"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1293,
+                                                                lineNumber: 1347,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2444,7 +2500,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Tax %"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1294,
+                                                                lineNumber: 1348,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2452,25 +2508,25 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Total"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1295,
+                                                                lineNumber: 1349,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                                 className: "px-4 py-2 w-12"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1296,
+                                                                lineNumber: 1350,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1288,
+                                                        lineNumber: 1342,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1287,
+                                                    lineNumber: 1341,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -2485,7 +2541,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     className: "absolute left-0 top-0 bottom-0 w-1 bg-rose-500 animate-pulse z-10"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1310,
+                                                                    lineNumber: 1364,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2497,6 +2553,8 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         options: itemOptions.slice(0, 20),
                                                                         onChange: (v)=>updateLine(line.id, 'product_id', v),
                                                                         disabled: isPaymentModalOpen || loading,
+                                                                        variant: "ghost",
+                                                                        isDark: true,
                                                                         onSearch: async (q)=>{
                                                                             const search = q.toLowerCase();
                                                                             return itemOptions.filter((i)=>i.label.toLowerCase().includes(search) || i.subLabel.toLowerCase().includes(search));
@@ -2515,12 +2573,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         }
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1313,
+                                                                        lineNumber: 1367,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1312,
+                                                                    lineNumber: 1366,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2542,14 +2600,14 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 children: (line.item_type || 'ITEM').toUpperCase()
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1343,
+                                                                                lineNumber: 1399,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             line.batch_no && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                                                 type: "button",
                                                                                 onClick: async ()=>{
                                                                                     if (!line.product_id) return;
-                                                                                    const batches = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$50403d__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getProductBatches"])(line.product_id);
+                                                                                    const batches = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$data$3a$891dab__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$text$2f$javascript$3e$__["getProductBatches"])(line.product_id);
                                                                                     const availableBatches = batches.filter((b)=>Number(b.qty_on_hand) > 0);
                                                                                     if (availableBatches.length > 0) {
                                                                                         setBatchProductName(line.description || '');
@@ -2566,18 +2624,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1360,
+                                                                                lineNumber: 1416,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1342,
+                                                                        lineNumber: 1398,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1341,
+                                                                    lineNumber: 1397,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2603,12 +2661,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         className: "h-10 bg-transparent border-none text-center font-black text-base focus:ring-0 text-[#ffffcc] placeholder:text-[#ffffcc]/40"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1382,
+                                                                        lineNumber: 1438,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1381,
+                                                                    lineNumber: 1437,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2623,17 +2681,17 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 children: u
                                                                             }, u, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1406,
+                                                                                lineNumber: 1462,
                                                                                 columnNumber: 31
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1404,
+                                                                        lineNumber: 1460,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1403,
+                                                                    lineNumber: 1459,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2646,12 +2704,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         className: "h-10 bg-transparent border-none font-mono font-black text-[#ffffcc] text-sm focus:ring-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1410,
+                                                                        lineNumber: 1466,
                                                                         columnNumber: 51
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1410,
+                                                                    lineNumber: 1466,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2660,17 +2718,17 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         className: "flex flex-col gap-1",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                                                className: "w-full h-8 bg-[#003333] text-[#ffffcc] border border-[#006666] rounded-lg px-2 text-[8px] font-black outline-none focus:ring-1 focus:ring-[#64ffff]",
-                                                                                value: line.tax_rate_id || '',
+                                                                                className: "w-full h-8 bg-[#003333] text-[#ffffcc] border border-[#006666] rounded-lg px-2 text-[8px] font-black outline-none focus:ring-1 focus:ring-[#64ffff] disabled:opacity-50",
+                                                                                value: taxMode === 'exempt' ? '' : line.tax_rate_id || '',
                                                                                 onChange: (e)=>updateLine(line.id, 'tax_rate_id', e.target.value),
-                                                                                disabled: isPaymentModalOpen || loading,
+                                                                                disabled: isPaymentModalOpen || loading || taxMode === 'exempt',
                                                                                 children: [
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                                         value: "",
                                                                                         children: "0% (No Tax)"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                        lineNumber: 1414,
+                                                                                        lineNumber: 1475,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     extendedTaxRates.map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2678,37 +2736,32 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                             children: t.name.includes(t.rate.toString()) ? t.name : `${t.name} (${t.rate}%)`
                                                                                         }, t.id, false, {
                                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                            lineNumber: 1416,
+                                                                                            lineNumber: 1477,
                                                                                             columnNumber: 33
                                                                                         }, this))
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1413,
+                                                                                lineNumber: 1469,
                                                                                 columnNumber: 29
                                                                             }, this),
-                                                                            line.tax_amount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                className: "text-[9px] font-bold text-emerald-600 text-right pr-1",
-                                                                                children: [
-                                                                                    "+ ",
-                                                                                    currency,
-                                                                                    line.tax_amount.toFixed(2),
-                                                                                    " Tax"
-                                                                                ]
-                                                                            }, void 0, true, {
+                                                                            line.tax_amount > 0 && taxMode !== 'exempt' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: "text-[9px] font-bold text-emerald-600 text-right pr-1 italic",
+                                                                                children: taxMode === 'inclusive' ? '(Incl)' : `+ ${currency}${line.tax_amount.toFixed(2)} Tax`
+                                                                            }, void 0, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1422,
+                                                                                lineNumber: 1483,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1412,
+                                                                        lineNumber: 1468,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1411,
+                                                                    lineNumber: 1467,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2717,16 +2770,16 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         className: isZeroLine ? 'text-rose-500 animate-pulse' : '',
                                                                         children: [
                                                                             currency,
-                                                                            (lineTotal + (line.tax_amount || 0)).toFixed(2)
+                                                                            (taxMode === 'inclusive' || taxMode === 'exempt' ? lineTotal : lineTotal + (line.tax_amount || 0)).toFixed(2)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1429,
+                                                                        lineNumber: 1490,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1428,
+                                                                    lineNumber: 1489,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2739,35 +2792,35 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             className: "h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1434,
+                                                                            lineNumber: 1495,
                                                                             columnNumber: 213
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1434,
+                                                                        lineNumber: 1495,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1433,
+                                                                    lineNumber: 1494,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, line.id, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1305,
+                                                            lineNumber: 1359,
                                                             columnNumber: 23
                                                         }, this);
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1299,
+                                                    lineNumber: 1353,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1286,
+                                            lineNumber: 1340,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2783,40 +2836,40 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1443,
+                                                            lineNumber: 1504,
                                                             columnNumber: 184
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1443,
+                                                        lineNumber: 1504,
                                                         columnNumber: 19
                                                     }, this),
                                                     "ADD LINE"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1442,
+                                                lineNumber: 1503,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1441,
+                                            lineNumber: 1502,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1285,
+                                    lineNumber: 1339,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1284,
+                                lineNumber: 1338,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1283,
+                            lineNumber: 1337,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2836,13 +2889,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-6 w-6 text-indigo-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1458,
-                                                            columnNumber: 95
+                                                            lineNumber: 1518,
+                                                            columnNumber: 97
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1458,
-                                                        columnNumber: 17
+                                                        lineNumber: 1518,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
@@ -2851,8 +2904,8 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Queue Load"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1460,
-                                                                columnNumber: 19
+                                                                lineNumber: 1520,
+                                                                columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-xl font-black text-slate-900 dark:text-white italic tracking-tighter",
@@ -2862,20 +2915,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1461,
-                                                                columnNumber: 19
+                                                                lineNumber: 1521,
+                                                                columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1459,
-                                                        columnNumber: 17
+                                                        lineNumber: 1519,
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1457,
-                                                columnNumber: 15
+                                                lineNumber: 1517,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex gap-4 items-center",
@@ -2886,13 +2939,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-6 w-6 text-emerald-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1465,
-                                                            columnNumber: 97
+                                                            lineNumber: 1525,
+                                                            columnNumber: 99
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1465,
-                                                        columnNumber: 17
+                                                        lineNumber: 1525,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
@@ -2901,8 +2954,8 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 children: "Settlement Total"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1467,
-                                                                columnNumber: 19
+                                                                lineNumber: 1527,
+                                                                columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-4xl font-black text-emerald-600 tracking-tighter italic drop-shadow-[0_0_20px_rgba(5,150,105,0.1)]",
@@ -2912,26 +2965,26 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1468,
-                                                                columnNumber: 19
+                                                                lineNumber: 1528,
+                                                                columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1466,
-                                                        columnNumber: 17
+                                                        lineNumber: 1526,
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1464,
-                                                columnNumber: 15
+                                                lineNumber: 1524,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1456,
-                                        columnNumber: 13
+                                        lineNumber: 1516,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex flex-col sm:flex-row gap-4 w-full xl:w-auto",
@@ -2942,7 +2995,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "h-6 w-6 text-rose-600"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1477,
+                                                    lineNumber: 1537,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2950,13 +3003,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "VOIDED TRANSACTION • NO EDITS PERMITTED"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1478,
+                                                    lineNumber: 1538,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1476,
+                                            lineNumber: 1536,
                                             columnNumber: 17
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
@@ -2967,7 +3020,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "Void / Cancel Node"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1483,
+                                                    lineNumber: 1543,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2998,7 +3051,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "absolute inset-x-0 bottom-0 h-0.5 bg-white/20 animate-pulse"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1518,
+                                                            lineNumber: 1578,
                                                             columnNumber: 21
                                                         }, this),
                                                         "COLLECT SETTLEMENT ",
@@ -3006,13 +3059,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-6 w-6 group-hover:translate-x-1 transition-transform"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1519,
+                                                            lineNumber: 1579,
                                                             columnNumber: 40
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1492,
+                                                    lineNumber: 1552,
                                                     columnNumber: 19
                                                 }, this),
                                                 !isRegistrationFee && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3029,7 +3082,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Save Draft"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1523,
+                                                            lineNumber: 1583,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3043,31 +3096,31 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Post Credit"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1531,
+                                                            lineNumber: 1591,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1522,
+                                                    lineNumber: 1582,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1474,
+                                        lineNumber: 1534,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1453,
+                                lineNumber: 1514,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1452,
+                            lineNumber: 1513,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -3091,7 +3144,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Financial Audit Node"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1559,
+                                                            lineNumber: 1619,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3105,7 +3158,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: "Bill Total"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1562,
+                                                                            lineNumber: 1622,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3116,13 +3169,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1563,
+                                                                            lineNumber: 1623,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1561,
+                                                                    lineNumber: 1621,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 patientBalance > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3135,7 +3188,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                     children: "Previous Debt"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                    lineNumber: 1568,
+                                                                                    lineNumber: 1628,
                                                                                     columnNumber: 27
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3146,13 +3199,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                    lineNumber: 1569,
+                                                                                    lineNumber: 1629,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1567,
+                                                                            lineNumber: 1627,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3161,20 +3214,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: includePrevBalance ? 'INCLUDED' : 'ADD TO TALLY'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1571,
+                                                                            lineNumber: 1631,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1566,
+                                                                    lineNumber: 1626,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "h-px bg-slate-200 dark:bg-slate-800 w-full"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1579,
+                                                                    lineNumber: 1639,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3185,7 +3238,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: "Settlement Target"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1581,
+                                                                            lineNumber: 1641,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3196,25 +3249,25 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1582,
+                                                                            lineNumber: 1642,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1580,
+                                                                    lineNumber: 1640,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1560,
+                                                            lineNumber: 1620,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1558,
+                                                    lineNumber: 1618,
                                                     columnNumber: 17
                                                 }, this),
                                                 payments.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3225,7 +3278,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Payment Stream"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1592,
+                                                            lineNumber: 1652,
                                                             columnNumber: 21
                                                         }, this),
                                                         payments.map((p, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3241,34 +3294,34 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                         className: "h-3 w-3 text-emerald-500"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                        lineNumber: 1597,
+                                                                                        lineNumber: 1657,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     p.method === 'upi' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$qr$2d$code$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__QrCode$3e$__["QrCode"], {
                                                                                         className: "h-3 w-3 text-indigo-500"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                        lineNumber: 1598,
+                                                                                        lineNumber: 1658,
                                                                                         columnNumber: 52
                                                                                     }, this),
                                                                                     p.method === 'card' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"], {
                                                                                         className: "h-3 w-3 text-blue-500"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                        lineNumber: 1599,
+                                                                                        lineNumber: 1659,
                                                                                         columnNumber: 53
                                                                                     }, this),
                                                                                     p.method === 'bank_transfer' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                                                                                         className: "h-3 w-3 text-amber-500"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                        lineNumber: 1600,
+                                                                                        lineNumber: 1660,
                                                                                         columnNumber: 62
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1596,
+                                                                                lineNumber: 1656,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3276,13 +3329,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 children: p.method
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1602,
+                                                                                lineNumber: 1662,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1595,
+                                                                        lineNumber: 1655,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3296,7 +3349,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1605,
+                                                                                lineNumber: 1665,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3306,30 +3359,30 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                    lineNumber: 1606,
+                                                                                    lineNumber: 1666,
                                                                                     columnNumber: 165
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1606,
+                                                                                lineNumber: 1666,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1604,
+                                                                        lineNumber: 1664,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, idx, true, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1594,
+                                                                lineNumber: 1654,
                                                                 columnNumber: 23
                                                             }, this))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1591,
+                                                    lineNumber: 1651,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3340,7 +3393,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: isDeficit ? 'Partial / Credit' : isSurplus ? 'Advance / Excess' : 'Balanced'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1615,
+                                                            lineNumber: 1675,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3348,19 +3401,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: isDeficit ? `Deficit: ${currency}${Math.max(0, settlementTarget - totalPaid).toFixed(2)} to be carried as debt.` : isSurplus ? `Surplus: ${currency}${(totalPaid - settlementTarget).toFixed(2)} will be credited.` : `Transaction perfectly tallied. Ready for sync.`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1618,
+                                                            lineNumber: 1678,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1614,
+                                                    lineNumber: 1674,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1557,
+                                            lineNumber: 1617,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3378,7 +3431,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: currency
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1637,
+                                                                    lineNumber: 1697,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3425,23 +3478,23 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1638,
+                                                                    lineNumber: 1698,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1636,
+                                                            lineNumber: 1696,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1635,
+                                                        lineNumber: 1695,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1634,
+                                                    lineNumber: 1694,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3518,7 +3571,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Device Active"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1718,
+                                                                    lineNumber: 1778,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3527,18 +3580,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         className: "h-4 w-4 animate-spin text-indigo-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1722,
+                                                                        lineNumber: 1782,
                                                                         columnNumber: 80
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(m.icon, {
                                                                         className: `h-4 w-4 ${m.color}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1722,
+                                                                        lineNumber: 1782,
                                                                         columnNumber: 143
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1721,
+                                                                    lineNumber: 1781,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3546,18 +3599,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: isPOSLoading && (m.id === 'card' || m.id === 'upi') ? 'PROCESSING...' : m.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1724,
+                                                                    lineNumber: 1784,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, m.id, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1685,
+                                                            lineNumber: 1745,
                                                             columnNumber: 21
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1678,
+                                                    lineNumber: 1738,
                                                     columnNumber: 17
                                                 }, this),
                                                 gatewayConfig?.enabled && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3584,12 +3637,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-4 w-4 text-yellow-300"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1749,
+                                                                lineNumber: 1809,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1748,
+                                                            lineNumber: 1808,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3600,7 +3653,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Active Gateway"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1752,
+                                                                    lineNumber: 1812,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3608,19 +3661,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Pay via Razorpay QR (Auto-Confirmed)"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1753,
+                                                                    lineNumber: 1813,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1751,
+                                                            lineNumber: 1811,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1734,
+                                                    lineNumber: 1794,
                                                     columnNumber: 19
                                                 }, this),
                                                 gatewayConfig?.enabled && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3648,18 +3701,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-4 w-4 animate-spin text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1776,
+                                                                lineNumber: 1836,
                                                                 columnNumber: 40
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
                                                                 className: "h-4 w-4 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1776,
+                                                                lineNumber: 1836,
                                                                 columnNumber: 98
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1775,
+                                                            lineNumber: 1835,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3670,7 +3723,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Contact-less Pay"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1779,
+                                                                    lineNumber: 1839,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3678,19 +3731,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: isSendingLink ? 'Requesting...' : 'Send Payment Link to WhatsApp'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1780,
+                                                                    lineNumber: 1840,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1778,
+                                                            lineNumber: 1838,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1760,
+                                                    lineNumber: 1820,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3707,7 +3760,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Cancel"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1790,
+                                                            lineNumber: 1850,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3722,7 +3775,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Reset"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1797,
+                                                            lineNumber: 1857,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3752,7 +3805,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-5 w-5 animate-spin"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1834,
+                                                                lineNumber: 1894,
                                                                 columnNumber: 32
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                                                 children: isDeficit ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -3762,7 +3815,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             className: "h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1837,
+                                                                            lineNumber: 1897,
                                                                             columnNumber: 44
                                                                         }, this)
                                                                     ]
@@ -3773,7 +3826,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             className: "h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1839,
+                                                                            lineNumber: 1899,
                                                                             columnNumber: 45
                                                                         }, this)
                                                                     ]
@@ -3784,7 +3837,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             className: "h-5 w-5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1841,
+                                                                            lineNumber: 1901,
                                                                             columnNumber: 49
                                                                         }, this)
                                                                     ]
@@ -3792,13 +3845,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             }, void 0, false)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1809,
+                                                            lineNumber: 1869,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1789,
+                                                    lineNumber: 1849,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3806,29 +3859,29 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "Standard Institutional Billing & Settlement Node"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1847,
+                                                    lineNumber: 1907,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1630,
+                                            lineNumber: 1690,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1555,
+                                    lineNumber: 1615,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1549,
+                                lineNumber: 1609,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1548,
+                            lineNumber: 1608,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -3846,7 +3899,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "h-3 w-3 text-indigo-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1858,
+                                                    lineNumber: 1918,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3854,13 +3907,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: "Dynamic Payment Gateway"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1859,
+                                                    lineNumber: 1919,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1857,
+                                            lineNumber: 1917,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3868,7 +3921,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "SCAN TO PAY"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1862,
+                                            lineNumber: 1922,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3881,7 +3934,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1863,
+                                            lineNumber: 1923,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3898,7 +3951,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             includeMargin: false
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1869,
+                                                            lineNumber: 1929,
                                                             columnNumber: 23
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "h-[180px] w-[180px] flex items-center justify-center bg-slate-50 rounded-xl",
@@ -3906,22 +3959,22 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-8 w-8 text-indigo-400 animate-spin"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1872,
+                                                                lineNumber: 1932,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1871,
+                                                            lineNumber: 1931,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1867,
+                                                        lineNumber: 1927,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1866,
+                                                    lineNumber: 1926,
                                                     columnNumber: 17
                                                 }, this),
                                                 razorpayStatus === 'loading' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3931,7 +3984,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-10 w-10 text-indigo-600 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1880,
+                                                            lineNumber: 1940,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3939,19 +3992,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Generating QR..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1881,
+                                                            lineNumber: 1941,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1879,
+                                                    lineNumber: 1939,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1865,
+                                            lineNumber: 1925,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3968,7 +4021,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Order ID"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1889,
+                                                                    lineNumber: 1949,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3976,13 +4029,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: razorpayOrderId || 'PENDING'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1890,
+                                                                    lineNumber: 1950,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1888,
+                                                            lineNumber: 1948,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3995,14 +4048,14 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1894,
+                                                                            lineNumber: 1954,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         " Waiting for Payment"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1893,
+                                                                    lineNumber: 1953,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4010,19 +4063,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "LIVE"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1896,
+                                                                    lineNumber: 1956,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1892,
+                                                            lineNumber: 1952,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1887,
+                                                    lineNumber: 1947,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4035,7 +4088,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Cancel"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1901,
+                                                            lineNumber: 1961,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4044,13 +4097,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "I have Paid"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1904,
+                                                            lineNumber: 1964,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1900,
+                                                    lineNumber: 1960,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4065,14 +4118,14 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: `h-4 w-4 ${isCustomerDisplayOpen ? 'animate-pulse text-emerald-500' : ''}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1917,
+                                                            lineNumber: 1977,
                                                             columnNumber: 19
                                                         }, this),
                                                         isCustomerDisplayOpen ? 'MIRROR ACTIVE (PATIENT SCREEN)' : 'MIRROR TO PATIENT DISPLAY'
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1912,
+                                                    lineNumber: 1972,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4082,7 +4135,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-4 w-4 text-amber-600 flex-shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1922,
+                                                            lineNumber: 1982,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4090,35 +4143,35 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Open any UPI App (PhonePe, GPay, Paytm) and scan this QR code. The system will automatically detect the payment via cloud hook."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1923,
+                                                            lineNumber: 1983,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1921,
+                                                    lineNumber: 1981,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 1886,
+                                            lineNumber: 1946,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                    lineNumber: 1856,
+                                    lineNumber: 1916,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1855,
+                                lineNumber: 1915,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1854,
+                            lineNumber: 1914,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4134,7 +4187,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 children: "Quick Identification"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1935,
+                                                lineNumber: 1995,
                                                 columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -4145,13 +4198,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1935,
+                                                lineNumber: 1995,
                                                 columnNumber: 161
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1935,
+                                        lineNumber: 1995,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4165,7 +4218,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "Patient Full Name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1938,
+                                                        lineNumber: 1998,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -4176,13 +4229,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         autoFocus: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1939,
+                                                        lineNumber: 1999,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1937,
+                                                lineNumber: 1997,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4193,7 +4246,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "Sync Mobile Terminal"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1942,
+                                                        lineNumber: 2002,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -4203,19 +4256,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         placeholder: "+91..."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1943,
+                                                        lineNumber: 2003,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1941,
+                                                lineNumber: 2001,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1936,
+                                        lineNumber: 1996,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -4227,7 +4280,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 children: "Abort"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1946,
+                                                lineNumber: 2006,
                                                 columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4238,7 +4291,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "h-5 w-5 animate-spin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1946,
+                                                    lineNumber: 2006,
                                                     columnNumber: 492
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
@@ -4247,31 +4300,31 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1946,
+                                                            lineNumber: 2006,
                                                             columnNumber: 561
                                                         }, this)
                                                     ]
                                                 }, void 0, true)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1946,
+                                                lineNumber: 2006,
                                                 columnNumber: 176
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1946,
+                                        lineNumber: 2006,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1934,
+                                lineNumber: 1994,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1933,
+                            lineNumber: 1993,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4295,7 +4348,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Patient Ledger Audit"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1957,
+                                                                    lineNumber: 2017,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -4303,13 +4356,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Full financial reconciliation for patient identity node"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1958,
+                                                                    lineNumber: 2018,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1956,
+                                                            lineNumber: 2016,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4320,7 +4373,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     children: "Total Liability"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1961,
+                                                                    lineNumber: 2021,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4331,24 +4384,24 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1962,
+                                                                    lineNumber: 2022,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1960,
+                                                            lineNumber: 2020,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1955,
+                                                    lineNumber: 2015,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1954,
+                                                lineNumber: 2014,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4360,7 +4413,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-10 w-10 text-indigo-500 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1970,
+                                                            lineNumber: 2030,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4368,13 +4421,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             children: "Syncing Ledger Node..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1971,
+                                                            lineNumber: 2031,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1969,
+                                                    lineNumber: 2029,
                                                     columnNumber: 19
                                                 }, this) : ledgerData.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-center py-20",
@@ -4383,12 +4436,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "No financial movements found for this identity node."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 1975,
+                                                        lineNumber: 2035,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1974,
+                                                    lineNumber: 2034,
                                                     columnNumber: 19
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
                                                     className: "w-full text-left border-collapse",
@@ -4402,7 +4455,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         children: "Date/Time"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1981,
+                                                                        lineNumber: 2041,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -4410,7 +4463,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         children: "Reference"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1982,
+                                                                        lineNumber: 2042,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -4418,7 +4471,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         children: "Account Node"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1983,
+                                                                        lineNumber: 2043,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -4426,7 +4479,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         children: "Debit"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1984,
+                                                                        lineNumber: 2044,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -4434,18 +4487,18 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                         children: "Credit"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                        lineNumber: 1985,
+                                                                        lineNumber: 2045,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 1980,
+                                                                lineNumber: 2040,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1979,
+                                                            lineNumber: 2039,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -4458,7 +4511,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: new Date(line.journal_entries?.date).toLocaleDateString()
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1991,
+                                                                            lineNumber: 2051,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4469,7 +4522,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                     children: line.journal_entries?.ref || 'N/A'
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                    lineNumber: 1995,
+                                                                                    lineNumber: 2055,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4477,13 +4530,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                     children: line.journal_entries?.journals?.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                    lineNumber: 1996,
+                                                                                    lineNumber: 2056,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1994,
+                                                                            lineNumber: 2054,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4493,12 +4546,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                                 children: line.accounts?.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                                lineNumber: 1999,
+                                                                                lineNumber: 2059,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 1998,
+                                                                            lineNumber: 2058,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4506,7 +4559,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: line.debit > 0 ? `${currency}${Number(line.debit).toFixed(2)}` : '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 2001,
+                                                                            lineNumber: 2061,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -4514,35 +4567,35 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                             children: line.credit > 0 ? `${currency}${Number(line.credit).toFixed(2)}` : '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                            lineNumber: 2004,
+                                                                            lineNumber: 2064,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                    lineNumber: 1990,
+                                                                    lineNumber: 2050,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 1988,
+                                                            lineNumber: 2048,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 1978,
+                                                    lineNumber: 2038,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 1967,
+                                                lineNumber: 2027,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 1953,
+                                        lineNumber: 2013,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4554,23 +4607,23 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                             children: "Close Audit Terminal"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                            lineNumber: 2015,
+                                            lineNumber: 2075,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 2014,
+                                        lineNumber: 2074,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 1952,
+                                lineNumber: 2012,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 1951,
+                            lineNumber: 2011,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4588,12 +4641,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "absolute top-[-50%] left-[-50%] w-[200%] h-[200%] animate-spin-slow bg-[radial-gradient(circle,white_0%,transparent_70%)]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 2028,
+                                                    lineNumber: 2088,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2027,
+                                                lineNumber: 2087,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4605,12 +4658,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                             className: "h-6 w-6 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                            lineNumber: 2032,
+                                                            lineNumber: 2092,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2031,
+                                                        lineNumber: 2091,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4618,7 +4671,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "UPI Smart Pay"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2034,
+                                                        lineNumber: 2094,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4626,19 +4679,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "Scan with any UPI App"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2035,
+                                                        lineNumber: 2095,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2030,
+                                                lineNumber: 2090,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 2026,
+                                        lineNumber: 2086,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4654,20 +4707,20 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         includeMargin: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2042,
+                                                        lineNumber: 2102,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "absolute inset-0 bg-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2049,
+                                                        lineNumber: 2109,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2040,
+                                                lineNumber: 2100,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4678,7 +4731,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "Settlement Amount"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2053,
+                                                        lineNumber: 2113,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4689,13 +4742,13 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2054,
+                                                        lineNumber: 2114,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2052,
+                                                lineNumber: 2112,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4704,7 +4757,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 children: "Done / Paid"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2059,
+                                                lineNumber: 2119,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4712,24 +4765,24 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                 children: "Please verify payment success on your mobile / machine before closing this terminal."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2066,
+                                                lineNumber: 2126,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 2039,
+                                        lineNumber: 2099,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 2025,
+                                lineNumber: 2085,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 2024,
+                            lineNumber: 2084,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4747,12 +4800,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     className: "h-8 w-8 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 2078,
+                                                    lineNumber: 2138,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2077,
+                                                lineNumber: 2137,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4762,7 +4815,7 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: errorDetails.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2081,
+                                                        lineNumber: 2141,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4770,19 +4823,19 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "System Sync Failure"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2082,
+                                                        lineNumber: 2142,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2080,
+                                                lineNumber: 2140,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 2076,
+                                        lineNumber: 2136,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4795,12 +4848,12 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                     children: errorDetails.message
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                    lineNumber: 2087,
+                                                    lineNumber: 2147,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2086,
+                                                lineNumber: 2146,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4820,14 +4873,14 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                                lineNumber: 2099,
+                                                                lineNumber: 2159,
                                                                 columnNumber: 19
                                                             }, this),
                                                             " Copy Error Code"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2092,
+                                                        lineNumber: 2152,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4836,41 +4889,41 @@ function CompactInvoiceEditor({ patients, billableItems, uoms = [], taxConfig, i
                                                         children: "Close"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                        lineNumber: 2101,
+                                                        lineNumber: 2161,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                                lineNumber: 2091,
+                                                lineNumber: 2151,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                        lineNumber: 2085,
+                                        lineNumber: 2145,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                                lineNumber: 2075,
+                                lineNumber: 2135,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                            lineNumber: 2074,
+                            lineNumber: 2134,
                             columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                    lineNumber: 1117,
+                    lineNumber: 1162,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/billing/invoice-editor-compact.tsx",
-                lineNumber: 1116,
+                lineNumber: 1161,
                 columnNumber: 7
             }, this)
         ]
