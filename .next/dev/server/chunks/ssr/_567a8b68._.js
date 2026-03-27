@@ -781,6 +781,24 @@ async function ensureDefaultAccounts(companyId, tenantId) {
             parentCode: '4000'
         },
         {
+            code: '4020',
+            name: 'OP Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4030',
+            name: 'Casualty Income',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
+            code: '4040',
+            name: 'IP Income / Ward Charges',
+            type: 'Revenue',
+            parentCode: '4000'
+        },
+        {
             code: '4100',
             name: 'Lab Test Revenue',
             type: 'Revenue',
@@ -1027,6 +1045,13 @@ async function signup(prevState, formData) {
         };
     }
     try {
+        // [SAFETY] Check if this is a fresh system. For local installs, we only allow ONE initial signup.
+        const userCount = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.count();
+        if (userCount > 0) {
+            return {
+                error: "Initial setup already completed. Please login instead."
+            };
+        }
         const existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].app_user.findFirst({
             where: {
                 email
@@ -1410,13 +1435,17 @@ __turbopack_async_result__();
 
 return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 
-/* __next_internal_action_entry_do_not_use__ [{"0017bc7bd76d12c4fa0332c041f8dc72f971161904":"getPaymentMappings","00e1e20b68fcf111e2adb0663e0e74e48a42a2e964":"getHMSSettings","00ee7cb30127714f93eb99d84e6378a1b9d5f71a82":"getUserProfile","401fbfa1dcf731b9d7863ef7a624aabc6f9c601520":"updateGlobalSettings","4031046d1e88ab01ac04a97d7373e9b675b9b2102e":"updateHMSSettings","4033f0ad3178ccda49f8634ca8f6313b462889bdb0":"updateWhatsAppSettings","405d8eea04931e98fb50c32271a9ab145ae6f8d465":"createDesignation","4098cc338ddde8532ea628809839b63f72ed6e703e":"updatePaymentGatewaySettings","40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa":"updatePDFSettings","40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6":"updateTenantSettings","40c1ce8bac6bd0294860e6dbb06e4ca911bd121437":"createBranch","40c78bda30257384bf051704051785bf4620f8ae50":"getDesignation","40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9":"updatePaymentMappings","40f5ad1ddc48abb6f590059867aca153fb43763d61":"deleteDesignation","6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c":"updateBranch","600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506":"getPDFSettings","604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0":"getPaymentGatewayConfig","6061fbcb1a881f4e8692dead2c43587d3634d83fe1":"getWhatsAppSettings","60660fbc726854ba5c95d6c1506c1006864e56857e":"getPDFConfig","60825e363deb70c92d1882c2041a21532c1b8cea9a":"getWhatsAppConfig","60978e108f0c867559c6c352cdc1209191fb6cd822":"updateDesignation","60af4c4a57d0c5c26681b16bf66e53126bb318bbab":"updateProfile","60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775":"getPaymentGatewaySettings"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"0017bc7bd76d12c4fa0332c041f8dc72f971161904":"getPaymentMappings","00e1e20b68fcf111e2adb0663e0e74e48a42a2e964":"getHMSSettings","00ee7cb30127714f93eb99d84e6378a1b9d5f71a82":"getUserProfile","401fbfa1dcf731b9d7863ef7a624aabc6f9c601520":"updateGlobalSettings","4031046d1e88ab01ac04a97d7373e9b675b9b2102e":"updateHMSSettings","4033f0ad3178ccda49f8634ca8f6313b462889bdb0":"updateWhatsAppSettings","405d8eea04931e98fb50c32271a9ab145ae6f8d465":"createDesignation","408df1093956fc035cc68154d5d98c525f414c0317":"updateAISettings","4098cc338ddde8532ea628809839b63f72ed6e703e":"updatePaymentGatewaySettings","40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa":"updatePDFSettings","40a8bd885a0cd875baf554e077e97cf0bb7d9b36b6":"updateTenantSettings","40c1ce8bac6bd0294860e6dbb06e4ca911bd121437":"createBranch","40c78bda30257384bf051704051785bf4620f8ae50":"getDesignation","40ce49ea4b7050e0573cddcba444e4d9ead38f4ab9":"updatePaymentMappings","40f5ad1ddc48abb6f590059867aca153fb43763d61":"deleteDesignation","6003ffc1bf6ab8e030685a3abb1a7068aa1ba3b43c":"updateBranch","600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506":"getPDFSettings","604fe2a8b690164f5a32f5338e5b0d30ffabfde0c0":"getPaymentGatewayConfig","6061fbcb1a881f4e8692dead2c43587d3634d83fe1":"getWhatsAppSettings","60660fbc726854ba5c95d6c1506c1006864e56857e":"getPDFConfig","6066d3905d83653ad33bde20210544c6df1c8f8477":"getAISettings","60825e363deb70c92d1882c2041a21532c1b8cea9a":"getWhatsAppConfig","608dd6755d4938c38cd9057e16d303d139cba113ed":"getAIConfig","60978e108f0c867559c6c352cdc1209191fb6cd822":"updateDesignation","60af4c4a57d0c5c26681b16bf66e53126bb318bbab":"updateProfile","60fdc4f0ccdb38a549b5cb4bebf4efac172e58c775":"getPaymentGatewaySettings"},"",""] */ __turbopack_context__.s([
     "createBranch",
     ()=>createBranch,
     "createDesignation",
     ()=>createDesignation,
     "deleteDesignation",
     ()=>deleteDesignation,
+    "getAIConfig",
+    ()=>getAIConfig,
+    "getAISettings",
+    ()=>getAISettings,
     "getDesignation",
     ()=>getDesignation,
     "getHMSSettings",
@@ -1437,6 +1466,8 @@ return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, _
     ()=>getWhatsAppConfig,
     "getWhatsAppSettings",
     ()=>getWhatsAppSettings,
+    "updateAISettings",
+    ()=>updateAISettings,
     "updateBranch",
     ()=>updateBranch,
     "updateDesignation",
@@ -1616,7 +1647,8 @@ async function updateGlobalSettings(data) {
                     },
                     data: {
                         currency_id: data.currencyId,
-                        numbering_prefix: data.invoicePrefix
+                        numbering_prefix: data.invoicePrefix,
+                        rounding_precision: data.roundingPrecision
                     }
                 });
             } else {
@@ -1626,7 +1658,8 @@ async function updateGlobalSettings(data) {
                         tenant_id: session.user.tenantId,
                         company_id: data.companyId,
                         currency_id: data.currencyId,
-                        numbering_prefix: data.invoicePrefix || 'INV'
+                        numbering_prefix: data.invoicePrefix || 'INV',
+                        rounding_precision: data.roundingPrecision || 2
                     }
                 });
             }
@@ -1645,9 +1678,15 @@ async function updateGlobalSettings(data) {
 }
 async function updateTenantSettings(data) {
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
-    if (!session?.user?.id || !session.user.isTenantAdmin) {
+    if (!session?.user?.id || !session.user.isTenantAdmin && !session.user.isAdmin) {
         return {
-            error: "Unauthorized. Tenant Admin access required."
+            error: "Unauthorized. Admin access required."
+        };
+    }
+    // Safety check: Ensure they are updating THEIR tenant
+    if (!session.user.isTenantAdmin && data.tenantId !== session.user.tenantId) {
+        return {
+            error: "Permission denied: You can only update your own organization settings."
         };
     }
     try {
@@ -1673,7 +1712,10 @@ async function updateTenantSettings(data) {
                 app_name: data.appName,
                 logo_url: data.logoUrl,
                 db_url: data.dbUrl,
-                metadata: updatedMeta
+                metadata: {
+                    ...updatedMeta,
+                    date_format: data.dateFormat || updatedMeta.date_format || 'dd/MM/yyyy'
+                }
             }
         });
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
@@ -1788,6 +1830,10 @@ async function getHMSSettings() {
                 enableCardIssuance: configData.enableCardIssuance ?? true,
                 consultationBillingMode: configData.consultationBillingMode || 'post_visit',
                 defaultDoctorId: configData.defaultDoctorId || null,
+                opSlipPreprintedLetterhead: configData.opSlipPreprintedLetterhead ?? false,
+                opSlipHeaderHeight: configData.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: configData.billPreprintedLetterhead ?? false,
+                billHeaderHeight: configData.billHeaderHeight || '4.5',
                 feeHistory: feeHistory.map((f)=>({
                         id: f.id,
                         amount: Number(f.fee_amount),
@@ -1921,6 +1967,10 @@ async function updateHMSSettings(data) {
                 validity: validityDays,
                 enableCardIssuance: !!data.enableCardIssuance,
                 consultationBillingMode: data.consultationBillingMode || 'post_visit',
+                opSlipPreprintedLetterhead: !!data.opSlipPreprintedLetterhead,
+                opSlipHeaderHeight: data.opSlipHeaderHeight || '4.5',
+                billPreprintedLetterhead: !!data.billPreprintedLetterhead,
+                billHeaderHeight: data.billHeaderHeight || '4.5',
                 fee: feeAmount,
                 productId: regProduct.id,
                 defaultDoctorId: data.defaultDoctorId || null,
@@ -2422,6 +2472,7 @@ async function getWhatsAppSettings(providedCompanyId, providedTenantId) {
             success: true,
             settings: {
                 enabled: data.enabled ?? false,
+                provider: data.provider ?? 'ultramsg',
                 instanceId: data.instanceId ?? '',
                 hasToken: hasToken,
                 autoSendBill: data.autoSendBill ?? false
@@ -2475,6 +2526,7 @@ async function updateWhatsAppSettings(data) {
         const formattedInstanceId = `instance${cleanInstanceId}`;
         const configValue = {
             enabled: data.enabled,
+            provider: data.provider || 'ultramsg',
             instanceId: formattedInstanceId,
             token: data.token && data.token.trim() !== '' ? data.token.trim() : existingData.token || '',
             autoSendBill: data.autoSendBill,
@@ -2650,6 +2702,148 @@ async function updatePDFSettings(data) {
         };
     }
 }
+async function getAISettings(providedCompanyId, providedTenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = providedCompanyId || session?.user?.companyId;
+    const tenantId = providedTenantId || session?.user?.tenantId;
+    if (!companyId || !tenantId) return {
+        success: false,
+        error: 'Unauthorized'
+    };
+    try {
+        let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+        if (!record) {
+            record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const data = record?.value || {};
+        const hasKey = !!(data.apiKey && data.apiKey.length > 0);
+        return {
+            success: true,
+            settings: {
+                enabled: data.enabled ?? true,
+                hasKey: hasKey,
+                apiKey: '' // Never return the key to the frontend
+            }
+        };
+    } catch (error) {
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function updateAISettings(data) {
+    const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["auth"])();
+    const companyId = data.companyId || session?.user?.companyId;
+    const tenantId = session?.user?.tenantId;
+    const userId = session?.user?.id;
+    if (!companyId || !tenantId || !userId) return {
+        success: false,
+        error: 'Session expired.'
+    };
+    console.log(`[AI-SAVE] Attempting to save for Company: ${companyId}, Tenant: ${tenantId}`);
+    const canManage = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$actions$2f$rbac$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["checkPermission"])('hms:admin');
+    if (!canManage) return {
+        success: false,
+        error: 'Unauthorized: HMS Admin permission required.'
+    };
+    try {
+        // Try multiple ways to find existing record to ensure we don't duplicate or lose data
+        let existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                company_id: companyId,
+                key: 'ai_config'
+            }
+        });
+        if (!existing) {
+            existing = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+                where: {
+                    tenant_id: tenantId,
+                    key: 'ai_config'
+                }
+            });
+        }
+        const existingData = existing?.value || {};
+        const finalApiKey = data.apiKey && data.apiKey.trim() !== '' ? data.apiKey.trim() : existingData.apiKey || '';
+        console.log(`[AI-SAVE] Final Key Length: ${finalApiKey?.length || 0}`);
+        const configValue = {
+            enabled: data.enabled,
+            apiKey: finalApiKey,
+            updatedAt: new Date().toISOString()
+        };
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].$transaction([
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.deleteMany({
+                where: {
+                    OR: [
+                        {
+                            company_id: companyId,
+                            key: 'ai_config'
+                        },
+                        {
+                            tenant_id: tenantId,
+                            key: 'ai_config'
+                        }
+                    ]
+                }
+            }),
+            __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.create({
+                data: {
+                    id: __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID(),
+                    tenant_id: tenantId,
+                    company_id: companyId,
+                    key: 'ai_config',
+                    value: configValue,
+                    scope: 'company',
+                    is_active: true,
+                    created_by: userId,
+                    updated_by: userId
+                }
+            })
+        ]);
+        console.log(`[AI-SAVE] SUCCESS. Result saved in database.`);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/settings/global');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('[AI-SAVE] FAILED:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+async function getAIConfig(companyId, tenantId) {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["unstable_noStore"])();
+    let record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+        where: {
+            company_id: companyId,
+            tenant_id: tenantId,
+            key: 'ai_config'
+        }
+    });
+    if (!record) {
+        record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
+            where: {
+                tenant_id: tenantId,
+                key: 'ai_config'
+            }
+        });
+    }
+    return record?.value || null;
+}
 async function getPDFConfig(companyId, tenantId) {
     try {
         const record = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].hms_settings.findFirst({
@@ -2688,6 +2882,9 @@ async function getPDFConfig(companyId, tenantId) {
     getWhatsAppConfig,
     getPDFSettings,
     updatePDFSettings,
+    getAISettings,
+    updateAISettings,
+    getAIConfig,
     getPDFConfig
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateProfile, "60af4c4a57d0c5c26681b16bf66e53126bb318bbab", null);
@@ -2712,6 +2909,9 @@ async function getPDFConfig(companyId, tenantId) {
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getWhatsAppConfig, "60825e363deb70c92d1882c2041a21532c1b8cea9a", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFSettings, "600c71b7b282fbbb6d8a0e50a2d2a6f639c02fa506", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updatePDFSettings, "40a7cbc7ead7d5b16b572a614a4c8efe2adb0bc2aa", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAISettings, "6066d3905d83653ad33bde20210544c6df1c8f8477", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAISettings, "408df1093956fc035cc68154d5d98c525f414c0317", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAIConfig, "608dd6755d4938c38cd9057e16d303d139cba113ed", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPDFConfig, "60660fbc726854ba5c95d6c1506c1006864e56857e", null);
 __turbopack_async_result__();
 } catch(e) { __turbopack_async_result__(e); } }, false);}),
